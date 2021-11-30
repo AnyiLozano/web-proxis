@@ -6,7 +6,8 @@ import PublicRoutes from "./public";
 const usePublicRoutes = () => {
     const { useScreens } = useViews();
     const {
-        Home
+        Home,
+        Login
     } = useScreens();
 
 
@@ -16,6 +17,12 @@ const usePublicRoutes = () => {
             exact: true,
             Component: Home,
             name: "Home"
+        },
+        {
+            path: "/login",
+            exact: true,
+            Component: Login,
+            name: "Login"
         }
     ];
 
