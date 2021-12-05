@@ -1,5 +1,5 @@
 import useServices from "api/services";
-import useTypes from "types";
+//import useTypes from "types";
 
 const useHomeActions = () => {
     // Services
@@ -7,8 +7,8 @@ const useHomeActions = () => {
     const { getHomeSectionService } = useHomeServices();
 
     // Types
-    const { useHomeTypes } = useTypes();
-    const { GET_HOME_SECTIONS } = useHomeTypes();
+    // const { useHomeTypes } = useTypes();
+    // const { GET_HOME_SECTIONS } = useHomeTypes();
 
     const actGetHomeSections = async (dispatch: any) => {
         try {

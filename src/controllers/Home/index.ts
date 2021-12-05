@@ -8,6 +8,7 @@ const useHome = () => {
 
     useEffect(() => {
         dispatch(actGetHomeSections);
+        // eslint-disable-next-line
     }, [])
 
     return {
