@@ -4,21 +4,83 @@ import {trackPromise} from "react-promise-tracker";
 const useHomeServices = () => {
     // Providers
     const { useHomeProviders } = useProviders();
-    const { getHomeSections } = useHomeProviders();
+    const {
+        getHomeBanner,
+        getHomeBackground,
+        getHomeSections,
+        getHomeMision,
+        getHomeValores,
+        getHomeTeam,
+    } = useHomeProviders();
 
     // Services
-    const getHomeSectionService = () : Promise<any> => {
+    const getHomeBannerService = () : Promise<any> => {
+        return new Promise<any>(async (resolve, reject) => {
+            try {
+                resolve(await trackPromise(getHomeBanner()));
+            }catch (error: any) {
+                reject(error);
+            }
+        })
+    }
+
+    const getHomeBackgroundService = () : Promise<any> => {
+        return new Promise<any>(async (resolve, reject) => {
+            try {
+                resolve(await trackPromise(getHomeBackground()));
+            }catch (error: any) {
+                reject(error);
+            }
+        })
+    }
+
+    const getHomeSectionsService = () : Promise<any> => {
         return new Promise<any>(async (resolve, reject) => {
             try {
                 resolve(await trackPromise(getHomeSections()));
-            }catch (e) {
-                reject(e);
+            }catch (error: any) {
+                reject(error);
+            }
+        })
+    }
+
+    const getHomeMisionService = () : Promise<any> => {
+        return new Promise<any>(async (resolve, reject) => {
+            try {
+                resolve(await trackPromise(getHomeMision()));
+            }catch (error: any) {
+                reject(error);
+            }
+        })
+    }
+
+    const getHomeValoresService = () : Promise<any> => {
+        return new Promise<any>(async (resolve, reject) => {
+            try {
+                resolve(await trackPromise(getHomeValores()));
+            }catch (error: any) {
+                reject(error);
+            }
+        })
+    }
+
+    const getHomeTeamService = () : Promise<any> => {
+        return new Promise<any>(async (resolve, reject) => {
+            try {
+                resolve(await trackPromise(getHomeTeam()));
+            }catch (error: any) {
+                reject(error);
             }
         })
     }
 
     return {
-        getHomeSectionService,
+        getHomeBannerService,
+        getHomeBackgroundService,
+        getHomeSectionsService,
+        getHomeMisionService,
+        getHomeValoresService,
+        getHomeTeamService,
     };
 }
 
