@@ -1,0 +1,82 @@
+.dato {
+    padding-bottom: 1rem;
+}
+
+.wp-block-columns {
+    display: flex;
+    padding-bottom: 1rem;
+    margin: 0rem;
+
+    figure {
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        width: 80%;
+    }
+
+    .wp-block-column {
+        p {
+            text-align: justify;
+        }
+    }
+}
+
+.principal-image {
+    @media (max-width: 1200px){
+        padding-top: 9rem;
+    }
+
+    @media (max-width: 1023px){
+        padding-top: 7rem;
+    }
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    background-color: #004289 !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+    color: #fff !important;
+    background-color: #0099DB !important;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #B2B2B2;
+}
+
+.css-6j8wv5-Input {
+    height: 52px;
+}
+
+.css-26l3qy-menu {
+    z-index: 1 !important;
+    display: block !important;
+}
+
+.css-1s2u09g-control {
+    background-color: transparent !important;
+}
+
+.dropdown-menu {
+    .show {
+        width: 20rem !important;
+    }
+    .MuiButton-text {
+        width: 100%;
+
+        a {
+            &:hover {
+            color: white;
+
+            }
+        }
+        &:hover {
+            background-color: #004289;
+            color: white;
+        }
+    }
+}
