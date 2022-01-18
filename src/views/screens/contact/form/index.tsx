@@ -1,6 +1,7 @@
 import { Alert, Card, Container, Grid, Snackbar, TextField } from "@mui/material";
 import useControllers from "controllers";
 import React, { FC } from "react";
+import { Controller } from "react-hook-form";
 import useContactStyles from "../contact.style";
 
 const FormContact: FC = (): JSX.Element => {
@@ -10,7 +11,7 @@ const FormContact: FC = (): JSX.Element => {
     const { useContact } = useScreenHooks();
     const {
         width,
-        register,
+        control,
         handleSentContact,
         handleSubmit,
         open,
@@ -31,33 +32,96 @@ const FormContact: FC = (): JSX.Element => {
                                         <StyledTitleSection>Contáctenos</StyledTitleSection>
                                     </Grid>
                                     <Grid item lg={12} className="md:pt-6">
-                                        <TextField
-                                            label="Nombre Completo"
-                                            type="text"
-                                            id="name"
-                                            fullWidth
-                                            {...register('name')}
+                                        <Controller
+                                            control={control}
+                                            rules={{
+                                                required: {
+                                                    value: true,
+                                                    message: "Este campo es obligatorio."
+                                                }
+                                            }}
+                                            name="name"
+                                            render={({ field, fieldState, formState }) => {
+                                                return (
+                                                    <React.Fragment>
+                                                        <TextField
+                                                            label="Nombre Completo"
+                                                            type="text"
+                                                            id={field.name}
+                                                            fullWidth
+                                                            name={field.name}
+                                                            onChange={(e) => {
+                                                                field.onChange(e);
+                                                            }}
+                                                            ref={field.ref}
+                                                            value={field.value}
+                                                        />
+                                                        <small>{fieldState.error?.message}</small>
+                                                    </React.Fragment>
+                                                )
+                                            }}
+                                        />
+
+                                    </Grid>
+                                    <Grid item lg={12} className="md:pt-6">
+                                        <Controller
+                                            control={control}
+                                            rules={{
+                                                required: {
+                                                    value: true,
+                                                    message: "Este campo es obligatorio."
+                                                }
+                                            }}
+                                            name="email"
+                                            render={({ field, fieldState, formState }) => {
+                                                return (
+                                                    <React.Fragment>
+                                                        <TextField
+                                                            label="Correo Electronico"
+                                                            type="email"
+                                                            id={field.name}
+                                                            fullWidth
+                                                            name={field.name}
+                                                            onChange={(e) => {
+                                                                field.onChange(e);
+                                                            }}
+                                                            ref={field.ref}
+                                                            value={field.value}
+                                                        />
+                                                        <small>{fieldState.error?.message}</small>
+                                                    </React.Fragment>
+                                                )
+                                            }}
                                         />
                                     </Grid>
                                     <Grid item lg={12} className="md:pt-6">
-                                        <TextField
-                                            label="Correo Electronico"
-                                            type="email"
-                                            id="email"
-                                            fullWidth
-                                            {...register('email')}
+                                        <Controller
+                                            control={control}
+                                            name="message"
+                                            rules={{
+                                                required: {
+                                                    value: true,
+                                                    message: "El campo es requerido"
+                                                }
+                                            }}
+                                            render={({ field, fieldState, formState }) => {
+                                                return (
+                                                    <TextField
+                                                        label="Mensaje"
+                                                        type="text"
+                                                        multiline
+                                                        rows={6}
+                                                        id={field.name}
+                                                        onChange={(e) => {
+                                                            field.onChange(e);
+                                                        }}
+                                                        value={field.value}
+                                                        fullWidth
+                                                    />
+                                                )
+                                            }}
                                         />
-                                    </Grid>
-                                    <Grid item lg={12} className="md:pt-6">
-                                        <TextField
-                                            label="Correo Electronico"
-                                            type="email"
-                                            multiline
-                                            rows={6}
-                                            id="email"
-                                            fullWidth
-                                            {...register('email')}
-                                        />
+
                                     </Grid>
                                     <Grid item lg={12} className="md:pt-6 flex justify-center">
                                         <StyledButtonPresentation onClick={handleSubmit(handleSentContact)}>Enviar</StyledButtonPresentation>
@@ -74,32 +138,93 @@ const FormContact: FC = (): JSX.Element => {
                                     <StyledTitle className="py-8">Contáctenos</StyledTitle>
                                 </Grid>
                                 <Grid item lg={12} className="pt-6">
-                                    <TextField
-                                        label="Nombre Completo"
-                                        type="text"
-                                        id="name"
-                                        fullWidth
-                                        {...register('name')}
+                                    <Controller
+                                        control={control}
+                                        rules={{
+                                            required: {
+                                                value: true,
+                                                message: "Este campo es obligatorio."
+                                            }
+                                        }}
+                                        name="name"
+                                        render={({ field, fieldState, formState }) => {
+                                            return (
+                                                <React.Fragment>
+                                                    <TextField
+                                                        label="Nombre Completo"
+                                                        type="text"
+                                                        id={field.name}
+                                                        fullWidth
+                                                        name={field.name}
+                                                        onChange={(e) => {
+                                                            field.onChange(e);
+                                                        }}
+                                                        ref={field.ref}
+                                                        value={field.value}
+                                                    />
+                                                    <small>{fieldState.error?.message}</small>
+                                                </React.Fragment>
+                                            )
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item lg={12} className="pt-6">
-                                    <TextField
-                                        label="Correo Electronico"
-                                        type="email"
-                                        id="email"
-                                        fullWidth
-                                        {...register('email')}
+                                    <Controller
+                                        control={control}
+                                        rules={{
+                                            required: {
+                                                value: true,
+                                                message: "Este campo es obligatorio."
+                                            }
+                                        }}
+                                        name="email"
+                                        render={({ field, fieldState, formState }) => {
+                                            return (
+                                                <React.Fragment>
+                                                    <TextField
+                                                        label="Correo Electronico"
+                                                        type="email"
+                                                        id={field.name}
+                                                        fullWidth
+                                                        name={field.name}
+                                                        onChange={(e) => {
+                                                            field.onChange(e);
+                                                        }}
+                                                        ref={field.ref}
+                                                        value={field.value}
+                                                    />
+                                                    <small>{fieldState.error?.message}</small>
+                                                </React.Fragment>
+                                            )
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item lg={12} className="pt-6">
-                                    <TextField
-                                        label="Correo Electronico"
-                                        type="email"
-                                        multiline
-                                        rows={6}
-                                        id="email"
-                                        fullWidth
-                                        {...register('message')}
+                                    <Controller
+                                        control={control}
+                                        name="message"
+                                        rules={{
+                                            required: {
+                                                value: true,
+                                                message: "El campo es requerido"
+                                            }
+                                        }}
+                                        render={({ field, fieldState, formState }) => {
+                                            return (
+                                                <TextField
+                                                    label="Mensaje"
+                                                    type="text"
+                                                    multiline
+                                                    rows={6}
+                                                    id={field.name}
+                                                    onChange={(e) => {
+                                                        field.onChange(e);
+                                                    }}
+                                                    value={field.value}
+                                                    fullWidth
+                                                />
+                                            )
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item lg={12} className="pt-6 flex justify-center">

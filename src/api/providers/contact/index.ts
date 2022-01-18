@@ -1,13 +1,11 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+
+//Interfaces
+import { IContactData } from "models/interfaces/contact";
+import { IResponse } from "models/interfaces/general";
 
 const useContactProviders = () => {
-    const sendContact = (data: any) : Promise<any> => {
-        let formData = new FormData();
-        formData.append('name', data.name);
-        formData.append('email', data.email);
-        formData.append('message', data.message);
-        return axios.post('/contact/send-contact', formData);
-    }
+    const sendContact = (data: IContactData) : Promise<AxiosResponse<IResponse>> => axios.post('/contact/send-contact', data);
 
     return {
         sendContact,

@@ -14,7 +14,7 @@ const useContact = () => {
     const history = useHistory();
 
     // UseForm
-    const { register, handleSubmit, reset } = useForm();
+    const { control, handleSubmit, reset } = useForm();
 
     // States
     const [open, setOpen] = useState<boolean>(false);
@@ -70,7 +70,7 @@ const useContact = () => {
     return {
         handleContact,
         width,
-        register,
+        control,
         handleSentContact,
         handleSubmit,
         open,
