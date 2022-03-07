@@ -50,7 +50,7 @@ const useHomeStyles = () => {
     `;
 
     const StyledSectionPraxis = styled.section`
-      background-color: #f7f7f7;
+      background-color: #ffffff;
       background-repeat: no-repeat;
       background-position: bottom center;
       background-position-y: 42rem;

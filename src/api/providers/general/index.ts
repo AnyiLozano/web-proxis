@@ -2,11 +2,11 @@ import axios from "axios";
 
 const useGeneralProviders = () => {
     const getAssets = () : Promise<any> => {
-        return axios.get('/general/get-assets');
+        return axios.get('/complements/get-logo');
     }
 
     const getMenus = () : Promise<any>  => {
-        return axios.get('/general/get-menus');
+        return axios.get('/complements/get-menus');
     }
 
     return {

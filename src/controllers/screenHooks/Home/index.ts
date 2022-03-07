@@ -1,126 +1,99 @@
-import useActions from "api/actions";
-import {useEffect, useState} from "react";
-import {IAction} from "models/interfaces";
-import useModels from "models";
-import {useSelector} from "react-redux";
+import useApi from "api";
+import { IAction } from "models/interfaces";
+import { IHomeAssets } from "models/interfaces/home";
+import { useEffect, useState } from "react";
 
 const useHome = () => {
-    // actions
-    const { dispatch, useHomeActions } = useActions()
-    const {
-        actGetHomeBanner,
-        actGetHomeBackground,
-        actGetHomeSections,
-        actGetHomeMision,
-        actGetHomeTeam,
-        actGetHomeValores
-    } = useHomeActions();
+    /** Api */
+    const { useActions } = useApi();
+    const { dispatch, useHomeActions } = useActions();
+    const { actGetHomeAssets } = useHomeActions();
 
-    // Selectors
-    const { useSelectors } = useModels();
-    const { useHomeSelectors } = useSelectors();
-    const {
-        bannerHomeSelector,
-        backgroundHomeSelector,
-        sectionsHomeSelector,
-        misionHomeSelector,
-        teamHomeSelector,
-        valoresHomeSelector
-    } = useHomeSelectors();
-    const homeBanner = useSelector(bannerHomeSelector);
-    const backgroundSection2 = useSelector(backgroundHomeSelector);
-    const sections = useSelector(sectionsHomeSelector);
-    const mision = useSelector(misionHomeSelector);
-    const valores = useSelector(valoresHomeSelector);
-    const team = useSelector(teamHomeSelector);
+    /** States */
+    const [homeBanner, setHomeBanner] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
+    const [gerencialTeam, setGerencialTeam] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
+    const [misionVision, setMisionVision] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
+    const [sections, setSections] = useState<any>([]);
+    const [section1, setSections1] = useState<any>({});
+    const [section2, setSections2] = useState<any>({});
+    const [section3, setSections3] = useState<any>({});
+    const [section4, setSections4] = useState<any>({});
+    const [hover, setHover] = useState<{ hover: boolean, id: number }>({ hover: false, id: 0 });
 
-    // States
-    const [hover, setHover] = useState<boolean>(false);
-    const [hover2, setHover2] = useState<boolean>(false);
-    const [hover3, setHover3] = useState<boolean>(false);
-    const [hover4, setHover4] = useState<boolean>(false);
-
-    // Handlers
-    const handlerHover = (type: string, number: number) => {
+    /** Handlers */
+    const handlerHover = (type: string, id: number) => {
         console.log(type)
-        if(number === 1){
-            if(type === 'over'){
-                setHover(true);
-            }else{
-                setHover(false);
-            }
-        }else if(number === 2){
-            if(type === 'over'){
-                setHover2(true);
-            }else{
-                setHover2(false);
-            }
-        }else if(number === 3){
-            if(type === 'over'){
-                setHover3(true);
-            }else{
-                setHover3(false);
-            }
-        }else if(number === 4){
-            if(type === 'over'){
-                setHover4(true);
-            }else{
-                setHover4(false);
-            }
-        }
+        type === "over" ? setHover({ hover: true, id: id }) : setHover({ hover: false, id: 0 });
     }
 
+    let obj : any = {}
+    let obj2 : any = {}
+    let obj3 : any = {}
+    let obj4 : any = {}
+
+    /** Effects */
     useEffect(() => {
-        const request : IAction = {
-            onError: (error: any) => console.log(error),
-            onSuccess: () => {}
-        }
-        dispatch(actGetHomeBanner(request));
+        const request: IAction = {
+            onError: (error) => console.log(error),
+            onSuccess: (data: IHomeAssets[]) => {
+                // eslint-disable-next-line
+                data && data.map((item: IHomeAssets) => {
+                    if (item.section === "Banner Home") {
+                        setHomeBanner(item);
+                    } else if (item.section === "Gerencial Team") {
+                        setGerencialTeam(item);
+                    } else if (item.section === "Mision - Vision") {
+                        setMisionVision(item);
+                    } else if (item.section.includes("Secciones-")) {
+                        if(item.id === 4){
+                            obj.section = item
+                        }else if(item.id === 8){
+                            obj.sectionHover = item;
+                            setSections1(obj)
+                        }
 
-        const requestBck : IAction = {
-            onError: (error: any) => console.log(error),
-            onSuccess: () => {}
-        }
-        dispatch(actGetHomeBackground(requestBck));
+                        if(item.id === 5){
+                            obj2.section = item
+                        }else if(item.id === 9){
+                            obj2.sectionHover = item;
+                            setSections2(obj2)
+                        }
 
-        const requestSec : IAction = {
-            onError: (error: any) => console.log(error),
-            onSuccess: () => {}
-        }
-        dispatch(actGetHomeSections(requestSec));
+                        if(item.id === 6){
+                            obj3.section = item
+                        }else if(item.id === 10){
+                            obj3.sectionHover = item;
+                            setSections3(obj3)
+                        }
 
-        const requestMis : IAction = {
-            onError: (error: any) => console.log(error),
-            onSuccess: () => {}
-        }
-        dispatch(actGetHomeMision(requestMis));
+                        if(item.id === 7){
+                            obj4.section = item
+                        }else if(item.id === 11){
+                            obj4.sectionHover = item;
+                            setSections4(obj4)
+                        }
+                    }
+                })
 
-        const requestVal : IAction = {
-            onError: (error: any) => console.log(error),
-            onSuccess: () => {}
+                setSections(sections);
+            }
         }
-        dispatch(actGetHomeValores(requestVal));
 
-        const requestTeam : IAction = {
-            onError: (error: any) => console.log(error),
-            onSuccess: () => {}
-        }
-        dispatch(actGetHomeTeam(requestTeam));
+        dispatch(actGetHomeAssets(request));
         // eslint-disable-next-line
-    }, [])
+    }, [dispatch]);
 
     return {
         homeBanner,
-        backgroundSection2,
+        gerencialTeam,
+        misionVision,
         sections,
         hover,
-        hover2,
-        hover3,
-        hover4,
         handlerHover,
-        mision,
-        valores,
-        team
+        section1,
+        section2,
+        section3,
+        section4
     }
 }
 
