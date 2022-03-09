@@ -13,6 +13,7 @@ const useHome = () => {
     const [homeBanner, setHomeBanner] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
     const [gerencialTeam, setGerencialTeam] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
     const [misionVision, setMisionVision] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
+    const [background, setBackground] = useState<IHomeAssets>({ alt: "", content: "", section: "", id: 0 });
     const [sections, setSections] = useState<any>([]);
     const [section1, setSections1] = useState<any>({});
     const [section2, setSections2] = useState<any>({});
@@ -71,7 +72,9 @@ const useHome = () => {
                         }else if(item.id === 11){
                             obj4.sectionHover = item;
                             setSections4(obj4)
-                        }
+                        } 
+                    } else if(item.alt === 'background'){
+                        setBackground(item)
                     }
                 })
 
@@ -93,7 +96,8 @@ const useHome = () => {
         section1,
         section2,
         section3,
-        section4
+        section4,
+        background
     }
 }
 

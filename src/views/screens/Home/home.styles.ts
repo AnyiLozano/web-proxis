@@ -5,7 +5,7 @@ import {Grid} from "@mui/material";
 const useHomeStyles = () => {
     const StyledSectionsHome = styled.section`
       ${tw `py-16`}
-      background-image: url('${(props: any) => props.background.content}');
+      background-image: url('${(props: any) => props.background}');
       background-size: 100% 100%;
       @media (max-width: 768px){
         padding-bottom: 0rem;

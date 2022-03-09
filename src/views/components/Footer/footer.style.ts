@@ -44,9 +44,9 @@ const useFooterStyles = () => {
   const StyledTextSection = styled.p`
       font-family: "Montserrat", sans-serif;
       font-size: 1.25rem;
-      text-align: center;
       @media (max-width: 1023px){
         font-size: 0.75rem;
+        text-align: center;
       }
     `;
 

@@ -18,9 +18,10 @@ const Home: FC = (): JSX.Element => {
         section1,
         section2,
         section3,
-        section4
+        section4,
+        background
     } = useHome();
-
+    console.log(background.content)
     // Styles
     const {
         StyledSectionsHome,
@@ -34,7 +35,7 @@ const Home: FC = (): JSX.Element => {
     return (
         <React.Fragment>
             <img className="principal-image" src={homeBanner.content} alt="Home Banner Praxis" />
-            <StyledSectionsHome background={"backgroundSection2"}>
+            <StyledSectionsHome background={background.content}>
                 <Grid item lg={12} className="text-center">
                     <StyledTitleSection>Secciones:</StyledTitleSection>
                 </Grid>
