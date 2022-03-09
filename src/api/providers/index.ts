@@ -6,19 +6,21 @@ import useContactProviders from "./contact";
 import usePacientesProviders from "./pacientes";
 import useCuidadoresProviders from "./cuidadores";
 import useAuthProviders from "./auth";
+import useTerapeuticNumberProviders from "./Terapeutic-number";
 
 const useProviders = () => {
-    axios.defaults.baseURL = process.env.REACT_APP_BASE_URL_API;
+  axios.defaults.baseURL = process.env.REACT_APP_BASE_URL_API;
 
-    return {
-        useGeneralProviders,
-        useHomeProviders,
-        useBlogProviders,
-        useContactProviders,
-        usePacientesProviders,
-        useCuidadoresProviders,
-        useAuthProviders,
-    }
-}
+  return {
+    useGeneralProviders,
+    useHomeProviders,
+    useBlogProviders,
+    useContactProviders,
+    usePacientesProviders,
+    useCuidadoresProviders,
+    useAuthProviders,
+    useTerapeuticNumberProviders,
+  };
+};
 
 export default useProviders;
