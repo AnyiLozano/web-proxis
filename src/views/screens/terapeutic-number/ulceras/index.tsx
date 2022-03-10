@@ -1,116 +1,112 @@
 import React from "react";
 import { Container, Grid } from "@mui/material";
-import _ from "lodash";
-import useTerapeuticNumberStyles from "../terapeutic-number.style";
+import useTerapeuticNumberStyles, {
+  StyledSubtitle,
+} from "../terapeutic-number.style";
 import useControllers from "controllers";
 
 const Ulceras = () => {
-    const {
-        StyledTerapeuticNumberSection,
-        StyledTitulo,
-        StyledTitulo1,
-        StyledTerapeuticNumberSection1,
-        StyledTitleSection2,
-        StyledDescriptionSection2,
-        StyledContainerBibliografia,
-        StyledTitleBibliografia,
-        StyledTextBibliografia,
-        StyledImage,
-        StyledImage1
-    } = useTerapeuticNumberStyles();
+  const {
+    StyledTitulo,
+    StyledTerapeuticNumberSection1,
+    StyledImage,
+  } = useTerapeuticNumberStyles();
 
-    const { useScreenHooks } = useControllers();
-    const { useTerapeuticNumber } = useScreenHooks();
-    const { lines, width, bibliografias, ulceras } = useTerapeuticNumber();
+  const { useScreenHooks } = useControllers();
+  const { useTerapeuticNumber } = useScreenHooks();
+  const { useHeridas } = useTerapeuticNumber();
+  const { woundsAssets } = useHeridas();
 
-    return (
+  return (
+    <React.Fragment>
+      {woundsAssets.ulceras_Banner_1 !== undefined && (
+        <StyledImage
+          src={woundsAssets.ulceras_Banner_1.content}
+          alt={woundsAssets.ulceras_Banner_1.alt}
+          style={{ marginBottom: "3%" }}
+        />
+      )}
+      {woundsAssets.ulceras_imagen_1 && (
         <React.Fragment>
-            <StyledImage src={ulceras?.image?.image} alt="terapeutica" />
-            <StyledTerapeuticNumberSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso 4.png">
-                <Container>
-                    <Grid item lg={12} className="text-center">
-                        <StyledTitulo>Úlceras</StyledTitulo>
-                    </Grid>
-                    <Grid item lg={12} className="text-center">
-                        <StyledTitulo1>{ulceras?.description.description}</StyledTitulo1>
-                    </Grid>
-                </Container>
-            </StyledTerapeuticNumberSection>
-            <StyledTerapeuticNumberSection1 background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-8.png">
-                <Container>
-                    <Grid item lg={12}>
-                        <Grid container>
-                            {
-                                _.map(ulceras?.lines, (item: any, index: any) => {
-                                    if (width >= 1024) {
-                                        if (index % 2 === 0) {
-                                            return (
-                                                <React.Fragment>
-                                                    <Grid item md={6} className="mt-12">
-                                                        <Grid item lg={12}>
-                                                            <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                        </Grid>
-                                                        <Grid item lg={12}>
-                                                            <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                        </Grid>
-                                                    </Grid>
-                                                    <Grid item md={6} className="flex justify-end mt-12">
-                                                        <StyledImage1 src={item.image} alt="image-terapeutic-number" className="ml-6"/>
-                                                    </Grid>
-                                                </React.Fragment>
-                                            )
-                                        } else {
-                                            return (
-                                                <React.Fragment>
-                                                    <Grid item md={6} key={index} className="flex items-center mt-12">
-                                                        <StyledImage1 className="mr-6" src={item.image} alt="image-terapeutic-number"/>
-                                                    </Grid>
-                                                    <Grid item md={6} className="mt-12">
-                                                        <Grid item lg={12} className="mt-2">
-                                                            <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                        </Grid>
-                                                        <Grid item lg={12} className="mt-4">
-                                                            <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                        </Grid>
-                                                    </Grid>
-                                                </React.Fragment>
-                                            )
-                                        }
-                                    } else {
-                                        return (
-                                            <React.Fragment>
-                                                <Grid item lg={6} className="mt-12">
-                                                    <Grid item lg={12}>
-                                                        <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                    </Grid>
-                                                    <Grid item lg={12}>
-                                                        <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                    </Grid>
-                                                </Grid>
-                                                <Grid item lg={6} className="flex justify-end mt-12">
-                                                    <StyledImage1 src={item.image} alt="image-terapeutic-number" />
-                                                </Grid>
-                                            </React.Fragment>
-                                        );
-                                    }
-                                })
-                            }
-                        </Grid>
-                    </Grid>
-                </Container>
+          <Container maxWidth="xl">
+            <Grid item lg={12} className="text-center">
+              <StyledTitulo>Úlceras</StyledTitulo>
+            </Grid>
+            <Grid item lg={12} className="text-center">
+              <img
+                src={woundsAssets.ulceras_imagen_1.content}
+                alt={woundsAssets.ulceras_imagen_1.alt}
+                style={{ width: "100%" }}
+              />
+            </Grid>
+            <Grid item lg={12} className="text-center">
+              <img
+                src={woundsAssets.ulceras_imagen_2.content}
+                alt={woundsAssets.ulceras_imagen_2.alt}
+                style={{ width: "100%" }}
+              />
+            </Grid>
+            <StyledTerapeuticNumberSection1
+              background={woundsAssets.ulceras_background.content}
+            >
+              <img
+                src={woundsAssets.ulceras_imagen_4.content}
+                alt={woundsAssets.ulceras_imagen_4.alt}
+                style={{ width: "100%" }}
+              />
             </StyledTerapeuticNumberSection1>
-            <StyledContainerBibliografia>
-                <Container>
-                    <Grid item lg={12}>
-                        <StyledTitleBibliografia>Bibliografia: </StyledTitleBibliografia>
-                    </Grid>
-                    <Grid item lg={12} className="pt-12">
-                        <StyledTextBibliografia>{bibliografias.bibliografiaHeridas}</StyledTextBibliografia>
-                    </Grid>
-                </Container>
-            </StyledContainerBibliografia>
+            <StyledSubtitle style={{ marginBottom: "3%" }}>
+              {woundsAssets.ulceras_titulo_1.content}
+            </StyledSubtitle>
+            <p>{woundsAssets.ulceras_text_1.content}</p>
+            <Grid container className="justify-center">
+              <img
+                src={woundsAssets.ulceras_imagen_6.content}
+                alt={woundsAssets.ulceras_imagen_6.alt}
+                style={{ width: "80%", marginTop: "3%" }}
+              />
+            </Grid>
+            <StyledSubtitle style={{ marginBottom: "3%" }}>
+              {woundsAssets.ulceras_titulo_3.content}
+            </StyledSubtitle>
+            <p>{woundsAssets.ulceras_text_2.content}</p>
+            <Grid container className="justify-center">
+              <img
+                src={woundsAssets.ulceras_imagen_7.content}
+                alt={woundsAssets.ulceras_imagen_7.alt}
+                style={{ width: "80%", marginTop: "3%" }}
+              />
+            </Grid>
+            <StyledSubtitle style={{ marginBottom: "3%" }}>
+              {woundsAssets.ulceras_titulo_4.content}
+            </StyledSubtitle>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: woundsAssets.ulceras_text_8.content,
+              }}
+            ></p>
+            <Grid container className="justify-center">
+              <img
+                src={woundsAssets.ulceras_imagen_9.content}
+                alt={woundsAssets.ulceras_imagen_9.alt}
+                style={{ width: "80%", marginTop: "3%" }}
+              />
+              <img
+                src={woundsAssets.ulceras_imagen_10.content}
+                alt={woundsAssets.ulceras_imagen_10.alt}
+                style={{ width: "80%", marginTop: "2%" }}
+              />
+            </Grid>
+          </Container>
+          <img
+            src={woundsAssets.ulceras_refrencias_1.content}
+            alt={woundsAssets.ulceras_refrencias_1.alt}
+            style={{ width: "100%", marginTop: "2%" }}
+          />
         </React.Fragment>
-    );
-}
+      )}
+    </React.Fragment>
+  );
+};
 
-export default Ulceras; 
+export default Ulceras;
