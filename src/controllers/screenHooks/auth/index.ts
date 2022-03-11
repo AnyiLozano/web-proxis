@@ -1,6 +1,6 @@
 import useApi from "api";
 import useModels from "models";
-import { ILoginAction, IRecoverPasswordAction, IRegisterAction } from "models/interfaces/auth";
+import { ILoginAction, IRegisterAction } from "models/interfaces/auth";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
@@ -10,7 +10,7 @@ const useAuth = () => {
     // Actions
     const { useActions } = useApi();
     const { dispatch, useAuthActions } = useActions();
-    const { actLogin, actRecover, actRegister } = useAuthActions();
+    const { actLogin, actRegister } = useAuthActions();
 
     // Selectors
     const { useSelectors } = useModels();
@@ -87,7 +87,7 @@ const useAuth = () => {
             formData.append('name', data.name);
             formData.append('password', data.password);
             formData.append('phone', data.phone);
-            formData.append('profesion', data.profesion);
+            formData.append('profession', data.profesion.label);
             formData.append('username', data.username);
 
             const request : IRegisterAction = {
@@ -116,45 +116,48 @@ const useAuth = () => {
         }
     }
 
-    // Use Form
-    // const {
-    //     control: registerRecover,
-    //     handleSubmit: handleSubmitRecover
-    // } = useForm();
-
-    // Handlers
-    // const handleRecover = (data: any) => {
-    //     if(
-    //         data.email !== "" && 
-    //         data.password !== "" 
-    //     ){
-    //         if(data.password === data.confirm_password){
-    //             const request : IRecoverPasswordAction = {
-    //                 recover: data,
-    //                 onSuccess: () => {
-    //                     setOpen(true);
-    //                     setText("Gracias! ahora puedes ingresar a nuestra plataforma");
-    //                     setVariant("success");
-    
-    //                     setTimeout(() => {
-    //                         history.push('/login')
-    //                     }, 5000)
-    //                 },
-    //                 onError: (error: any) => {
-    //                     setOpen(true);
-    //                     setText(error);
-    //                     setVariant("error");
-    //                 }
-    //             }
-    
-    //             dispatch(actRecover(request));
-    //         }
-    //     }else{
-    //         setOpen(true);
-    //         setText("Debes llenar todos los datos para poder recuperar la contraseña");
-    //         setVariant("error");
-    //     }
-    // }
+    const profession : any[] = [
+        {
+            value: 1,
+            label: "Cirugía General"
+        },
+        {
+            value: 2,
+            label: "Cirugía Plástica"
+        },
+        {
+            value: 3,
+            label: "Cirugía Vascular"
+        },
+        {
+            value: 4,
+            label: "Medicina General"
+        },
+        {
+            value: 5,
+            label: "Medicina Interna"
+        },
+        {
+            value: 6,
+            label: "Ortopedia"
+        },
+        {
+            value: 7,
+            label: "Familiarista"
+        },
+        {
+            value: 8,
+            label: "Dermatología"
+        },
+        {
+            value: 9,
+            label: "Enfermeria"
+        },
+        {
+            value: 10,
+            label: "Aux. Enfermeria"
+        }
+    ];
 
     const handleClose = () => {
         setOpen(false);
@@ -172,7 +175,8 @@ const useAuth = () => {
         handleClose,
         handleRegister,
         registerRegister,
-        handleSubmitRegister
+        handleSubmitRegister,
+        profession
     };
 }
 

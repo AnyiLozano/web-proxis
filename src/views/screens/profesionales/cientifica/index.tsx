@@ -1,44 +1,35 @@
 import React from "react";
-import { Container, Grid} from "@mui/material";
-import Slider from "react-slick";
-import useControllers from "controllers";
-import _ from "lodash";
+import { Grid } from "@mui/material";
 import useCientificaStyles from "./cientifica.style";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import useControllers from "controllers";
 
 const Cientifica = () => {
-    // Styles
-    const {
-        StyledSection4,
-        StyledTitleSection2,
-        StyledCarousel,
-        StyledImage2,
-        StyledTitleSection3,
-        StyledDescriptionSection2,
-        ContainerStyled
-    } = useCientificaStyles();
+  // Styles
+  const { StyledSection4, StyledTitleSection2, StyledImage2, ContainerStyled } =
+    useCientificaStyles();
 
-    // Controllers
-    const { useScreenHooks } = useControllers();
-    const { useCuidadores } = useScreenHooks();
-    const { contentArtesanal } = useCuidadores();
+  const { useScreenHooks } = useControllers();
+  const { useProducts } = useScreenHooks();
+  const { products } = useProducts();
+  const { cuidadores } = products;
 
-    return (
-        <React.Fragment>
-            <StyledSection4 background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-7-3.png" >
-                <ContainerStyled>
-                    <Grid item md={12} className="flex justify-center py-12">
-                        <StyledTitleSection2>Evidencia científica</StyledTitleSection2>
-                    </Grid>
-                    <Grid item md={12} className="py-12">
-                        <Link to="/">
-                            <StyledImage2 src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-1-2.png" />
-                        </Link>
-                    </Grid>
-                </ContainerStyled>
-            </StyledSection4>
-        </React.Fragment>
-    );
-}
+  return (
+    <React.Fragment>
+      <StyledSection4 background={cuidadores !== undefined && cuidadores.artesanalBackground.content}>
+        <ContainerStyled>
+          <Grid item md={12} className="flex justify-center py-12">
+            <StyledTitleSection2>Evidencia científica</StyledTitleSection2>
+          </Grid>
+          <Grid item md={12} className="py-12">
+            <Link to="/">
+              <StyledImage2 src={cuidadores !== undefined && cuidadores.evidencia_cientificac.content   } />
+            </Link>
+          </Grid>
+        </ContainerStyled>
+      </StyledSection4>
+    </React.Fragment>
+  );
+};
 
 export default Cientifica;

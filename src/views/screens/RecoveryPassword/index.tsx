@@ -1,8 +1,6 @@
-import { Checkbox, Container, FormControlLabel, Grid, TextField } from "@mui/material";
+import { Container, Grid, TextField } from "@mui/material";
 import React, { FC, useState } from "react";
 import useRecoveryStyles from "./recovery.styles";
-import { Link } from "react-router-dom";
-import Select from "react-select";
 
 const RecoveryPassword: FC = (): JSX.Element => {
     const {
@@ -10,8 +8,6 @@ const RecoveryPassword: FC = (): JSX.Element => {
         StyledTitle,
         StyledSection,
         StyledButton,
-        StyledDescription,
-        StyledSelect
     } = useRecoveryStyles();
 
     // States

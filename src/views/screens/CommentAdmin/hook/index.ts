@@ -15,10 +15,9 @@ const useActiveUsers = () => {
     const login = useSelector(loginSelector);
 
     // States
-    const [items, setItems] = useState<any>({});
     const [comments, setComments] = useState<any>([]);
-    const [totalPag, setTotalPag] = useState<number>(1);
-    const [page, setPage] = useState<number>(1);
+    const [totalPag] = useState<number>(1);
+    const [page] = useState<number>(1);
 
     // Handlers
     const getComments = () : Promise<any> => {

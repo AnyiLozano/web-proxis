@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Theme, withStyles } from "@mui/material";
+import { Container, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import React, { FC } from "react";
 import _ from "lodash";
 import useActiveUsers from "./hook";
@@ -31,7 +31,7 @@ const ActiveUsers: FC = (): JSX.Element => {
                                             <TableCell align="center">{moment(item.date).format('DD-MM-YYYY')}</TableCell>
                                             <TableCell align="center">
                                                 <Grid item md={12} className="flex justify-center">
-                                                    <img src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-4.png" onClick={() => deleteComment(item.id)} />
+                                                    <img src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-4.png" alt="" onClick={() => deleteComment(item.id)} />
                                                 </Grid>
                                             </TableCell>
                                         </TableRow>

@@ -37,15 +37,15 @@ const Login: FC<{ background: string, show:boolean }> = (background): JSX.Elemen
         <React.Fragment>
             {
                 width >= 1200 ? (
-                    <StyledSection background={background.background !== undefined ? background.background : "http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-7-3.png"} style={{ height: "40.7rem" }}>
+                    <StyledSection background={background.background !== undefined ? background.background : "http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png"} style={{ height: "40.7rem" }}>
                         <Container>
                             <Grid container>
                                 <Grid item lg={6} md={12} className="flex justify-center pb-12 sm:pb-1">
-                                    {
+                                    {/* {
                                        !background.show && (
-                                            <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-3-3.png" />
+                                            // <StyledImage src="http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png" />
                                         )
-                                    }
+                                    } */}
                                 </Grid>
                                 <Grid item lg={6} className="flex justify-center w-full">
                                     <Grid item md={12}>
@@ -79,7 +79,7 @@ const Login: FC<{ background: string, show:boolean }> = (background): JSX.Elemen
                     </StyledSection>
                 ) : (
                     <React.Fragment>
-                        <StyledSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-7-3.png">
+                        <StyledSection background="http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png">
                             <Container>
                                 <Grid item md={12} xs={12} className="pt-12">
                                     <Grid md={12} className="pb-12 sm:pb-12">

@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Theme, withStyles } from "@mui/material";
+import { Container, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import React, { FC } from "react";
 import _ from "lodash";
 import useActiveUsers from "./hook";
@@ -7,7 +7,6 @@ import useActiveStyles from "./active.styles";
 const ActiveUsers: FC = (): JSX.Element => {
     // Controller
     const { users, activateUser, deletedUser } = useActiveUsers();
-    console.log(users)
     const { StyledContainer } = useActiveStyles()
 
     return (
@@ -29,17 +28,17 @@ const ActiveUsers: FC = (): JSX.Element => {
                                     _.map(users, (item: any, index: any) => (
                                         <TableRow key={index}>
                                             <TableCell align="center">{item.fullname}</TableCell>
-                                            <TableCell align="center">{item.profesion}</TableCell>
+                                            <TableCell align="center">{item.profession}</TableCell>
                                             <TableCell align="center">{item.email}</TableCell>
                                             <TableCell align="center">{item.phone}</TableCell>
                                             <TableCell align="center" onClick={() => activateUser(item.id)}>
                                                 <Grid item md={12} className="flex justify-center">
-                                                    <img src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-1-1.png" />
+                                                    <img src="http://api-praxis.test/wp-content/uploads/2022/03/Recurso-2.png" alt="" />
                                                 </Grid>
                                             </TableCell>
                                             <TableCell align="center" onClick={() => deletedUser(item.id)}>
                                                 <Grid item md={12} className="flex justify-center">
-                                                    <img src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-4.png" />
+                                                    <img src="http://api-praxis.test/wp-content/uploads/2022/03/Recurso-1.png" alt="" />
                                                 </Grid>
                                             </TableCell>
                                         </TableRow>

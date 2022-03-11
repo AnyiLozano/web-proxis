@@ -6,19 +6,19 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const useActiveUsers = () => {
+    /** History */
     const history = useHistory()
 
-    // Controllers
+    /** Controllers */
     const { useSelectors } = useModels();
     const { useAuthSelectors } = useSelectors();
     const { loginSelector } = useAuthSelectors();
     const login = useSelector(loginSelector);
 
     // States
-    const [items, setItems] = useState<any>({});
     const [users, setUsers] = useState<any>([]);
-    const [totalPag, setTotalPag] = useState<number>(1);
-    const [page, setPage] = useState<number>(1);
+    const [totalPag] = useState<number>(1);
+    const [page] = useState<number>(1);
 
     // Handlers
     const getUsers = () : Promise<any> => {
@@ -32,7 +32,7 @@ const useActiveUsers = () => {
     }
 
     const activeUser = (id: number) : Promise<any> => {
-        return axios.get(`${process.env.REACT_APP_BASE_URL_API}/users/active-user?id=${id}`)
+        return axios.post(`${process.env.REACT_APP_BASE_URL_API}/users/active-user`, {id})
         .then((res:any) => {
             if(res.data.transaction.status){
                 trackPromise(getUsers())
@@ -47,7 +47,7 @@ const useActiveUsers = () => {
     }
 
     const deteleUser = (id: number) : Promise<any> => {
-        return axios.get(`${process.env.REACT_APP_BASE_URL_API}/users/delete-user?id=${id}`)
+        return axios.post(`${process.env.REACT_APP_BASE_URL_API}/users/delete-user`, {id})
         .then((res:any) => {
             if(res.data.transaction.status){
                 trackPromise(getUsers())
@@ -63,7 +63,7 @@ const useActiveUsers = () => {
 
     // useEffect
     useEffect(() => {
-        if(login.token && login.user.role !== "Administrador"){
+        if(login.token && login.user.role !== "admin"){
             history.push('/')
         }
         trackPromise(getUsers());    

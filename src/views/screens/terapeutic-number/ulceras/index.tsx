@@ -63,7 +63,7 @@ const Ulceras = () => {
               <img
                 src={woundsAssets.ulceras_imagen_6.content}
                 alt={woundsAssets.ulceras_imagen_6.alt}
-                style={{ width: "80%", marginTop: "3%" }}
+                style={{ width: "75%", marginTop: "3%" }}
               />
             </Grid>
             <StyledSubtitle style={{ marginBottom: "3%" }}>
@@ -74,7 +74,7 @@ const Ulceras = () => {
               <img
                 src={woundsAssets.ulceras_imagen_7.content}
                 alt={woundsAssets.ulceras_imagen_7.alt}
-                style={{ width: "80%", marginTop: "3%" }}
+                style={{ width: "75%", marginTop: "3%" }}
               />
             </Grid>
             <StyledSubtitle style={{ marginBottom: "3%" }}>
@@ -89,12 +89,12 @@ const Ulceras = () => {
               <img
                 src={woundsAssets.ulceras_imagen_9.content}
                 alt={woundsAssets.ulceras_imagen_9.alt}
-                style={{ width: "80%", marginTop: "3%" }}
+                style={{ width: "75%", marginTop: "3%" }}
               />
               <img
                 src={woundsAssets.ulceras_imagen_10.content}
                 alt={woundsAssets.ulceras_imagen_10.alt}
-                style={{ width: "80%", marginTop: "2%" }}
+                style={{ width: "75%", marginTop: "2%" }}
               />
             </Grid>
           </Container>

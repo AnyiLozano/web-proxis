@@ -1,58 +1,34 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const useProducts = () => {
-    const products = [
-        {
-            id: 1,
-            title: "Indicaciones y áreas de aplicación",
-            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut. ",
-            image: "http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-4-1.png"
-        },
-        {
-            id: 2,
-            title: "Características",
-            description: [
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ",
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ",
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ",
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut "
-            ],
-            image: "http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-4-1.png"
-        },
-        {
-            id: 3,
-            title: "Ventajas",
-            description: [
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ",
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ",
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ",
-                " Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut "
-            ],
-            image: "http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-4-1.png"
-        },
-        {
-            id: 4,
-            image: "http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-5-5.png  "
-        },
-    ];
+  /** States */
+  const [products, setProducts] = useState<any>({});
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
-    const bibliografias = {
-        title: "Tipos de tejido en una herida",
-        description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut. ",
-        image: "http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-6-1.png"
-    }
+  /** Handlers */
+  const getAssets = () => {
+    axios
+      .get(`${process.env.REACT_APP_BASE_URL_API}/products/get-assets`)
+      .then((res: any) => {
+        setProducts(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-    // States
-    const [width, setWidth] = useState<number>(window.innerWidth);
+  useEffect(() => {
+    getAssets();
+  }, []);
 
-    // Listeners
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
+  // Listeners
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
-    return {
-        products,
-        width,
-        bibliografias,
-    };
-}
+  return {
+    products,
+    width,
+  };
+};
 
 export default useProducts;

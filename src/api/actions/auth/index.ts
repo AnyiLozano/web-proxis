@@ -21,6 +21,8 @@ const useAuthActions = () => {
             const res : any = await loginService(login);
             const { data } = res.data;
 
+            console.log(data);
+
             dispatch({
                 type: LOGIN,
                 payload: data

@@ -1,182 +1,167 @@
-import { Container, Grid } from '@mui/material';
-import useControllers from 'controllers';
-import React, { FC } from 'react'
-import useProductsStyles from '../products.style';
-import _ from "lodash";
+import { Container, Grid } from "@mui/material";
+import useControllers from "controllers";
+import React, { FC } from "react";
+import useProductsStyles from "../products.style";
+import { StyledImageGeneral } from "views/screens/terapeutic-number/terapeutic-number.style";
 
 const Bulcosan: FC = (): JSX.Element => {
-    // Styles
-    const {
-        StyledImage,
-        StyledTerapeuticNumberSection,
-        StyledTitulo1,
-        StyledTerapeuticNumberSection1,
-        StyledTitleSection2,
-        StyledDescriptionSection2,
-        StyledListItemSection2,
-        StyledContainerBibliografia,
-        StyledTextBibliografia,
-        StyledSubTitleBibliografia,
-        StyledTitulo
-    } = useProductsStyles();
+  // Styles
+  const {
+    StyledImage,
+    StyledTerapeuticNumberSection,
+    StyledTitulo1,
+    StyledTitulo,
+  } = useProductsStyles();
 
-    // Products
-    const { useScreenHooks } = useControllers();
-    const { useProducts } = useScreenHooks();
-    const { products, width, bibliografias } = useProducts();
+  // Products
+  const { useScreenHooks } = useControllers();
+  const { useProducts } = useScreenHooks();
+  const { products } = useProducts();
 
-    return (
+  const { bulcosan } = products;
+
+  return (
+    <React.Fragment>
+      {bulcosan !== undefined && (
         <React.Fragment>
-            <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-8-1.png" alt="Epiprot Principal Image" />
-            <StyledTerapeuticNumberSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso 4.png">
-                <Container>
-                    <Grid item lg={12} className="flex justify-center">
-                        <StyledTitulo>Vulcosan®</StyledTitulo>
-                    </Grid>
-                    <Grid item lg={12} className="text-center">
-                        <StyledTitulo1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut. </StyledTitulo1>
-                    </Grid>
-                </Container>
+          <StyledImage
+            src={bulcosan.banner_principal.content}
+            alt={bulcosan.banner_principal.alt}
+          />
+          <StyledTerapeuticNumberSection
+            background={bulcosan.background_description.content}
+          >
+            <Container>
+              <Grid item lg={12} className="flex justify-center">
+                <StyledImageGeneral
+                  src={bulcosan.vulcosan_titulo_1.content}
+                  alt={bulcosan.vulcosan_titulo_1.alt}
+                  style={{ width: "auto" }}
+                />
+              </Grid>
+              <Grid item lg={12} className="text-center">
+                <StyledTitulo1
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      bulcosan !== undefined &&
+                      bulcosan.vulcosan_texto_1.content,
+                  }}
+                ></StyledTitulo1>
+              </Grid>
+            </Container>
+          </StyledTerapeuticNumberSection>
+          <Container className="mt-12">
+            <Grid container>
+              <Grid item md={6}>
+                <StyledImageGeneral
+                  src={bulcosan.indicaciones.content}
+                  alt={bulcosan.indicaciones.alt}
+                  style={{ width: "100%" }}
+                />
+              </Grid>
+              <Grid item md={6}>
+                <StyledImageGeneral
+                  src={bulcosan.indicaciones_image.content}
+                  alt={bulcosan.indicaciones_image.alt}
+                  style={{ width: "100%" }}
+                />
+              </Grid>
+            </Grid>
+            <StyledTerapeuticNumberSection
+              background={bulcosan.caracteristicas_background.content}
+            >
+              <Grid container className="mt-5">
+                <Grid item md={6}>
+                  <StyledImageGeneral
+                    src={bulcosan.caracteristicas.content}
+                    alt={bulcosan.caracteristicas.alt}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+                <Grid item md={6}>
+                  <StyledImageGeneral
+                    src={bulcosan.caracteristicas_image.content}
+                    alt={bulcosan.caracteristicas_image.alt}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container className="mt-5">
+                <Grid item md={6}>
+                  <StyledImageGeneral
+                    src={bulcosan.ventajas.content}
+                    alt={bulcosan.ventajas.alt}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+                <Grid item md={6}>
+                  <StyledImageGeneral
+                    src={bulcosan.ventajas_imagen.content}
+                    alt={bulcosan.ventajas_imagen.alt}
+                    style={{ width: "100%" }}
+                  />
+                </Grid>
+              </Grid>
             </StyledTerapeuticNumberSection>
-            <StyledTerapeuticNumberSection1 background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-8.png">
-                <Container>
-                    <Grid item lg={12}>
-                        <Grid container>
-                            {
-                                _.map(products, (item: any, index: number) => {
-                                    if (width >= 1024) {
-                                        if (item.id !== 4) {
-                                            if (index % 2 === 0) {
-                                                return (
-                                                    <React.Fragment>
-                                                        <Grid item lg={6} className="mt-12" key={index}>
-                                                            <Grid item lg={12}>
-                                                                <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                            </Grid>
-                                                            <Grid item lg={12}>
-                                                                {
-                                                                    typeof item.description === "string"
-                                                                        ? (
-                                                                            <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                                        ) : (
-                                                                            <ul style={{ listStyle: 'disc' }}>
-                                                                                {
-                                                                                    _.map(item.description, (it: any, idx: number) => (
-                                                                                        <React.Fragment>
-                                                                                            <StyledListItemSection2 className="mb-2" key={idx}>{it}</StyledListItemSection2>
-                                                                                        </React.Fragment>
-                                                                                    ))
-                                                                                }
-                                                                            </ul>
-                                                                        )
-                                                                }
-                                                            </Grid>
-                                                        </Grid>
-                                                        <Grid item lg={6} className="flex justify-end mt-12">
-                                                            <StyledImage src={item.image} alt="image-terapeutic-number" />
-                                                        </Grid>
-                                                    </React.Fragment>
-                                                );
-                                            } else {
-                                                return (
-                                                    <React.Fragment>
-                                                        <Grid item lg={6} key={index} className="flex items-center mt-12">
-                                                            <StyledImage src={item.image} alt="image-terapeutic-number" />
-                                                        </Grid>
-                                                        <Grid item lg={6} className="mt-12">
-                                                            <Grid item lg={12} className="mt-2">
-                                                                <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                            </Grid>
-                                                            <Grid item lg={12} className="mt-4">
-                                                                {
-                                                                    typeof item.description === "string"
-                                                                        ? (
-                                                                            <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                                        ) : (
-                                                                            <ul style={{ listStyle: 'disc' }}>
-                                                                                {
-                                                                                    _.map(item.description, (it: any, idx: number) => (
-                                                                                        <React.Fragment>
-                                                                                            <StyledListItemSection2 className="mb-2" key={idx}>{it}</StyledListItemSection2>
-                                                                                        </React.Fragment>
-                                                                                    ))
-                                                                                }
-                                                                            </ul>
-                                                                        )
-                                                                }
-
-                                                            </Grid>
-                                                        </Grid>
-                                                    </React.Fragment>
-                                                )
-                                            }
-                                        } else {
-                                            return (
-                                                <Grid item lg={12} className="mt-12">
-                                                    <StyledImage src={item.image} alt="Aplication Product" width="100%" />
-                                                </Grid>
-                                            )
-                                        }
-
-                                    } else {
-                                        return (
-                                            <React.Fragment>
-                                                <Grid item lg={6} className="mt-12">
-                                                    <Grid item lg={12}>
-                                                        <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                    </Grid>
-                                                    <Grid item lg={12}>
-                                                        {
-                                                            typeof item.description === "string"
-                                                                ? (
-                                                                    <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                                ) : (
-                                                                    <ul style={{ listStyle: 'disc' }}>
-                                                                        {
-                                                                            _.map(item.description, (it: any, idx: number) => (
-                                                                                <React.Fragment>
-                                                                                    <StyledListItemSection2 className="mb-2" key={idx}>{it}</StyledListItemSection2>
-                                                                                </React.Fragment>
-                                                                            ))
-                                                                        }
-                                                                    </ul>
-                                                                )
-                                                        }
-                                                    </Grid>
-                                                </Grid>
-                                                <Grid item lg={6} className="flex justify-end mt-12">
-                                                    <StyledImage src={item.image} alt="image-terapeutic-number" />
-                                                </Grid>
-                                            </React.Fragment>
-                                        );
-                                    }
-                                })
-                            }
-                        </Grid>
-                    </Grid>
-                </Container>
-            </StyledTerapeuticNumberSection1>
-            <StyledContainerBibliografia>
-                <Container>
-                    <Grid container>
-                        <Grid item lg={6} className="pt-12">
-                            <Grid item lg={12} className="pb-6">
-                                <StyledSubTitleBibliografia>{bibliografias.title}</StyledSubTitleBibliografia>
-                            </Grid>
-                            <Grid item lg={12}>
-                                <StyledTextBibliografia>{bibliografias.description}</StyledTextBibliografia>
-                            </Grid>
-                        </Grid>
-                        <Grid item lg={6} className="pt-12 flex justify-center">
-                            <StyledImage src={bibliografias.image} alt="Products"/>
-                        </Grid>
-                    </Grid>
-
-                </Container>
-            </StyledContainerBibliografia>
-            <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-7-1.png" alt="Marcas"/>
+            <StyledTitulo>{bulcosan.aplicacion_title.content}</StyledTitulo>
+            <Grid container className="mt-5 justify-center">
+              <StyledImageGeneral
+                src={bulcosan.aplicacion_image.content}
+                alt={bulcosan.aplicacion_image.alt}
+                style={{ width: "100%" }}
+              />
+            </Grid>
+            <StyledTitulo className="mt-10">
+              {bulcosan.facil_title.content}
+            </StyledTitulo>
+            <Grid container className="mt-12">
+              <Grid
+                item
+                md={6}
+                className="d-flex justify-center align-items-center"
+              >
+                <StyledImageGeneral
+                  src={bulcosan.facil_image.content}
+                  alt={bulcosan.facil_image.alt}
+                  style={{ width: "50%" }}
+                />
+              </Grid>
+              <Grid
+                item
+                md={6}
+                className="d-flex justify-center align-items-center"
+              >
+                <StyledImageGeneral
+                  src={bulcosan.facil_image2.content}
+                  alt={bulcosan.facil_image2.alt}
+                  style={{ width: "100%" }}
+                />
+              </Grid>
+            </Grid>
+          </Container>
+          <Grid container className="mt-5">
+            <Grid item md={12}>
+              <StyledImageGeneral
+                src={bulcosan.references.content}
+                alt={bulcosan.references.alt}
+                style={{ width: "100%" }}
+              />
+            </Grid>
+          </Grid>
+          <Container>
+            <Grid container className="mt-12 mb-12 align-items-center">
+              <StyledTitulo>{bulcosan.consiguelo.content}</StyledTitulo>
+              <StyledImageGeneral
+                src={bulcosan.cruz.content}
+                style={{ width: "auto", marginTop: "0%", marginLeft: "2%" }}
+                alt={bulcosan.cruz.alt}
+              />
+            </Grid>
+          </Container>
         </React.Fragment>
-    )
-}
+      )}
+    </React.Fragment>
+  );
+};
 
 export default Bulcosan;

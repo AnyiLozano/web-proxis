@@ -1,9 +1,5 @@
 import React from "react";
-import { Container, Grid } from "@mui/material";
-import Slider from "react-slick";
-import useControllers from "controllers";
-import _ from "lodash";
-import { Link } from 'react-router-dom';
+import { Grid } from "@mui/material";
 import useInformacionStyles from "./informacion.style";
 
 const Informacion = () => {
@@ -11,18 +7,10 @@ const Informacion = () => {
     const {
         StyledSection4,
         StyledTitleSection2,
-        StyledCarousel,
         StyledImage2,
-        StyledTitleSection3,
-        StyledDescriptionSection2,
         ContainerStyled,
         StyledButton
     } = useInformacionStyles();
-
-    // Controllers
-    const { useScreenHooks } = useControllers();
-    const { useCuidadores } = useScreenHooks();
-    const { contentArtesanal } = useCuidadores();
 
     return (
         <React.Fragment>
@@ -47,7 +35,7 @@ const Informacion = () => {
                             </Grid>
                             <Grid item md={6} sm={12}>
                                 <Grid item md={12}>
-                                    <StyledImage2 src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-5.png" />
+                                    <StyledImage2 alt="" src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-5.png" />
                                 </Grid>
                             </Grid>
                         </Grid>

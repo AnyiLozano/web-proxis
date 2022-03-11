@@ -8,6 +8,12 @@ const useCuidadoresStyles = () => {
         padding-top: 8.9rem;
     `;
 
+    const StyledTitulo = styled.h1`
+        color: #004289;
+        font-weight: 700;
+        font-size: 31px;
+    `;
+
     const StyledAppBarPage = styled(AppBar)`
         ${tw``}
         background-color: transparent !important; 
@@ -127,6 +133,18 @@ const useCuidadoresStyles = () => {
     const ContainerStyled = styled(Container)`
         margin-top: 14.4rem !important;
     `
+    const StyledTitulo1 = styled.p`
+        font-style: italic;
+        color: #000;
+        font-size: 20px;
+        text-align: justify;
+        font-family: 'Montserrat';
+        padding-top: 2rem;
+        @media (max-width: 500px) {
+        font-size: 1rem;
+        }
+    `;
+
 
     return {
         StyledImage,
@@ -143,7 +161,9 @@ const useCuidadoresStyles = () => {
         StyledDescriptionSection3,
         StyledCarousel,
         StyledSection4,
-        ContainerStyled
+        ContainerStyled,
+        StyledTitulo,
+        StyledTitulo1
     }
 }
 

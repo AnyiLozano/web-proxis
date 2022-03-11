@@ -33,6 +33,8 @@ const Header: FC = (): JSX.Element => {
     const { useGeneral } = useScreenHooks();
     const { assets, menus } = useGeneral();
     const { logo } = assets;
+
+    console.log("menus", menus)
     return (
         <React.Fragment>
             <AppBarComponent position="absolute">
@@ -46,7 +48,7 @@ const Header: FC = (): JSX.Element => {
                                     login.token !== undefined ? (
                                         <React.Fragment>
                                             {
-                                                login.user.role === "Administrador" ? (
+                                                login.user.role === "admin" ? (
                                                     <React.Fragment>
                                                         <StyledButtonLogin
                                                             className="nav-link dropdown-toggle"
@@ -121,14 +123,14 @@ const Header: FC = (): JSX.Element => {
                                                             data-toggle="dropdown"
                                                             aria-expanded="false"
                                                         >
-                                                            {item.text}
+                                                            {item.post_title}
                                                         </StyledButtonMenu>
                                                         <div className="dropdown-menu pr-6" aria-labelledby="navbarDropdown">
                                                             {
                                                                 _.map(item.submenus, (submenu: any, idx: number) => (
                                                                     <StyledButtonMenu key={idx}>
-                                                                        <Link to={submenu.path} >
-                                                                            {submenu.text}
+                                                                        <Link to={submenu.url} >
+                                                                            {submenu.post_title}
                                                                         </Link>
                                                                     </StyledButtonMenu>
                                                                 ))
@@ -138,9 +140,9 @@ const Header: FC = (): JSX.Element => {
                                                 );
                                             } else {
                                                 return (
-                                                    <Link to={item.path} key={index}>
+                                                    <Link to={item.url} key={index}>
                                                         <StyledButtonMenu>
-                                                            {item.text}
+                                                            {item.post_title}
                                                         </StyledButtonMenu>
                                                     </Link>
                                                 );
@@ -229,7 +231,7 @@ const Header: FC = (): JSX.Element => {
                                                     return (
                                                         <React.Fragment>
                                                             <StyledListItem onClick={() => expandMenu('menu')} key={index}>
-                                                                {item.text}
+                                                                {item.post_title}
                                                                 {expand ? <ExpandLess /> : <ExpandMore />}
                                                             </StyledListItem>
                                                             <Collapse in={expand} timeout="auto" unmountOnExit>
@@ -238,8 +240,8 @@ const Header: FC = (): JSX.Element => {
                                                                         {
                                                                             _.map(item.submenus, (submenu: any, idx: number) => (
                                                                                 <StyledListItem sx={{ pl: 4 }} key={idx}>
-                                                                                    <Link to={submenu.path}>
-                                                                                        {submenu.text}
+                                                                                    <Link to={submenu.url}>
+                                                                                        {submenu.post_title}
                                                                                     </Link>
                                                                                 </StyledListItem>
                                                                             ))
@@ -252,8 +254,8 @@ const Header: FC = (): JSX.Element => {
                                                 } else {
                                                     return (
                                                         <StyledListItem key={index}>
-                                                            <Link to={item.path}>
-                                                                {item.text}
+                                                            <Link to={item.url}>
+                                                                {item.post_title}
                                                             </Link>
                                                         </StyledListItem>
                                                     );

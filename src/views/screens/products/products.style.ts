@@ -152,8 +152,8 @@ const useProductsStyles = () => {
 
     const StyledTitulo = styled.h1`
         color: #004289;
-        font-weight: 600;
-        font-size: 45px;
+        font-weight: 700;
+        font-size: 31px;
     `;
 
     return {

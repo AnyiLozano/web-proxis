@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import tw from "twin.macro";
+import tw from "twin.macro"
 import { AppBar, Grid } from "@mui/material";
 
 const useTerapeuticNumberStyles = () => {
@@ -201,5 +201,29 @@ export const StyledSubtitle = styled.h3.attrs({
 
   @media (max-width: 1200px) {
     font-size: 20px;
+  }
+`;
+
+export const StyledImageGeneral = styled.img.attrs({
+  className: "general-image",
+})`
+  width: 75%;
+  margin-top: 2%;
+
+  @media (max-width: 1200px) {
+    margin-top: 1%;
+    width: 100%;
+  }
+`;
+
+export const StyledTabContainer = styled(Grid).attrs({})`
+  background-color: #e3e3e3;
+  margin-bottom: 3%;
+  border-radius: 10;
+  width: 80%;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin-bottom: 1%;
   }
 `;

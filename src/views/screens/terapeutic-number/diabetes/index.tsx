@@ -1,116 +1,210 @@
 import React from "react";
-import {Container, Grid} from "@mui/material";
-import _ from "lodash";
-import useTerapeuticNumberStyles from "../terapeutic-number.style";
+import { Container, Grid } from "@mui/material";
+import useTerapeuticNumberStyles, {
+  StyledImageGeneral,
+  StyledSubtitle,
+} from "../terapeutic-number.style";
 import useControllers from "controllers";
+import { ITerapeuticNumber } from "models/interfaces/home";
 
 const Diabetes = () => {
-    const {
-        StyledTerapeuticNumberSection,
-        StyledTitulo,
-        StyledTitulo1,
-        StyledTerapeuticNumberSection1,
-        StyledTitleSection2,
-        StyledDescriptionSection2,
-        StyledContainerBibliografia,
-        StyledTitleBibliografia,
-        StyledTextBibliografia,
-        StyledImage,
-        StyledImage1,
-    } = useTerapeuticNumberStyles();
+  const {
+    StyledTerapeuticNumberSection,
+    StyledTitulo,
+    StyledTitulo1,
+    StyledImage,
+  } = useTerapeuticNumberStyles();
 
-    const { useScreenHooks } = useControllers();
-    const { useTerapeuticNumber } = useScreenHooks();
-    const { lines, width, bibliografias, diabetes } = useTerapeuticNumber();
+  const { useScreenHooks } = useControllers();
+  const { useTerapeuticNumber } = useScreenHooks();
+  const { useHeridas } = useTerapeuticNumber();
+  const { woundsAssets } = useHeridas();
 
-    return (
+  return (
+    <React.Fragment>
+      {woundsAssets.diabetes_banner_1 && (
         <React.Fragment>
-            <StyledImage src={diabetes?.image.image} alt="terapeutica" />
-            <StyledTerapeuticNumberSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso 4.png">
-                <Container>
-                    <Grid item lg={12} className="text-center">
-                        <StyledTitulo>Diabetes</StyledTitulo>
-                    </Grid>
-                    <Grid item lg={12} className="text-center">
-                        <StyledTitulo1>{diabetes?.description.description}</StyledTitulo1>
-                    </Grid>
-                </Container>
-            </StyledTerapeuticNumberSection>
-            <StyledTerapeuticNumberSection1 background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-8.png">
-                <Container>
-                    <Grid item lg={12}>
-                        <Grid container>
-                            {
-                                _.map(diabetes?.lines, (item: any, index: any) => {
-                                    if(width >= 1024){
-                                        if(index%2 === 0){
-                                            return (
-                                                <React.Fragment>
-                                                    <Grid item md={6} className="mt-12">
-                                                        <Grid item lg={12}>
-                                                            <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                        </Grid>
-                                                        <Grid item lg={12}>
-                                                            <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                        </Grid>
-                                                    </Grid>
-                                                    <Grid item md={6} className="flex justify-end mt-12">
-                                                        <StyledImage1 src={item.image} alt="image-terapeutic-number" className="ml-6"/>
-                                                    </Grid>
-                                                </React.Fragment>
-                                            )
-                                        }else{
-                                            return (
-                                                <React.Fragment>
-                                                    <Grid item md={6} key={index} className="flex items-center mt-12">
-                                                        <StyledImage1 src={item.image} alt="image-terapeutic-number" className="mr-6"/>
-                                                    </Grid>
-                                                    <Grid item md={6} className="mt-12">
-                                                        <Grid item lg={12} className="mt-2">
-                                                            <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                        </Grid>
-                                                        <Grid item lg={12} className="mt-4">
-                                                            <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                        </Grid>
-                                                    </Grid>
-                                                </React.Fragment>
-                                            )
-                                        }
-                                    }else{
-                                        return (
-                                            <React.Fragment>
-                                                <Grid item md={12} className="mt-12">
-                                                    <Grid item lg={12}>
-                                                        <StyledTitleSection2>{item.title}</StyledTitleSection2>
-                                                    </Grid>
-                                                    <Grid item lg={12}>
-                                                        <StyledDescriptionSection2>{item.description}</StyledDescriptionSection2>
-                                                    </Grid>
-                                                </Grid>
-                                                <Grid item md={12} className="flex justify-end mt-12">
-                                                    <StyledImage1 src={item.image} alt="image-terapeutic-number"/>
-                                                </Grid>
-                                            </React.Fragment>
-                                        );
-                                    }
-                                })
-                            }
+          <StyledImage
+            src={woundsAssets.diabetes_banner_1.content}
+            alt={woundsAssets.diabetes_banner_1.alt}
+          />
+          <StyledTerapeuticNumberSection
+            background={woundsAssets.diabetes_background_1.content}
+          >
+            <Container>
+              <Grid item lg={12} className="text-center">
+                <StyledTitulo>Diabetes</StyledTitulo>
+              </Grid>
+              <Grid item lg={12} className="text-center">
+                <StyledTitulo1>
+                  {woundsAssets.diabetes_text_1.content}
+                </StyledTitulo1>
+              </Grid>
+            </Container>
+          </StyledTerapeuticNumberSection>
+          <Container maxWidth="xl">
+            <StyledSubtitle style={{ textAlign: "center" }}>
+              {woundsAssets.diabetes_titulo_1 !== undefined &&
+                woundsAssets.diabetes_titulo_1.content}
+            </StyledSubtitle>
+            <Grid container>
+              {woundsAssets.diabetes_cuadro !== undefined &&
+                woundsAssets.diabetes_cuadro.map(
+                  (item: ITerapeuticNumber, index: number) => (
+                    <React.Fragment>
+                      {index === 0 ? (
+                        <Grid item md={6} className="d-flex justify-end">
+                          <StyledImageGeneral
+                            src={item.content}
+                            alt={item.alt}
+                          />
                         </Grid>
+                      ) : (
+                        <Grid item md={6}>
+                          <StyledImageGeneral
+                            src={item.content}
+                            alt={item.alt}
+                          />
+                        </Grid>
+                      )}
+                    </React.Fragment>
+                  )
+                )}
+            </Grid>
+            <StyledSubtitle style={{ textAlign: "center" }}>
+              {woundsAssets.diabetes_titulo_2 !== undefined &&
+                woundsAssets.diabetes_titulo_2.content}
+            </StyledSubtitle>
+            <p>
+              {woundsAssets.diabetes_text_2 !== undefined &&
+                woundsAssets.diabetes_text_2.content}
+            </p>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                src={woundsAssets.diabetes_imagen_1.content}
+                style={{ width: "50%" }}
+                alt={woundsAssets.diabetes_imagen_1.alt}
+              />
+            </Grid>
+            <Grid container>
+              {woundsAssets.diabetes_cuadrose !== undefined &&
+                woundsAssets.diabetes_cuadrose.map(
+                  (item: ITerapeuticNumber, index: number) => (
+                    <Grid item md={6} className="d-flex justify-center">
+                      <StyledImageGeneral src={item.content} alt={item.alt} />
                     </Grid>
-                </Container>
-            </StyledTerapeuticNumberSection1>
-            <StyledContainerBibliografia>
-                <Container>
-                    <Grid item lg={12}>
-                        <StyledTitleBibliografia>Bibliografia: </StyledTitleBibliografia>
-                    </Grid>
-                    <Grid item lg={12} className="pt-12">
-                        <StyledTextBibliografia>{bibliografias.bibliografiaHeridas}</StyledTextBibliografia>
-                    </Grid>
-                </Container>
-            </StyledContainerBibliografia>
+                  )
+                )}
+            </Grid>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                src={woundsAssets.diabetes_image_2.content}
+                alt={woundsAssets.diabetes_image_2.alt}
+                style={{ width: "100%" }}
+              />
+            </Grid>
+            <StyledSubtitle>
+              {woundsAssets.diabetes_titulo_3 !== undefined &&
+                woundsAssets.diabetes_titulo_3.content}
+            </StyledSubtitle>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                src={woundsAssets.diabetes_imagen_4.content}
+                alt={woundsAssets.diabetes_imagen_4.alt}
+              />
+            </Grid>
+          </Container>
+          <StyledTerapeuticNumberSection
+            background={woundsAssets.diabetes_background_2.content}
+          >
+            <Container>
+              <Grid item lg={12} className="text-center">
+                <StyledTitulo>
+                  {woundsAssets.diabetes_titulo_4.content}
+                </StyledTitulo>
+              </Grid>
+              <Grid item lg={12} className="text-center">
+                <StyledTitulo1>
+                  {woundsAssets.diabetes_text_3.content}
+                </StyledTitulo1>
+              </Grid>
+              <Grid item md={12} className="d-flex justify-center">
+                <StyledImageGeneral
+                  src={woundsAssets.diabetes_imagen_5.content}
+                  alt={woundsAssets.diabetes_imagen_5.alt}
+                />
+              </Grid>
+            </Container>
+          </StyledTerapeuticNumberSection>
+          <Container>
+            <Grid item lg={12} className="text-center">
+              <StyledTitulo>
+                {woundsAssets.diabetes_titulo_5.content}
+              </StyledTitulo>
+            </Grid>
+            <Grid item lg={12} className="text-center">
+              <StyledTitulo1
+                dangerouslySetInnerHTML={{
+                  __html: woundsAssets.diabetes_text_4.content,
+                }}
+              ></StyledTitulo1>
+            </Grid>
+          </Container>
+          <Container>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                src={woundsAssets.diabetes_imagen_6.content}
+                alt={woundsAssets.diabetes_imagen_6.alt}
+              />
+            </Grid>
+            <StyledTitulo1>
+              {woundsAssets.diabetes_text_5.content}
+            </StyledTitulo1>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                src={woundsAssets.diabetes_imagen_7.content}
+                alt={woundsAssets.diabetes_imagen_7.alt}
+              />
+            </Grid>
+            <Grid container className="my-12">
+              <Grid item md={6} className="d-flex justify-center">
+                <StyledImageGeneral
+                  src={woundsAssets.diabetes_images_8.content}
+                  alt={woundsAssets.diabetes_images_8.alt}
+                  style={{ width: "90%" }}
+                />
+              </Grid>
+              <Grid item md={6} className="d-flex justify-center">
+                <StyledImageGeneral
+                  src={woundsAssets.diabetes_imagen_9.content}
+                  style={{ width: "90%" }}
+                  alt={woundsAssets.diabetes_imagen_9.alt}
+                />
+              </Grid>
+            </Grid>
+            <StyledTitulo style={{ textAlign: "center" }}>
+              {woundsAssets.diabetes_titulo_6.content}
+            </StyledTitulo>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                src={woundsAssets.diabetes_imagen_10.content}
+                alt={woundsAssets.diabetes_imagen_10.alt}
+              />
+            </Grid>
+          </Container>
         </React.Fragment>
-    );
-}
+      )}
+      {woundsAssets.diabetes_imagen_11 && (
+        <Grid item md={12} className="d-flex justify-center">
+          <StyledImageGeneral
+            style={{ width: "100%" }}
+            src={woundsAssets.diabetes_imagen_11.content}
+            alt={woundsAssets.diabetes_imagen_11.alt}
+          />
+        </Grid>
+      )}
+    </React.Fragment>
+  );
+};
 
 export default Diabetes;
