@@ -9,7 +9,6 @@ import useTerapeuticNumberStyles, {
 import useControllers from "controllers";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { ITerapeuticNumber } from "../../../../models/interfaces/home/index";
-import "../../../../styles/style.scss";
 
 const Heridas = () => {
   const {
