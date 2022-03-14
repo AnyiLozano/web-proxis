@@ -1,12 +1,12 @@
 import useApi from "api";
-import useModels from "models";
-import { IBlogAssets, IGetBlogAction } from "models/interfaces/blog";
+// import useModels from "models";
+import { IBlogAssets } from "models/interfaces/blog";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { trackPromise } from "react-promise-tracker";
-import axios from "axios";
-import { useForm } from "react-hook-form";
+// import { useSelector } from "react-redux";
+// import { useParams } from "react-router-dom";
+// import { trackPromise } from "react-promise-tracker";
+// import axios from "axios";
+// import { useForm } from "react-hook-form";
 import { IAction } from "models/interfaces";
 
 const useBlog = (page: string) => {

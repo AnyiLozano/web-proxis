@@ -1,9 +1,9 @@
-import { Card, CardContent, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React, { FC } from "react";
 import useBlogStyles from "./blog.styles";
 import _ from "lodash";
 import useControllers from "controllers";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import { useHistory } from "react-router-dom";
 
 const Blog: FC = (): JSX.Element => {
