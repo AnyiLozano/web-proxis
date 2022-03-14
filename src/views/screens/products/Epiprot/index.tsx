@@ -5,7 +5,10 @@ import useProductsStyles from "../products.style";
 import Login from "views/screens/Login";
 import useModels from "models";
 import { useSelector } from "react-redux";
-import { StyledImageGeneral } from "views/screens/terapeutic-number/terapeutic-number.style";
+import {
+  StyledImageGeneral,
+  StyledSubtitle,
+} from "views/screens/terapeutic-number/terapeutic-number.style";
 
 const Epiprot: FC = (): JSX.Element => {
   // Styles
@@ -138,16 +141,14 @@ const Epiprot: FC = (): JSX.Element => {
                   />
                 </Grid>
                 <Grid container>
-                  <Grid
-                    item
-                    md={6}
-                    className="d-flex justify-center align-items-center"
-                  >
-                    <StyledImageGeneral
-                      src={epiprot.info_prescribir.content}
-                      alt={epiprot.info_prescribir.alt}
-                      style={{ width: "100%", height: "60%" }}
-                    />
+                  <Grid item md={6}>
+                    <StyledTitulo>Información para prescribir</StyledTitulo>
+                    <StyledTitulo1
+                      style={{  fontSize: 18, textAlign: "left" }}
+                      dangerouslySetInnerHTML={{
+                        __html: epiprot.info_prescribir.content,
+                      }}
+                    ></StyledTitulo1>
                   </Grid>
                   <Grid item md={6} className="d-flex justify-center">
                     <StyledImageGeneral
@@ -189,17 +190,19 @@ const Epiprot: FC = (): JSX.Element => {
                     __html: epiprot.table_category_para.content,
                   }}
                 ></StyledTitulo1>
-                <Grid container className="mt-12">
-                  <Grid
-                    item
-                    md={6}
-                    className="d-flex justify-center align-items-center"
-                  >
-                    <StyledImageGeneral
-                      src={epiprot.indications_text.content}
-                      alt={epiprot.indications_text.alt}
-                      style={{ width: "100%", height: "65%" }}
-                    />
+                <Grid container className="mt-12 mb-12">
+                  <Grid item md={6}>
+                    <Grid item md={12}>
+                      <StyledSubtitle>Indicaciones</StyledSubtitle>
+                    </Grid>
+                    <Grid item md={12}>
+                      <StyledTitulo1
+                        dangerouslySetInnerHTML={{
+                          __html: epiprot.indications_text.content,
+                        }}
+                        style={{ paddingTop: "0rem" }}
+                      ></StyledTitulo1>
+                    </Grid>
                   </Grid>
                   <Grid item md={6} className="d-flex justify-center">
                     <StyledImageGeneral

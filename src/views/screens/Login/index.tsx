@@ -37,7 +37,7 @@ const Login: FC<{ background: string, show:boolean }> = (background): JSX.Elemen
         <React.Fragment>
             {
                 width >= 1200 ? (
-                    <StyledSection background={background.background !== undefined ? background.background : "http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png"} style={{ height: "40.7rem" }}>
+                    <StyledSection background={background.background !== undefined ? background.background : "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/registro-1.png"} style={{ height: "60.7rem" }}>
                         <Container>
                             <Grid container>
                                 <Grid item lg={6} md={12} className="flex justify-center pb-12 sm:pb-1">

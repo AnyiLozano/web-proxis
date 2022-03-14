@@ -25,10 +25,10 @@ const Presentation: FC = (): JSX.Element => {
             {
                 width >= 1200
                     ? (
-                        <StyledSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-4-3.png">
+                        <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/fondocontacto1.png">
                             <Grid container className="items-center">
                                 <StyledContainerImage item md={6}>
-                                    <img src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-2.png" alt="Chica" />
+                                    <img src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/contacto.png" alt="Chica" />
                                 </StyledContainerImage>
                                 <Grid item md={6}>
                                     <Grid item lg={12} className="flex justify-center">
@@ -79,7 +79,7 @@ const Presentation: FC = (): JSX.Element => {
                                     </Grid>
                                 </Grid>
                                 <Grid item lg={6}>
-                                    <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-2-2.png" alt="Chica"/>
+                                    <StyledImage src="http://api-praxis.test/wp-content/uploads/2022/03/contacto.png" alt="Chica"/>
                                 </Grid>
                             </Grid>
                         </StyledSection>

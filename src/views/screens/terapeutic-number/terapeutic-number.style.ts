@@ -217,7 +217,7 @@ export const StyledImageGeneral = styled.img.attrs({
 `;
 
 export const StyledTabContainer = styled(Grid).attrs({})`
-  background-color: #e3e3e3;
+  background-color: transparent;
   margin-bottom: 3%;
   border-radius: 10;
   width: 80%;

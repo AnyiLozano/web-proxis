@@ -7,89 +7,174 @@ import Slider from "react-slick";
 import { useHistory } from "react-router-dom";
 
 const Blog: FC = (): JSX.Element => {
-    // Styles
-    const {
-        StyledImageBanner,
-        StyledBlogFirstSection,
-        StyledImage,
-        StyledTextDescription,
-        StyledButtonViewMore,
-        StyledContainer2,
-        StyledTitle2,
-    } = useBlogStyles();
+  // Styles
+  const {
+    StyledImageBanner,
+    StyledBlogFirstSection,
+    StyledImage,
+    StyledTextDescription,
+    StyledButtonViewMore,
+    StyledContainer2,
+    StyledTitle2,
+  } = useBlogStyles();
 
-    //Controllers
-    const { useScreenHooks } = useControllers();
-    const { useBlog } = useScreenHooks();
-    const { recient, blogs, comments } = useBlog();
+  /** Controllers */
+  const { useScreenHooks } = useControllers();
+  const { useBlog } = useScreenHooks();
+  const { postsAssets, recentPosts, posts } = useBlog("principal");
+  const history = useHistory();
 
-    const history = useHistory()
-
-    return (
+  return (
+    <React.Fragment>
+      {postsAssets !== undefined && (
         <React.Fragment>
-            <StyledImageBanner src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-1.png" alt="Blog's Banner Image" />
-            <StyledBlogFirstSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso 4.png" className="sm:py-36
-            ">
-                <Container>
-                    <Grid container>
-                        {
-                            _.map(recient, (item: any, index: any) => {
-                                if (index === 0) {
-                                    return (
-                                        <Grid item lg={4} key={index} className="px-6">
-                                            <Grid item lg={12}>
-                                                <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-4-2.png" alt="pre-test" style={{ position: 'absolute   ' }} />
-                                                <StyledImage src={item.image} alt="Test" style={{ width: '100%' }} />
-                                            </Grid>
-                                            <StyledTextDescription>{item.title}</StyledTextDescription>
-                                            <StyledButtonViewMore onClick={() => history.push(`/detail/${item.id}`)}>Seguir Leyendo</StyledButtonViewMore>
-                                        </Grid>
-                                    )
-                                } else if (index === 1) {
-                                    return (
-                                        <Grid item lg={4} key={index} className="px-6">
-                                            <Grid item lg={12}>
-                                                <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-5-6.png" alt="pre-test" style={{ position: 'absolute   ' }} />
-                                                <StyledImage src={item.image} alt="Test" style={{ width: '100%' }} />
-                                            </Grid>
-                                            <StyledTextDescription>{item.title}</StyledTextDescription>
-                                            <StyledButtonViewMore onClick={() => history.push(`/detail/${item.id}`)}>Seguir Leyendo</StyledButtonViewMore>
-                                        </Grid>
-                                    )
-                                } else {
-                                    return (
-                                        <Grid item lg={4} key={index} className="px-6">
-                                            <Grid item lg={12}>
-                                                <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-6-2.png" alt="pre-test" style={{ position: 'absolute   ' }} />
-                                                <StyledImage src={item.image} alt="Test" style={{ width: '100%' }} />
-                                            </Grid>
-                                            <StyledTextDescription>{item.title}</StyledTextDescription>
-                                            <StyledButtonViewMore onClick={() => history.push(`/detail/${item.id}`)}>Seguir Leyendo</StyledButtonViewMore>
-                                        </Grid>
-                                    )
-                                }
-                            })
-                        }
+          <StyledImageBanner
+            src={postsAssets.blog_banner_principal?.content}
+            alt="Blog's Banner Image"
+          />
+          <StyledBlogFirstSection
+            background={postsAssets.blog_background_recent?.content}
+            className="sm:py-36"
+          >
+            <Container>
+              <StyledTitle2 className="pb-16" style={{ textAlign: "center" }}>
+                Reciente
+              </StyledTitle2>
+              <Grid container>
+                {_.map(recentPosts, (item: any, index: any) => {
+                  if (index === 0) {
+                    return (
+                      <Grid item lg={3} key={index} className="px-6">
+                        <StyledImage
+                          src={postsAssets.blog_number_1?.content}
+                          alt="pre-test"
+                          style={{ position: "absolute   " }}
+                        />
+                        <Grid item lg={12}>
+                          <StyledImage
+                            src={item.image}
+                            alt="Test"
+                            style={{ width: "100%" }}
+                          />
+                        </Grid>
+                        <StyledTextDescription>
+                          {item.post_title}
+                        </StyledTextDescription>
+                        <StyledButtonViewMore
+                          onClick={() => history.push(`/detail/${item.id}`)}
+                        >
+                          Seguir Leyendo
+                        </StyledButtonViewMore>
+                      </Grid>
+                    );
+                  } else if (index === 1) {
+                    return (
+                      <Grid item lg={3} key={index} className="px-6">
+                        <Grid item lg={12}>
+                          <StyledImage
+                            src={postsAssets.blog_number_2?.content}
+                            alt="pre-test"
+                            style={{ position: "absolute   " }}
+                          />
+                          <StyledImage
+                            src={item.image}
+                            alt="Test"
+                            style={{ width: "100%" }}
+                          />
+                        </Grid>
+                        <StyledTextDescription>
+                          {item.post_title}
+                        </StyledTextDescription>
+                        <StyledButtonViewMore
+                          onClick={() => history.push(`/detail/${item.id}`)}
+                        >
+                          Seguir Leyendo
+                        </StyledButtonViewMore>
+                      </Grid>
+                    );
+                  } else if (index === 2) {
+                    return (
+                      <Grid item lg={3} key={index} className="px-6">
+                        <Grid item lg={12}>
+                          <StyledImage
+                            src={postsAssets.blog_number_3?.content}
+                            alt="pre-test"
+                            style={{ position: "absolute   " }}
+                          />
+                          <StyledImage
+                            src={item.image}
+                            alt="Test"
+                            style={{ width: "100%" }}
+                          />
+                        </Grid>
+                        <StyledTextDescription>
+                          {item.post_title}
+                        </StyledTextDescription>
+                        <StyledButtonViewMore
+                          onClick={() => history.push(`/detail/${item.id}`)}
+                        >
+                          Seguir Leyendo
+                        </StyledButtonViewMore>
+                      </Grid>
+                    );
+                  } else {
+                    return (
+                      <Grid item lg={3} key={index} className="px-6">
+                        <Grid item lg={12}>
+                          <StyledImage
+                            src={postsAssets.blog_number_4?.content}
+                            alt="pre-test"
+                            style={{ position: "absolute   " }}
+                          />
+                          <StyledImage
+                            src={item.image}
+                            alt="Test"
+                            style={{ width: "100%" }}
+                          />
+                        </Grid>
+                        <StyledTextDescription>
+                          {item.post_title}
+                        </StyledTextDescription>
+                        <StyledButtonViewMore
+                          onClick={() => history.push(`/detail/${item.id}`)}
+                        >
+                          Seguir Leyendo
+                        </StyledButtonViewMore>
+                      </Grid>
+                    );
+                  }
+                })}
+              </Grid>
+            </Container>
+          </StyledBlogFirstSection>
+          <StyledContainer2>
+            <Container className="py-16">
+              <Grid container>
+                {_.map(posts, (item: any, index: any) => (
+                  <Grid item lg={6} className="py-6 px-6">
+                    <Grid item lg={12}>
+                      <StyledTitle2>{item.title}</StyledTitle2>
+                      <StyledTextDescription
+                        dangerouslySetInnerHTML={{ __html: item.except }}
+                      ></StyledTextDescription>
+                      <StyledButtonViewMore
+                        onClick={() => history.push(`/detail/${item.id}`)}
+                      >
+                        Seguir Leyendo
+                      </StyledButtonViewMore>
                     </Grid>
-                </Container>
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
+          </StyledContainer2>
+        </React.Fragment>
+      )}
+      {/* 
+            
+                
             </StyledBlogFirstSection>
-            <StyledContainer2>
-                <Container className="py-16">
-                    <Grid container>
-                        {
-                            _.map(blogs, (item: any, index: any) => (
-                                <Grid item lg={6} className="py-6 px-6">
-                                    <Grid item lg={12}>
-                                        <StyledTitle2>{item.title}</StyledTitle2>
-                                        <StyledTextDescription dangerouslySetInnerHTML={{ __html: item.except }}></StyledTextDescription>
-                                        <StyledButtonViewMore onClick={() => history.push(`/detail/${item.id}`)}>Seguir Leyendo</StyledButtonViewMore>
-                                    </Grid>
-                                </Grid>
-                            ))
-                        }
-                    </Grid>
-                </Container>
-            </StyledContainer2>
+            
             <StyledBlogFirstSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso 4.png" >
                 <Container>
                     <Grid item lg={12} className="py-1 md:py-6">
@@ -141,9 +226,9 @@ const Blog: FC = (): JSX.Element => {
                         </Grid>
                     </Grid>
                 </Container>
-            </StyledBlogFirstSection>
-        </React.Fragment>
-    )
+            </StyledBlogFirstSection> */}
+    </React.Fragment>
+  );
 };
 
-export default Blog
+export default Blog;

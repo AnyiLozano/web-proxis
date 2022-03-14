@@ -11,3 +11,4 @@ declare module "react-router-dom";
 declare module "styled-components";
 declare module "react-swipeable-views";
 declare module "react-slick";
+declare module "@mui/material"; 

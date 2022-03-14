@@ -145,155 +145,115 @@ const Heridas = () => {
                       ))}
                     </TabList>
                   </Box>
-                  <TabPanel value="0">
-                    <Container>
-                      <Grid
-                        container
-                        className="justify-center align-items-center"
-                      >
-                        {_.map(
-                          woundsAssets.tabs,
-                          (item: any, index: number) => (
-                            <React.Fragment>
-                              {item.section.includes("1-image") && (
-                                <Grid item md={3} className="pr-12" key={index}>
-                                  <img
-                                    src={item.content}
-                                    alt=""
-                                    style={{ margin: "10% 0" }}
-                                  />
-                                </Grid>
-                              )}
-                              {item.section.includes("1-text") && (
-                                <Grid item md={9}>
-                                  <p>{item.content}</p>
-                                </Grid>
-                              )}
-                            </React.Fragment>
-                          )
-                        )}
-                      </Grid>
-                    </Container>
+                  <TabPanel
+                    value="0"
+                    style={{
+                      backgroundColor: "transparent !important",
+                      padding: 0,
+                    }}
+                  >
+                    <Grid
+                      container
+                      className="justify-center align-items-center"
+                    >
+                      {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                        <React.Fragment>
+                          {item.section.includes("1-image") && (
+                            <Grid item md={12} className="pr-12" key={index}>
+                              <img src={item.content} alt="" />
+                            </Grid>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </Grid>
                   </TabPanel>
-                  <TabPanel value="1">
-                    <Container>
-                      <Grid
-                        container
-                        className="justify-center align-items-center"
-                      >
-                        {_.map(
-                          woundsAssets.tabs,
-                          (item: any, index: number) => (
-                            <React.Fragment>
-                              {item.section.includes("2-image") && (
-                                <Grid item md={3} className="pr-12" key={index}>
-                                  <img
-                                    src={item.content}
-                                    style={{ margin: "10% 0" }}
-                                    alt=""
-                                  />
-                                </Grid>
-                              )}
-                              {item.section.includes("2-text") && (
-                                <Grid item md={6}>
-                                  <img src={item.content} alt={item.alt} />
-                                </Grid>
-                              )}
-                            </React.Fragment>
-                          )
-                        )}
-                      </Grid>
-                    </Container>
+                  <TabPanel
+                    value="1"
+                    style={{
+                      backgroundColor: "transparent !important",
+                      padding: 0,
+                    }}
+                  >
+                    <Grid
+                      container
+                      className="justify-center align-items-center"
+                    >
+                      {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                        <React.Fragment>
+                          {item.section.includes("2-image") && (
+                            <Grid item md={12} className="pr-12" key={index}>
+                              <img src={item.content} alt="" />
+                            </Grid>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </Grid>
                   </TabPanel>
-                  <TabPanel value="2">
-                    <Container>
-                      <Grid
-                        container
-                        className="justify-center align-items-center"
-                      >
-                        {_.map(
-                          woundsAssets.tabs,
-                          (item: any, index: number) => (
-                            <React.Fragment>
-                              {item.section.includes("3-image") && (
-                                <Grid item md={3} className="pr-12" key={index}>
-                                  <img
-                                    src={item.content}
-                                    style={{ margin: "10% 0" }}
-                                    alt=""
-                                  />
-                                </Grid>
-                              )}
-                              {item.section.includes("3-text") && (
-                                <Grid item md={6}>
-                                  <img src={item.content} alt={item.alt} />
-                                </Grid>
-                              )}
-                            </React.Fragment>
-                          )
-                        )}
-                      </Grid>
-                    </Container>
+                  <TabPanel
+                    value="2"
+                    style={{
+                      backgroundColor: "transparent !important",
+                      padding: 0,
+                    }}
+                  >
+                    <Grid
+                      container
+                      className="justify-center align-items-center"
+                    >
+                      {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                        <React.Fragment>
+                          {item.section.includes("3-image") && (
+                            <Grid item md={12} className="pr-12" key={index}>
+                              <img src={item.content} alt="" />
+                            </Grid>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </Grid>
                   </TabPanel>
-                  <TabPanel value="3">
-                    <Container>
-                      <Grid
-                        container
-                        className="justify-center align-items-center"
-                      >
-                        {_.map(
-                          woundsAssets.tabs,
-                          (item: any, index: number) => (
-                            <React.Fragment>
-                              {item.section.includes("4-image") && (
-                                <Grid item md={3} className="pr-12" key={index}>
-                                  <img
-                                    src={item.content}
-                                    style={{ margin: "10% 0" }}
-                                    alt=""
-                                  />
-                                </Grid>
-                              )}
-                              {item.section.includes("4-text") && (
-                                <Grid item md={6}>
-                                  <img src={item.content} alt={item.alt} />
-                                </Grid>
-                              )}
-                            </React.Fragment>
-                          )
-                        )}
-                      </Grid>
-                    </Container>
+                  <TabPanel
+                    value="3"
+                    style={{
+                      backgroundColor: "transparent !important",
+                      padding: 0,
+                    }}
+                  >
+                    <Grid
+                      container
+                      className="justify-center align-items-center"
+                    >
+                      {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                        <React.Fragment>
+                          {item.section.includes("4-image") && (
+                            <Grid item md={12} className="pr-12" key={index}>
+                              <img src={item.content} alt="" />
+                            </Grid>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </Grid>
                   </TabPanel>
-                  <TabPanel value="4">
-                    <Container>
-                      <Grid
-                        container
-                        className="justify-center align-items-center"
-                      >
-                        {_.map(
-                          woundsAssets.tabs,
-                          (item: any, index: number) => (
-                            <React.Fragment>
-                              {item.section.includes("5-image") && (
-                                <Grid item md={3} className="pr-12" key={index}>
-                                  <img
-                                    src={item.content}
-                                    style={{ margin: "10% 0" }}
-                                    alt=""
-                                  />
-                                </Grid>
-                              )}
-                              {item.section.includes("5-text") && (
-                                <Grid item md={6}>
-                                  <img src={item.content} alt={item.alt} />
-                                </Grid>
-                              )}
-                            </React.Fragment>
-                          )
-                        )}
-                      </Grid>
-                    </Container>
+                  <TabPanel
+                    value="4"
+                    style={{
+                      backgroundColor: "transparent !important",
+                      padding: 0,
+                    }}
+                  >
+                    <Grid
+                      container
+                      className="justify-center align-items-center"
+                    >
+                      {_.map(woundsAssets.tabs, (item: any, index: number) => (
+                        <React.Fragment>
+                          {item.section.includes("5-image") && (
+                            <Grid item md={12} className="pr-12" key={index}>
+                              <img src={item.content} alt="" />
+                            </Grid>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </Grid>
                   </TabPanel>
                 </TabContext>
               </Box>

@@ -80,7 +80,7 @@ const TuPapel = () => {
                     {_.map(cuidadores.tultis, (item: any, index: number) => (
                       <TabPanel
                         value={index.toString()}
-                        style={{ backgroundColor: "#004289" }}
+                        style={{ backgroundColor: "transparent", padding: 0 }}
                       >
                         <img
                           src={item.content}

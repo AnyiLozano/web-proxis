@@ -83,7 +83,6 @@ const useProductsStyles = () => {
         font-style: italic;
         color: #000;
         font-size: 20px;
-        text-align: justify;
         font-family: 'Montserrat';
         padding-top: 4rem;
         @media (max-width: 500px) {

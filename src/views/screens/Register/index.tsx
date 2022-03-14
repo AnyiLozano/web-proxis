@@ -1,4 +1,4 @@
-import { Container, Grid, TextField } from "@mui/material";
+import { Checkbox, Container, FormControlLabel, Grid, TextField } from "@mui/material";
 import React, { FC, useState } from "react";
 import useLoginStyles from "./register.styles";
 import useControllers from "controllers";
@@ -22,14 +22,15 @@ const Register: FC = (): JSX.Element => {
   // Controllers
   const { useScreenHooks } = useControllers();
   const { useAuth } = useScreenHooks();
-  const { handleRegister, registerRegister, handleSubmitRegister, profession } = useAuth();
+  const { handleRegister, registerRegister, handleSubmitRegister, profession } =
+    useAuth();
 
   return (
     <React.Fragment>
       {width >= 1200 ? (
         <StyledSection
-          background="http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png"
-          style={{ height: "50.7rem" }}
+          background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/registro-1.png"
+          style={{ height: "60.7rem" }}
         >
           <Container>
             <Grid container>
@@ -146,6 +147,16 @@ const Register: FC = (): JSX.Element => {
                           {...field}
                         />
                       )}
+                    />
+                  </Grid>
+                  <Grid lg={12} className="flex justify-center">
+                    <FormControlLabel
+                      control={<Checkbox defaultChecked />}
+                      label="Acepta Política de manejo de datos. Política de privacidad. Términos y condiciones"
+                      style={{
+                        color: "#666666",
+                        fontFamily: "'Montserrat', sans-serif !important",
+                      }}
                     />
                   </Grid>
                   <Grid

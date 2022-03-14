@@ -86,7 +86,7 @@ const Bulcosan: FC = (): JSX.Element => {
                   />
                 </Grid>
               </Grid>
-              <Grid container className="mt-5">
+              <Grid container className="mt-14">
                 <Grid item md={6}>
                   <StyledImageGeneral
                     src={bulcosan.ventajas.content}

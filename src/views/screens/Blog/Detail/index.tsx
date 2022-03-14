@@ -7,26 +7,27 @@ import { Controller } from "react-hook-form";
 
 const BlogDetail: FC = (): JSX.Element => {
 
-    // Styles
-    const {
-        StyledImage,
-        StyledDate,
-        StyledTitlePost,
-        StyledTextData,
-        StyledTitle2,
-        StyledTextarea,
-        StyledButtonViewMore
-    } = useBlogStyles();
+    // // Styles
+    // const {
+    //     StyledImage,
+    //     StyledDate,
+    //     StyledTitlePost,
+    //     StyledTextData,
+    //     StyledTitle2,
+    //     StyledTextarea,
+    //     StyledButtonViewMore
+    // } = useBlogStyles();
 
-    console.log();
+    // console.log();
 
-    const { useScreenHooks } = useControllers();
-    const { useBlog } = useScreenHooks();
-    const { control, handleSubmit, handleComment, post, login } = useBlog();
+    // const { useScreenHooks } = useControllers();
+    // const { useBlog } = useScreenHooks();
+    // const { control, handleSubmit, handleComment, post, login } = useBlog();
 
     return (
         <React.Fragment>
-            <StyledImage src={post.portada_img} alt="Post's Image" />
+            <p>Hola</p>
+            {/* <StyledImage src={post.portada_img} alt="Post's Image" />
             <Container>
                 <StyledDate>{post.post_date}</StyledDate>
                 <StyledTitlePost className="pt-12 text-center">{post.post_title}</StyledTitlePost>
@@ -52,7 +53,7 @@ const BlogDetail: FC = (): JSX.Element => {
                         </Grid>
                     )
                 }
-            </Container>
+            </Container> */}
         </React.Fragment>
     )
 }
