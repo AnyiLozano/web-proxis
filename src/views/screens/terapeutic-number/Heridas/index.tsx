@@ -9,6 +9,7 @@ import useTerapeuticNumberStyles, {
 import useControllers from "controllers";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { ITerapeuticNumber } from "../../../../models/interfaces/home/index";
+import "../../../../styles/style.scss";
 
 const Heridas = () => {
   const {
@@ -147,10 +148,6 @@ const Heridas = () => {
                   </Box>
                   <TabPanel
                     value="0"
-                    style={{
-                      backgroundColor: "transparent !important",
-                      padding: 0,
-                    }}
                   >
                     <Grid
                       container
@@ -169,10 +166,6 @@ const Heridas = () => {
                   </TabPanel>
                   <TabPanel
                     value="1"
-                    style={{
-                      backgroundColor: "transparent !important",
-                      padding: 0,
-                    }}
                   >
                     <Grid
                       container
@@ -191,10 +184,6 @@ const Heridas = () => {
                   </TabPanel>
                   <TabPanel
                     value="2"
-                    style={{
-                      backgroundColor: "transparent !important",
-                      padding: 0,
-                    }}
                   >
                     <Grid
                       container
@@ -213,10 +202,6 @@ const Heridas = () => {
                   </TabPanel>
                   <TabPanel
                     value="3"
-                    style={{
-                      backgroundColor: "transparent !important",
-                      padding: 0,
-                    }}
                   >
                     <Grid
                       container
@@ -235,10 +220,6 @@ const Heridas = () => {
                   </TabPanel>
                   <TabPanel
                     value="4"
-                    style={{
-                      backgroundColor: "transparent !important",
-                      padding: 0,
-                    }}
                   >
                     <Grid
                       container
