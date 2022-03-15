@@ -61,7 +61,7 @@ const Blog: FC = (): JSX.Element => {
                           {item.post_title}
                         </StyledTextDescription>
                         <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
+                          // onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -86,7 +86,7 @@ const Blog: FC = (): JSX.Element => {
                           {item.post_title}
                         </StyledTextDescription>
                         <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
+                          // onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -111,7 +111,7 @@ const Blog: FC = (): JSX.Element => {
                           {item.post_title}
                         </StyledTextDescription>
                         <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
+                          // onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -136,7 +136,7 @@ const Blog: FC = (): JSX.Element => {
                           {item.post_title}
                         </StyledTextDescription>
                         <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
+                          // onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -158,7 +158,7 @@ const Blog: FC = (): JSX.Element => {
                         dangerouslySetInnerHTML={{ __html: item.except }}
                       ></StyledTextDescription>
                       <StyledButtonViewMore
-                        onClick={() => history.push(`/detail/${item.id}`)}
+                        // onClick={() => history.push(`/detail/${item.id}`)}
                       >
                         Seguir Leyendo
                       </StyledButtonViewMore>

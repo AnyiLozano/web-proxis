@@ -12,13 +12,13 @@ const useTerapeuticNumberStyles = () => {
   const StyledTitulo = styled.h1`
     color: #004289;
     font-weight: 600;
-    font-size: 45px;
+    font-size: 35px;
   `;
   const StyledTitulo1 = styled.p`
     font-style: italic;
     color: #000;
     font-size: 20px;
-    text-align: justify;
+    text-align: left;
     font-family: "Montserrat";
     padding-top: 4rem;
     @media (max-width: 500px) {

@@ -1,10 +1,10 @@
-import { Toolbar } from "@mui/material";
 import React, { FC } from "react";
 import useProductsStyles from "./products.style";
 import { Link, useParams } from "react-router-dom";
 import Epiprot from "./Epiprot";
 import Bulcosan from "./Bulcosan";
 import Proctokinasa from "./Proctokinasa";
+import { Grid } from "@mui/material";
 
 const Products: FC = (): JSX.Element => {
     // Products
@@ -20,8 +20,8 @@ const Products: FC = (): JSX.Element => {
     return (
         <React.Fragment>
             <StyledAppBarPage position="absolute">
-                <Toolbar>
-                    <StyledGrid xs={4} className="flex justify-center items-center" selected={type === "epiprot" && true}>
+                <Grid container>
+                    <StyledGrid xs={4} lg={4} md={4} xl={4} className="flex justify-center items-center" selected={type === "epiprot" && true}>
                         <Link to="/products/epiprot" className="text-white">
                             Epiprot®
                         </Link>
@@ -36,7 +36,7 @@ const Products: FC = (): JSX.Element => {
                             Proctokinasa®
                         </Link>
                     </StyledGrid3>
-                </Toolbar>
+                </Grid>
             </StyledAppBarPage>
             {
                 type === "epiprot" 

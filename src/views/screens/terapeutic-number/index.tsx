@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { Toolbar } from "@mui/material";
 import useTerapeuticNumberStyles from "./terapeutic-number.style";
 import Heridas from "./Heridas";
 import Ulceras from "./ulceras";
 import { useParams, Link } from "react-router-dom";
 import Diabetes from "./diabetes";
 import Hemorroides from "./hemorroides";
+import { Grid } from "@mui/material";
 
 const TerapeuticNumber: FC = (): JSX.Element => {
     const {
@@ -21,7 +21,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
     return (
         <React.Fragment>
             <StyledAppBarPage position="absolute">
-                <Toolbar>
+                <Grid container>
                     <StyledGrid xs={3} className="flex justify-center items-center" selected={type === "heridas" && true}>
                         <Link to="/terapeutic-number/heridas" className="text-white text-xs">
                             Heridas
@@ -42,7 +42,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
                             Enfermedad Hemorrodial
                         </Link>
                     </StyledGrid4>
-                </Toolbar>
+                </Grid>
             </StyledAppBarPage>
 
             {

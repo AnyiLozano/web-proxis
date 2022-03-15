@@ -1,4 +1,4 @@
-import { Toolbar } from "@mui/material";
+import { Grid } from "@mui/material";
 import React, { FC } from "react";
 import { Link, useParams } from "react-router-dom";
 import Cientifica from "./cientifica";
@@ -20,23 +20,19 @@ const Profesionales: FC = (): JSX.Element => {
     return (
         <React.Fragment>
             <StyledAppBarPage position="absolute">
-                <Toolbar>
-                    <StyledGrid xs={4} className="flex justify-center items-center" selected={type === "salud" && true}>
+                <Grid container>
+                    <StyledGrid xs={6} className="flex justify-center items-center" selected={type === "salud" && true}>
                         <Link to="/profesionales/salud" className="text-white">
                         Factor de Crecimiento Epidérmico
                         </Link>
                     </StyledGrid>
-                    <StyledGrid2 xs={4} className="flex justify-center items-center" selected={type === "cientifica" && true}>
+                    <StyledGrid2 xs={6} className="flex justify-center items-center" selected={type === "cientifica" && true}>
                         <Link to="/profesionales/cientifica" className="text-white">
                         Evidencia científica
                         </Link>
                     </StyledGrid2>
-                    <StyledGrid3 xs={4} className="flex justify-center items-center" selected={type === "informacion" && true}>
-                        <Link to="/profesionales/informacion" className="text-white">
-                        Información para prescribir
-                        </Link>
-                    </StyledGrid3>
-                </Toolbar>
+                   
+                </Grid>
             </StyledAppBarPage>
             {
                 type === "salud" 

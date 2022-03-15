@@ -29,7 +29,7 @@ const Footer: FC = (): JSX.Element => {
                                     <Grid item lg={3}>
                                         <StyledSubtitleSection>Redes Sociales:</StyledSubtitleSection>
                                         <Grid item lg={12} className="flex justify-center">
-                                            <img style={{ marginLeft: '-35%', marginTop: '4%', }} src="http://api-praxis.test/wp-content/uploads/2022/03/linkeding.png" alt="Contacto de Praxis Pharmaceutical" />
+                                            <img style={{ marginLeft: '-35%', marginTop: '4%', }} src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/linkedingsocial.png" alt="Contacto de Praxis Pharmaceutical" />
                                         </Grid>
                                     </Grid>
                                     <Grid item lg={5}>

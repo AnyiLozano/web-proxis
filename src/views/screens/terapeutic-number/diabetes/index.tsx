@@ -138,7 +138,7 @@ const Diabetes = () => {
           </StyledTerapeuticNumberSection>
           <Container>
             <Grid item lg={12} className="text-center">
-              <StyledTitulo>
+              <StyledTitulo  style={{ marginTop:'5%' }}>
                 {woundsAssets.diabetes_titulo_5.content}
               </StyledTitulo>
             </Grid>

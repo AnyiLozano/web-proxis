@@ -137,7 +137,7 @@ const useCuidadoresStyles = () => {
         font-style: italic;
         color: #000;
         font-size: 20px;
-        text-align: justify;
+        text-align: left;
         font-family: 'Montserrat';
         padding-top: 2rem;
         @media (max-width: 500px) {

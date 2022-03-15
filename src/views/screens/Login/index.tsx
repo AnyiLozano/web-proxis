@@ -67,11 +67,11 @@ const Login: FC<{ background: string, show:boolean }> = (background): JSX.Elemen
                                                 <StyledButton>Registrarse</StyledButton>
                                             </Link>
                                         </Grid>
-                                        <Grid lg={12} className="gap-4 flex justify-center">
+                                        {/* <Grid lg={12} className="gap-4 flex justify-center">
                                             <Link to="/recovery-password">
                                                 <StyledDescription>Recuperar Contraseña</StyledDescription>
                                             </Link>
-                                        </Grid>
+                                        </Grid> */}
                                     </Grid>
                                 </Grid>
                             </Grid>

@@ -11,7 +11,8 @@ const Artesanal = () => {
     StyledCarousel,
     StyledImage2,
     ContainerStyled,
-    StyledTitleSection2 
+    StyledTitleSection2,
+    StyledTitulo1,
   } = useCuidadoresStyles();
 
   // Controllers
@@ -81,6 +82,11 @@ const Artesanal = () => {
                   )}
                 </StyledCarousel>
               </Grid>
+              <StyledTitulo1 style={{ marginBottom: "3%" }}>
+                Material trabajado para PRAXIS PHARMACEUTICAL COLOMBIA, Ltda.
+                por <b>Osvaldo Crespo Rodríguez</b> - Enfermero, experto en el
+                manejo de pacientes con lesiones en piel año 2020.
+              </StyledTitulo1>
             </ContainerStyled>
           </StyledSection4>
         </React.Fragment>

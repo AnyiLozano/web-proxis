@@ -1,9 +1,9 @@
-import { Toolbar } from '@mui/material';
 import React from 'react'
 import useCuidadoresStyles from './cuidadores.styles';
 import { Link, useParams } from "react-router-dom";
 import TuPapel from './cuidadores copy';
 import Artesanal from './artesanal';
+import { Grid } from '@mui/material';
 
 const Cuidadores = () => {
     // Styles
@@ -20,7 +20,7 @@ const Cuidadores = () => {
     return (
         <React.Fragment>
             <StyledAppBarPage position="absolute">
-                <Toolbar>
+                <Grid container>
                     <StyledGrid xs={6} className="flex justify-center items-center" selected={type === "tu-papel" && true}>
                         <Link to="/cuidadores/tu-papel" className="text-white">
                             Tu papel
@@ -31,7 +31,7 @@ const Cuidadores = () => {
                             Una tarea artesanal
                         </Link>
                     </StyledGrid2>
-                </Toolbar>
+                </Grid>
             </StyledAppBarPage>
             {
                 type === "tu-papel" 
