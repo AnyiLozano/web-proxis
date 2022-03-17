@@ -27,25 +27,25 @@ const useHomeStyles = () => {
     const StyledImgSections1 = styled.img`
       width: 100%;
       @media (min-width: 1600px){
-        width: 90%
+        width: 100%
       }
     `;
     const StyledImgSections2 = styled.img`
       width: 100%;
       @media (min-width: 1600px){
-        width: 90%
+        width: 100%
       }
     `;
     const StyledImgSections3 = styled.img`
       width: 100%;
       @media (min-width: 1600px){
-        width: 90%
+        width: 100%
       }
     `;
     const StyledImgSections4 = styled.img`
       width: 100%;
       @media (min-width: 1600px){
-        width: 90%
+        width: 100%
       }
     `;
 

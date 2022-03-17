@@ -47,7 +47,14 @@
 
 .slick-prev:before, .slick-next:before {
     color: #B2B2B2;
+    font-size: 60px;
 }
+
+.slick-prev {
+    left: -70px;
+}
+
+
 
 .css-6j8wv5-Input {
     height: 52px;

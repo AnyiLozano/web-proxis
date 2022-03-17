@@ -52,17 +52,19 @@ const Home: FC = (): JSX.Element => {
           className="flex justify-center md:py-16 sm:py-14 py-14"
         >
           <div
-            className="col-lg-3"
+            // className="col-lg-3"
             onMouseLeave={() => handlerHover("leave", 1)}
             onMouseOver={() => handlerHover("over", 1)}
             style={{ zIndex: hover.hover && hover.id === 1 ? 1 : undefined }}
           >
             {hover.hover && hover.id === 1 ? (
-                <StyledImgSections1
-                  src={section1 && section1.sectionHover?.content}
-                  alt={section1.sectionHover?.alt}
-                  onClick={() => history.push("/terapeutic-number/heridas")}
-                />
+              <StyledImgSections1
+                src={section1 && section1.sectionHover?.content}
+                alt={section1.sectionHover?.alt}
+                style={{ width: 257 }}
+
+                onClick={() => history.push("/terapeutic-number/heridas")}
+              />
             ) : (
               <StyledImgSections1
                 src={section1 && section1.section?.content}
@@ -71,45 +73,47 @@ const Home: FC = (): JSX.Element => {
             )}
           </div>
           <div
-            className="2xl:-ml-36 -ml-16 sm:-ml-28 xs:-ml-12 col-lg-3"
+            className="2xl:-ml-12 -ml-16 sm:-ml-28 xs:-ml-12 "
             onMouseLeave={() => handlerHover("leave", 2)}
             onMouseOver={() => handlerHover("over", 2)}
             style={{ zIndex: hover.hover && hover.id === 2 ? 1 : undefined }}
           >
-              {hover.hover && hover.id === 2 ? (
-                <StyledImgSections2
-                  src={section2 && section2.sectionHover?.content}
-                  alt={section2.sectionHover?.alt}
-                  onClick={() => history.push("/aliados/pacientes")}
-                />
-              ) : (
-                <StyledImgSections2
-                  src={section2 && section2.section?.content}
-                  alt={section2 && section2.section?.alt}
-                />
-              )}
+            {hover.hover && hover.id === 2 ? (
+              <StyledImgSections2
+                src={section2 && section2.sectionHover?.content}
+                alt={section2.sectionHover?.alt}
+                style={{ width: 257 }}
+                onClick={() => history.push("/aliados/pacientes")}
+              />
+            ) : (
+              <StyledImgSections2
+                src={section2 && section2.section?.content}
+                alt={section2 && section2.section?.alt}
+              />
+            )}
           </div>
           <div
-            className="2xl:-ml-36 -ml-16 sm:-ml-28 xs:-ml-12 col-lg-3"
+            className="2xl:-ml-12 -ml-16 sm:-ml-28 xs:-ml-12"
             onMouseLeave={() => handlerHover("leave", 3)}
             onMouseOver={() => handlerHover("over", 3)}
             style={{ zIndex: hover.hover && hover.id === 3 ? 1 : undefined }}
           >
-              {hover.hover && hover.id === 3 ? (
-                <StyledImgSections3
-                  src={section3 && section3.sectionHover?.content}
-                  alt={section3.sectionHover?.alt}
-                  onClick={() => history.push("/products/Vulcosan")}
-                />
-              ) : (
-                <StyledImgSections3
-                  src={section3 && section3.section?.content}
-                  alt={section3.section?.alt}
-                />
-              )}
+            {hover.hover && hover.id === 3 ? (
+              <StyledImgSections3
+                src={section3 && section3.sectionHover?.content}
+                alt={section3.sectionHover?.alt}
+                onClick={() => history.push("/products/Vulcosan")}
+                style={{ width: 257 }}
+              />
+            ) : (
+              <StyledImgSections3
+                src={section3 && section3.section?.content}
+                alt={section3.section?.alt}
+              />
+            )}
           </div>
           <div
-            className="2xl:-ml-36 -ml-16 sm:-ml-28 xs:-ml-12 col-lg-3"
+            className="2xl:-ml-12 -ml-12 sm:-ml-28 xs:-ml-12"
             onMouseLeave={() => handlerHover("leave", 4)}
             onMouseOver={() => handlerHover("over", 4)}
             style={{ zIndex: hover.hover && hover.id === 4 ? 1 : undefined }}
@@ -119,6 +123,7 @@ const Home: FC = (): JSX.Element => {
                 src={section4 && section4.sectionHover?.content}
                 alt={section3.sectionHover?.alt}
                 onClick={() => history.push("/blog")}
+                style={{ width: 257 }}
               />
             ) : (
               <StyledImgSections4
