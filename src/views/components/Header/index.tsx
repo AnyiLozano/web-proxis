@@ -46,14 +46,14 @@ const Header: FC = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <AppBarComponent position="absolute">
+      <AppBarComponent position="fixed">
         <Container maxWidth="xl">
           <Toolbar
             className="py-6"
             style={{ justifyContent: "space-between" }}
             variant="regular"
           >
-            <img src={logo} alt="Logo Profix" />
+            <img src={"http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"} alt="Logo Profix" />
             <StyledContainerMenu item md={12}>
               <Grid item md={12} className="flex justify-end">
                 {login.token !== undefined ? (

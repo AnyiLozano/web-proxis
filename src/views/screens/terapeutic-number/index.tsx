@@ -39,7 +39,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
                     </StyledGrid3>
                     <StyledGrid4 xs={3} className="flex justify-center items-center" selected={type === "enfermedad-hemorrodial" && true}>
                         <Link to="/terapeutic-number/enfermedad-hemorrodial" className="text-white text-md">
-                            Enfermedad hemorrodial
+                            Enfermedad hemorroidal
                         </Link>
                     </StyledGrid4>
                 </Grid>

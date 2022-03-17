@@ -15,7 +15,6 @@ const useTerapeuticNumberStyles = () => {
     font-size: 35px;
   `;
   const StyledTitulo1 = styled.p`
-    font-style: italic;
     color: #000;
     font-size: 20px;
     text-align: left;
@@ -207,7 +206,7 @@ export const StyledSubtitle = styled.h3.attrs({
 export const StyledImageGeneral = styled.img.attrs({
   className: "general-image",
 })`
-  width: 75%;
+  width: 85%;
   margin-top: 2%;
 
   @media (max-width: 1200px) {

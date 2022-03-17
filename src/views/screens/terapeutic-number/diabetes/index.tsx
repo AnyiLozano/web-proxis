@@ -71,12 +71,17 @@ const Diabetes = () => {
                     </React.Fragment>
                   )
                 )}
-            </Grid>
-            <StyledSubtitle style={{ textAlign: "center" }}>
+            </Grid> 
+            </Container>
+            <StyledTerapeuticNumberSection style={{ backgroundPosition: "top right", paddingTop: 0, paddingBottom: 0 }}
+            background={woundsAssets.ulceras_background.content}
+          > 
+            <Container>
+            <StyledSubtitle style={{ textAlign: "" }}>
               {woundsAssets.diabetes_titulo_2 !== undefined &&
                 woundsAssets.diabetes_titulo_2.content}
             </StyledSubtitle>
-            <p style={{ fontSize: "20px"}}>
+            <p style={{ fontSize: "20px", marginTop: "-2%"}}>
               {woundsAssets.diabetes_text_2 !== undefined &&
                 woundsAssets.diabetes_text_2.content} 
             </p>
@@ -97,6 +102,9 @@ const Diabetes = () => {
                   )
                 )}
             </Grid>
+            </Container>
+            </StyledTerapeuticNumberSection>
+            <Container>
             <Grid item md={12} className="d-flex justify-center">
               <StyledImageGeneral
                 src={woundsAssets.diabetes_image_2.content}
@@ -137,6 +145,9 @@ const Diabetes = () => {
               </Grid>
             </Container>
           </StyledTerapeuticNumberSection>
+          <StyledTerapeuticNumberSection style={{ backgroundPosition: "top right", paddingTop: 0, paddingBottom: 0 }}
+            background={woundsAssets.ulceras_background.content}
+          >
           <Container>
             <Grid item lg={12} className="">
               <StyledTitulo  style={{ marginTop:'5%' }}>
@@ -144,7 +155,7 @@ const Diabetes = () => {
               </StyledTitulo>
             </Grid>
             <Grid item lg={12} className="text-center">
-              <StyledTitulo1 style={{     marginTop: "-4%" }}
+              <StyledTitulo1 style={{     marginTop: "-4%"  }} 
                 dangerouslySetInnerHTML={{
                   __html: woundsAssets.diabetes_text_4.content,
                 }}
@@ -158,6 +169,11 @@ const Diabetes = () => {
                 alt={woundsAssets.diabetes_imagen_6.alt}
               />
             </Grid>
+          </Container>
+
+            </StyledTerapeuticNumberSection>
+          <Container>
+
             <StyledTitulo1>
               {woundsAssets.diabetes_text_5.content}
             </StyledTitulo1>
@@ -186,23 +202,33 @@ const Diabetes = () => {
             <StyledTitulo style={{ textAlign: "center" }}>
               {woundsAssets.diabetes_titulo_6.content}
             </StyledTitulo>
+            </Container>
+            <StyledTerapeuticNumberSection
+            background={woundsAssets.ulceras_background.content}
+          >
+            <Container maxWidth="xl">
             <Grid item md={12} className="d-flex justify-center">
               <StyledImageGeneral
                 src={woundsAssets.diabetes_imagen_10.content}
                 alt={woundsAssets.diabetes_imagen_10.alt}
               />
             </Grid>
-          </Container>
+            </Container>
+            
+            </StyledTerapeuticNumberSection>
+          
         </React.Fragment>
       )}
-      {woundsAssets.diabetes_imagen_11 && (
-        <Grid item md={12} className="d-flex justify-center">
-          <StyledImageGeneral
-            style={{ width: "100%" }}
-            src={woundsAssets.diabetes_imagen_11.content}
-            alt={woundsAssets.diabetes_imagen_11.alt}
-          />
-        </Grid>
+      {woundsAssets.diabetes_imagen_11 !== undefined && (
+        <div style={{ background: "#014380" }}
+        className="py-12"
+        >
+          <Container maxWidth="lg">
+            <h1 className="pb-12 text-center text-white" style={{ fontSize: 30, fontWeight: "700" }}>Referencias</h1>
+            <p dangerouslySetInnerHTML={{__html: woundsAssets.diabetes_imagen_11.content}} className="text-white"></p>
+          </Container>
+
+        </div>
       )}
     </React.Fragment>
   );

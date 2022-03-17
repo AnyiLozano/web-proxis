@@ -123,15 +123,19 @@ const Heridas = () => {
           </Grid>
           <Container maxWidth="xl">
             <StyledSubtitle>Tipos de tejido en una herida</StyledSubtitle>
-            <p>
+            <p style={{ fontSize: "20px" }}>
               {woundsAssets.wound_type_description !== undefined &&
                 woundsAssets.wound_type_description.content}
             </p>
-            <StyledTabContainer container className="pt-8 justify-center" style={{ display: "grid" }}>
+            <StyledTabContainer
+              container
+              className="pt-8 justify-center"
+              style={{ display: "grid" }}
+            >
               <Box sx={{ width: "100%", typography: "body1" }}>
                 <TabContext value={value}>
                   <Box sx={{ borderBottom: 1, borderColor: "transparent" }}>
-                    <TabList 
+                    <TabList
                       onChange={handleChange}
                       aria-label="lab API tabs example"
                     >
@@ -140,14 +144,15 @@ const Heridas = () => {
                           className="mr-1 heridas-tabs"
                           label={item}
                           value={index.toString()}
-                          style={{ backgroundColor: "#8A8A8A", textTransform: "capitalize" }}
+                          style={{
+                            backgroundColor: "#8A8A8A",
+                            textTransform: "capitalize",
+                          }}
                         />
                       ))}
                     </TabList>
                   </Box>
-                  <TabPanel
-                    value="0"
-                  >
+                  <TabPanel value="0">
                     <Grid
                       container
                       className="justify-center align-items-center"
@@ -163,9 +168,7 @@ const Heridas = () => {
                       ))}
                     </Grid>
                   </TabPanel>
-                  <TabPanel
-                    value="1"
-                  >
+                  <TabPanel value="1">
                     <Grid
                       container
                       className="justify-center align-items-center"
@@ -181,9 +184,7 @@ const Heridas = () => {
                       ))}
                     </Grid>
                   </TabPanel>
-                  <TabPanel
-                    value="2"
-                  >
+                  <TabPanel value="2">
                     <Grid
                       container
                       className="justify-center align-items-center"
@@ -199,9 +200,7 @@ const Heridas = () => {
                       ))}
                     </Grid>
                   </TabPanel>
-                  <TabPanel
-                    value="3"
-                  >
+                  <TabPanel value="3">
                     <Grid
                       container
                       className="justify-center align-items-center"
@@ -217,9 +216,7 @@ const Heridas = () => {
                       ))}
                     </Grid>
                   </TabPanel>
-                  <TabPanel
-                    value="4"
-                  >
+                  <TabPanel value="4">
                     <Grid
                       container
                       className="justify-center align-items-center"
@@ -290,22 +287,26 @@ const Heridas = () => {
             />
           </Grid>
         )}
-        {woundsAssets.aux_person !== undefined && (
-          <Grid container className="justify-center mb-5">
-            <StyledImageGeneral
-              alt={woundsAssets.aux_person.alt}
-              src={woundsAssets.aux_person.content}
-            />
-          </Grid>
-        )}
       </Container>
+      {woundsAssets.aux_person !== undefined && (
+        <Grid container className="justify-center mb-5">
+          <StyledImageGeneral
+            alt={woundsAssets.aux_person.alt}
+            src={woundsAssets.aux_person.content}
+          />
+        </Grid>
+      )}
 
       {woundsAssets.references !== undefined && (
-        <img
-          alt={woundsAssets.references.alt}
-          style={{ width: "100%" }}
-          src={woundsAssets.references.content}
-        />
+        <div style={{ background: "#014380" }}
+        className="py-12"
+        >
+          <Container maxWidth="lg">
+            <h1 className="pb-12 text-center text-white" style={{ fontSize: 30, fontWeight: "700" }}>Referencias</h1>
+            <p dangerouslySetInnerHTML={{__html: woundsAssets.references.content}} className="text-white"></p>
+          </Container>
+
+        </div>
       )}
 
       <Container maxWidth="xl">
@@ -359,7 +360,9 @@ const Heridas = () => {
             <StyledSubtitle style={{ marginBottom: "3%" }}>
               {woundsAssets.factoresTitle.content}
             </StyledSubtitle>
-            <p>{woundsAssets.factoresDescription.content}</p>
+            <p style={{ fontSize: "20px" }}>
+              {woundsAssets.factoresDescription.content}
+            </p>
             <Grid container className="justify-center">
               <StyledImageGeneral
                 src={woundsAssets.factoresImage.content}
@@ -367,7 +370,9 @@ const Heridas = () => {
                 style={{ marginTop: "2%" }}
               />
             </Grid>
-            <p>{woundsAssets.factoresSubDescription.content}</p>
+            <p style={{ fontSize: "20px" }}>
+              {woundsAssets.factoresSubDescription.content}
+            </p>
             <StyledSubtitle style={{ marginBottom: "3%" }}>
               {woundsAssets.complicacionesTitle.content}
             </StyledSubtitle>
@@ -382,6 +387,7 @@ const Heridas = () => {
               {woundsAssets.Heridas_titulo3.content}
             </StyledSubtitle>
             <p
+              style={{ fontSize: "20px" }}
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.Herida_texto_4.content,
               }}

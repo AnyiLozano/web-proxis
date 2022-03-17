@@ -31,7 +31,8 @@ const Epiprot: FC = (): JSX.Element => {
 
   const obj = {
     background:
-      "https://api-praxis.eml.com.co/wp-content/uploads/2022/03/Banner_login.png",
+      "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/experanza.png",
+    logo: "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/factor_epiprot1.png",
     show: true,
   };
 

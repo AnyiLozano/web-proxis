@@ -7,7 +7,7 @@ const useLoginStyles = () => {
         ${tw``}
         margin-top: 8.9rem;
         background-image: url('${(props: any) => props.background}');
-        background-size: 100% 100%;
+        background-size: ${(props: any) => !props.background.includes("imagen_inicio_sesion.png") ? "80% 100%" : "100% 100%"} ;
         background-repeat: no-repeat;
         padding-top: 12%;
 

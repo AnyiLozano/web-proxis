@@ -7,8 +7,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const useHeaderStyles = () => {
     const AppBarComponent = styled(AppBar)`
-      background-color: transparent !important;
-      background: linear-gradient(transparent 10%,#ffffffd6 40%);
+    background-color: transparent !important;
+    background: linear-gradient(#fff 10%,#fffffff6 0%);
+
     `;
 
     const StyledButtonLogin = styled(Button)`

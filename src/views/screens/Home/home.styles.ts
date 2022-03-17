@@ -16,7 +16,7 @@ const useHomeStyles = () => {
     const StyledTitleSection = styled.h1`
       ${tw  `text-xl`}
       color: #004289;
-      font-size: 5rem;
+      font-size: 3.4rem;
       font-weight: bolder;
       font-family: 'Montserrat', sans-serif;
       @media (max-width: 768px) {

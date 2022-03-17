@@ -142,7 +142,7 @@ const Home: FC = (): JSX.Element => {
             src={gerencialTeam.content}
             alt={gerencialTeam.alt}
             width="100%"
-            className="pt-6 lg:py-16"
+            className="pt-6 lg:pt-16"
           />
         </Container>
       </StyledSectionPraxis>

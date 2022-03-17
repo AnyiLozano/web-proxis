@@ -82,8 +82,7 @@ const Hemorroides = () => {
                                   src={item.image}
                                   alt="image-terapeutic-number"
                                   className="ml-6"
-                                style={{ width: "100%" }}
-
+                                  style={{ width: "100%" }}
                                 />
                               </Grid>
                             </React.Fragment>
@@ -154,11 +153,25 @@ const Hemorroides = () => {
               </Grid>
             </Container>
           </StyledTerapeuticNumberSection1>
-          <StyledImageGeneral
-            src={woundsAssets.hemorroidal_background_referencias.content}
-            alt={woundsAssets.hemorroidal_background_referencias.alt}
-            style={{ width: "100%" }}
-          />
+
+          {woundsAssets.hemorroidal_background_referencias !== undefined && (
+            <div style={{ background: "#014380", marginTop: "3%" }} className="py-12">
+              <Container maxWidth="lg">
+                <h1
+                  className="pb-12 text-center text-white"
+                  style={{ fontSize: 30, fontWeight: "700" }}
+                >
+                  Referencias
+                </h1>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: woundsAssets.hemorroidal_background_referencias.content,
+                  }}
+                  className="text-white"
+                ></p>
+              </Container>
+            </div>
+          )}
         </React.Fragment>
       )}
     </React.Fragment>

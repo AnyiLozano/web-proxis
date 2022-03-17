@@ -34,7 +34,7 @@ const Footer: FC = (): JSX.Element => {
                     <a href="https://www.linkedin.com/company/praxispharmaceuticalcalidaddevida" target="_blank">
                       <img
                         style={{ marginLeft: "-35%", marginTop: "4%" }}
-                        src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/linkedingsocial.png"
+                        src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/completo_linkeding.png"
                         alt="Contacto de Praxis Pharmaceutical"
                       />
                     </a>

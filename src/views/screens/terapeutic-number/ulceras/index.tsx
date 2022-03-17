@@ -6,11 +6,8 @@ import useTerapeuticNumberStyles, {
 import useControllers from "controllers";
 
 const Ulceras = () => {
-  const {
-    StyledTitulo,
-    StyledTerapeuticNumberSection1,
-    StyledImage,
-  } = useTerapeuticNumberStyles();
+  const { StyledTitulo, StyledTerapeuticNumberSection1, StyledImage } =
+    useTerapeuticNumberStyles();
 
   const { useScreenHooks } = useControllers();
   const { useTerapeuticNumber } = useScreenHooks();
@@ -58,7 +55,9 @@ const Ulceras = () => {
             <StyledSubtitle style={{ marginBottom: "3%" }}>
               {woundsAssets.ulceras_titulo_1.content}
             </StyledSubtitle>
-            <p style={{ fontSize: "20px" }}>{woundsAssets.ulceras_text_1.content}</p>
+            <p style={{ fontSize: "20px" }}>
+              {woundsAssets.ulceras_text_1.content}
+            </p>
             <Grid container className="justify-center">
               <img
                 src={woundsAssets.ulceras_imagen_6.content}
@@ -69,10 +68,12 @@ const Ulceras = () => {
             <StyledSubtitle style={{ marginBottom: "3%" }}>
               {woundsAssets.ulceras_titulo_3.content}
             </StyledSubtitle>
-            <p dangerouslySetInnerHTML={{ 
-                __html: woundsAssets.ulceras_text_2.content, 
-                }} style={{ fontSize: "20px" }}
-                ></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: woundsAssets.ulceras_text_2.content,
+              }}
+              style={{ fontSize: "20px" }}
+            ></p>
             <Grid container className="justify-center">
               <img
                 src={woundsAssets.ulceras_imagen_7.content}
@@ -86,7 +87,8 @@ const Ulceras = () => {
             <p
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.ulceras_text_8.content,
-              }} style={{ fontSize: "20px" }}
+              }}
+              style={{ fontSize: "20px" }}
             ></p>
             <Grid container className="justify-center">
               <img
@@ -101,11 +103,24 @@ const Ulceras = () => {
               />
             </Grid>
           </Container>
-          <img
-            src={woundsAssets.ulceras_refrencias_1.content}
-            alt={woundsAssets.ulceras_refrencias_1.alt}
-            style={{ width: "100%", marginTop: "2%" }}
-          />
+          {woundsAssets.ulceras_refrencias_1 !== undefined && (
+            <div style={{ background: "#014380" }} className="py-12">
+              <Container maxWidth="lg">
+                <h1
+                  className="pb-12 text-center text-white"
+                  style={{ fontSize: 30, fontWeight: "700" }}
+                >
+                  Referencias
+                </h1>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: woundsAssets.ulceras_refrencias_1.content,
+                  }}
+                  className="text-white"
+                ></p>
+              </Container>
+            </div>
+          )}
         </React.Fragment>
       )}
     </React.Fragment>

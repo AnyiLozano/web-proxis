@@ -20,7 +20,7 @@ const useFooterStyles = () => {
 
   const StyledTitleSection = styled.h1`
       ${tw`text-white py-6 sm:py-12`}
-      font-size: 4rem;
+      font-size: 2rem;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
       
