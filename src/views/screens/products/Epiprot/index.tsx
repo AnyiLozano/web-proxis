@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
 import Login from "views/screens/Login";
 import useModels from "models";
@@ -31,17 +31,29 @@ const Epiprot: FC = (): JSX.Element => {
 
   const obj = {
     background:
-      "http://api-praxis.test/wp-content/uploads/2022/03/Banner_login.png",
+      "https://api-praxis.eml.com.co/wp-content/uploads/2022/03/Banner_login.png",
     show: true,
   };
 
   const { epiprot } = products;
 
+  const [firstImage, setFirstImage] = useState<boolean>(false);
+
   return (
     <React.Fragment>
       {login.token === undefined ? (
         <React.Fragment>
-          <Login {...obj} />
+          {!firstImage ? (
+            <div>
+              <StyledImage
+                src={epiprot !== undefined && epiprot.banner_1.content}
+                alt={epiprot !== undefined && epiprot.banner_1.alt}
+                onClick={() => setFirstImage(true)}
+              />
+            </div>
+          ) : (
+            <Login {...obj} />
+          )}
         </React.Fragment>
       ) : (
         <React.Fragment>
@@ -69,7 +81,7 @@ const Epiprot: FC = (): JSX.Element => {
                       }
                     />
                   </Grid>
-                  <Grid item lg={12} className="text-center">
+                  <Grid item lg={12} className="">
                     <StyledTitulo1
                       dangerouslySetInnerHTML={{
                         __html:
@@ -81,7 +93,7 @@ const Epiprot: FC = (): JSX.Element => {
                 </Container>
               </StyledTerapeuticNumberSection>
               <Container>
-                <StyledTitulo style={{ textAlign: "center" }}>
+                <StyledTitulo style={{ marginTop: "3%" }}>
                   {epiprot.title_composition.content}
                 </StyledTitulo>
                 <StyledTitulo1
@@ -105,12 +117,16 @@ const Epiprot: FC = (): JSX.Element => {
                   <Grid container>
                     <Grid item md={6}>
                       <StyledTitulo
-                        style={{ textAlign: "center", margin: "3% 0%" }}
+                        style={{
+                          textAlign: "center",
+                          margin: "3% -2%",
+                          marginTop: "-5%",
+                        }}
                       >
                         {epiprot.fuente_title.content}
                       </StyledTitulo>
                       <StyledTitulo1
-                        style={{ fontSize: 13, paddingTop: "2rem" }}
+                        style={{ fontSize: 15, paddingTop: "0rem" }}
                         dangerouslySetInnerHTML={{
                           __html: epiprot.fuente_text.content,
                         }}
@@ -142,9 +158,15 @@ const Epiprot: FC = (): JSX.Element => {
                 </Grid>
                 <Grid container>
                   <Grid item md={6}>
-                    <StyledTitulo>Información para prescribir</StyledTitulo>
+                    <StyledTitulo style={{ marginTop: "7%" }}>
+                      Información para prescribir
+                    </StyledTitulo>
                     <StyledTitulo1
-                      style={{  fontSize: 18, textAlign: "left" }}
+                      style={{
+                        fontSize: 18,
+                        textAlign: "left",
+                        marginTop: "-6%",
+                      }}
                       dangerouslySetInnerHTML={{
                         __html: epiprot.info_prescribir.content,
                       }}

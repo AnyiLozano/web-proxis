@@ -268,7 +268,7 @@ const Register: FC = (): JSX.Element => {
                     )}
                   />
                 </Grid>
-                <Grid lg={12} className="pb-4 sm:pb-4 flex justify-center">
+                <Grid md={12} className="pb-4 sm:pb-4 flex justify-center">
                   <Controller
                     control={registerRegister}
                     name="profesion"
@@ -276,6 +276,7 @@ const Register: FC = (): JSX.Element => {
                       <StyledSelect
                         placeholder="Profesion"
                         options={profession}
+                        className="md:w-9/12"
                         style={{ background: "transparent" }}
                         {...field}
                       />

@@ -35,7 +35,7 @@ const Proctokinasa: FC = (): JSX.Element => {
               <Grid item lg={12} className="flex justify-center">
                 <StyledTitulo>Proctokinasa®</StyledTitulo>
               </Grid>
-              <Grid item lg={12} className="text-center">
+              <Grid item lg={12} className="">
                 <StyledTitulo1>
                   {proctokinasa.vulcosan_texto_1.content}
                 </StyledTitulo1>

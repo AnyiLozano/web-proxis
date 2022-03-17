@@ -36,8 +36,9 @@ const Diabetes = () => {
                 <StyledTitulo>Diabetes</StyledTitulo>
               </Grid>
               <Grid item lg={12} className="text-center">
-                <StyledTitulo1>
-                  {woundsAssets.diabetes_text_1.content}
+                <StyledTitulo1 dangerouslySetInnerHTML={{
+                  __html: woundsAssets.diabetes_text_1.content,
+                }}>
                 </StyledTitulo1>
               </Grid>
             </Container>
@@ -75,9 +76,9 @@ const Diabetes = () => {
               {woundsAssets.diabetes_titulo_2 !== undefined &&
                 woundsAssets.diabetes_titulo_2.content}
             </StyledSubtitle>
-            <p>
+            <p style={{ fontSize: "20px"}}>
               {woundsAssets.diabetes_text_2 !== undefined &&
-                woundsAssets.diabetes_text_2.content}
+                woundsAssets.diabetes_text_2.content} 
             </p>
             <Grid item md={12} className="d-flex justify-center">
               <StyledImageGeneral
@@ -118,13 +119,13 @@ const Diabetes = () => {
             background={woundsAssets.diabetes_background_2.content}
           >
             <Container>
-              <Grid item lg={12} className="text-center">
+              <Grid item lg={12} className="">
                 <StyledTitulo>
                   {woundsAssets.diabetes_titulo_4.content}
                 </StyledTitulo>
               </Grid>
               <Grid item lg={12} className="text-center">
-                <StyledTitulo1>
+                <StyledTitulo1  style={{ marginTop:'-4%' }}>
                   {woundsAssets.diabetes_text_3.content}
                 </StyledTitulo1>
               </Grid>
@@ -137,13 +138,13 @@ const Diabetes = () => {
             </Container>
           </StyledTerapeuticNumberSection>
           <Container>
-            <Grid item lg={12} className="text-center">
+            <Grid item lg={12} className="">
               <StyledTitulo  style={{ marginTop:'5%' }}>
                 {woundsAssets.diabetes_titulo_5.content}
               </StyledTitulo>
             </Grid>
             <Grid item lg={12} className="text-center">
-              <StyledTitulo1
+              <StyledTitulo1 style={{     marginTop: "-4%" }}
                 dangerouslySetInnerHTML={{
                   __html: woundsAssets.diabetes_text_4.content,
                 }}

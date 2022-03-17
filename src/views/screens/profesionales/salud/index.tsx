@@ -38,7 +38,7 @@ const Salud = () => {
                   dangerouslySetInnerHTML={{
                     __html: cuidadores.text_factores.content,
                   }}
-                  className="text-xs md:text-sm"
+                  className="text-lg md:text-lg"
                 ></span>
               </Grid>
               <img

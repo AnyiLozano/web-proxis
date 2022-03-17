@@ -11,7 +11,7 @@ const useTerapeuticNumberStyles = () => {
   `;
   const StyledTitulo = styled.h1`
     color: #004289;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 35px;
   `;
   const StyledTitulo1 = styled.p`
@@ -197,7 +197,7 @@ export const StyledSubtitle = styled.h3.attrs({
   font-size: 33px;
   margin: 4% 0;
   color: #014380;
-  font-weight: 600;
+  font-weight: 700;
 
   @media (max-width: 1200px) {
     font-size: 20px;

@@ -58,7 +58,7 @@ const Ulceras = () => {
             <StyledSubtitle style={{ marginBottom: "3%" }}>
               {woundsAssets.ulceras_titulo_1.content}
             </StyledSubtitle>
-            <p>{woundsAssets.ulceras_text_1.content}</p>
+            <p style={{ fontSize: "20px" }}>{woundsAssets.ulceras_text_1.content}</p>
             <Grid container className="justify-center">
               <img
                 src={woundsAssets.ulceras_imagen_6.content}
@@ -69,7 +69,10 @@ const Ulceras = () => {
             <StyledSubtitle style={{ marginBottom: "3%" }}>
               {woundsAssets.ulceras_titulo_3.content}
             </StyledSubtitle>
-            <p>{woundsAssets.ulceras_text_2.content}</p>
+            <p dangerouslySetInnerHTML={{ 
+                __html: woundsAssets.ulceras_text_2.content, 
+                }} style={{ fontSize: "20px" }}
+                ></p>
             <Grid container className="justify-center">
               <img
                 src={woundsAssets.ulceras_imagen_7.content}
@@ -83,7 +86,7 @@ const Ulceras = () => {
             <p
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.ulceras_text_8.content,
-              }}
+              }} style={{ fontSize: "20px" }}
             ></p>
             <Grid container className="justify-center">
               <img

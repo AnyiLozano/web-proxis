@@ -39,7 +39,7 @@ const Bulcosan: FC = (): JSX.Element => {
                   style={{ width: "auto" }}
                 />
               </Grid>
-              <Grid item lg={12} className="text-center">
+              <Grid item lg={12} className="">
                 <StyledTitulo1
                   dangerouslySetInnerHTML={{
                     __html:
@@ -91,7 +91,7 @@ const Bulcosan: FC = (): JSX.Element => {
                   <StyledImageGeneral
                     src={bulcosan.ventajas.content}
                     alt={bulcosan.ventajas.alt}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", marginTop: "3%" }}
                   />
                 </Grid>
                 <Grid item md={6}>
@@ -151,11 +151,13 @@ const Bulcosan: FC = (): JSX.Element => {
           <Container>
             <Grid container className="mt-12 mb-12 align-items-center">
               <StyledTitulo>{bulcosan.consiguelo.content}</StyledTitulo>
+              <a href="https://www.cruzverde.com.co/aposito-esteril-caja-x-10-vulcosan-phmb-10cm-x-10cm/COCV_386040.html" target="_blank">
               <StyledImageGeneral
                 src={bulcosan.cruz.content}
                 style={{ width: "auto", marginTop: "0%", marginLeft: "2%" }}
                 alt={bulcosan.cruz.alt}
               />
+                </a>
             </Grid>
           </Container>
         </React.Fragment>

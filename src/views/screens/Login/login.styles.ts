@@ -9,11 +9,7 @@ const useLoginStyles = () => {
         background-image: url('${(props: any) => props.background}');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-
-        @media (min-width: 1024px){
-            display: flex;
-            align-items: center;
-        }
+        padding-top: 12%;
 
         @media (max-width: 1023px){
             margin-top: 6.9rem;

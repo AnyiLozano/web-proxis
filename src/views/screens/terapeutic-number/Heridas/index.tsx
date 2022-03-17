@@ -127,20 +127,20 @@ const Heridas = () => {
               {woundsAssets.wound_type_description !== undefined &&
                 woundsAssets.wound_type_description.content}
             </p>
-            <StyledTabContainer container className="pt-8 justify-center">
+            <StyledTabContainer container className="pt-8 justify-center" style={{ display: "grid" }}>
               <Box sx={{ width: "100%", typography: "body1" }}>
                 <TabContext value={value}>
                   <Box sx={{ borderBottom: 1, borderColor: "transparent" }}>
-                    <TabList
+                    <TabList 
                       onChange={handleChange}
                       aria-label="lab API tabs example"
                     >
                       {_.map(tabs, (item: any, index: number) => (
                         <Tab
-                          className="mr-1"
+                          className="mr-1 heridas-tabs"
                           label={item}
                           value={index.toString()}
-                          style={{ backgroundColor: "#8A8A8A" }}
+                          style={{ backgroundColor: "#8A8A8A", textTransform: "capitalize" }}
                         />
                       ))}
                     </TabList>

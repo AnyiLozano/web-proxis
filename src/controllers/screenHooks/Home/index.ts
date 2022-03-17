@@ -23,8 +23,11 @@ const useHome = () => {
 
     /** Handlers */
     const handlerHover = (type: string, id: number) => {
-        console.log(type)
-        type === "over" ? setHover({ hover: true, id: id }) : setHover({ hover: false, id: 0 });
+        if(id !== hover.id) {
+            type === "over" ? setHover({ hover: true, id: id }) : setHover({ hover: false, id: 0 });
+        }else{
+            return false;
+        }
     }
 
     let obj : any = {}

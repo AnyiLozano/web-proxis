@@ -27,8 +27,8 @@ const Products: FC = (): JSX.Element => {
                         </Link>
                     </StyledGrid>
                     <StyledGrid2 xs={4} className="flex justify-center items-center" selected={type === "bulcosan" && true}>
-                        <Link to="/products/bulcosan" className="text-white">
-                            Bulcosan®
+                        <Link to="/products/Vulcosan" className="text-white">
+                            Vulcosan®
                         </Link>
                     </StyledGrid2>
                     <StyledGrid3 xs={4} className="flex justify-center items-center" selected={type === "proctokinasa" && true}>
@@ -41,7 +41,7 @@ const Products: FC = (): JSX.Element => {
             {
                 type === "epiprot" 
                     ? <Epiprot/>
-                    : type === "bulcosan"
+                    : type === "Vulcosan"
                         ? <Bulcosan/>
                         : <Proctokinasa/>
             }

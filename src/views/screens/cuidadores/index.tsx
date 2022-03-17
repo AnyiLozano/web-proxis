@@ -28,7 +28,7 @@ const Cuidadores = () => {
                     </StyledGrid>
                     <StyledGrid2 xs={6} className="flex justify-center items-center" selected={type === "artesanal" && true}>
                         <Link to="/cuidadores/artesanal" className="text-white">
-                            Una tarea artesanal
+                            Una tarea ancestral
                         </Link>
                     </StyledGrid2>
                 </Grid>

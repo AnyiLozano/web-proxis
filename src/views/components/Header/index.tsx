@@ -48,7 +48,11 @@ const Header: FC = (): JSX.Element => {
     <React.Fragment>
       <AppBarComponent position="absolute">
         <Container maxWidth="xl">
-          <Toolbar className="py-6" style={{ justifyContent: "space-between" }} variant="regular">
+          <Toolbar
+            className="py-6"
+            style={{ justifyContent: "space-between" }}
+            variant="regular"
+          >
             <img src={logo} alt="Logo Profix" />
             <StyledContainerMenu item md={12}>
               <Grid item md={12} className="flex justify-end">
@@ -73,11 +77,7 @@ const Header: FC = (): JSX.Element => {
                           <StyledButtonMenu>
                             <Link to="/active-users">Activar Usuarios</Link>
                           </StyledButtonMenu>
-                          <StyledButtonMenu>
-                            <Link to="/comments-admin">
-                              Administrar Comentario
-                            </Link>
-                          </StyledButtonMenu>
+
                           <StyledButtonMenu onClick={() => closeSesion()}>
                             Cerrar Sesion
                           </StyledButtonMenu>
@@ -137,17 +137,19 @@ const Header: FC = (): JSX.Element => {
                             {item.post_title}
                           </StyledButtonMenu>
                           <div
-                            className="dropdown-menu pr-6"
+                            className="dropdown-menu"
                             aria-labelledby="navbarDropdown"
                           >
                             {_.map(
                               item.submenus,
                               (submenu: any, idx: number) => (
-                                <StyledButtonMenu key={idx}>
-                                  <Link to={submenu.url}>
-                                    {submenu.post_title}
-                                  </Link>
-                                </StyledButtonMenu>
+                                <React.Fragment>
+                                  <StyledButtonMenu key={idx} isSubmenu>
+                                    <Link to={submenu.url}>
+                                      {submenu.post_title}
+                                    </Link>
+                                  </StyledButtonMenu>
+                                </React.Fragment>
                               )
                             )}
                           </div>
@@ -194,11 +196,7 @@ const Header: FC = (): JSX.Element => {
                                       Activar Usuarios
                                     </Link>
                                   </StyledListItem>
-                                  <StyledListItem sx={{ pl: 4 }}>
-                                    <Link to="/comments-admin">
-                                      Administrar Comentarios
-                                    </Link>
-                                  </StyledListItem>
+
                                   <StyledListItem
                                     sx={{ pl: 4 }}
                                     onClick={() => closeSesion()}

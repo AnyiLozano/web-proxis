@@ -52,7 +52,10 @@ const TuPapel = () => {
             alt={cuidadores.banner_principal.alt}
             style={{ paddingTop: "0%", width: "100%" }}
           />
-          <StyledSection background={cuidadores.aliados_background_1.content} style={{ backgroundSize: "50% 100%" }}>
+          <StyledSection
+            background={cuidadores.aliados_background_1.content}
+            style={{ backgroundSize: "50% 100%" }}
+          >
             <Container style={{ marginTop: "2%" }}>
               <StyledTitulo>
                 {cuidadores.title_clasification.content}
@@ -63,14 +66,16 @@ const TuPapel = () => {
               <Grid item md={12} className="pt-8">
                 <Box sx={{ width: "100%", typography: "body1" }}>
                   <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                    <Box sx={{ borderBottom: 1, borderColor: "divider" }} 
+                    >
                       <TabList
                         onChange={handleChange}
                         aria-label="lab API tabs example"
                       >
                         {_.map(data, (item: any, index: number) => (
                           <Tab
-                            className="mr-1"
+                            style={{ textTransform: "capitalize" }}
+                            className="mr-1 tad-cuidadores"
                             label={item}
                             value={index.toString()}
                           />
@@ -78,9 +83,7 @@ const TuPapel = () => {
                       </TabList>
                     </Box>
                     {_.map(cuidadores.tultis, (item: any, index: number) => (
-                      <TabPanel
-                        value={index.toString()}
-                      >
+                      <TabPanel value={index.toString()}>
                         <img
                           src={item.content}
                           style={{ width: "100%" }}

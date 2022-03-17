@@ -22,7 +22,7 @@ const usePacientesStyles = () => {
     const StyledTitle = styled.h1`
         color: #004289;
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 700;
         padding-top: 3rem;
         padding-bottom: 3rem;
     `;
@@ -30,7 +30,7 @@ const usePacientesStyles = () => {
     const StyledTitle2 = styled.h1`
         color: #004289;
         font-size: 1.5rem;
-        font-weight: 600;
+        font-weight: 700;
         text-align: center
     `;
 

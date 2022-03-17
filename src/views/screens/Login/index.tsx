@@ -37,15 +37,15 @@ const Login: FC<{ background: string, show:boolean }> = (background): JSX.Elemen
         <React.Fragment>
             {
                 width >= 1200 ? (
-                    <StyledSection background={background.background !== undefined ? background.background : "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/registro-1.png"} style={{ height: "60.7rem" }}>
+                    <StyledSection background={background.background !== undefined ? background.background : "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/imagen_inicio_sesion.png"} style={{ height: "47.6rem" }}>
                         <Container>
                             <Grid container>
                                 <Grid item lg={6} md={12} className="flex justify-center pb-12 sm:pb-1">
-                                    {/* {
+                                     {
                                        !background.show && (
-                                            // <StyledImage src="http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png" />
+                                            <StyledImage src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/pharmaceutical_praxis_1.png" />
                                         )
-                                    } */}
+                                    } 
                                 </Grid>
                                 <Grid item lg={6} className="flex justify-center w-full">
                                     <Grid item md={12}>

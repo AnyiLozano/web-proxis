@@ -44,9 +44,9 @@ const useBlogStyles = () => {
     `
 
     const StyledTitle2 = styled.h1`
-        color: #004289;
-        font-size: 2rem;
-        font-weight: 600;
+    color: #004289;
+    font-size: 2.5rem;
+    margin-top: -8%;
     `;
 
     const StyledDate = styled.h1`

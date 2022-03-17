@@ -16,10 +16,10 @@ const ActiveUsers: FC = (): JSX.Element => {
                     <TableContainer component={Paper}>
                         <Table>
                             <TableHead>
-                                <TableCell align="center">Nombre Completo</TableCell>
+                                <TableCell align="center">Nombre completo</TableCell>
                                 <TableCell align="center">Profesion</TableCell>
-                                <TableCell align="center">Correo Electronico</TableCell>
-                                <TableCell align="center">Telefono</TableCell>
+                                <TableCell align="center">Correo Electrónico</TableCell>
+                                <TableCell align="center">Teléfono</TableCell>
                                 <TableCell align="center">Aprobar</TableCell>
                                 <TableCell align="center">Eliminar</TableCell>
                             </TableHead>
@@ -33,12 +33,12 @@ const ActiveUsers: FC = (): JSX.Element => {
                                             <TableCell align="center">{item.phone}</TableCell>
                                             <TableCell align="center" onClick={() => activateUser(item.id)}>
                                                 <Grid item md={12} className="flex justify-center">
-                                                    <img src="http://api-praxis.test/wp-content/uploads/2022/03/Recurso-2.png" alt="" />
+                                                    <img src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/chulo1.png" alt="" />
                                                 </Grid>
                                             </TableCell>
                                             <TableCell align="center" onClick={() => deletedUser(item.id)}>
                                                 <Grid item md={12} className="flex justify-center">
-                                                    <img src="http://api-praxis.test/wp-content/uploads/2022/03/Recurso-1.png" alt="" />
+                                                    <img src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/eliminar1.png" alt="" />
                                                 </Grid>
                                             </TableCell>
                                         </TableRow>

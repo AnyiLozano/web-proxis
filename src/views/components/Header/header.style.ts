@@ -15,7 +15,7 @@ const useHeaderStyles = () => {
       ${tw ``}
       background-color: #004289 !important;
       color: #fff !important;
-      text-transform: capitalize !important;
+      text-transform: none !important;
       border-radius: 10px !important;
       font-family: 'Montserrat', sans-serif !important;
     `;
@@ -26,11 +26,13 @@ const useHeaderStyles = () => {
 
     const StyledButtonMenu = styled(Button)`
       ${tw ``}
-      font-size: 1rem !important;
-      margin-left: 1rem !important;
+      font-size: ${(props: any) => props.isSubmenu ? "0.8rem !important" : "1rem !important"};
       font-weight: 600 !important;
-      text-transform: capitalize !important;
+      text-transform: none !important;
       font-family: 'Montserrat', sans-serif !important;
+      color: ${(props: any) => props.isSubmenu ? "#605d5d !important" : "#004289 !important"};
+      border-bottom: ${(props: any) => props.isSubmenu && "1px solid #e3e3e3 !important"};
+      justify-content: start;
     `;
 
     const StyledDownIcon = styled(ArrowDropDownIcon)`

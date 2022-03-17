@@ -37,7 +37,7 @@ const Blog: FC = (): JSX.Element => {
             className="sm:py-36"
           >
             <Container>
-              <StyledTitle2 className="pb-16" style={{ textAlign: "center" }}>
+              <StyledTitle2 className="pb-16" style={{ textAlign: "center", fontWeight: "700" }}>
                 Reciente
               </StyledTitle2>
               <Grid container>
@@ -57,11 +57,11 @@ const Blog: FC = (): JSX.Element => {
                             style={{ width: "100%" }}
                           />
                         </Grid>
-                        <StyledTextDescription>
-                          {item.post_title}
-                        </StyledTextDescription>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
+                        </p>
                         <StyledButtonViewMore
-                          // onClick={() => history.push(`/detail/${item.id}`)}
+                          onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -82,11 +82,11 @@ const Blog: FC = (): JSX.Element => {
                             style={{ width: "100%" }}
                           />
                         </Grid>
-                        <StyledTextDescription>
-                          {item.post_title}
-                        </StyledTextDescription>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
+                        </p>
                         <StyledButtonViewMore
-                          // onClick={() => history.push(`/detail/${item.id}`)}
+                          onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -107,17 +107,17 @@ const Blog: FC = (): JSX.Element => {
                             style={{ width: "100%" }}
                           />
                         </Grid>
-                        <StyledTextDescription>
-                          {item.post_title}
-                        </StyledTextDescription>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
+                        </p>
                         <StyledButtonViewMore
-                          // onClick={() => history.push(`/detail/${item.id}`)}
+                          onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
                       </Grid>
                     );
-                  } else {
+                  } else if (index === 3) {
                     return (
                       <Grid item lg={3} key={index} className="px-6">
                         <Grid item lg={12}>
@@ -132,11 +132,11 @@ const Blog: FC = (): JSX.Element => {
                             style={{ width: "100%" }}
                           />
                         </Grid>
-                        <StyledTextDescription>
-                          {item.post_title}
-                        </StyledTextDescription>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
+                        </p>
                         <StyledButtonViewMore
-                          // onClick={() => history.push(`/detail/${item.id}`)}
+                          onClick={() => history.push(`/detail/${item.id}`)}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
@@ -150,15 +150,16 @@ const Blog: FC = (): JSX.Element => {
           <StyledContainer2>
             <Container className="py-16">
               <Grid container>
-                {_.map(posts, (item: any, index: any) => (
-                  <Grid item lg={6} className="py-6 px-6">
+                {_.map(recentPosts, (item: any, index: any) => (
+                  <Grid item lg={4} className="py-6 px-6">
+                    
                     <Grid item lg={12}>
-                      <StyledTitle2>{item.title}</StyledTitle2>
-                      <StyledTextDescription
-                        dangerouslySetInnerHTML={{ __html: item.except }}
+                      <StyledTitle2 style={{ fontSize: "22px", fontWeight: "700" }}>Lorem ipsum dolor sit amet consectetur</StyledTitle2>
+                      <StyledTextDescription style={{ fontSize: "15px" }}
+                        dangerouslySetInnerHTML={{ __html: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati?"   }}
                       ></StyledTextDescription>
                       <StyledButtonViewMore
-                        // onClick={() => history.push(`/detail/${item.id}`)}
+                        onClick={() => history.push(`/detail/${item.id}`)}
                       >
                         Seguir Leyendo
                       </StyledButtonViewMore>
