@@ -35,6 +35,7 @@ const Heridas = () => {
 
   return (
     <React.Fragment>
+     
       <StyledImage
         className="mt-28"
         src={
@@ -52,7 +53,7 @@ const Heridas = () => {
           woundsAssets.background_description.content
         }
       >
-        <Container>
+        <Container maxWidth="xl">
           <Grid item lg={12} className="text-center">
             <StyledTitulo alt="¿Qué son las heridas?">Heridas</StyledTitulo>
           </Grid>
@@ -102,7 +103,7 @@ const Heridas = () => {
             <Grid item md={12}>
               <StyledTitulo
                 alt="¿Qué son las heridas?"
-                style={{ textAlign: "center" }}
+                style={{ textAlign: "" }}
               >
                 Clasificación
               </StyledTitulo>
@@ -110,7 +111,7 @@ const Heridas = () => {
             <Grid
               item
               md={12}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "" }}
             >
               <StyledImageGeneral
                 src={
@@ -127,6 +128,7 @@ const Heridas = () => {
               {woundsAssets.wound_type_description !== undefined &&
                 woundsAssets.wound_type_description.content}
             </p>
+            </Container>
             <StyledTabContainer
               container
               className="pt-8 justify-center"
@@ -235,7 +237,7 @@ const Heridas = () => {
                 </TabContext>
               </Box>
             </StyledTabContainer>
-          </Container>
+          {/* </Container> */}
         </StyledTerapeuticNumberSection1>
 
         <img
@@ -287,7 +289,7 @@ const Heridas = () => {
             />
           </Grid>
         )}
-      </Container>
+      {/* </Container> */}
       {woundsAssets.aux_person !== undefined && (
         <Grid container className="justify-center mb-5">
           <StyledImageGeneral
@@ -309,7 +311,7 @@ const Heridas = () => {
         </div>
       )}
 
-      <Container maxWidth="xl">
+      {/* <Container maxWidth="xl"> */}
         {woundsAssets.quiq_wounds !== undefined && (
           <React.Fragment>
             <StyledSubtitle style={{ textAlign: "center", fontWeight: "bold" }}>
