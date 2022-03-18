@@ -37,7 +37,6 @@ const Heridas = () => {
     <React.Fragment>
      {/* Banner Principal */}
       <StyledImage
-        className="mt-28"
         src={
           woundsAssets.principal_banner !== undefined &&
           woundsAssets.principal_banner.content
@@ -108,6 +107,7 @@ const Heridas = () => {
             <Grid item md={12}>
               <StyledTitulo
                 alt="¿Qué son las heridas?"
+                className="pl-10"
                 style={{ textAlign: "" }}
               >
                 Clasificación
@@ -290,7 +290,7 @@ const Heridas = () => {
             <StyledImageGeneral
               src={woundsAssets.remembers_wounds.content}
               alt={woundsAssets.remembers_wounds.alt}
-              style={{ margin: "5% 0" }}
+              style={{ margin: "5% 0", width: "80%" }}
             />
           </Grid>
         )}
@@ -311,7 +311,7 @@ const Heridas = () => {
         >
           <Container maxWidth="lg">
             <h1 className="pb-12 text-center text-white" style={{ fontSize: 30, fontWeight: "700" }}>Referencias</h1>
-            <p dangerouslySetInnerHTML={{__html: woundsAssets.references.content}} className="text-white"></p>
+            <p dangerouslySetInnerHTML={{__html: woundsAssets.references.content}} className="text-white text-xs"></p>
           </Container>
 
         </div>
@@ -375,7 +375,7 @@ const Heridas = () => {
               <StyledImageGeneral
                 src={woundsAssets.factoresImage.content}
                 alt={woundsAssets.factoresImage.content}
-                style={{ marginTop: "2%" }}
+                style={{ marginTop: "2%", width: "80%" }}
               />
             </Grid>
             <p style={{ fontSize: "20px" }}>
@@ -388,7 +388,7 @@ const Heridas = () => {
               <StyledImageGeneral
                 src={woundsAssets.complicacionesImage.content}
                 alt={woundsAssets.complicacionesImage.content}
-                style={{ marginTop: "2%" }}
+                style={{ marginTop: "1%", width: "60%" }}
               />
             </Grid>
             <StyledSubtitle style={{ marginBottom: "3%" }}>
@@ -404,7 +404,7 @@ const Heridas = () => {
               <StyledImageGeneral
                 src={woundsAssets.Heridas_imagen_13.content}
                 alt={woundsAssets.Heridas_imagen_13.content}
-                style={{ marginTop: "2%" }}
+                style={{ marginTop: "2%", width: "70%" }}
               />
             </Grid>
             <img

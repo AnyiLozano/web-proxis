@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import tw from "twin.macro"
+import tw from "twin.macro";
 import { AppBar, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 
 const useTerapeuticNumberStyles = () => {
   const StyledTerapeuticNumberSection = styled.section`
-    ${tw`py-16 xl:py-36`}
+    ${tw`py-6 xl:py-16`}
     background-image: url('${(props: any) => props.background}');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -159,10 +160,6 @@ const useTerapeuticNumberStyles = () => {
 
   const StyledImage = styled.img`
     width: 100%;
-    margin-top: 8.9rem;
-    @media (max-width: 1023px) {
-      margin-top: 6.9rem;
-    }
   `;
   const StyledImage1 = styled.img`
     width: 100%;
@@ -206,7 +203,7 @@ export const StyledSubtitle = styled.h3.attrs({
 export const StyledImageGeneral = styled.img.attrs({
   className: "general-image",
 })`
-  width: 75%;
+  width: 100%;
   margin-top: 2%;
 
   @media (max-width: 1200px) {
@@ -224,5 +221,14 @@ export const StyledTabContainer = styled(Grid).attrs({})`
   @media (max-width: 1200px) {
     width: 100%;
     margin-bottom: 1%;
+  }
+`;
+
+export const StyledContainer = styled(Container).attrs({
+  className: "general-container",
+})`
+  max-width: 1536px;
+  @media (max-width: 1500px) {
+    max-width: 1200px;
   }
 `;
