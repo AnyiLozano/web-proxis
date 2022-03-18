@@ -31,7 +31,7 @@ const Footer: FC = (): JSX.Element => {
                 <Grid item lg={3}>
                   <StyledSubtitleSection>Redes Sociales:</StyledSubtitleSection>
                   <Grid item lg={12} className="flex justify-center">
-                    <a href="https://www.linkedin.com/company/praxispharmaceuticalcalidaddevida" target="_blank">
+                    <a href="https://www.linkedin.com/company/praxispharmaceuticalcalidaddevida" target="_blank" rel="noreferrer">
                       <img
                         style={{ marginLeft: "-20%", marginTop: "4%", width: "65% "}}
                         src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/completo_linkeding.png"

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Pacientes = () => {
     const { useScreenHooks } = useControllers();
   const { useBlog } = useScreenHooks();
-  const { postsAssets, recentPosts, posts } = useBlog("principal");
+  const { recentPosts } = useBlog("principal");
 
     // Styles
     const {
@@ -16,7 +16,6 @@ const Pacientes = () => {
         StyledImage1,
         StyledSection,
         StyledTitle,
-        StyledTitle2,
         StyledButtonViewMore
     } = usePacientesStyles();
     return (

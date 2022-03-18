@@ -151,7 +151,7 @@ const Bulcosan: FC = (): JSX.Element => {
           <Container>
             <Grid container className="mt-12 mb-12 align-items-center">
               <StyledTitulo>{bulcosan.consiguelo.content}</StyledTitulo>
-              <a href="https://www.cruzverde.com.co/aposito-esteril-caja-x-10-vulcosan-phmb-10cm-x-10cm/COCV_386040.html" target="_blank">
+              <a href="https://www.cruzverde.com.co/aposito-esteril-caja-x-10-vulcosan-phmb-10cm-x-10cm/COCV_386040.html" target="_blank" rel="noreferrer">
               <StyledImageGeneral
                 src={bulcosan.cruz.content}
                 style={{ width: "auto", marginTop: "0%", marginLeft: "2%" }}

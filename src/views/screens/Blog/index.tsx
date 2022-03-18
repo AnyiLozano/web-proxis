@@ -21,7 +21,7 @@ const Blog: FC = (): JSX.Element => {
   /** Controllers */
   const { useScreenHooks } = useControllers();
   const { useBlog } = useScreenHooks();
-  const { postsAssets, recentPosts, posts } = useBlog("principal");
+  const { postsAssets, recentPosts } = useBlog("principal");
   const history = useHistory();
 
   return (

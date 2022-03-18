@@ -41,8 +41,7 @@ const Header: FC = (): JSX.Element => {
     closeSesion,
   } = useHeader();
   const { useGeneral } = useScreenHooks();
-  const { assets, menus } = useGeneral();
-  const { logo } = assets;
+  const { menus } = useGeneral();
 
   return (
     <React.Fragment>

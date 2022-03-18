@@ -1,11 +1,9 @@
 import { Grid } from "@mui/material";
-import useControllers from "controllers";
 import useModels from "models";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Login from "../Login";
-import useProductsStyles from "../products/products.style";
 import Cientifica from "./cientifica";
 import Informacion from "./informacion";
 import useProfesionalesStyles from "./profesionales.style";
@@ -13,21 +11,14 @@ import Salud from "./salud";
 
 const Profesionales: FC = (): JSX.Element => {
   // Products
-  const { StyledAppBarPage, StyledGrid, StyledGrid2, StyledGrid3 } =
+  const { StyledAppBarPage, StyledGrid, StyledGrid2 } =
     useProfesionalesStyles();
 
   const { useSelectors } = useModels();
   const { useAuthSelectors } = useSelectors();
   const { loginSelector } = useAuthSelectors();
   const login = useSelector(loginSelector);
-  const { StyledImage } = useProductsStyles();
 
-  // Profesioanles
-  const { useScreenHooks } = useControllers();
-  const { useProducts } = useScreenHooks();
-  const { products } = useProducts();
-
-  const { epiprot } = products;
 
   const obj = {
     background:
@@ -37,8 +28,6 @@ const Profesionales: FC = (): JSX.Element => {
   };
 
   const { type } = useParams();
-
-  const [firstImage, setFirstImage] = useState<boolean>(false);
 
   return (
     <React.Fragment>

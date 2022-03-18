@@ -1,9 +1,7 @@
 import React from "react";
 import { Container, Grid } from "@mui/material";
 import _ from "lodash";
-import useTerapeuticNumberStyles, {
-  StyledImageGeneral,
-} from "../terapeutic-number.style";
+import useTerapeuticNumberStyles from "../terapeutic-number.style";
 import useControllers from "controllers";
 
 const Hemorroides = () => {

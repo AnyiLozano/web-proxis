@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import useControllers from "controllers";
 import useHomeStyles from "./home.styles";
 import { Container, Grid } from "@mui/material";
-import { useHistory } from "react-router-dom";
 import "styles/styles.scss";
 
 const Home: FC = (): JSX.Element => {
@@ -22,7 +21,6 @@ const Home: FC = (): JSX.Element => {
     background,
   } = useHome();
 
-  const history = useHistory();
 
   // Styles
   const {
