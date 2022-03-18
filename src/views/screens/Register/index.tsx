@@ -29,7 +29,7 @@ const Register: FC = (): JSX.Element => {
     <React.Fragment>
       {width >= 1200 ? (
         <StyledSection
-          background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/registro-1.png"
+          background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/registerbackground_23.png"
           style={{ height: "60.7rem" }}
         >
           <Container>

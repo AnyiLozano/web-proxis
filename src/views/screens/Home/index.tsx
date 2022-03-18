@@ -73,7 +73,7 @@ const Home: FC = (): JSX.Element => {
             )}
           </div>
           <div
-            className="2xl:-ml-12 -ml-16 sm:-ml-28 xs:-ml-12 "
+            className="2xl:-ml-12 -ml-4 sm:-ml-12 xs:-ml-12 "
             onMouseLeave={() => handlerHover("leave", 2)}
             onMouseOver={() => handlerHover("over", 2)}
             style={{ zIndex: hover.hover && hover.id === 2 ? 1 : undefined }}
@@ -93,7 +93,7 @@ const Home: FC = (): JSX.Element => {
             )}
           </div>
           <div
-            className="2xl:-ml-12 -ml-16 sm:-ml-28 xs:-ml-12"
+            className="2xl:-ml-12 -ml-4 sm:-ml-12 xs:-ml-12"
             onMouseLeave={() => handlerHover("leave", 3)}
             onMouseOver={() => handlerHover("over", 3)}
             style={{ zIndex: hover.hover && hover.id === 3 ? 1 : undefined }}
@@ -113,7 +113,7 @@ const Home: FC = (): JSX.Element => {
             )}
           </div>
           <div
-            className="2xl:-ml-12 -ml-12 sm:-ml-28 xs:-ml-12"
+            className="2xl:-ml-12 -ml-4 sm:-ml-12 xs:-ml-12"
             onMouseLeave={() => handlerHover("leave", 4)}
             onMouseOver={() => handlerHover("over", 4)}
             style={{ zIndex: hover.hover && hover.id === 4 ? 1 : undefined }}
