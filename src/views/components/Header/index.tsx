@@ -74,7 +74,7 @@ const Header: FC = (): JSX.Element => {
                           aria-labelledby="navbarDropdown"
                         >
                           <StyledButtonMenu>
-                            <Link to="/active-users">Activar usuarios</Link>
+                            <Link to="/active-users">Activar usuarios</Link>   
                           </StyledButtonMenu>
 
                           <StyledButtonMenu isSubmenu onClick={() => closeSesion()}>
