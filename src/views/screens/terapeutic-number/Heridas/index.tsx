@@ -35,7 +35,7 @@ const Heridas = () => {
 
   return (
     <React.Fragment>
-     
+     {/* Banner Principal */}
       <StyledImage
         className="mt-28"
         src={
@@ -47,13 +47,15 @@ const Heridas = () => {
           woundsAssets.principal_banner.alt
         }
       />
+
+      {/* Descripcion */}
       <StyledTerapeuticNumberSection
         background={
           woundsAssets.background_description !== undefined &&
           woundsAssets.background_description.content
         }
       >
-        <Container maxWidth="xl">
+        <Container>
           <Grid item lg={12} className="text-center">
             <StyledTitulo alt="¿Qué son las heridas?">Heridas</StyledTitulo>
           </Grid>
@@ -65,6 +67,8 @@ const Heridas = () => {
           </Grid>
         </Container>
       </StyledTerapeuticNumberSection>
+
+      {/* Secion Heridas */}
       <Container maxWidth="xl">
         <StyledTerapeuticNumberSection1
           background={
@@ -99,6 +103,7 @@ const Heridas = () => {
               )
             )}
           </Grid>
+          {/* Clasificacion */}
           <Grid container style={{ marginTop: "2%" }}>
             <Grid item md={12}>
               <StyledTitulo
@@ -111,7 +116,7 @@ const Heridas = () => {
             <Grid
               item
               md={12}
-              style={{ display: "flex", justifyContent: "" }}
+              style={{ display: "flex", justifyContent: "center" }}
             >
               <StyledImageGeneral
                 src={
@@ -295,10 +300,11 @@ const Heridas = () => {
           <StyledImageGeneral
             alt={woundsAssets.aux_person.alt}
             src={woundsAssets.aux_person.content}
+            style={{ width: "100%" }}
           />
         </Grid>
       )}
-
+    </Container>
       {woundsAssets.references !== undefined && (
         <div style={{ background: "#014380" }}
         className="py-12"
@@ -310,7 +316,7 @@ const Heridas = () => {
 
         </div>
       )}
-
+      <Container>
       {/* <Container maxWidth="xl"> */}
         {woundsAssets.quiq_wounds !== undefined && (
           <React.Fragment>

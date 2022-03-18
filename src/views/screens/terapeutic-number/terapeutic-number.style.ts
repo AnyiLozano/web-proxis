@@ -206,7 +206,7 @@ export const StyledSubtitle = styled.h3.attrs({
 export const StyledImageGeneral = styled.img.attrs({
   className: "general-image",
 })`
-  width: 100%;
+  width: 75%;
   margin-top: 2%;
 
   @media (max-width: 1200px) {
