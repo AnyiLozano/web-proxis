@@ -77,7 +77,7 @@ const Header: FC = (): JSX.Element => {
                             <Link to="/active-users">Activar Usuarios</Link>
                           </StyledButtonMenu>
 
-                          <StyledButtonMenu onClick={() => closeSesion()}>
+                          <StyledButtonMenu isSubmenu onClick={() => closeSesion()}>
                             Cerrar Sesion
                           </StyledButtonMenu>
                         </div>
