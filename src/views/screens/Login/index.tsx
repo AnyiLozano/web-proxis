@@ -68,7 +68,7 @@ const Login: FC<{ background: string; show: boolean; logo?: string }> = (
                     src={
                       background.logo !== undefined
                         ? background.logo
-                        : "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/podcast23.png"
+                        : "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/flex_logo_fondo.png"
                     }
                   />
                 )}

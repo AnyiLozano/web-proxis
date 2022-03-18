@@ -51,7 +51,7 @@ const Home: FC = (): JSX.Element => {
           lg={12}
           className="flex justify-center md:py-16 sm:py-14 py-14"
         >
-          <div
+          <a href="/terapeutic-number/heridas"
             // className="col-lg-3"
             onMouseLeave={() => handlerHover("leave", 1)}
             onMouseOver={() => handlerHover("over", 1)}
@@ -62,8 +62,7 @@ const Home: FC = (): JSX.Element => {
                 src={section1 && section1.sectionHover?.content}
                 alt={section1.sectionHover?.alt}
                 style={{ width: 257 }}
-
-                onClick={() => history.push("/terapeutic-number/heridas")}
+                // onClick={() => history.push("/terapeutic-number/heridas")}
               />
             ) : (
               <StyledImgSections1
@@ -71,8 +70,8 @@ const Home: FC = (): JSX.Element => {
                 alt={section1.section?.alt}
               />
             )}
-          </div>
-          <div
+          </a>
+          <a href="/aliados/pacientes"
             className="2xl:-ml-12 -ml-4 sm:-ml-12 xs:-ml-12 "
             onMouseLeave={() => handlerHover("leave", 2)}
             onMouseOver={() => handlerHover("over", 2)}
@@ -83,7 +82,7 @@ const Home: FC = (): JSX.Element => {
                 src={section2 && section2.sectionHover?.content}
                 alt={section2.sectionHover?.alt}
                 style={{ width: 257 }}
-                onClick={() => history.push("/aliados/pacientes")}
+                // onClick={() => history.push("/aliados/pacientes")}
               />
             ) : (
               <StyledImgSections2
@@ -91,8 +90,8 @@ const Home: FC = (): JSX.Element => {
                 alt={section2 && section2.section?.alt}
               />
             )}
-          </div>
-          <div
+          </a>
+          <a href="/products/Vulcosan"
             className="2xl:-ml-12 -ml-4 sm:-ml-12 xs:-ml-12"
             onMouseLeave={() => handlerHover("leave", 3)}
             onMouseOver={() => handlerHover("over", 3)}
@@ -102,7 +101,7 @@ const Home: FC = (): JSX.Element => {
               <StyledImgSections3
                 src={section3 && section3.sectionHover?.content}
                 alt={section3.sectionHover?.alt}
-                onClick={() => history.push("/products/Vulcosan")}
+                // onClick={() => history.push("/products/Vulcosan")}
                 style={{ width: 257 }}
               />
             ) : (
@@ -111,8 +110,8 @@ const Home: FC = (): JSX.Element => {
                 alt={section3.section?.alt}
               />
             )}
-          </div>
-          <div
+          </a>
+          <a href="/blog"
             className="2xl:-ml-12 -ml-4 sm:-ml-12 xs:-ml-12"
             onMouseLeave={() => handlerHover("leave", 4)}
             onMouseOver={() => handlerHover("over", 4)}
@@ -122,7 +121,7 @@ const Home: FC = (): JSX.Element => {
               <StyledImgSections4
                 src={section4 && section4.sectionHover?.content}
                 alt={section3.sectionHover?.alt}
-                onClick={() => history.push("/blog")}
+                // onClick={() => history.push("/blog")}
                 style={{ width: 257 }}
               />
             ) : (
@@ -131,7 +130,7 @@ const Home: FC = (): JSX.Element => {
                 alt={section4 && section4.section?.alt}
               />
             )}
-          </div>
+          </a>
         </Grid>
       </StyledSectionsHome>
       <StyledSectionPraxis className="py-12">

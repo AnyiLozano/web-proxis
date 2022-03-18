@@ -33,30 +33,30 @@ const Footer: FC = (): JSX.Element => {
                   <Grid item lg={12} className="flex justify-center">
                     <a href="https://www.linkedin.com/company/praxispharmaceuticalcalidaddevida" target="_blank">
                       <img
-                        style={{ marginLeft: "-35%", marginTop: "4%" }}
+                        style={{ marginLeft: "-20%", marginTop: "4%", width: "65% "}}
                         src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/completo_linkeding.png"
                         alt="Contacto de Praxis Pharmaceutical"
                       />
                     </a>
                   </Grid>
                 </Grid>
-                <Grid item lg={5}>
+                <Grid item lg={5} className="text-center">
                   <StyledTextSection>
                     <b>Praxis Pharmaceutical Colombia Ltda</b>
                   </StyledTextSection>
                   <StyledTextSection>
-                    <b>Dirección:</b> Cr 12 A No. 83-75 OF 601
+                    <b style={{ marginLeft: "-10%" }}>Dirección:</b> Cr 12 A No. 83-75 OF 601
                   </StyledTextSection>
                   <StyledTextSection>
-                    <b>Mapa</b>
+                    <b style={{ marginLeft: "-70%" }}>Mapa</b>
                   </StyledTextSection>
                 </Grid>
-                <Grid item lg={4}>
+                <Grid item lg={4} className="text-center">
                   <StyledTextSection>
                     <b>Teléfono:</b> 601 756 60 06
                   </StyledTextSection>
                   <StyledTextSection>
-                    <b>Email:</b> info@praxisph.com.co
+                    <b style={{ marginLeft: "14%" }}>Email:</b> info@praxisph.com.co
                   </StyledTextSection>
                 </Grid>
               </Grid>

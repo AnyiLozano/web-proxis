@@ -23,7 +23,7 @@ const FormContact: FC = (): JSX.Element => {
         <React.Fragment>
             {
                 width >= 1200 ? (
-                    <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/contacto-234.png" style={{ height: 1080, display: 'flex', alignItems: 'center' }}>
+                    <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/contacto-2356.png" style={{ height: 1080, display: 'flex', alignItems: 'center' }}>
                         <Container>
                             <Grid item lg={12} className="flex justify-center">
                                 <Card sx={{ width: '50%', background: '#ffffffc4', padding: "2rem", marginBottom: '4rem' }}>
