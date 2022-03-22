@@ -20,7 +20,7 @@ const useTerapeuticNumberStyles = () => {
     font-size: 20px;
     text-align: left;
     font-family: "Montserrat";
-    padding-top: 4rem;
+    padding-top: 2rem;
     @media (max-width: 500px) {
       font-size: 1rem;
     }

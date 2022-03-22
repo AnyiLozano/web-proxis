@@ -54,7 +54,7 @@ const Heridas = () => {
           woundsAssets.background_description.content
         }
       >
-        <Container>
+        <Container maxWidth="md">
           <Grid item lg={12} className="text-center">
             <StyledTitulo alt="¿Qué son las heridas?">Heridas</StyledTitulo>
           </Grid>
@@ -68,7 +68,6 @@ const Heridas = () => {
       </StyledTerapeuticNumberSection>
 
       {/* Secion Heridas */}
-      <Container maxWidth="xl">
         <StyledTerapeuticNumberSection1
           background={
             woundsAssets.background_p && woundsAssets.background_p.content
@@ -78,11 +77,11 @@ const Heridas = () => {
             {_.map(
               woundsAssets.wounds1 !== undefined && woundsAssets.wounds1,
               (item: ITerapeuticNumber, index: number) => (
-                <Grid item md={12} key={index}>
+                <Grid  item md={12} key={index}>
                   <img
                     src={item.content}
                     alt={item.alt}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", background: "red" }}
                   />
                 </Grid>
               )
@@ -96,7 +95,7 @@ const Heridas = () => {
                   <img
                     src={item.content}
                     alt={item.alt}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", background: "red" }}
                   />
                 </Grid>
               )
@@ -108,7 +107,7 @@ const Heridas = () => {
               <StyledTitulo
                 alt="¿Qué son las heridas?"
                 className="pl-10"
-                style={{ textAlign: "" }}
+                style={{ textAlign: "", background: "red" }}
               >
                 Clasificación
               </StyledTitulo>
@@ -116,7 +115,7 @@ const Heridas = () => {
             <Grid
               item
               md={12}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "center",  background: "red" }}
             >
               <StyledImageGeneral
                 src={
@@ -128,8 +127,8 @@ const Heridas = () => {
             </Grid>
           </Grid>
           <Container maxWidth="xl">
-            <StyledSubtitle>Tipos de tejido en una herida</StyledSubtitle>
-            <p style={{ fontSize: "20px" }}>
+            <StyledSubtitle style={{   background: "red" }}>Tipos de tejido en una herida</StyledSubtitle>
+            <p style={{ fontSize: "20px",  background: "red" }}>
               {woundsAssets.wound_type_description !== undefined &&
                 woundsAssets.wound_type_description.content}
             </p>
@@ -137,7 +136,7 @@ const Heridas = () => {
             <StyledTabContainer
               container
               className="pt-8 justify-center"
-              style={{ display: "grid" }}
+              style={{ display: "grid",  background: "red" }}
             >
               <Box sx={{ width: "100%", typography: "body1" }}>
                 <TabContext value={value}>
@@ -232,7 +231,7 @@ const Heridas = () => {
                         <React.Fragment>
                           {item.section.includes("5-image") && (
                             <Grid item md={12} className="pr-12" key={index}>
-                              <img src={item.content} alt="" />
+                              <img src={item.content} alt=""  />
                             </Grid>
                           )}
                         </React.Fragment>
@@ -246,7 +245,7 @@ const Heridas = () => {
         </StyledTerapeuticNumberSection1>
 
         <img
-          style={{ width: "100%" }}
+          style={{ width: "100%", background: "red" }}
           alt={
             woundsAssets.recomendation_wounds !== undefined &&
             woundsAssets.recomendation_wounds.alt
@@ -304,7 +303,6 @@ const Heridas = () => {
           />
         </Grid>
       )}
-    </Container>
       {woundsAssets.references !== undefined && (
         <div style={{ background: "#014380" }}
         className="py-12"
