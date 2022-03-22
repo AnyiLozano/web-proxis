@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 
 const useTerapeuticNumberStyles = () => {
   const StyledTerapeuticNumberSection = styled.section`
-    ${tw`py-6 xl:py-16`}
+    ${tw`py-12 xl:py-20`}
     background-image: url('${(props: any) => props.background}');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -17,10 +17,10 @@ const useTerapeuticNumberStyles = () => {
   `;
   const StyledTitulo1 = styled.p`
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     font-family: "Montserrat";
-    padding-top: 2rem;
+    padding-top: 0rem;
     @media (max-width: 500px) {
       font-size: 1rem;
     }
@@ -190,8 +190,8 @@ export default useTerapeuticNumberStyles;
 export const StyledSubtitle = styled.h3.attrs({
   className: "subtitle-terapeutic-number",
 })`
-  font-size: 33px;
-  margin: 4% 0;
+  font-size: 30px;
+  margin: 4% 33px;
   color: #014380;
   font-weight: 700;
 
@@ -203,7 +203,7 @@ export const StyledSubtitle = styled.h3.attrs({
 export const StyledImageGeneral = styled.img.attrs({
   className: "general-image",
 })`
-  width: 100%;
+  width: 80%;
   margin-top: 2%;
 
   @media (max-width: 1200px) {

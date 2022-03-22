@@ -48,7 +48,7 @@ const Heridas = () => {
       />
 
       {/* Descripcion */}
-      <StyledTerapeuticNumberSection
+      <StyledTerapeuticNumberSection  
         background={
           woundsAssets.background_description !== undefined &&
           woundsAssets.background_description.content
@@ -81,7 +81,7 @@ const Heridas = () => {
                   <img
                     src={item.content}
                     alt={item.alt}
-                    style={{ width: "100%", background: "red" }}
+                    style={{ width: "100%" }}
                   />
                 </Grid>
               )
@@ -95,7 +95,7 @@ const Heridas = () => {
                   <img
                     src={item.content}
                     alt={item.alt}
-                    style={{ width: "100%", background: "red" }}
+                    style={{ width: "100%"}}
                   />
                 </Grid>
               )
@@ -107,7 +107,7 @@ const Heridas = () => {
               <StyledTitulo
                 alt="¿Qué son las heridas?"
                 className="pl-10"
-                style={{ textAlign: "", background: "red" }}
+                style={{ textAlign: "" }}
               >
                 Clasificación
               </StyledTitulo>
@@ -115,7 +115,7 @@ const Heridas = () => {
             <Grid
               item
               md={12}
-              style={{ display: "flex", justifyContent: "center",  background: "red" }}
+              style={{ display: "flex", justifyContent: "center" }}
             >
               <StyledImageGeneral
                 src={
@@ -123,12 +123,13 @@ const Heridas = () => {
                   woundsAssets.clasification.content
                 }
                 alt=""
+                style={{ width: "auto" }}
               />
             </Grid>
           </Grid>
           <Container maxWidth="xl">
-            <StyledSubtitle style={{   background: "red" }}>Tipos de tejido en una herida</StyledSubtitle>
-            <p style={{ fontSize: "20px",  background: "red" }}>
+            <StyledSubtitle style={{    }}>Tipos de tejido en una herida</StyledSubtitle>
+            <p style={{ fontSize: "20px",   marginLeft: "3%", marginTop: "-2%" }}>
               {woundsAssets.wound_type_description !== undefined &&
                 woundsAssets.wound_type_description.content}
             </p>
@@ -136,7 +137,7 @@ const Heridas = () => {
             <StyledTabContainer
               container
               className="pt-8 justify-center"
-              style={{ display: "grid",  background: "red" }}
+              style={{ display: "grid" }}
             >
               <Box sx={{ width: "100%", typography: "body1" }}>
                 <TabContext value={value}>
@@ -245,7 +246,7 @@ const Heridas = () => {
         </StyledTerapeuticNumberSection1>
 
         <img
-          style={{ width: "100%", background: "red" }}
+          style={{ width: "100%" }}
           alt={
             woundsAssets.recomendation_wounds !== undefined &&
             woundsAssets.recomendation_wounds.alt
@@ -274,7 +275,7 @@ const Heridas = () => {
                       : {}
                   }
                 >
-                  <StyledImageGeneral
+                  <StyledImageGeneral 
                     key={index}
                     alt={item.alt}
                     src={item.content}
@@ -299,7 +300,7 @@ const Heridas = () => {
           <StyledImageGeneral
             alt={woundsAssets.aux_person.alt}
             src={woundsAssets.aux_person.content}
-            style={{ width: "100%" }}
+            style={{ width: "100%"  }}
           />
         </Grid>
       )}
@@ -346,7 +347,7 @@ const Heridas = () => {
                 <StyledImageGeneral
                   src={woundsAssets.quirurgicas_1.content}
                   alt={woundsAssets.quirurgicas_1.alt}
-                  style={{ marginBottom: "3%" }}
+                  style={{ marginBottom: "3%", width: "70%" }}
                 />
               </Grid>
             </React.Fragment>
@@ -363,37 +364,37 @@ const Heridas = () => {
         </StyledTerapeuticNumberSection1>
         {woundsAssets.factoresTitle !== undefined && (
           <React.Fragment>
-            <StyledSubtitle style={{ marginBottom: "3%" }}>
+            <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "6.4%" }}>
               {woundsAssets.factoresTitle.content}
             </StyledSubtitle>
-            <p style={{ fontSize: "20px" }}>
+            <p style={{ fontSize: "20px", padding: "0px 70px" }}>
               {woundsAssets.factoresDescription.content}
             </p>
             <Grid container className="justify-center">
               <StyledImageGeneral
                 src={woundsAssets.factoresImage.content}
                 alt={woundsAssets.factoresImage.content}
-                style={{ marginTop: "2%", width: "80%" }}
+                style={{ marginTop: "2%", width: "85%"}}
               />
             </Grid>
-            <p style={{ fontSize: "20px" }}>
+            <p style={{ fontSize: "20px", padding: "10px 70px" }}>
               {woundsAssets.factoresSubDescription.content}
             </p>
-            <StyledSubtitle style={{ marginBottom: "3%" }}>
+            <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "6%" }}>
               {woundsAssets.complicacionesTitle.content}
             </StyledSubtitle>
             <Grid container className="justify-center">
               <StyledImageGeneral
                 src={woundsAssets.complicacionesImage.content}
                 alt={woundsAssets.complicacionesImage.content}
-                style={{ marginTop: "1%", width: "60%" }}
+                style={{ marginTop: "1%", width: "50%"}}
               />
             </Grid>
-            <StyledSubtitle style={{ marginBottom: "3%" }}>
+            <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "6%" }}>
               {woundsAssets.Heridas_titulo3.content}
             </StyledSubtitle>
             <p
-              style={{ fontSize: "20px" }}
+              style={{ fontSize: "20px", padding: "0px 70px", }}
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.Herida_texto_4.content,
               }}
@@ -402,7 +403,7 @@ const Heridas = () => {
               <StyledImageGeneral
                 src={woundsAssets.Heridas_imagen_13.content}
                 alt={woundsAssets.Heridas_imagen_13.content}
-                style={{ marginTop: "2%", width: "70%" }}
+                style={{ marginTop: "2%", width: "60%" }}
               />
             </Grid>
             <img
@@ -422,11 +423,12 @@ const Heridas = () => {
                 marginBottom: "3%",
                 textAlign: "center",
                 fontWeight: "bold",
+                padding: "0px 34.4px",
               }}
             >
               {woundsAssets.Heridas_texto_17.content}
             </StyledSubtitle>
-          </React.Fragment>
+          </React.Fragment> 
         )}
       </Container>
     </React.Fragment>

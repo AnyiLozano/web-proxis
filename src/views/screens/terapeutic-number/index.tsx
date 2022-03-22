@@ -21,7 +21,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <StyledContainer maxWidth="xl">
+      <StyledContainer maxWidth="lg">
         <StyledAppBarPage position="relative">
           <Grid container>
             <StyledGrid
