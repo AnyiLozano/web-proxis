@@ -5,22 +5,28 @@ import { Container } from "@mui/material";
 
 const useTerapeuticNumberStyles = () => {
   const StyledTerapeuticNumberSection = styled.section`
-    ${tw`py-12 xl:py-20`}
+    ${tw`py-12 xl:pt-20`}
     background-image: url('${(props: any) => props.background}');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 105% 140%;
+    padding-bottom: 10.2%;
   `;
   const StyledTitulo = styled.h1`
     color: #004289;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 41px;
+    margin-top: -1rem;
+    margin-left: 4.8%;
+
   `;
   const StyledTitulo1 = styled.p`
     color: #000;
-    font-size: 18px;
+    font-size: 18.8px;
     text-align: left;
     font-family: "Montserrat";
-    padding-top: 0rem;
+    padding-top: 2.4rem;
+    padding-left: 1.3rem;
+    line-height: 1.3;
     @media (max-width: 500px) {
       font-size: 1rem;
     }
