@@ -299,12 +299,33 @@ const Heridas = () => {
                     : {}
                 }
               >
-                <StyledImageGeneral
-                  key={index}
-                  alt={item.alt}
-                  src={item.content}
-                  style={index === 1 ? { width: "84%" } : { }}
-                />
+                {index === 0 ? (
+                  <StyledImageGeneral
+                    key={index}
+                    alt={item.alt}
+                    src={item.content}
+                  />
+                ) : (
+                  <React.Fragment>
+                    <Grid md={12}>
+                      <StyledSubtitle
+                        style={{ padding: "0.3% 23px", fontSize: "28px" }}
+                      >
+                        {item.content.split("--")[0]}
+                      </StyledSubtitle>
+                      <p
+                        style={{
+                          fontSize: "17px",
+                          marginLeft: "5.2%",
+                          marginTop: "-2.3%",
+                          lineHeight: "1.1",
+                        }}
+                      >
+                        {item.content.split("--")[1]}
+                      </p>
+                    </Grid>
+                  </React.Fragment>
+                )}
               </Grid>
             )
           )}
@@ -314,14 +335,14 @@ const Heridas = () => {
 
       {/* GUANTES ANTES DE INICIAR */}
       {woundsAssets.remembers_wounds !== undefined && (
-          <Grid container className="justify-center">
-            <StyledImageGeneral
-              src={woundsAssets.remembers_wounds.content}
-              alt={woundsAssets.remembers_wounds.alt}
-              style={{ margin: "4% 0", width: "76.5%", marginLeft: "4%" }}
-            />
-          </Grid>
-        )}
+        <Grid container className="justify-center">
+          <StyledImageGeneral
+            src={woundsAssets.remembers_wounds.content}
+            alt={woundsAssets.remembers_wounds.alt}
+            style={{ margin: "4% 0", width: "76.5%", marginLeft: "4%" }}
+          />
+        </Grid>
+      )}
       {/* GUANTES ANTES DE INICIAR */}
 
       {/* CASO ATENDER HERIDAD */}
@@ -330,7 +351,12 @@ const Heridas = () => {
           <StyledImageGeneral
             alt={woundsAssets.aux_person.alt}
             src={woundsAssets.aux_person.content}
-            style={{ width: "94%", marginLeft: "4.3%", marginTop: "-1%", height: "292px"   }}
+            style={{
+              width: "94%",
+              marginLeft: "4.3%",
+              marginTop: "-1%",
+              height: "292px",
+            }}
           />
         </Grid>
       )}
@@ -338,14 +364,34 @@ const Heridas = () => {
 
       {/* REFERENCIAS */}
       {woundsAssets.references !== undefined && (
-        <div style={{ background: "#014380", marginLeft: "59px", marginRight: "13px" }}
-        className="py-16"
+        <div
+          style={{
+            background: "#014380",
+            marginLeft: "59px",
+            marginRight: "13px",
+          }}
+          className="py-16"
         >
           <Container maxWidth="lg">
-            <h1 className="pb-12 text-center text-white" style={{ fontSize: 30, fontWeight: "700", marginTop: "-3%", marginLeft: "5%" }}>Referencias</h1>
+            <h1
+              className="pb-12 text-center text-white"
+              style={{
+                fontSize: 30,
+                fontWeight: "700",
+                marginTop: "-3%",
+                marginLeft: "5%",
+              }}
+            >
+              Referencias
+            </h1>
           </Container>
-            <p dangerouslySetInnerHTML={{__html: woundsAssets.references.content}} className="text-white text-xs" style={{ padding: "0 160px", marginTop: "-1.2%" }}></p>
-
+          <p
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.references.content,
+            }}
+            className="text-white text-xs"
+            style={{ padding: "0 160px", marginTop: "-1.2%" }}
+          ></p>
         </div>
       )}
       {/* REFERENCIAS */}
@@ -353,17 +399,29 @@ const Heridas = () => {
       {/* HERIDAS QUIRURGICAS */}
       {/* <Container> */}
       {woundsAssets.quiq_wounds !== undefined && (
-          <React.Fragment>
-            <StyledSubtitle style={{ textAlign: "center", fontWeight: "bold", fontSize: "43px", marginLeft: "7%" }}>
-              Heridas quirúrgicas
-            </StyledSubtitle>
-            <img
-              src={woundsAssets.quiq_wounds.content}
-              alt={woundsAssets.quiq_wounds.alt}
-              style={{ width: "1181px", marginTop: "-1.4%", marginLeft: "0%",  height: "382px" }}
-            />
-          </React.Fragment>
-        )}
+        <React.Fragment>
+          <StyledSubtitle
+            style={{
+              textAlign: "center",
+              fontWeight: "bold",
+              fontSize: "43px",
+              marginLeft: "7%",
+            }}
+          >
+            Heridas quirúrgicas
+          </StyledSubtitle>
+          <img
+            src={woundsAssets.quiq_wounds.content}
+            alt={woundsAssets.quiq_wounds.alt}
+            style={{
+              width: "1181px",
+              marginTop: "-1.4%",
+              marginLeft: "0%",
+              height: "382px",
+            }}
+          />
+        </React.Fragment>
+      )}
       {/* HERIDAS QUIRURGICAS */}
 
       {/* UNA HERIDAD QUIRURGICA */}
@@ -374,107 +432,151 @@ const Heridas = () => {
             woundsAssets.Fondo_Background1.content
           }
         > */}
-          {woundsAssets.quirurgicas_1 !== undefined && (
-            <React.Fragment>
-              <StyledSubtitle
-                style={{ textAlign: "center", fontWeight: "bold", marginTop: "2.6%", marginLeft: "7%", fontSize: "28px" }}
-              >
-                Una herida quirúrgica
-              </StyledSubtitle>
-              <Grid container className="justify-center">
-                <StyledImageGeneral
-                  src={woundsAssets.quirurgicas_1.content}
-                  alt={woundsAssets.quirurgicas_1.alt}
-                  style={{  marginBottom: "3%", width: "80%", marginTop: "-1.4%", marginLeft: "3.8%"
-                 }}
-                />
-              </Grid>
-            </React.Fragment>
-          )}
-          {woundsAssets.caracteristicas_cuadro !== undefined && (
-            <React.Fragment>
-              <img
-                src={woundsAssets.caracteristicas_cuadro.content}
-                alt={woundsAssets.caracteristicas_cuadro.alt}
-                style={{ width: "1220px", marginLeft: "0%", marginTop: "-1%", height: "500px"
-               }}
-              />
-            </React.Fragment>
-          )} 
-        {/* </StyledTerapeuticNumberSection1>
+      {woundsAssets.quirurgicas_1 !== undefined && (
+        <React.Fragment>
+          <StyledSubtitle
+            style={{
+              textAlign: "center",
+              fontWeight: "bold",
+              marginTop: "2.6%",
+              marginLeft: "7%",
+              fontSize: "28px",
+            }}
+          >
+            Una herida quirúrgica
+          </StyledSubtitle>
+          <Grid container className="justify-center">
+            <StyledImageGeneral
+              src={woundsAssets.quirurgicas_1.content}
+              alt={woundsAssets.quirurgicas_1.alt}
+              style={{
+                marginBottom: "3%",
+                width: "80%",
+                marginTop: "-1.4%",
+                marginLeft: "3.8%",
+              }}
+            />
+          </Grid>
+        </React.Fragment>
+      )}
+      {woundsAssets.caracteristicas_cuadro !== undefined && (
+        <React.Fragment>
+          <img
+            src={woundsAssets.caracteristicas_cuadro.content}
+            alt={woundsAssets.caracteristicas_cuadro.alt}
+            style={{
+              width: "1220px",
+              marginLeft: "0%",
+              marginTop: "-1%",
+              height: "500px",
+            }}
+          />
+        </React.Fragment>
+      )}
+      {/* </StyledTerapeuticNumberSection1>
       {/* UNA HERIDAD QUIRURGICA */}
 
       {/* FACTORES QUIRURUGICAS */}
       {woundsAssets.factoresTitle !== undefined && (
-          <React.Fragment>
-            <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "7.1%", fontSize: "28.4px", marginTop: "3.8%" }}>
-              {woundsAssets.factoresTitle.content}
-            </StyledSubtitle>
-            <p style={{ fontSize: "16.6px", padding: "0px 81px", marginTop: "-1%", lineHeight: "1.1" }}>
-              {woundsAssets.factoresDescription.content}
-            </p>
-            <Grid container className="justify-center">
-              <StyledImageGeneral
-                src={woundsAssets.factoresImage.content}
-                alt={woundsAssets.factoresImage.content}
-                style={{ marginTop: "2%", width: "91%", marginLeft: "4%"}}
-              />
-            </Grid>
-            <p style={{ fontSize: "17px", padding: "17px 83px", lineHeight: "1" }}>
-              {woundsAssets.factoresSubDescription.content}
-            </p>
-            <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "7%", marginTop: "1.6%", fontSize: "28.6px" }}>
-              {woundsAssets.complicacionesTitle.content}
-            </StyledSubtitle>
-            <Grid container className="justify-center">
-              <StyledImageGeneral
-                src={woundsAssets.complicacionesImage.content}
-                alt={woundsAssets.complicacionesImage.content}
-                style={{ marginTop: "-1%", width: "641px", marginLeft: "5%"}}
-              />
-            </Grid>
-            <StyledSubtitle style={{ marginBottom: "3%", marginTop: "6.7%", fontSize: "28.2px", marginLeft: "7%" }}>
-              {woundsAssets.Heridas_titulo3.content}
-            </StyledSubtitle>
-            <p
-              style={{ fontSize: "17px", padding: "0px 81px", lineHeight: "1" }}
-              dangerouslySetInnerHTML={{
-                __html: woundsAssets.Herida_texto_4.content,
-              }}
-            ></p>
-            <Grid container className="justify-center">
-              <StyledImageGeneral
-                src={woundsAssets.Heridas_imagen_13.content}
-                alt={woundsAssets.Heridas_imagen_13.content}
-                style={{ marginTop: "2%", width: "70%", marginLeft: "3%" }}
-              />
-            </Grid>
-            <img
-              src={woundsAssets.Heridas_imagen_14.content}
-              alt={woundsAssets.Heridas_imagen_14.content}
-              style={{ width: "1152%", marginTop: "0.7%" }}
+        <React.Fragment>
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              marginLeft: "7.1%",
+              fontSize: "28.4px",
+              marginTop: "3.8%",
+            }}
+          >
+            {woundsAssets.factoresTitle.content}
+          </StyledSubtitle>
+          <p
+            style={{
+              fontSize: "16.6px",
+              padding: "0px 81px",
+              marginTop: "-1%",
+              lineHeight: "1.1",
+            }}
+          >
+            {woundsAssets.factoresDescription.content}
+          </p>
+          <Grid container className="justify-center">
+            <StyledImageGeneral
+              src={woundsAssets.factoresImage.content}
+              alt={woundsAssets.factoresImage.content}
+              style={{ marginTop: "2%", width: "91%", marginLeft: "4%" }}
             />
-            <Grid container className="justify-center">
-              <StyledImageGeneral
-                src={woundsAssets.Heridas_imagen_15.content}
-                style={{ width: "1150px", marginTop: "3%", height: "506px"}}
-                alt={woundsAssets.Heridas_imagen_15.content}
-              />
-            </Grid>
-            <StyledSubtitle
-              style={{
-                marginBottom: "3%",
-                fontWeight: "bold",
-                marginLeft: "7.7%",
-                marginTop: "2.4%",
-                fontSize: "23px",
-                textAlign: "center"
-              }}
-            >
-              {woundsAssets.Heridas_texto_17.content}
-            </StyledSubtitle>
-          </React.Fragment> 
-        )}
+          </Grid>
+          <p
+            style={{ fontSize: "17px", padding: "17px 83px", lineHeight: "1" }}
+          >
+            {woundsAssets.factoresSubDescription.content}
+          </p>
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              marginLeft: "7%",
+              marginTop: "1.6%",
+              fontSize: "28.6px",
+            }}
+          >
+            {woundsAssets.complicacionesTitle.content}
+          </StyledSubtitle>
+          <Grid container className="justify-center">
+            <StyledImageGeneral
+              src={woundsAssets.complicacionesImage.content}
+              alt={woundsAssets.complicacionesImage.content}
+              style={{ marginTop: "-1%", width: "641px", marginLeft: "5%" }}
+            />
+          </Grid>
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              marginTop: "6.7%",
+              fontSize: "28.2px",
+              marginLeft: "7%",
+            }}
+          >
+            {woundsAssets.Heridas_titulo3.content}
+          </StyledSubtitle>
+          <p
+            style={{ fontSize: "17px", padding: "0px 81px", lineHeight: "1" }}
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.Herida_texto_4.content,
+            }}
+          ></p>
+          <Grid container className="justify-center">
+            <StyledImageGeneral
+              src={woundsAssets.Heridas_imagen_13.content}
+              alt={woundsAssets.Heridas_imagen_13.content}
+              style={{ marginTop: "2%", width: "70%", marginLeft: "3%" }}
+            />
+          </Grid>
+          <img
+            src={woundsAssets.Heridas_imagen_14.content}
+            alt={woundsAssets.Heridas_imagen_14.content}
+            style={{ width: "1152%", marginTop: "0.7%" }}
+          />
+          <Grid container className="justify-center">
+            <StyledImageGeneral
+              src={woundsAssets.Heridas_imagen_15.content}
+              style={{ width: "1150px", marginTop: "3%", height: "506px" }}
+              alt={woundsAssets.Heridas_imagen_15.content}
+            />
+          </Grid>
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              fontWeight: "bold",
+              marginLeft: "7.7%",
+              marginTop: "2.4%",
+              fontSize: "23px",
+              textAlign: "center",
+            }}
+          >
+            {woundsAssets.Heridas_texto_17.content}
+          </StyledSubtitle>
+        </React.Fragment>
+      )}
       {/* FACTORES QUIRURUGICAS */}
     </React.Fragment>
   );
