@@ -338,7 +338,7 @@ const Heridas = () => {
 
       {/* REFERENCIAS */}
       {woundsAssets.references !== undefined && (
-        <div style={{ background: "#014380" }}
+        <div style={{ background: "#014380", marginLeft: "56px", marginRight: "10px" }}
         className="py-16"
         >
           <Container maxWidth="lg">
