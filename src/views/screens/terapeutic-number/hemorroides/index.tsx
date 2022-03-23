@@ -170,7 +170,7 @@ const Hemorroides = () => {
 
       {/* REFERENCIAS */}
       {woundsAssets.hemorroidal_background_referencias !== undefined && (
-        <div style={{ background: "#014380" }} className="py-16">
+        <div style={{ background: "#014380" }} className="py-16 mt-6">
           <Container maxWidth="lg">
             <h1
               className="pb-12 text-center text-white"

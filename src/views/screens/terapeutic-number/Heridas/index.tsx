@@ -97,8 +97,8 @@ const Heridas = () => {
                 src={item.content}
                 alt={item.alt}
                 style={{
-                  width: "1130.8px",
-                  marginLeft: "0.1%",
+                  width: "1065.8px",
+                  marginLeft: "3.1%",
                   marginTop: "2.8%",
                 }}
               />
@@ -148,7 +148,7 @@ const Heridas = () => {
         </StyledSubtitle>
         <p
           style={{
-            fontSize: "20px",
+            fontSize: "17px",
             marginLeft: "5.2%",
             marginTop: "-2.3%",
             lineHeight: "1.1",
@@ -303,7 +303,7 @@ const Heridas = () => {
                   key={index}
                   alt={item.alt}
                   src={item.content}
-                  style={index === 1 ? { width: "86%" } : { }}
+                  style={index === 1 ? { width: "84%" } : { }}
                 />
               </Grid>
             )
@@ -410,7 +410,7 @@ const Heridas = () => {
             <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "7.1%", fontSize: "28.4px", marginTop: "3.8%" }}>
               {woundsAssets.factoresTitle.content}
             </StyledSubtitle>
-            <p style={{ fontSize: "18.6px", padding: "0px 81px", marginTop: "-1%", lineHeight: "1.1" }}>
+            <p style={{ fontSize: "16.6px", padding: "0px 81px", marginTop: "-1%", lineHeight: "1.1" }}>
               {woundsAssets.factoresDescription.content}
             </p>
             <Grid container className="justify-center">
@@ -420,7 +420,7 @@ const Heridas = () => {
                 style={{ marginTop: "2%", width: "91%", marginLeft: "4%"}}
               />
             </Grid>
-            <p style={{ fontSize: "20px", padding: "17px 83px", lineHeight: "1" }}>
+            <p style={{ fontSize: "17px", padding: "17px 83px", lineHeight: "1" }}>
               {woundsAssets.factoresSubDescription.content}
             </p>
             <StyledSubtitle style={{ marginBottom: "3%", marginLeft: "7%", marginTop: "1.6%", fontSize: "28.6px" }}>
@@ -437,7 +437,7 @@ const Heridas = () => {
               {woundsAssets.Heridas_titulo3.content}
             </StyledSubtitle>
             <p
-              style={{ fontSize: "20px", padding: "0px 81px", lineHeight: "1" }}
+              style={{ fontSize: "17px", padding: "0px 81px", lineHeight: "1" }}
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.Herida_texto_4.content,
               }}
@@ -467,7 +467,7 @@ const Heridas = () => {
                 fontWeight: "bold",
                 marginLeft: "7.7%",
                 marginTop: "2.4%",
-                fontSize: "28px",
+                fontSize: "23px",
                 textAlign: "center"
               }}
             >

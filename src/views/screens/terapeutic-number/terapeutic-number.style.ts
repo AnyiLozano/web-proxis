@@ -21,7 +21,7 @@ const useTerapeuticNumberStyles = () => {
   `;
   const StyledTitulo1 = styled.p`
     color: #000;
-    font-size: 18.8px;
+    font-size: 15.8px;
     text-align: left;
     font-family: "Montserrat";
     padding-top: 2.4rem;
