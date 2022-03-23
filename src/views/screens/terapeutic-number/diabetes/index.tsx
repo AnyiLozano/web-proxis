@@ -381,7 +381,7 @@ const Diabetes = () => {
             }}
             className="text-white text-xs"
             style={{ padding: "0 160px", marginTop: "-1.2%" }}
-          ></p>
+          ></p>    
         </div>
       )}
       {/* REFERENCIAS */}
@@ -390,3 +390,5 @@ const Diabetes = () => {
 };
 
 export default Diabetes;
+
+

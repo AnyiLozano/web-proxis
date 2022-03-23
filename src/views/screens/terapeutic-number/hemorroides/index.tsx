@@ -29,20 +29,36 @@ const Hemorroides = () => {
             src={woundsAssets.hemorroidal_banner_1.content}
             alt={woundsAssets.hemorroidal_banner_1.alt}
           />
+
+          {/* banner section */}
           <StyledTerapeuticNumberSection
+          style={{ backgroundSize: "109% 93%" }}
             background={woundsAssets.hemorroidal_background_1.content}
           >
             <Container>
               <Grid item lg={12} className="text-center">
-                <StyledTitulo>Enfermedad hemorroidal</StyledTitulo>
+                <StyledTitulo
+                style={{
+                  marginTop: "0%",
+                  marginLeft: "4%",
+                  fontSize: "44px",
+                }}
+                >Enfermedad hemorroidal</StyledTitulo>
               </Grid>
               <Grid item lg={12} className="text-center">
-                <StyledTitulo1>
+                <StyledTitulo1
+                 style={{
+                  lineHeight: "1",
+                  fontSize: "18px",
+                  padding: "26px 145px",
+                }}
+                >
                   {woundsAssets.hemorroidal_text_1.content}
                 </StyledTitulo1>
               </Grid>
             </Container>
           </StyledTerapeuticNumberSection>
+          {/* banner section */}
           <StyledTerapeuticNumberSection1
             background={
               woundsAssets.hemorroidal_background_p &&
@@ -152,26 +168,35 @@ const Hemorroides = () => {
             </Container>
           </StyledTerapeuticNumberSection1>
 
-          {woundsAssets.hemorroidal_background_referencias !== undefined && (
-            <div style={{ background: "#014380", marginTop: "3%" }} className="py-12">
-              <Container maxWidth="lg">
-                <h1
-                  className="pb-12 text-center text-white"
-                  style={{ fontSize: 30, fontWeight: "700" }}
-                >
-                  Referencias
-                </h1>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: woundsAssets.hemorroidal_background_referencias.content,
-                  }}
-                  className="text-white"
-                ></p>
-              </Container>
-            </div>
-          )}
+      {/* REFERENCIAS */}
+      {woundsAssets.hemorroidal_background_referencias !== undefined && (
+        <div style={{ background: "#014380" }} className="py-16">
+          <Container maxWidth="lg">
+            <h1
+              className="pb-12 text-center text-white"
+              style={{
+                fontSize: 30,
+                fontWeight: "700",
+                marginTop: "-3%",
+                marginLeft: "5%",
+              }}
+            >
+              Referencias
+            </h1>
+          </Container>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.hemorroidal_background_referencias.content,
+            }}
+            className="text-white text-xs"
+            style={{ padding: "0 160px", marginTop: "-1.2%" }}
+          ></p>    
+        </div>
+      )}
         </React.Fragment>
       )}
+
+
     </React.Fragment>
   );
 };
