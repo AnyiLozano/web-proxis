@@ -467,7 +467,7 @@ const Heridas = () => {
                 fontWeight: "bold",
                 marginLeft: "7.7%",
                 marginTop: "2.4%",
-                fontSize: "32px",
+                fontSize: "28px",
                 textAlign: "center"
               }}
             >
