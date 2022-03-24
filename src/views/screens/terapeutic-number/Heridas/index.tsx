@@ -104,6 +104,7 @@ const Heridas = () => {
                       marginLeft: "9%",
                       fontFamily: "montserrat, medium italic",
                       color: "#4D4D4D",
+                      fontWeight: "500",
                     }}
                     dangerouslySetInnerHTML={{
                       __html: woundsAssets.wounds1[1].content.split("--")[1],
@@ -161,6 +162,8 @@ const Heridas = () => {
                     paddingBottom: "5%",
                     fontFamily: "montserrat, medium italic",
                     color: "#4D4D4D",
+                    fontWeight: "500",
+
                   }}
                   dangerouslySetInnerHTML={{
                     __html: woundsAssets.wounds2[1].content.split("--")[1],
@@ -223,9 +226,9 @@ const Heridas = () => {
             fontSize: "17px",
             marginLeft: "5.2%",
             marginTop: "-1.8%",
-            lineHeight: "1.1",
             fontFamily: "montserrat",
             color: "4D4D4D",
+            fontWeight: "500"
           }}
         >
           {woundsAssets.wound_type_description !== undefined &&
@@ -397,9 +400,9 @@ const Heridas = () => {
                           fontSize: "17px",
                           marginLeft: "7.2%",
                           marginTop: "5.5%",
-                          lineHeight: "1.1",
                           fontFamily: "montserrat",
                           color: "4D4D4D",
+                          fontWeight: "500"
                         }}
                       >
                         {item.content.split("--")[1]}
@@ -446,6 +449,7 @@ const Heridas = () => {
               lineHeight: "1.1",
               fontFamily: "montserrat",
               color: "#004280",
+              fontWeight: "700"
             }}
           >
             {woundsAssets.remembers_wounds[1].content.split("--")[1]}
@@ -597,6 +601,7 @@ const Heridas = () => {
                 fontFamily: "montserrat, bold",
                 fontSize: "17px",
                 width: "48%",
+                fontWeight: "500"
               }}
             ></p>
           </Grid>
@@ -687,6 +692,9 @@ const Heridas = () => {
                   marginLeft: "6.9%",
                   fontFamily: "montserrat, bold",
                   fontSize: "17px",
+                fontWeight: "600",
+                color: "#4d4d4d"
+
                 }}
               ></p>
             </Grid>
@@ -729,6 +737,7 @@ const Heridas = () => {
               padding: "0px 81px",
               marginTop: "-1%",
               fontFamily: "montserrat, bold",
+              fontWeight: "500",
             }}
           >
             {woundsAssets.factoresDescription.content}
@@ -746,6 +755,7 @@ const Heridas = () => {
               padding: "17px 83px",
               fontFamily: "montserrat, bold",
               marginTop: "0.2%",
+              fontWeight: "500",  
             }}
           >
             {woundsAssets.factoresSubDescription.content}
@@ -785,7 +795,7 @@ const Heridas = () => {
           </StyledSubtitle>
 
           <p
-            style={{ fontSize: "17px", padding: "6px 81px" }}
+            style={{ fontSize: "17px", padding: "6px 81px", fontWeight: "500" }}
             dangerouslySetInnerHTML={{
               __html: woundsAssets.Herida_texto_4.content,
             }}
@@ -876,6 +886,8 @@ const Heridas = () => {
                 fontFamily: "montserrat, bold",
                 fontSize: "17px",
                 width: "48%",
+              fontWeight: "500",
+
               }}
             ></p>
           </Grid>

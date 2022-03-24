@@ -28,6 +28,7 @@ const useTerapeuticNumberStyles = () => {
   font-family: "Montserrat";
   line-height: 1.3;
   margin-top: 4.2%;
+  font-weight: 600;
     margin-left: 2.4%;
     @media (max-width: 500px) {
       font-size: 1rem;
