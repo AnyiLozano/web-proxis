@@ -8,25 +8,27 @@ const useTerapeuticNumberStyles = () => {
     ${tw`py-12 xl:pt-20`}
     background-image: url('${(props: any) => props.background}');
     background-repeat: no-repeat;
-    background-size: 105% 140%;
-    padding-bottom: 10.2%;
+    background-size: 107% 142%;
+    padding-bottom: 8.7%;
   `;
   const StyledTitulo = styled.h1`
     color: #004289;
     font-weight: 700;
-    font-size: 41px;
-    margin-top: -1rem;
-    margin-left: 4.8%;
+    font-size: 37.7px;
+    margin-top: 1rem;
+    margin-left: 5.6%;
+    font-family: montserrat, bold;
+}
 
   `;
   const StyledTitulo1 = styled.p`
-    color: #000;
-    font-size: 15.8px;
-    text-align: left;
-    font-family: "Montserrat";
-    padding-top: 2.4rem;
-    padding-left: 1.3rem;
-    line-height: 1.3;
+  color: #4D4D4D;
+  font-size: 17px;
+  text-align: left;
+  font-family: "Montserrat";
+  line-height: 1.3;
+  margin-top: 4.2%;
+    margin-left: 2.4%;
     @media (max-width: 500px) {
       font-size: 1rem;
     }
