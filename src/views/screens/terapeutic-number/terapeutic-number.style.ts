@@ -22,13 +22,13 @@ const useTerapeuticNumberStyles = () => {
 
   `;
   const StyledTitulo1 = styled.p`
-  color: #4D4D4D;
+  color: #666666;
   font-size: 17px;
   text-align: left;
-  font-family: "Montserrat";
+  font-family: "Montserrat, medium";
   line-height: 1.3;
   margin-top: 4.2%;
-  font-weight: 600;
+  font-weight: 500;
     margin-left: 2.4%;
     @media (max-width: 500px) {
       font-size: 1rem;

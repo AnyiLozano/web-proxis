@@ -886,7 +886,8 @@ const Heridas = () => {
                 fontFamily: "montserrat, bold",
                 fontSize: "17px",
                 width: "48%",
-              fontWeight: "600",
+              fontWeight: "500",
+              color: "#666666"
 
               }}
             ></p>
