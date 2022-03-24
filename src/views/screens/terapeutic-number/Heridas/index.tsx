@@ -856,7 +856,7 @@ const Heridas = () => {
             <StyledSubtitle
               style={{
                 fontWeight: "montserrat, bold",
-                fontSize: "25px",
+                fontSize: "25px",   
                 marginLeft: "7.4%",
                 marginTop: "5.1%",
               }}
