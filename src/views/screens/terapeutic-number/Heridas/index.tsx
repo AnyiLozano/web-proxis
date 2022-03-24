@@ -867,7 +867,7 @@ const Heridas = () => {
               style={{
                 fontWeight: "montserrat, bold",
                 fontSize: "25px",   
-                marginLeft: "7.4%",
+                marginLeft: "6.1%",
                 marginTop: "5.1%",
               }}
               dangerouslySetInnerHTML={{
@@ -882,11 +882,11 @@ const Heridas = () => {
               style={{
                 // padding: "0 160px",
                 marginTop: "-5.9%",
-                marginLeft: "7.1%",
+                marginLeft: "6.1%",
                 fontFamily: "montserrat, bold",
                 fontSize: "17px",
                 width: "48%",
-              fontWeight: "500",
+              fontWeight: "600",
 
               }}
             ></p>
@@ -898,9 +898,10 @@ const Heridas = () => {
                 alt={woundsAssets.Heridas_imagen_15.alt}
                 style={{
                   marginTop: "-84.3%",
-                  marginLeft: "100.3%",
+                  marginLeft: "108.3%",
                   height: "505px",
                 fontFamily: "montserrat",
+                width: "530px"
                 }}
               />
             </Grid>
