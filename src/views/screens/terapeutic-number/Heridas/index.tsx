@@ -102,8 +102,8 @@ const Heridas = () => {
                       paddingBottom: "5%",
                       padding: "0 30px",
                       marginLeft: "9%",
-                      fontFamily: "montserrat, medium italic",
-                      color: "#4D4D4D",
+                      fontFamily: "Montserrat, medium",
+                      color: "#666666",
                       fontWeight: "500",
                     }}
                     dangerouslySetInnerHTML={{
@@ -160,8 +160,8 @@ const Heridas = () => {
                     marginTop: "5.7%",
                     lineHeight: "1.1",
                     paddingBottom: "5%",
-                    fontFamily: "montserrat, medium italic",
-                    color: "#4D4D4D",
+                    fontFamily: "Montserrat, medium",
+                    color: "#666666",
                     fontWeight: "500",
 
                   }}
@@ -226,8 +226,8 @@ const Heridas = () => {
             fontSize: "17px",
             marginLeft: "5.2%",
             marginTop: "-1.8%",
-            fontFamily: "montserrat",
-            color: "4D4D4D",
+            fontFamily: "Montserrat, medium",
+            color: "#666666",
             fontWeight: "500"
           }}
         >
@@ -400,8 +400,8 @@ const Heridas = () => {
                           fontSize: "17px",
                           marginLeft: "7.2%",
                           marginTop: "5.5%",
-                          fontFamily: "montserrat",
-                          color: "4D4D4D",
+                          fontFamily: "Montserrat, medium",
+                          color: "#666666",
                           fontWeight: "500"
                         }}
                       >
@@ -447,7 +447,7 @@ const Heridas = () => {
               marginLeft: "4.5%",
               marginTop: 18,
               lineHeight: "1.1",
-              fontFamily: "montserrat",
+              fontFamily: "Montserrat, medium",
               color: "#004280",
               fontWeight: "700"
             }}
@@ -509,9 +509,9 @@ const Heridas = () => {
             style={{
               padding: "0 126px",
               marginTop: "-1.9%",
-              fontFamily: "montserrat",
+              fontFamily: "Montserrat, medium",
+              color: "#666666",
               fontSize: 15,
-              color: "#343434",
               fontWeight: "600",
             }}
           ></p>
@@ -554,7 +554,7 @@ const Heridas = () => {
               padding: "0 160px",
               marginTop: "-2.2%",
               marginLeft: "-0.1%",
-              fontFamily: "montserrat",
+              fontFamily: "Montserrat, medium",
             }}
           ></p>
         </div>
@@ -580,7 +580,7 @@ const Heridas = () => {
             <StyledSubtitle
               style={{
                 textAlign: "center",
-                fontWeight: "bold",
+                fontFamily: "Montserrat, bold",
                 fontSize: "25px",
                 marginLeft: "-51.1%",
                 marginTop: "7.3%",
@@ -598,7 +598,8 @@ const Heridas = () => {
                 // padding: "0 160px",
                 marginTop: "-0.2%",
                 marginLeft: "6.9%",
-                fontFamily: "montserrat, bold",
+                fontFamily: "Montserrat, medium",
+                color: "#666666",
                 fontSize: "17px",
                 width: "48%",
                 fontWeight: "500"
@@ -690,10 +691,10 @@ const Heridas = () => {
                 style={{
                   marginTop: "-2%",
                   marginLeft: "6.9%",
-                  fontFamily: "montserrat, bold",
+                  fontFamily: "Montserrat, medium",
+                  color: "#666666",
                   fontSize: "17px",
                 fontWeight: "600",
-                color: "#4d4d4d"
 
                 }}
               ></p>
@@ -724,6 +725,7 @@ const Heridas = () => {
           <StyledSubtitle
             style={{
               marginBottom: "3%",
+              fontFamily: "Montserrat, bold",
               marginLeft: "7.1%",
               fontSize: "28.4px",
               marginTop: "3.8%",
@@ -736,7 +738,8 @@ const Heridas = () => {
               fontSize: "17px",
               padding: "0px 81px",
               marginTop: "-1%",
-              fontFamily: "montserrat, bold",
+              fontFamily: "Montserrat, medium",
+              color: "#666666",
               fontWeight: "500",
             }}
           >
@@ -753,7 +756,8 @@ const Heridas = () => {
             style={{
               fontSize: "17px",
               padding: "17px 83px",
-              fontFamily: "montserrat, bold",
+              fontFamily: "Montserrat, medium",
+              color: "#666666",
               marginTop: "0.2%",
               fontWeight: "500",  
             }}
@@ -795,7 +799,7 @@ const Heridas = () => {
           </StyledSubtitle>
 
           <p
-            style={{ fontSize: "17px", padding: "6px 81px", fontWeight: "500" }}
+            style={{ fontSize: "17px", padding: "6px 81px", fontWeight: "500",  fontFamily: "Montserrat, medium", color: "#666666", }}
             dangerouslySetInnerHTML={{
               __html: woundsAssets.Herida_texto_4.content,
             }}
@@ -844,7 +848,7 @@ const Heridas = () => {
                 style={{
                   padding: "0 137px",
                   marginTop: "-1.9%",
-                  fontFamily: "montserrat",
+                  fontFamily: "Montserrat, medium",
                   fontSize: 15,
                   color: "#fff",
                   fontWeight: "600",
@@ -883,11 +887,11 @@ const Heridas = () => {
                 // padding: "0 160px",
                 marginTop: "-5.9%",
                 marginLeft: "6.1%",
-                fontFamily: "montserrat, bold",
+                fontFamily: "Montserrat, medium",
+                color: "#666666",
                 fontSize: "17px",
                 width: "48%",
               fontWeight: "500",
-              color: "#666666"
 
               }}
             ></p>
