@@ -29,7 +29,7 @@ const Footer: FC = (): JSX.Element => {
                 className="pb-12 flex justify-center md:justify-start"
               >
                 <Grid item lg={3}>
-                  <StyledSubtitleSection>Redes Sociales:</StyledSubtitleSection>
+                  <StyledSubtitleSection style={{ fontSize: "20px" }}>Redes Sociales:</StyledSubtitleSection>
                   <Grid item lg={12} className="flex justify-center">
                     <a href="https://www.linkedin.com/company/praxispharmaceuticalcalidaddevida" target="_blank" rel="noreferrer">
                       <img
@@ -41,22 +41,22 @@ const Footer: FC = (): JSX.Element => {
                   </Grid>
                 </Grid>
                 <Grid item lg={5} className="text-center">
-                  <StyledTextSection>
+                  <StyledTextSection style={{ fontSize: "19px" }}>
                     <b>Praxis Pharmaceutical Colombia Ltda</b>
                   </StyledTextSection>
                   <StyledTextSection>
-                    <b style={{ marginLeft: "-10%" }}>Dirección:</b> Cr 12 A No. 83-75 OF 601
+                    <b style={{ marginLeft: "-7%", fontSize: "19px" }}>Dirección:</b> Cr 12 A No. 83-75 OF 601
                   </StyledTextSection>
                   <StyledTextSection>
-                    <b style={{ marginLeft: "-70%" }}>Mapa</b>
+                    <b style={{ marginLeft: "-67%", fontSize: "19px" }}>Mapa</b>
                   </StyledTextSection>
                 </Grid>
                 <Grid item lg={4} className="text-center">
-                  <StyledTextSection>
+                  <StyledTextSection style={{ fontSize: "19px" }}>
                     <b>Teléfono:</b> 601 756 60 06
                   </StyledTextSection>
                   <StyledTextSection>
-                    <b style={{ marginLeft: "14%" }}>Email:</b> info@praxisph.com.co
+                    <b style={{ marginLeft: "17%", fontSize: "19px" }}>Email:</b> info@praxisph.com.co
                   </StyledTextSection>
                 </Grid>
               </Grid>

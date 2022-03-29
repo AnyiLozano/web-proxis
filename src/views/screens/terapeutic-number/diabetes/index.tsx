@@ -58,7 +58,7 @@ const Diabetes = () => {
               <Grid item lg={12} className="text-center">
                 <StyledTitulo1
                   style={{
-                    lineHeight: "1",
+                    lineHeight: "1.3",
                     fontSize: "17px",
                     padding: "0 118px",
                     marginTop: "2.6%",

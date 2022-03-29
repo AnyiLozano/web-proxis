@@ -61,7 +61,7 @@ const Bulcosan: FC = (): JSX.Element => {
               <Grid item lg={12} className="">
                 <StyledTitulo1
                   style={{
-                    lineHeight: "1",
+                    lineHeight: "1.3",
                     fontSize: "17px",
                     padding: "0 56px",
                     marginTop: "2.7%",
@@ -89,7 +89,7 @@ const Bulcosan: FC = (): JSX.Element => {
                     textAlign: "center",
                     fontFamily: "Montserrat, bold",
                     fontSize: "25px",
-                    marginLeft: "-44.1%",
+                    marginLeft: "-54.1%",
                     marginTop: "2.8%",
                   }}
                   dangerouslySetInnerHTML={{
@@ -104,7 +104,7 @@ const Bulcosan: FC = (): JSX.Element => {
                   style={{
                     // padding: "0 160px",
                     marginTop: "-3%",
-                    marginLeft: "9.5%",
+                    marginLeft: "5.5%",
                     fontFamily: "Montserrat, medium",
                     color: "#666666",
                     fontSize: "17px",
@@ -127,6 +127,7 @@ const Bulcosan: FC = (): JSX.Element => {
                     width: "63%",
                     fontWeight: "500",
                     padding: "0 7%",
+                    marginLeft: "-5%"
                   }}
                 ></p>
               </Grid>
