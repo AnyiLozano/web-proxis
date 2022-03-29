@@ -29,14 +29,33 @@ const Proctokinasa: FC = (): JSX.Element => {
             alt={proctokinasa.banner_principal.alt}
           />
           <StyledTerapeuticNumberSection
+            style={{ backgroundSize: "105% 124%" }}
             background={proctokinasa.background_description.content}
           >
             <Container>
               <Grid item lg={12} className="flex justify-center">
-                <StyledTitulo>Proctokinasa®</StyledTitulo>
+                <StyledTitulo
+                  style={{
+                    fontFamily: "Montserrat, bold",
+                    fontSize: "25px",
+                    marginTop: "-8.2%",
+                  }}
+                >
+                  Proctokinasa®
+                </StyledTitulo>
               </Grid>
               <Grid item lg={12} className="">
-                <StyledTitulo1>
+                <StyledTitulo1
+                  style={{
+                    lineHeight: "1",
+                    padding: "0 56px",
+                    marginTop: "-1.3%",
+                    fontFamily: "Montserrat, medium",
+                    fontSize: "17px",
+                    color: "#666666",
+                    marginLeft: "5.4%",
+                  }}
+                >
                   {proctokinasa.vulcosan_texto_1.content}
                 </StyledTitulo1>
               </Grid>
@@ -49,10 +68,23 @@ const Proctokinasa: FC = (): JSX.Element => {
                   return (
                     <React.Fragment>
                       <Grid item md={6} className="mt-12 pr-5">
-                        <StyledTitulo>{item.title}</StyledTitulo>
+                        <StyledTitulo
+                          style={{
+                            fontSize: 25,
+                            fontFamily: "Montserrat, bold",
+                          }}
+                        >
+                          {item.title}
+                        </StyledTitulo>
                         <StyledTitulo1
                           dangerouslySetInnerHTML={{
                             __html: item.text,
+                          }}
+                          style={{
+                            fontSize: 17,
+                            fontFamily: "Montserrat, bold",
+                            color: "#666666",
+                            fontWeight: "500"
                           }}
                         ></StyledTitulo1>
                       </Grid>
@@ -81,8 +113,25 @@ const Proctokinasa: FC = (): JSX.Element => {
                       </Grid>
 
                       <Grid item md={6} className="mt-12">
-                        <StyledTitulo>{item.title}</StyledTitulo>
-                        <StyledTitulo1>{item.text}</StyledTitulo1>
+                        <StyledTitulo
+                          style={{
+                            fontSize: 25,
+                            fontFamily: "Montserrat, bold",
+                          }}
+                        >
+                          {item.title}
+                        </StyledTitulo>
+                        <StyledTitulo1
+                          dangerouslySetInnerHTML={{
+                            __html: item.text
+                          }}
+                          style={{
+                            fontSize: 17,
+                            fontFamily: "Montserrat, bold",
+                            color: "#666666",
+                            fontWeight: "500"
+                          }}
+                        ></StyledTitulo1>
                       </Grid>
                     </React.Fragment>
                   );

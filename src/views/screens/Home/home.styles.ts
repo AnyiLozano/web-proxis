@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 import {Grid} from "@mui/material";
+import { Container } from "@mui/material";
 
 const useHomeStyles = () => {
     const StyledSectionsHome = styled.section`
@@ -113,3 +114,16 @@ const useHomeStyles = () => {
 }
 
 export default useHomeStyles;
+
+export const StyledContainer = styled(Container).attrs({
+  className: "general-container",
+})`
+  max-width: 1536px;
+  @media (max-width: 1500px) {
+    max-width: 1200px;
+  }
+`;
+
+export const StyledImage = styled.img`
+width: 100%;
+`;

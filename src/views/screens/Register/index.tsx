@@ -3,6 +3,7 @@ import React, { FC, useState } from "react";
 import useLoginStyles from "./register.styles";
 import useControllers from "controllers";
 import { Controller } from "react-hook-form";
+import { StyledContainer } from "../Home/home.styles";
 
 const Register: FC = (): JSX.Element => {
   const {
@@ -27,10 +28,11 @@ const Register: FC = (): JSX.Element => {
 
   return (
     <React.Fragment>
+      {/* <StyledContainer maxWidth="lg"> */}
       {width >= 1200 ? (
         <StyledSection
           background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/portal_colo.png"
-          style={{ height: "60.7rem" }}
+          style={{ height: "60.7rem",     marginBottom: "-4%" }}
         >
           <Container>
             <Grid container>
@@ -299,6 +301,8 @@ const Register: FC = (): JSX.Element => {
           </StyledSection>
         </React.Fragment>
       )}
+      {/* </StyledContainer> */}
+      
     </React.Fragment>
   );
 };

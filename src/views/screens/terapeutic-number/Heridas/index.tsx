@@ -446,6 +446,7 @@ const Heridas = () => {
               fontSize: 17,
               marginLeft: "4.5%",
               marginTop: 18,
+              
               lineHeight: "1.1",
               fontFamily: "Montserrat, medium",
               color: "#004280",
@@ -519,47 +520,7 @@ const Heridas = () => {
       )}
       {/* CASO ATENDER HERIDAD 
 
-      {/* REFERENCIAS */}
-      {woundsAssets.references !== undefined && (
-        <div
-          style={{
-            background: "#005D93",
-            marginLeft: "0.1%",
-            marginRight: "0px",
-            marginTop: "3%",
-            height: "4.8%",
-          }}
-          className="py-16"
-        >
-          <Container maxWidth="lg">
-            <h1
-              className="pb-12 text-center text-white"
-              style={{
-                fontSize: 25,
-                fontWeight: "700",
-                marginTop: "-2.6%",
-                marginLeft: "4.1%",
-                fontFamily: "montserrat, bold",
-              }}
-            >
-              Referencias:
-            </h1>
-          </Container>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: woundsAssets.references.content,
-            }}
-            className="text-white text-xs"
-            style={{
-              padding: "0 160px",
-              marginTop: "-2.2%",
-              marginLeft: "-0.1%",
-              fontFamily: "Montserrat, medium",
-            }}
-          ></p>
-        </div>
-      )}
-      {/* REFERENCIAS */}
+      
 
       {/* HERIDAS QUIRURGICAS */}
       {/* <Container>  */}
@@ -939,6 +900,48 @@ const Heridas = () => {
         </React.Fragment>
       )}
       {/* FACTORES QUIRURUGICAS */}
+
+      {/* REFERENCIAS */}
+      {woundsAssets.references !== undefined && (
+        <div
+          style={{
+            background: "#005D93",
+            marginLeft: "0.1%",
+            marginRight: "0px",
+            marginTop: "3%",
+            height: "4.8%",
+          }}
+          className="py-16"
+        >
+          <Container maxWidth="lg">
+            <h1
+              className="pb-12 text-center text-white"
+              style={{
+                fontSize: 25,
+                fontWeight: "700",
+                marginTop: "-2.6%",
+                marginLeft: "4.1%",
+                fontFamily: "montserrat, bold",
+              }}
+            >
+              Referencias:
+            </h1>
+          </Container>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.references.content,
+            }}
+            className="text-white text-xs"
+            style={{
+              padding: "0 160px",
+              marginTop: "-2.2%",
+              marginLeft: "-0.1%",
+              fontFamily: "Montserrat, medium",
+            }}
+          ></p>
+        </div>
+      )}
+      {/* REFERENCIAS */}
     </React.Fragment>
   );
 };

@@ -5,6 +5,7 @@ import Epiprot from "./Epiprot";
 import Bulcosan from "./Bulcosan";
 import Proctokinasa from "./Proctokinasa";
 import { Grid } from "@mui/material";
+import { StyledContainer } from "../Home/home.styles";
 
 const Products: FC = (): JSX.Element => {
     // Products
@@ -19,7 +20,8 @@ const Products: FC = (): JSX.Element => {
 
     return (
         <React.Fragment>
-            <StyledAppBarPage position="absolute">
+            <StyledContainer maxWidth="lg">
+            <StyledAppBarPage position="relative">
                 <Grid container>
                     <StyledGrid xs={4} lg={4} md={4} xl={4} className="flex justify-center items-center" selected={type === "epiprot" && true}>
                         <Link to="/products/epiprot" className="text-white">
@@ -45,6 +47,7 @@ const Products: FC = (): JSX.Element => {
                         ? <Bulcosan/>
                         : <Proctokinasa/>
             }
+            </StyledContainer>
         </React.Fragment>
     )
 }

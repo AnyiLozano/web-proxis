@@ -29,155 +29,308 @@ const Ulceras = () => {
       {/* ULCERAS  */}
       {woundsAssets.ulceras_imagen_1 && (
         <React.Fragment>
-          <Container maxWidth="xl">
-            <Grid item lg={12} className="text-center">
-              <StyledTitulo
-                style={{
-                  fontSize: "45px",
-                  marginTop: "3.3rem",
-                  marginLeft: "4.4%",
-                }}
-              >
-                Úlceras
-              </StyledTitulo>
-            </Grid>
-            <Grid item lg={12} className="text-center">
+          <Grid item lg={12} className="text-center">
+            <StyledTitulo
+              style={{
+                fontSize: "45px",
+                marginTop: "3.9rem",
+                marginLeft: "5.6%",
+                fontFamily: "Montserrat, bold",
+              }}
+            >
+              Úlceras
+            </StyledTitulo>
+          </Grid>
+          <Grid item md={6}>
+            <StyledSubtitle
+              style={{
+                fontFamily: "Montserrat, bold",
+                fontSize: "25px",
+                marginLeft: "6.9%",
+                marginTop: "7.3%",
+              }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  woundsAssets.generalidades_texto1.content.split("--")[0],
+              }}
+            ></StyledSubtitle>
+            <p
+              dangerouslySetInnerHTML={{
+                __html:
+                  woundsAssets.generalidades_texto1.content.split("--")[1],
+              }}
+              className=""
+              style={{
+                marginTop: "-2.6%",
+                marginLeft: "6.9%",
+                fontFamily: "Montserrat, medium",
+                color: "#666666",
+                fontSize: "17px",
+                width: "48%",
+                fontWeight: "500",
+              }}
+            ></p>
+          </Grid>
+          <Grid container>
+            <Grid item md={6}>
               <img
                 src={woundsAssets.ulceras_imagen_1.content}
                 alt={woundsAssets.ulceras_imagen_1.alt}
-                style={{ marginTop: "-6.7%", marginLeft: "5.3%", width: "93%" }}
-              />
-            </Grid>
-            <Grid item lg={12} className="text-center">
-              <img
-                src={woundsAssets.ulceras_imagen_2.content}
-                alt={woundsAssets.ulceras_imagen_2.alt}
-                style={{ width: "100%", marginLeft: "2%", marginTop: "-0.4%" }}
-              />
-            </Grid>
-            <StyledTerapeuticNumberSection1
-              background={woundsAssets.ulceras_background.content}
-            >
-              <img
-                src={woundsAssets.ulceras_imagen_4.content}
-                alt={woundsAssets.ulceras_imagen_4.alt}
                 style={{
-                  width: "97%",
-                  marginLeft: "54.3px",
-                  marginTop: "1.2%",
-                  height: "774px",
-                }}
-              />
-            </StyledTerapeuticNumberSection1>
-            {/* PRESION */}
-            <StyledSubtitle
-              style={{
-                marginBottom: "3%",
-                marginTop: "3%",
-                fontSize: "28.3px",
-                marginLeft: "5%",
-              }}
-            >
-              {woundsAssets.ulceras_titulo_1.content}
-            </StyledSubtitle>
-            <p
-              style={{
-                fontSize: "20px",
-                lineHeight: "1",
-                padding: "0 58px",
-                marginTop: "-1%",
-              }}
-            >
-              {woundsAssets.ulceras_text_1.content}
-            </p>
-            <Grid container className="justify-center">
-              <img
-                src={woundsAssets.ulceras_imagen_6.content}
-                alt={woundsAssets.ulceras_imagen_6.alt}
-                style={{
-                  width: "67.3%",
-                  marginTop: "1.4%",
-                  marginLeft: "4.4%",
+                  marginTop: "-59.2%",
+                  marginLeft: "124.1%",
                 }}
               />
             </Grid>
-            {/* CLASIFICACION */}
-            <StyledSubtitle
-              style={{
-                marginBottom: "3%",
-                marginTop: "5.7%",
-                fontSize: "28.4px",
-                marginLeft: "5.2%",
-              }}
-            >
-              {woundsAssets.ulceras_titulo_3.content}
-            </StyledSubtitle>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: woundsAssets.ulceras_text_2.content,
-              }}
-              style={{
-                fontSize: "20px",
-                lineHeight: "1",
-                padding: "0 57px",
-                marginTop: "-0.3%",
-              }}
-            ></p>
-            <Grid container className="justify-center">
-              <img
-                src={woundsAssets.ulceras_imagen_7.content}
-                alt={woundsAssets.ulceras_imagen_7.alt}
-                style={{ width: "95%", marginTop: "3%", marginLeft: "3%" }}
-              />
-            </Grid>
-            {/* CLASIFICACION */}
+          </Grid>
+          {/* ULCERAS  */}
 
-            {/* prevenir lesiones */}
-            <StyledSubtitle
-              style={{
-                marginBottom: "3%",
-                marginTop: "2.8%",
-                fontSize: "28px",
-                marginLeft: "5.3%",
-              }}
-            >
-              {woundsAssets.ulceras_titulo_4.content}
-            </StyledSubtitle>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: woundsAssets.ulceras_text_8.content,
-              }}
-              style={{
-                fontSize: "20px",
-                lineHeight: "1",
-                padding: "0 58px",
-                marginTop: "-1%",
-              }}
-            ></p>
-            <Grid container className="justify-center">
-              <img
-                src={woundsAssets.ulceras_imagen_9.content}
-                alt={woundsAssets.ulceras_imagen_9.alt}
-                style={{ width: "97%", marginTop: "1.9%", marginLeft: "3%" }}
-              />
-              <img
-                src={woundsAssets.ulceras_imagen_10.content}
-                alt={woundsAssets.ulceras_imagen_10.alt}
-                style={{ width: "97%", marginTop: "-0.1%", marginLeft: "3%" }}
-              />
+          {/* PADECEN DE DEPRESION */}
+          <div
+            style={{
+              background: "#E3E3E3",
+              marginLeft: "5.2%",
+              marginRight: "10px",
+              marginTop: "0%",
+              height: "6.9%",
+              borderBottomLeftRadius: "20px",
+              borderBottomRightRadius: "20px",
+            }}
+            className="py-16"
+          >
+            <Grid container>
+              <Grid item md={6}>
+                <img
+                  src={woundsAssets.ulceras_imagen_2.content}
+                  alt={woundsAssets.ulceras_imagen_2.alt}
+                  style={{
+                    marginTop: "0.1%",
+                    marginLeft: "12.4%",
+                    width: "70%",
+                  }}
+                />
+              </Grid>
             </Grid>
-          </Container>
+            <Grid item md={6}>
+              <StyledSubtitle
+                style={{
+                  fontFamily: "Montserrat, bold",
+                  fontSize: "25px",
+                  marginLeft: "50.3%",
+                  marginTop: "-21.4%",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html:
+                    woundsAssets.depresion_padecer1.content.split("--")[0],
+                }}
+              ></StyledSubtitle>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html:
+                    woundsAssets.depresion_padecer1.content.split("--")[1],
+                }}
+                className=""
+                style={{
+                  marginTop: "-2%",
+                  marginLeft: "50.3%",
+                  fontFamily: "Montserrat, medium",
+                  color: "#666666",
+                  fontSize: "17px",
+                  width: "48%",
+                  fontWeight: "500",
+                }}
+              ></p>
+            </Grid>
+          </div>
+          {/* PADECEN DE DEPRESION */}
+
+          {/* lesiones presion */}
+          <StyledTerapeuticNumberSection1
+            background={woundsAssets.ulceras_background.content}
+          >
+            {woundsAssets.ulceras_imagen_4 !== undefined && (
+              <React.Fragment>
+                <Grid item md={6}>
+                  <StyledSubtitle
+                    style={{
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginLeft: "-33.8%",
+                      marginTop: "4.3%",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.lesiones_por_presion.content.split(
+                          "--"
+                        )[0],
+                    }}
+                  ></StyledSubtitle>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.lesiones_por_presion.content.split(
+                          "--"
+                        )[1],
+                    }}
+                    className=""
+                    style={{
+                      marginTop: "-2.4%",
+                      marginLeft: "3%",
+                      fontFamily: "Montserrat, medium",
+                      color: "#666666",
+                      fontSize: "17px",
+                      fontWeight: "600",
+                      padding: "0 52px",
+                    }}
+                  ></p>
+                </Grid>
+                <Grid container>
+                  <Grid item md={12}>
+                    <img
+                      src={woundsAssets.ulceras_imagen_4.content}
+                      alt={woundsAssets.ulceras_imagen_4.alt}
+                      style={{
+                        marginLeft: "0%",
+                        marginTop: "-13.4%",
+                        height: "773px",
+                      }}
+                    />
+                  </Grid>
+                </Grid>
+              </React.Fragment>
+            )}
+          </StyledTerapeuticNumberSection1>
+          {/* lesiones presion */}
+
+          {/* PRESION */}
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              marginTop: "2%",
+              fontSize: "25px",
+              marginLeft: "7.1%",
+              fontFamily: "montserrat, bold",
+            }}
+          >
+            {woundsAssets.ulceras_titulo_1.content}
+          </StyledSubtitle>
+          <p
+            style={{
+              fontSize: "17px",
+              marginLeft: "7.2%",
+              marginTop: "-0.5%",
+              fontFamily: "Montserrat, medium",
+              color: "#666666",
+            }}
+          >
+            {woundsAssets.ulceras_text_1.content}
+          </p>
+          <Grid container className="justify-center">
+            <img
+              src={woundsAssets.ulceras_imagen_6.content}
+              alt={woundsAssets.ulceras_imagen_6.alt}
+              style={{
+                width: "64.3%",
+                marginTop: "2.2%",
+                marginLeft: "4%",
+              }}
+            />
+          </Grid>
+          {/* PRESION */}
+
+          {/* CLASIFICACION */}
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              marginTop: "5.8%",
+              fontSize: "25px",
+              marginLeft: "7%",
+              fontFamily: "montserrat, bold",
+            }}
+          >
+            {woundsAssets.ulceras_titulo_3.content}
+          </StyledSubtitle>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.ulceras_text_2.content,
+            }}
+            style={{
+              fontSize: "17px",
+              padding: "0px 81px",
+              marginTop: "0.5%",
+              color: "#666666",
+              fontFamily: "Montserrat, medium",
+            }}
+          ></p>
+          <Grid container className="justify-center">
+            <img
+              src={woundsAssets.ulceras_imagen_7.content}
+              alt={woundsAssets.ulceras_imagen_7.alt}
+              style={{ width: "92%", marginTop: "3.5%", marginLeft: "3.3%" }}
+            />
+          </Grid>
+          {/* CLASIFICACION */}
+
+          {/* prevenir lesiones */}
+          <StyledSubtitle
+            style={{
+              marginBottom: "3%",
+              marginTop: "2.2%",
+              fontSize: "25px",
+              marginLeft: "7.1%",
+              fontFamily: "montserrat, bold",
+            }}
+          >
+            {woundsAssets.ulceras_titulo_4.content}
+          </StyledSubtitle>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.ulceras_text_8.content,
+            }}
+            style={{
+              fontSize: "17px",
+              padding: "0px 81px",
+              marginTop: "-0.7%",
+              fontFamily: "Montserrat, medium",
+              color: "#666666",
+            }}
+          ></p>
+          <Grid container className="justify-center">
+            <img
+              src={woundsAssets.ulceras_imagen_9.content}
+              alt={woundsAssets.ulceras_imagen_9.alt}
+              style={{ width: "92.2%", marginTop: "2.7%", marginLeft: "2.7%" }}
+            />
+            <img
+              src={woundsAssets.ulceras_imagen_10.content}
+              alt={woundsAssets.ulceras_imagen_10.alt}
+              style={{ width: "92.2%", marginTop: "0.5%", marginLeft: "2.7%" }}
+            />
+          </Grid>
+          {/* prevenir lesiones */}
+
           {/* REFERENCIAS */}
           {woundsAssets.references !== undefined && (
-            <div style={{ background: "#014380" }} className="py-12">
+            <div
+              style={{
+                background: "#005D93",
+                marginLeft: "0.1%",
+                marginRight: "0px",
+                marginTop: "3%",
+                height: "4.8%",
+              }}
+              className="py-16"
+            >
               <Container maxWidth="lg">
                 <h1
                   className="pb-12 text-center text-white"
                   style={{
-                    fontSize: 30,
+                    fontSize: 25,
                     fontWeight: "700",
                     marginTop: "-3%",
-                    marginLeft: "5%",
+                    marginLeft: "3%",
+                    fontFamily: "montserrat, bold",
                   }}
                 >
                   Referencias
@@ -185,10 +338,15 @@ const Ulceras = () => {
               </Container>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: woundsAssets.references.content,
+                  __html: woundsAssets.ulceras_refrencias_1.content,
                 }}
                 className="text-white text-xs"
-                style={{ padding: "0 160px", marginTop: "-1.2%" }}
+                style={{
+                  padding: "0 160px",
+                  marginTop: "-2.2%",
+                  marginLeft: "-0.1%",
+                  fontFamily: "Montserrat, medium",
+                }}
               ></p>
             </div>
           )}

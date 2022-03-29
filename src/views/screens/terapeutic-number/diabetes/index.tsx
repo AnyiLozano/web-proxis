@@ -21,7 +21,13 @@ const Diabetes = () => {
   const { woundsAssets } = useHeridas();
 
   return (
-    <React.Fragment>
+    <div
+      // style={{
+      //   backgroundImage:
+      //     "url('http://api-praxis.eml.com.co/wp-content/uploads/2022/03/SALU_DIABETES.png')",
+      //   height: "7500px",
+      // }}
+    >
       {woundsAssets.diabetes_banner_1 && (
         <React.Fragment>
           {/* bannerPRINCIPAL */}
@@ -33,16 +39,17 @@ const Diabetes = () => {
 
           {/* BANNER DIABETES */}
           <StyledTerapeuticNumberSection
-            style={{ backgroundSize: "109% 85%" }}
+            style={{ backgroundSize: "109% 92%" }}
             background={woundsAssets.diabetes_background_1.content}
           >
             <Container>
               <Grid item lg={12} className="text-center">
                 <StyledTitulo
                   style={{
-                    marginTop: "0%",
-                    marginLeft: "4%",
-                    fontSize: "44px",
+                    marginTop: "0.6%",
+                    marginLeft: "4.3%",
+                    fontFamily: "Montserrat, bold",
+                    fontSize: "39px",
                   }}
                 >
                   Diabetes
@@ -52,8 +59,11 @@ const Diabetes = () => {
                 <StyledTitulo1
                   style={{
                     lineHeight: "1",
-                    fontSize: "18px",
-                    padding: "26px 145px",
+                    fontSize: "17px",
+                    padding: "0 118px",
+                    marginTop: "2.6%",
+                    fontFamily: "Montserrat, medium",
+                    color: "#666666",
                   }}
                   dangerouslySetInnerHTML={{
                     __html: woundsAssets.diabetes_text_1.content,
@@ -69,9 +79,10 @@ const Diabetes = () => {
             <StyledSubtitle
               style={{
                 textAlign: "center",
-                marginTop: "-3%",
+                marginTop: "2%",
                 fontSize: "30px",
-                marginLeft: "7%",
+                marginLeft: "11.6%",
+                fontFamily: "Montserrat, bold",
               }}
             >
               {woundsAssets.diabetes_titulo_1 !== undefined &&
@@ -87,7 +98,7 @@ const Diabetes = () => {
                           <StyledImageGeneral
                             src={item.content}
                             alt={item.alt}
-                            style={{ width: "82.8%", marginTop: "-4%" }}
+                            style={{ width: "81.8%", marginTop: "-3.6%" }}
                           />
                         </Grid>
                       ) : (
@@ -97,7 +108,7 @@ const Diabetes = () => {
                             alt={item.alt}
                             style={{
                               width: "82.8%",
-                              marginTop: "-4%",
+                              marginTop: "-3.6%",
                               marginLeft: "5%",
                             }}
                           />
@@ -123,9 +134,10 @@ const Diabetes = () => {
               <StyledSubtitle
                 style={{
                   textAlign: "",
-                  marginTop: "1.5%",
-                  fontSize: "28.5px",
+                  marginTop: "2%",
+                  fontSize: "25px",
                   marginLeft: "5%",
+                  fontFamily: "Montserrat, bold",
                 }}
               >
                 {woundsAssets.diabetes_titulo_2 !== undefined &&
@@ -133,10 +145,12 @@ const Diabetes = () => {
               </StyledSubtitle>
               <p
                 style={{
-                  fontSize: "20px",
+                  fontSize: "17px",
                   marginTop: "-2.7%",
-                  lineHeight: "1",
                   padding: "0 55px",
+                  fontFamily: "Montserrat, medium",
+                  color: "#666666",
+                  fontWeight: "500",
                 }}
               >
                 {woundsAssets.diabetes_text_2 !== undefined &&
@@ -145,7 +159,11 @@ const Diabetes = () => {
               <Grid item md={12} className="d-flex justify-center">
                 <StyledImageGeneral
                   src={woundsAssets.diabetes_imagen_1.content}
-                  style={{ width: "63.1%", marginLeft: "1.5%" }}
+                  style={{
+                    width: "63.1%",
+                    marginLeft: "1.5%",
+                    marginTop: "0.7%",
+                  }}
                   alt={woundsAssets.diabetes_imagen_1.alt}
                 />
               </Grid>
@@ -172,22 +190,68 @@ const Diabetes = () => {
           {/* complicaciones  */}
 
           {/* PACIENTES DIABETES FAMILIA */}
+          {woundsAssets.diabetes_image_2 !== undefined && (
+            <React.Fragment>
+              <Grid container>
+                <Grid item md={6}>
+                  <StyledSubtitle
+                    style={{
+                      fontFamily: "Montserrat, bold",
+                      fontSize: "25px",
+                      marginLeft: "14.3%",
+                      marginTop: "4.8%",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.paciente_diabetes_familiar.content.split(
+                          "--"
+                        )[0],
+                    }}
+                  ></StyledSubtitle>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.paciente_diabetes_familiar.content.split(
+                          "--"
+                        )[1],
+                    }}
+                    className=""
+                    style={{
+                      fontFamily: "Montserrat, medium",
+                      color: "#666666",
+                      fontSize: "17px",
+                      fontWeight: "600",
+                      width: "83%",
+                      marginLeft: "14%",
+                      marginTop: "5.9%",
+                      lineHeight: "1.1",
+                    }}
+                  ></p>
+                </Grid>
+                <Grid item md={6}>
+                  <img
+                    src={woundsAssets.diabetes_image_2.content}
+                    alt={woundsAssets.diabetes_image_2.alt}
+                    style={{
+                      marginLeft: "0%",
+                      marginTop: "3.6%",
+                      height: "101%",
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </React.Fragment>
+          )}
           <Container>
-            <Grid item md={12} className="d-flex justify-center">
-              <StyledImageGeneral
-                src={woundsAssets.diabetes_image_2.content}
-                alt={woundsAssets.diabetes_image_2.alt}
-                style={{ width: "98%", marginLeft: "6.4%", height: "463px" }}
-              />
-            </Grid>
             {/* PACIENTES DIABETES FAMILIA */}
 
             {/* FAMILIA CUIDADOR */}
             <StyledSubtitle
               style={{
-                marginTop: "2.6%",
-                fontSize: "27.8px",
+                marginTop: "5.3%",
+                fontSize: "25px",
                 marginLeft: "5.3%",
+                fontFamily: "Montserrat, bold",
               }}
             >
               {woundsAssets.diabetes_titulo_3 !== undefined &&
@@ -212,9 +276,10 @@ const Diabetes = () => {
               <Grid item lg={12} className="">
                 <StyledTitulo
                   style={{
-                    fontSize: "28px",
+                    fontSize: "25px",
                     marginLeft: "5.2%",
                     marginTop: "-2.7%",
+                    fontFamily: "Montserrat, bold",
                   }}
                 >
                   {woundsAssets.diabetes_titulo_4.content}
@@ -223,9 +288,11 @@ const Diabetes = () => {
               <Grid item lg={12} className="text-center">
                 <StyledTitulo1
                   style={{
-                    lineHeight: "1",
-                    padding: "0 56px",
-                    marginTop: "0.6%",
+                    marginTop: "2%",
+                    marginLeft: "5.2%",
+                    fontFamily: "Montserrat, medium",
+                    color: "#666666",
+                    fontWeight: "500",
                   }}
                 >
                   {woundsAssets.diabetes_text_3.content}
@@ -256,41 +323,53 @@ const Diabetes = () => {
             }}
             background={woundsAssets.ulceras_background.content}
           >
-            <Container>
-              <Grid item lg={12} className="">
-                <StyledTitulo style={{ marginTop: "4%", fontSize: "28.4px" }}>
-                  {woundsAssets.diabetes_titulo_5.content}
-                </StyledTitulo>
-              </Grid>
-              <Grid item lg={12} className="text-center">
-                <StyledTitulo1
-                  style={{
-                    marginTop: "2.4%",
-                    lineHeight: "1",
-                    padding: "0 58px",
-                  }}
-                  dangerouslySetInnerHTML={{
-                    __html: woundsAssets.diabetes_text_4.content,
-                  }}
-                ></StyledTitulo1>
-              </Grid>
-            </Container>
-            <Container>
-              <Grid item md={12} className="d-flex justify-center">
-                <StyledImageGeneral
-                  style={{ width: "1045px", marginLeft: "3.9%" }}
-                  src={woundsAssets.diabetes_imagen_6.content}
-                  alt={woundsAssets.diabetes_imagen_6.alt}
-                />
-              </Grid>
-            </Container>
+          <Container>
+            <Grid item lg={12} className="">
+              <StyledTitulo
+                style={{
+                  marginTop: "4.3%",
+                  fontSize: "25px",
+                  fontFamily: "Montserrat, bold",
+                  marginLeft: "5%",
+                }}
+              >
+                {woundsAssets.diabetes_titulo_5.content}
+              </StyledTitulo>
+            </Grid>
+            <Grid item lg={12} className="text-center">
+              <StyledTitulo1
+                style={{
+                  marginTop: "2.4%",
+                  lineHeight: "1",
+                  marginLeft: "56px",
+                  fontFamily: "Montserrat, medium",
+                  color: "#666666",
+                  fontWeight: "500",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: woundsAssets.diabetes_text_4.content,
+                }}
+              ></StyledTitulo1>
+            </Grid>
+          </Container>
+          <Container>
+            <Grid item md={12} className="d-flex justify-center">
+              <StyledImageGeneral
+                style={{ width: "1045px", marginLeft: "4%", marginTop: "4.5%" }}
+                src={woundsAssets.diabetes_imagen_6.content}
+                alt={woundsAssets.diabetes_imagen_6.alt}
+              />
+            </Grid>
+          </Container>
           </StyledTerapeuticNumberSection>
           <Container>
             <StyledTitulo1
               style={{
-                padding: "0 58px",
-                lineHeight: "1",
+                marginLeft: "56px",
                 marginTop: "39.3px",
+                fontFamily: "Montserrat, medium",
+                color: "#666666",
+                fontWeight: "500",
               }}
               dangerouslySetInnerHTML={{
                 __html: woundsAssets.diabetes_text_5.content,
@@ -303,7 +382,7 @@ const Diabetes = () => {
               <StyledImageGeneral
                 style={{
                   width: "798px",
-                  marginTop: "16.2px",
+                  marginTop: "7.2px",
                   marginLeft: "0.4%",
                 }}
                 src={woundsAssets.diabetes_imagen_7.content}
@@ -313,31 +392,69 @@ const Diabetes = () => {
             {/* PLATOS */}
 
             {/* ejercisio  */}
-            <Grid container className="my-12">
-              <Grid item md={6} className="d-flex justify-center">
-                <StyledImageGeneral
-                  src={woundsAssets.diabetes_images_8.content}
-                  alt={woundsAssets.diabetes_images_8.alt}
-                  style={{ width: "90%", marginLeft: "10%" }}
-                />
-              </Grid>
-              <Grid item md={6} className="d-flex justify-center">
-                <StyledImageGeneral
-                  src={woundsAssets.diabetes_imagen_9.content}
-                  style={{ width: "100%", marginLeft: "9%", marginTop: "-5%" }}
-                  alt={woundsAssets.diabetes_imagen_9.alt}
-                />
-              </Grid>
-              {/* ejercisio  */}
-            </Grid>
+            {woundsAssets.diabetes_imagen_9 !== undefined && (
+              <React.Fragment>
+                <Grid item md={6}>
+                  <StyledSubtitle
+                    style={{
+                      textAlign: "center",
+                      fontFamily: "Montserrat, bold",
+                      fontSize: "25px",
+                      marginLeft: "-44.8%",
+                      marginTop: "5.4%",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.ejercisio_texto_1.content.split("--")[0],
+                    }}
+                  ></StyledSubtitle>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.ejercisio_texto_1.content.split("--")[1],
+                    }}
+                    className=""
+                    style={{
+                      marginTop: "-1.3%",
+                      marginLeft: "5.2%",
+                      fontFamily: "Montserrat, medium",
+                      color: "#666666",
+                      fontSize: "17px",
+                      fontWeight: "500",
+                      width: "46.4%",
+                      lineHeight: "1.2",
+                    }}
+                  ></p>
+                </Grid>
+                <Grid container>
+                  <Grid item md={12}>
+                    <img
+                      src={woundsAssets.diabetes_imagen_9.content}
+                      alt={woundsAssets.diabetes_imagen_9.alt}
+                      style={{
+                        marginLeft: "51.9%",
+                        marginTop: "-29.1%",
+                      }}
+                    />
+                  </Grid>
+                </Grid>
+              </React.Fragment>
+            )}
+
             {/* RECOMENDACIONES */}
-            <StyledTitulo style={{ fontSize: "28.6px", marginTop: "-1%" }}>
+            <StyledTitulo
+              style={{
+                fontSize: "25px",
+                marginTop: "3.2%",
+                fontFamily: "Montserrat, bold",
+                marginLeft: "5%",
+              }}
+            >
               {woundsAssets.diabetes_titulo_6.content}
             </StyledTitulo>
-            {/* RECOMENDACIONES */}
           </Container>
 
-          {/* senor */}
+          {/* background image */}
           <StyledTerapeuticNumberSection
             background={woundsAssets.ulceras_background.content}
           >
@@ -355,12 +472,54 @@ const Diabetes = () => {
               </Grid>
             </Container>
           </StyledTerapeuticNumberSection>
-          {/* senor */}
+          {/* background image */}
         </React.Fragment>
       )}
+      {/* RECOMENDACIONES */}
 
       {/* REFERENCIAS */}
       {woundsAssets.diabetes_imagen_11 !== undefined && (
+        <div
+          style={{
+            background: "#005D93",
+            marginLeft: "0.1%",
+            marginRight: "0px",
+            marginTop: "3%",
+            height: "4.8%",
+          }}
+          className="py-16"
+        >
+          <Container maxWidth="lg">
+            <h1
+              className="pb-12 text-center text-white"
+              style={{
+                fontSize: 25,
+                fontWeight: "700",
+                marginTop: "-2.6%",
+                marginLeft: "4.1%",
+                fontFamily: "montserrat, bold",
+              }}
+            >
+              Referencias:
+            </h1>
+          </Container>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: woundsAssets.diabetes_imagen_11.content,
+            }}
+            className="text-white text-xs"
+            style={{
+              padding: "0 160px",
+              marginTop: "-2.2%",
+              marginLeft: "-0.1%",
+              fontFamily: "Montserrat, medium",
+            }}
+          ></p>
+        </div>
+      )}
+
+
+      {/* {woundsAssets.diabetes_imagen_11 !== undefined && (
         <div style={{ background: "#014380" }} className="py-16">
           <Container maxWidth="lg">
             <h1
@@ -381,14 +540,12 @@ const Diabetes = () => {
             }}
             className="text-white text-xs"
             style={{ padding: "0 160px", marginTop: "-1.2%" }}
-          ></p>    
+          ></p>
         </div>
-      )}
+      )} */}
       {/* REFERENCIAS */}
-    </React.Fragment>
+    </div>
   );
 };
 
 export default Diabetes;
-
-

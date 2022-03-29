@@ -40,7 +40,7 @@ const useBlogStyles = () => {
     `;
 
     const StyledContainer2 = styled.section`
-        background-color: #f7f7f7;
+        margin-top: -8%;
     `
 
     const StyledTitle2 = styled.h1`

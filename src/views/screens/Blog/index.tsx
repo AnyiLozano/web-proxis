@@ -5,6 +5,7 @@ import _ from "lodash";
 import useControllers from "controllers";
 // import Slider from "react-slick";
 import { useHistory } from "react-router-dom";
+import { StyledContainer } from "../Home/home.styles";
 
 const Blog: FC = (): JSX.Element => {
   // Styles
@@ -26,152 +27,237 @@ const Blog: FC = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      {postsAssets !== undefined && (
-        <React.Fragment>
-          <StyledImageBanner
-            src={postsAssets.blog_banner_principal?.content}
-            alt="Blog's Banner Image"
-          />
-          <StyledBlogFirstSection
-            background={postsAssets.blog_background_recent?.content}
-            className="sm:py-36"
-          >
-            <Container>
-              <StyledTitle2 className="pb-16" style={{ textAlign: "center", fontWeight: "700" }}>
-                Reciente
-              </StyledTitle2>
-              <Grid container>
-                {_.map(recentPosts, (item: any, index: any) => {
-                  if (index === 0) {
-                    return (
-                      <Grid item lg={3} key={index} className="px-6">
-                        <StyledImage
-                          src={postsAssets.blog_number_1?.content}
-                          alt="pre-test"
-                          style={{ position: "absolute   " }}
-                        />
-                        <Grid item lg={12}>
+      <StyledContainer maxWidth="lg">
+        {postsAssets !== undefined && (
+          <React.Fragment>
+            <StyledImageBanner
+              style={{ marginTop: "12%" }}
+              src={postsAssets.blog_banner_principal?.content}
+              alt="Blog's Banner Image"
+            />
+            <StyledBlogFirstSection
+              style={{ backgroundSize: "108% 86%" }}
+              background={postsAssets.blog_background_recent?.content}
+              className="sm:py-36"
+            >
+              <Container>
+                <StyledTitle2
+                  className="pb-16"
+                  style={{
+                    textAlign: "center",
+                    fontWeight: "600",
+                    fontFamily: "montserrat, bold",
+                  }}
+                >
+                  Reciente
+                </StyledTitle2>
+                <Grid container>
+                  {_.map(recentPosts, (item: any, index: any) => {
+                    if (index === 0) {
+                      return (
+                        <Grid item lg={3} key={index} className="px-6">
                           <StyledImage
-                            src={item.image}
-                            alt="Test"
-                            style={{ width: "100%" }}
-                          />
-                        </Grid>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
-                        </p>
-                        <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
-                        >
-                          Seguir Leyendo
-                        </StyledButtonViewMore>
-                      </Grid>
-                    );
-                  } else if (index === 1) {
-                    return (
-                      <Grid item lg={3} key={index} className="px-6">
-                        <Grid item lg={12}>
-                          <StyledImage
-                            src={postsAssets.blog_number_2?.content}
+                            src={postsAssets.blog_number_1?.content}
                             alt="pre-test"
                             style={{ position: "absolute   " }}
                           />
-                          <StyledImage
-                            src={item.image}
-                            alt="Test"
-                            style={{ width: "100%" }}
-                          />
+                          <Grid item lg={12}>
+                            <StyledImage
+                              src={item.image}
+                              alt="Test"
+                              style={{ width: "100%" }}
+                            />
+                          </Grid>
+                          <p
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                              marginTop: "8%"
+                            }}
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Officiis, a obcaecati?
+                          </p>
+                          <StyledButtonViewMore
+                            onClick={() => history.push(`/detail/${item.id}`)}
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Seguir Leyendo
+                          </StyledButtonViewMore>
                         </Grid>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
-                        </p>
+                      );
+                    } else if (index === 1) {
+                      return (
+                        <Grid item lg={3} key={index} className="px-6">
+                          <Grid item lg={12}>
+                            <StyledImage
+                              src={postsAssets.blog_number_2?.content}
+                              alt="pre-test"
+                              style={{ position: "absolute   " }}
+                            />
+                            <StyledImage
+                              src={item.image}
+                              alt="Test"
+                              style={{ width: "100%" }}
+                            />
+                          </Grid>
+                          <p
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                              marginTop: "8%"
+                            }}
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Officiis, a obcaecati?
+                          </p>
+                          <StyledButtonViewMore
+                            onClick={() => history.push(`/detail/${item.id}`)}
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Seguir Leyendo
+                          </StyledButtonViewMore>
+                        </Grid>
+                      );
+                    } else if (index === 2) {
+                      return (
+                        <Grid item lg={3} key={index} className="px-6">
+                          <Grid item lg={12}>
+                            <StyledImage
+                              src={postsAssets.blog_number_3?.content}
+                              alt="pre-test"
+                              style={{ position: "absolute   " }}
+                            />
+                            <StyledImage
+                              src={item.image}
+                              alt="Test"
+                              style={{ width: "100%" }}
+                            />
+                          </Grid>
+                          <p
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                              marginTop: "8%"
+                            }}
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Officiis, a obcaecati?
+                          </p>
+                          <StyledButtonViewMore
+                            onClick={() => history.push(`/detail/${item.id}`)}
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Seguir Leyendo
+                          </StyledButtonViewMore>
+                        </Grid>
+                      );
+                    } else if (index === 3) {
+                      return (
+                        <Grid item lg={3} key={index} className="px-6">
+                          <Grid item lg={12}>
+                            <StyledImage
+                              src={postsAssets.blog_number_4?.content}
+                              alt="pre-test"
+                              style={{ position: "absolute   " }}
+                            />
+                            <StyledImage
+                              src={item.image}
+                              alt="Test"
+                              style={{ width: "100%" }}
+                            />
+                          </Grid>
+                          <p
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                              marginTop: "8%"
+                            }}
+                          >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Officiis, a obcaecati?
+                          </p>
+                          <StyledButtonViewMore
+                            onClick={() => history.push(`/detail/${item.id}`)}
+                            style={{
+                              fontSize: "17px",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontWeight: "500",
+                            }}
+                          >
+                            Seguir Leyendo
+                          </StyledButtonViewMore>
+                        </Grid>
+                      );
+                    }
+                  })}
+                </Grid>
+              </Container>
+            </StyledBlogFirstSection>
+            <StyledContainer2>
+              <Container className="py-16">
+                <Grid container>
+                  {_.map(recentPosts, (item: any, index: any) => (
+                    <Grid item lg={4} className="py-6 px-6">
+                      <Grid item lg={12}>
+                        <StyledTitle2
+                            style={{ fontSize: "22px", fontWeight: "700", fontFamily: "montserrat, bold"
+
+                          }}
+                        >
+                          Lorem ipsum dolor sit amet consectetur
+                        </StyledTitle2>
+                        <StyledTextDescription
+                          style={{ fontSize: "15px" }}
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati?",
+                          }}
+                        ></StyledTextDescription>
                         <StyledButtonViewMore
                           onClick={() => history.push(`/detail/${item.id}`)}
+                          style={{
+                            fontSize: "17px",
+                            fontFamily: "Montserrat, medium",
+                            color: "#666666",
+                            fontWeight: "500",
+                          }}
                         >
                           Seguir Leyendo
                         </StyledButtonViewMore>
                       </Grid>
-                    );
-                  } else if (index === 2) {
-                    return (
-                      <Grid item lg={3} key={index} className="px-6">
-                        <Grid item lg={12}>
-                          <StyledImage
-                            src={postsAssets.blog_number_3?.content}
-                            alt="pre-test"
-                            style={{ position: "absolute   " }}
-                          />
-                          <StyledImage
-                            src={item.image}
-                            alt="Test"
-                            style={{ width: "100%" }}
-                          />
-                        </Grid>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
-                        </p>
-                        <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
-                        >
-                          Seguir Leyendo
-                        </StyledButtonViewMore>
-                      </Grid>
-                    );
-                  } else if (index === 3) {
-                    return (
-                      <Grid item lg={3} key={index} className="px-6">
-                        <Grid item lg={12}>
-                          <StyledImage
-                            src={postsAssets.blog_number_4?.content}
-                            alt="pre-test"
-                            style={{ position: "absolute   " }}
-                          />
-                          <StyledImage
-                            src={item.image}
-                            alt="Test"
-                            style={{ width: "100%" }}
-                          />
-                        </Grid>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati? 
-                        </p>
-                        <StyledButtonViewMore
-                          onClick={() => history.push(`/detail/${item.id}`)}
-                        >
-                          Seguir Leyendo
-                        </StyledButtonViewMore>
-                      </Grid>
-                    );
-                  }
-                })}
-              </Grid>
-            </Container>
-          </StyledBlogFirstSection>
-          <StyledContainer2>
-            <Container className="py-16">
-              <Grid container>
-                {_.map(recentPosts, (item: any, index: any) => (
-                  <Grid item lg={4} className="py-6 px-6">
-                    
-                    <Grid item lg={12}>
-                      <StyledTitle2 style={{ fontSize: "22px", fontWeight: "700" }}>Lorem ipsum dolor sit amet consectetur</StyledTitle2>
-                      <StyledTextDescription style={{ fontSize: "15px" }}
-                        dangerouslySetInnerHTML={{ __html: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati?"   }}
-                      ></StyledTextDescription>
-                      <StyledButtonViewMore
-                        onClick={() => history.push(`/detail/${item.id}`)}
-                      >
-                        Seguir Leyendo
-                      </StyledButtonViewMore>
                     </Grid>
-                  </Grid>
-                ))}
-              </Grid>
-            </Container>
-          </StyledContainer2>
-        </React.Fragment>
-      )}
-      {/* 
+                  ))}
+                </Grid>
+              </Container>
+            </StyledContainer2>
+          </React.Fragment>
+        )}
+        {/* 
             
                 
             </StyledBlogFirstSection>
@@ -228,6 +314,7 @@ const Blog: FC = (): JSX.Element => {
                     </Grid>
                 </Container>
             </StyledBlogFirstSection> */}
+      </StyledContainer>
     </React.Fragment>
   );
 };

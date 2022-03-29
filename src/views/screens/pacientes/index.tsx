@@ -4,6 +4,7 @@ import React from 'react'
 import usePacientesStyles from './pacientes.styles';
 import _ from "lodash";
 import { Link } from "react-router-dom";
+import { StyledContainer } from '../terapeutic-number/terapeutic-number.style';
 
 const Pacientes = () => {
     const { useScreenHooks } = useControllers();
@@ -20,13 +21,14 @@ const Pacientes = () => {
     } = usePacientesStyles();
     return (
         <React.Fragment>
+            <StyledContainer maxWidth="lg">
             <Grid item lg={12}>
                 <StyledImage1 src={"http://api-praxis.eml.com.co/wp-content/uploads/2022/03/pacientesfondobackground.png"} alt="Pacients' Image" />
             </Grid>
             <StyledSection item lg={12} background='http://api-praxis.eml.com.co/wp-content/uploads/2022/03/historias_de_vida.png'>
                 <Container>
-                    <Grid item lg={12}>
-                        <StyledTitle className="text-center">Historias de vida</StyledTitle>
+                    <Grid item lg={12}> 
+                        <StyledTitle className="text-center" style={{ fontFamily: "montserrat, bold", }}>Historias de vida</StyledTitle>
                     </Grid>
                     <Grid item lg={12}>
                         <Grid container>
@@ -47,6 +49,7 @@ const Pacientes = () => {
                     </Grid>
                 </Container>
             </StyledSection>
+            </StyledContainer>
         </React.Fragment>
     )
 }

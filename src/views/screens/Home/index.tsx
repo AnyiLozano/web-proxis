@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import useControllers from "controllers";
-import useHomeStyles from "./home.styles";
+import useHomeStyles, { StyledContainer, StyledImage } from "./home.styles";
 import { Container, Grid } from "@mui/material";
 import "styles/styles.scss";
 
@@ -33,15 +33,25 @@ const Home: FC = (): JSX.Element => {
     StyledSectionPraxis,
   } = useHomeStyles();
   return (
-    <React.Fragment>
-      <img
-        className="principal-image"
-        src={homeBanner.content}
-        alt="Home Banner Praxis"
+    
+        <React.Fragment>
+               <StyledContainer maxWidth="lg">
+      <StyledImage 
+      style={{ marginTop: "12%", }} 
+        src={ homeBanner.content } 
+        alt= ""
       />
-      <StyledSectionsHome background={background.content}>
+      <StyledSectionsHome  background={background.content} 
+          style={{paddingBottom: "1rem" }}
+      
+      >
         <Grid item lg={12} className="text-center">
-          <StyledTitleSection>Secciones:</StyledTitleSection>
+          <StyledTitleSection 
+          style={{ 
+            fontSize: "45px",
+            fontFamily: "montserrat, bold",
+           }}
+          >Secciones:</StyledTitleSection>
         </Grid>
 
         <Grid
@@ -148,6 +158,7 @@ const Home: FC = (): JSX.Element => {
           />
         </Container>
       </StyledSectionPraxis>
+      </StyledContainer>
     </React.Fragment>
   );
 };

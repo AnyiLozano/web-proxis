@@ -32,26 +32,31 @@ const Hemorroides = () => {
 
           {/* banner section */}
           <StyledTerapeuticNumberSection
-          style={{ backgroundSize: "109% 93%" }}
+            style={{ backgroundSize: "109% 101%" }}
             background={woundsAssets.hemorroidal_background_1.content}
           >
             <Container>
               <Grid item lg={12} className="text-center">
                 <StyledTitulo
-                style={{
-                  marginTop: "0%",
-                  marginLeft: "4%",
-                  fontSize: "44px",
-                }}
-                >Enfermedad hemorroidal</StyledTitulo>
+                  style={{
+                    marginTop: "0%",
+                    marginLeft: "4%",
+                    fontSize: "44px",
+                    fontFamily: "Montserrat, bold",
+                  }}
+                >
+                  Enfermedad hemorroidal
+                </StyledTitulo>
               </Grid>
               <Grid item lg={12} className="text-center">
                 <StyledTitulo1
-                 style={{
-                  lineHeight: "1",
-                  fontSize: "18px",
-                  padding: "26px 145px",
-                }}
+                  style={{
+                    lineHeight: "1",
+                    fontSize: "17px",
+                    padding: "2px 145px",
+                    fontFamily: "Montserrat, medium",
+                    color: "#666666",
+                  }}
                 >
                   {woundsAssets.hemorroidal_text_1.content}
                 </StyledTitulo1>
@@ -77,12 +82,29 @@ const Hemorroides = () => {
                             <React.Fragment>
                               <Grid item md={6} className="mt-12">
                                 <Grid item lg={12}>
-                                  <StyledTitleSection2>
+                                  <StyledTitleSection2
+                                    style={{
+                                      marginTop: "0%",
+                                      marginLeft: "0%",
+                                      fontSize: "25px",
+                                      fontFamily: "Montserrat, bold",
+                                      marginBottom: "3%",
+                                      fontWeight: "600"
+                                    }}
+                                  >
                                     {item.title}
                                   </StyledTitleSection2>
                                 </Grid>
                                 <Grid item lg={12}>
-                                  <StyledDescriptionSection2>
+                                  <StyledDescriptionSection2
+                                  style={{
+                                    marginTop: "0%",
+                                    marginLeft: "0%",
+                                    fontSize: "17px",
+                                    fontFamily: "Montserrat, medium",
+                                    fontWeight: "500"
+                                  }}
+                                  >
                                     {item.description}
                                   </StyledDescriptionSection2>
                                 </Grid>
@@ -118,12 +140,29 @@ const Hemorroides = () => {
                               </Grid>
                               <Grid item lg={6} className="mt-12">
                                 <Grid item lg={12} className="mt-2">
-                                  <StyledTitleSection2>
+                                  <StyledTitleSection2 
+                                  style={{
+                                    marginTop: "0%",
+                                    marginLeft: "0%",
+                                    fontSize: "25px",
+                                    fontFamily: "Montserrat, bold",
+                                    marginBottom: "3%",
+                                    fontWeight: "600"
+                                  }}
+                                  >
                                     {item.title}
                                   </StyledTitleSection2>
                                 </Grid>
                                 <Grid item lg={12} className="mt-4">
-                                  <StyledDescriptionSection2>
+                                  <StyledDescriptionSection2 
+                                  style={{
+                                    marginTop: "0%",
+                                    marginLeft: "0%",
+                                    fontSize: "17px",
+                                    fontFamily: "Montserrat, medium",
+                                    fontWeight: "500"
+                                  }}
+                                  >
                                     {item.description}
                                   </StyledDescriptionSection2>
                                 </Grid>
@@ -136,12 +175,29 @@ const Hemorroides = () => {
                           <React.Fragment>
                             <Grid item lg={12} className="mt-12">
                               <Grid item lg={12}>
-                                <StyledTitleSection2>
+                                <StyledTitleSection2 
+                                style={{
+                                  marginTop: "0%",
+                                  marginLeft: "0%",
+                                  fontSize: "25px",
+                                  fontFamily: "Montserrat, bold",
+                                  marginBottom: "3%",
+                                  fontWeight: "600"
+                                }}
+                                >
                                   {item.title}
                                 </StyledTitleSection2>
                               </Grid>
                               <Grid item lg={12}>
-                                <StyledDescriptionSection2>
+                                <StyledDescriptionSection2 
+                                 style={{
+                                  marginTop: "0%",
+                                  marginLeft: "0%",
+                                  fontSize: "17px",
+                                  fontFamily: "Montserrat, medium",
+                                  fontWeight: "500"
+                                }}
+                                >
                                   {item.description}
                                 </StyledDescriptionSection2>
                               </Grid>
@@ -168,20 +224,30 @@ const Hemorroides = () => {
             </Container>
           </StyledTerapeuticNumberSection1>
 
-      {/* REFERENCIAS */}
-      {woundsAssets.hemorroidal_background_referencias !== undefined && (
-        <div style={{ background: "#014380" }} className="py-16 mt-6">
+          {/* REFERENCIAS */}
+          {woundsAssets.hemorroidal_background_referencias !== undefined && (
+        <div
+          style={{
+            background: "#005D93",
+            marginLeft: "0.1%",
+            marginRight: "0px",
+            marginTop: "3%",
+            height: "4.8%",
+          }}
+          className="py-16"
+        >
           <Container maxWidth="lg">
             <h1
               className="pb-12 text-center text-white"
               style={{
-                fontSize: 30,
+                fontSize: 25,
                 fontWeight: "700",
-                marginTop: "-3%",
-                marginLeft: "5%",
+                marginTop: "-2.6%",
+                marginLeft: "4.1%",
+                fontFamily: "montserrat, bold",
               }}
             >
-              Referencias
+              Referencias:
             </h1>
           </Container>
           <p
@@ -189,14 +255,18 @@ const Hemorroides = () => {
               __html: woundsAssets.hemorroidal_background_referencias.content,
             }}
             className="text-white text-xs"
-            style={{ padding: "0 160px", marginTop: "-1.2%" }}
-          ></p>    
+            style={{
+              padding: "0 160px",
+              marginTop: "-2.2%",
+              marginLeft: "-0.1%",
+              fontFamily: "Montserrat, medium",
+            }}
+          ></p>
         </div>
       )}
+          
         </React.Fragment>
       )}
-
-
     </React.Fragment>
   );
 };

@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import TuPapel from './cuidadores copy';
 import Artesanal from './artesanal';
 import { Grid } from '@mui/material';
+import { StyledContainer } from '../Home/home.styles';
 
 const Cuidadores = () => {
     // Styles
@@ -19,7 +20,8 @@ const Cuidadores = () => {
 
     return (
         <React.Fragment>
-            <StyledAppBarPage position="absolute">
+            <StyledContainer maxWidth="lg">
+            <StyledAppBarPage position="relative">
                 <Grid container>
                     <StyledGrid xs={6} className="flex justify-center items-center" selected={type === "tu-papel" && true}>
                         <Link to="/cuidadores/tu-papel" className="text-white">
@@ -38,6 +40,7 @@ const Cuidadores = () => {
                     ? <TuPapel/>
                     : <Artesanal/>
             }
+            </StyledContainer> 
         </React.Fragment>
     )
 }

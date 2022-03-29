@@ -5,7 +5,7 @@ import tw from "twin.macro";
 const useLoginStyles = () => {
     const StyledSection = styled.section`
         ${tw``}
-        margin-top: 8.9rem;
+        margin-top: ${(props: any) => props.isEpiprot ? "0rem" : "7%"} ;
         background-image: url('${(props: any) => props.background}');
         background-size: ${(props: any) => !props.background.includes("imagen_inicio_sesion.png") ? "80% 100%" : "100% 100%"} ;
         background-repeat: no-repeat;

@@ -5,7 +5,7 @@ import Slider from "react-slick";
 
 const useCuidadoresStyles = () => {
     const StyledImage = styled.img`
-        padding-top: 8.9rem;
+        
     `;
 
     const StyledTitulo = styled.h1`
@@ -123,7 +123,7 @@ const useCuidadoresStyles = () => {
         background-image: url('${(props: any) => props.background}');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        margin-top: 8.9rem !important;
+        margin-top: -14.4rem !important;
 
         @media (max-width: 1023px){
             margin-top: 10.6rem;
