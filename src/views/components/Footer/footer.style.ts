@@ -45,9 +45,14 @@ const useFooterStyles = () => {
       font-family: "Montserrat", sans-serif;
       font-size: 1.25rem;
       @media (max-width: 1023px){
-        font-size: 0.75rem;
-        text-align: center;
+        font-size: 1rem;
       }
+      @media (max-width: 820px){
+        font-size: 1rem;
+        text-align: center;
+        
+      }
+
     `;
 
   return {

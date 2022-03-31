@@ -23,7 +23,7 @@ const Footer: FC = (): JSX.Element => {
             <Grid item lg={12} className="flex justify-center">
               <StyledTitleSection>Contáctenos</StyledTitleSection>
             </Grid>
-            {width >= 1200 ? (
+            {width >= 1024 ? (
               <Grid
                 container
                 className="pb-12 flex justify-center md:justify-start"
@@ -61,37 +61,37 @@ const Footer: FC = (): JSX.Element => {
                 </Grid>
               </Grid>
             ) : (
+
+            //**version movil */
               <Grid
                 container
-                className="pb-12 flex justify-center md:justify-start"
+                className="pb-12 flex justify-center md:justify-start "
               >
-                <Grid item md={12} lg={12} xs={12} sm={12}>
-                  <StyledSubtitleSection className="text-center">
+                <Grid item md={6} lg={12} xs={12} sm={12}>
+                  <StyledSubtitleSection className="text-center" style={{ marginLeft: width > 820 ? "30%" : '0%', marginTop: width > 820 ?  "-3%" : '-3%'  }}>
                     Redes Sociales:
                   </StyledSubtitleSection>
                   <Grid item lg={12} className="flex justify-center">
                     <img
-                      style={{ marginTop: "4%" }}
-                      src="http://api-praxis.test/wp-content/uploads/2022/03/linkeding.png"
+                      style={{ marginTop: "2%", marginLeft: width > 820 ? "32%" : '0%', width:  width <= 600 ? "18%" : '14%', marginBottom: width <= 820 ? "5.5%" : '0%' }}
+                      src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/completo_linkeding.png"
                       alt="linkeding"
                     />
                   </Grid>
                 </Grid>
-                <Grid item md={12} lg={12} xs={12} sm={12} className="mt-8">
-                  <StyledTextSection className="text-center">
+                <Grid item md={6} lg={12} xs={12} sm={12}>
+                  <StyledTextSection>
                     <b>Praxis Pharmaceutical Colombia Ltda</b>
                   </StyledTextSection>
-                  <br />
+                  {/* <br /> */}
                   <StyledTextSection>
                     <b>Dirección:</b> Cr 12 A No. 83-75 OF 601
                   </StyledTextSection>
-                </Grid>
-                <Grid item md={12} lg={12} xs={12} sm={12} className="mt-6">
-                  <StyledTextSection className="text-center">
+                  <StyledTextSection>
                     <b>Teléfono:</b> 601 756 60 06
                   </StyledTextSection>
-                  <br />
-                  <StyledTextSection className="text-center">
+                  {/* <br />s */}
+                  <StyledTextSection>
                     <b>Email:</b> info@praxisph.com.co
                   </StyledTextSection>
                 </Grid>
