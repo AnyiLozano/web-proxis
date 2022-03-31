@@ -72,11 +72,14 @@ const Footer: FC = (): JSX.Element => {
                     Redes Sociales:
                   </StyledSubtitleSection>
                   <Grid item lg={12} className="flex justify-center">
-                    <img
-                      style={{ marginTop: "2%", marginLeft: width > 820 ? "32%" : '0%', width:  width <= 600 ? "18%" : '14%', marginBottom: width <= 820 ? "4.5%" : '0%' }}
+                  <a href="https://www.linkedin.com/company/praxispharmaceuticalcalidaddevida" target="_blank" rel="noreferrer">
+                  <img
+                      style={{ marginTop: "2%", marginLeft: width > 820 ? "79%" : '30%', width:  width <= 600 ? "40%" : '48%', marginBottom: width <= 820 ? "10.5%" : '0%' }}
                       src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/completo_linkeding.png"
                       alt="linkeding"
                     />
+                  </a>
+                   
                   </Grid>
                 </Grid>
                 <Grid item md={6} lg={12} xs={12} sm={12}>

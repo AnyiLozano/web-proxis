@@ -57,6 +57,12 @@ const useHome = () => {
     id: 0,
   });
 
+  const [banner_responsive1, setBannerResponsive1] = useState<IHomeAssets>({
+    alt: "",
+    content: "",
+    section: "",
+    id: 0,
+  });
   /** Handlers */
   const handlerHover = (type: string, id: number) => {
     if (id !== hover.id) {
@@ -88,7 +94,9 @@ const useHome = () => {
               setMisionResponsive(item);
             } else if (item.id === 269) {
                 setGerencialResponsive(item);
-            } else if (item.section === "Gerencial Team") {
+            } else if (item.id === 270) {
+              setBannerResponsive1(item);
+          } else if (item.section === "Gerencial Team") {
               setGerencialTeam(item);
             } else if (item.section === "Mision - Vision") {
               setMisionVision(item);
@@ -146,7 +154,8 @@ const useHome = () => {
     section4,
     background,
     misionResponsive,
-    gerencialResponsive
+    gerencialResponsive,
+    banner_responsive1
   };
 };
 

@@ -20,7 +20,8 @@ const Home: FC = (): JSX.Element => {
     section4,
     background,
     misionResponsive,
-    gerencialResponsive
+    gerencialResponsive,
+    banner_responsive1
   } = useHome();
 
   // Styles
@@ -46,12 +47,25 @@ const Home: FC = (): JSX.Element => {
 
   return (
     <React.Fragment>
+      {/* banner */}
       <StyledContainer maxWidth="lg">
-        <StyledImage
-          style={{ marginTop: width >= 1024 ? "12%" : '32%' }}
+        { width <= 1023 ? (
+          <StyledImage
+          style={{ marginTop: width >= 768 ? "11%" : (width >= 500 && width <= 767) ? '22%' : '29%' }}
+          src={banner_responsive1.content}
+          alt=""
+          />
+        ) : (
+          <StyledImage
+          style={{ marginTop:  "12%" }}
           src={homeBanner.content}
           alt=""
-        />
+          />
+          
+        )}
+      {/* banner */}
+
+        {/* secciones */}
         <StyledSectionsHome
           background={background.content}
           style={{ paddingBottom: "1rem" }}
@@ -158,6 +172,8 @@ const Home: FC = (): JSX.Element => {
             </a>
           </Grid>
         </StyledSectionsHome>
+        {/* seccciones */}
+
         {/* mision vision */}
         <StyledSectionPraxis className="py-12">
           <Container maxWidth="lg">
