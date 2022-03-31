@@ -48,7 +48,7 @@ const Home: FC = (): JSX.Element => {
     <React.Fragment>
       <StyledContainer maxWidth="lg">
         <StyledImage
-          style={{ marginTop: "12%" }}
+          style={{ marginTop: width >= 1024 ? "12%" : '32%' }}
           src={homeBanner.content}
           alt=""
         />
