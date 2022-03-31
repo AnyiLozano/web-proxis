@@ -15,7 +15,6 @@ const TuPapel = () => {
   // Styles
   const {
     StyledImage,
-    StyledSection,
     StyledSectionBlue,
     StyledTitulo,
     StyledTitulo1,

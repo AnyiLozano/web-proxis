@@ -181,7 +181,7 @@ const Home: FC = (): JSX.Element => {
                 src={gerencialResponsive.content}
                 alt={gerencialResponsive.alt}
                 width="100%"
-                className="pt-6 lg:pt-16"
+                className="pt-6 lg:pt-16 xs:pt-20 md:pt-20"
               />
             ) : (
               <img

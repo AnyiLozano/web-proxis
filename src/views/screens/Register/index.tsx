@@ -3,7 +3,7 @@ import React, { FC, useState } from "react";
 import useLoginStyles from "./register.styles";
 import useControllers from "controllers";
 import { Controller } from "react-hook-form";
-import { StyledContainer } from "../Home/home.styles";
+// import { StyledContainer } from "../Home/home.styles";
 
 const Register: FC = (): JSX.Element => {
   const {

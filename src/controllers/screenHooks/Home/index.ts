@@ -80,6 +80,7 @@ const useHome = () => {
       onSuccess: (data: IHomeAssets[]) => {
         // eslint-disable-next-line
         data &&
+        // eslint-disable-next-line
           data.map((item: IHomeAssets) => {
             if (item.section === "Banner Home") {
               setHomeBanner(item);

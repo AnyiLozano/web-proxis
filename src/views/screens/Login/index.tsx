@@ -11,7 +11,7 @@ import React, { FC, useState } from "react";
 import useLoginStyles from "./login.styles";
 import { Link } from "react-router-dom";
 import useControllers from "controllers";
-import { StyledContainer } from "../Home/home.styles";
+// import { StyledContainer } from "../Home/home.styles";
 
 const Login: FC<{ background: string; show: boolean; logo?: string, height?: string; }> = (
   background

@@ -73,7 +73,7 @@ const Footer: FC = (): JSX.Element => {
                   </StyledSubtitleSection>
                   <Grid item lg={12} className="flex justify-center">
                     <img
-                      style={{ marginTop: "2%", marginLeft: width > 820 ? "32%" : '0%', width:  width <= 600 ? "18%" : '14%', marginBottom: width <= 820 ? "5.5%" : '0%' }}
+                      style={{ marginTop: "2%", marginLeft: width > 820 ? "32%" : '0%', width:  width <= 600 ? "18%" : '14%', marginBottom: width <= 820 ? "4.5%" : '0%' }}
                       src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/completo_linkeding.png"
                       alt="linkeding"
                     />
