@@ -68,12 +68,12 @@ const Home: FC = (): JSX.Element => {
         {/* secciones */}
         <StyledSectionsHome
           background={background.content}
-          style={{ paddingBottom: "1rem" }}
+          style={{ paddingBottom: "1rem", paddingTop: width >= 1024 ? "4rem" : (width >= 300 && width <= 767) ? "1rem" :"3rem"  }}
         >
           <Grid item lg={12} className="text-center">
             <StyledTitleSection
               style={{
-                fontSize: "45px",
+                fontSize: width >= 1024 ? "45px" : (width >= 300 && width <= 767) ? "20px" : "45px",
                 fontFamily: "montserrat, bold",
               }}
             >
@@ -84,7 +84,13 @@ const Home: FC = (): JSX.Element => {
           <Grid
             item
             lg={12}
-            className="flex justify-center md:py-16 sm:py-14 py-14"
+            className="flex justify-center"
+            style={{ 
+              paddingLeft: width >= 1024 ? "0%" : "10%",
+              paddingRight: width >= 1024 ? "0%" : "10%",
+              paddingTop: width >= 1024 ? "3.5rem" : (width >= 300 && width <= 767) ? "2.5rem !important" : "3.5rem",
+              paddingBottom: width >= 1024 ? "3.5rem" : (width >= 300 && width <= 767) ? "2.5rem !important" : "3.5rem"
+            }}
           >
             <a
               href="/terapeutic-number/heridas"
