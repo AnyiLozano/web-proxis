@@ -126,3 +126,18 @@
     width: 78%;
     margin-left: 13%;
 }
+
+@media (max-width: 1023px) {
+    .tabs {
+        width: 100vw;
+        padding-right: 30px;
+
+        .MuiTabs-scroller {
+            overflow: scroll !important;
+        }
+    }
+
+    .container-tab {
+        padding-right: 30px;
+    }
+}

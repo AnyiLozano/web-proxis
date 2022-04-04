@@ -10,6 +10,11 @@ const useTerapeuticNumberStyles = () => {
     background-repeat: no-repeat;
     background-size: 107% 142%;
     padding-bottom: 8.7%;
+
+    @media (max-width: 1023px){
+      padding-top: 1rem;
+      padding-bottom: 5%;
+    }
   `;
   const StyledTitulo = styled.h1`
     color: #004289;
@@ -18,20 +23,30 @@ const useTerapeuticNumberStyles = () => {
     margin-top: 1rem;
     margin-left: 5.6%;
     font-family: montserrat, bold;
+
+    @media (max-width: 1023px){
+      font-size: 18px;
+      margin-top: 0rem;
+    }
 }
 
   `;
   const StyledTitulo1 = styled.p`
-  color: #666666;
-  font-size: 17px;
-  text-align: left;
-  font-family: "Montserrat, medium";
-  line-height: 1.3;
-  margin-top: 4.2%;
-  font-weight: 500;
+    color: #666666;
+    font-size: 17px;
+    text-align: left;
+    font-family: "Montserrat, medium";
+    line-height: 1.3;
+    margin-top: 4.2%;
+    font-weight: 500;
     margin-left: 2.4%;
+
+    @media (max-width: 1023px){
+      margin-left: 8.4%;
+    }
+
     @media (max-width: 500px) {
-      font-size: 1rem;
+      font-size: 12px;
     }
   `;
 
@@ -43,6 +58,11 @@ const useTerapeuticNumberStyles = () => {
     @media (max-width: 1200px) {
       padding-top: 0rem !important;
       padding-bottom: 6rem !important;
+    }
+
+    @media (max-width: 1023px) {
+      padding-top: 0rem !important;
+      padding-bottom: 0rem !important;
     }
   `;
 
@@ -86,7 +106,12 @@ const useTerapeuticNumberStyles = () => {
     }};
 
     @media (max-width: 1024px) {
-      height: 15.3vw;
+      height: 80px;
+      font-size: 15px !important;
+    }
+
+    @media (max-width: 500px){
+      height: 50px;
     }
   `;
 
@@ -104,7 +129,12 @@ const useTerapeuticNumberStyles = () => {
     }};
 
     @media (max-width: 1024px) {
-      height: 15.3vw;
+      height: 80px;
+      font-size: 15px !important;
+    }
+
+    @media (max-width: 500px){
+      height: 50px;
     }
   `;
 
@@ -122,7 +152,12 @@ const useTerapeuticNumberStyles = () => {
     }};
 
     @media (max-width: 1024px) {
-      height: 15.3vw;
+      height: 80px;
+      font-size: 15px !important;
+    }
+
+    @media (max-width: 500px){
+      height: 50px;
     }
   `;
 
@@ -140,8 +175,13 @@ const useTerapeuticNumberStyles = () => {
     }};
 
     @media (max-width: 1024px) {
-      height: 15.3vw;
+      height: 80px;
       text-align: center;
+      font-size: 15px !important;
+    }
+
+    @media (max-width: 500px){
+      height: 50px;
     }
   `;
 

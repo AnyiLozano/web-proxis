@@ -1,5 +1,7 @@
-import React, { FC } from "react";
-import useTerapeuticNumberStyles, { StyledContainer } from "./terapeutic-number.style";
+import React, { FC, useEffect, useState } from "react";
+import useTerapeuticNumberStyles, {
+  StyledContainer,
+} from "./terapeutic-number.style";
 import Heridas from "./Heridas";
 import Ulceras from "./ulceras";
 import { useParams, Link } from "react-router-dom";
@@ -19,6 +21,12 @@ const TerapeuticNumber: FC = (): JSX.Element => {
 
   const { type } = useParams();
 
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
     <React.Fragment>
       <StyledContainer maxWidth="lg">
@@ -31,7 +39,10 @@ const TerapeuticNumber: FC = (): JSX.Element => {
             >
               <Link
                 to="/terapeutic-number/heridas"
-                className="text-white text-md"
+                className="text-white text-md sm:text-xs xs:text-xs"
+                style={{
+                  fontSize: width <= 767 ? "10px" : "15px",
+                }}
               >
                 Heridas
               </Link>
@@ -43,31 +54,40 @@ const TerapeuticNumber: FC = (): JSX.Element => {
             >
               <Link
                 to="/terapeutic-number/ulceras"
-                className="text-white text-md"
+                className="text-white text-md sm:text-xs"
+                style={{
+                  fontSize: width <= 767 ? "10px" : "15px",
+                }}
               >
                 Úlceras
               </Link>
             </StyledGrid2>
             <StyledGrid3
               xs={3}
-              className="flex justify-center items-center"
+              className="flex justify-center items-center sm:text-xs"
               selected={type === "diabetes" && true}
             >
               <Link
                 to="/terapeutic-number/diabetes"
-                className="text-white text-md"
+                className="text-white text-md sm:text-xs"
+                style={{
+                  fontSize: width <= 767 ? "10px" : "15px",
+                }}
               >
                 Diabetes
               </Link>
             </StyledGrid3>
             <StyledGrid4
               xs={3}
-              className="flex justify-center items-center"
+              className="flex justify-center items-center sm:text-xs"
               selected={type === "enfermedad-hemorrodial" && true}
             >
               <Link
                 to="/terapeutic-number/enfermedad-hemorrodial"
                 className="text-white text-md"
+                style={{
+                  fontSize: width <= 767 ? "10px" : "15px",
+                }}
               >
                 Enfermedad hemorroidal
               </Link>
