@@ -88,7 +88,7 @@ const useTerapeuticNumberStyles = () => {
     margin-top: 8.9rem;
 
     @media (max-width: 1023px) {
-      margin-top: 7rem;
+      margin-top: 6.5rem;
     }
   `;
 

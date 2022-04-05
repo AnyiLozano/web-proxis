@@ -999,9 +999,9 @@ const Heridas = () => {
                       src={woundsAssets.Heridas_imagen_15.content}
                       alt={woundsAssets.Heridas_imagen_15.alt}
                       style={{
-                        marginTop: "-84.3%",
+                        marginTop: "-72.3%",
                         marginLeft: "108.3%",
-                        height: "505px",
+                        // height: "505px",
                         fontFamily: "montserrat",
                         width: "530px",
                       }}

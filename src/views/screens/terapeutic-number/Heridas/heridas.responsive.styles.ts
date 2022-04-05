@@ -226,8 +226,8 @@ export const StyledTitleFactores = styled(StyledSubtitle).attrs({
   className: "titulo-factores",
 })`
     margin-bottom: 3%;
-    font-family: "Montserrat, bold",
-    margin-left: 7.1%;
+    font-family: "Montserrat, bold";
+    margin-left: 9.9%;
     font-size: 28.4px;
     margin-top: 3.8%;
 

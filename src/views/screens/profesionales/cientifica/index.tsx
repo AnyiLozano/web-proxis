@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import useCientificaStyles from "./cientifica.style";
 import { Link } from "react-router-dom";
 import useControllers from "controllers";
+import { StyledTitleText } from "views/screens/products/Epiprot/epiprot.responsive.styles";
 
 const Cientifica = () => {
   // Styles
@@ -13,15 +14,27 @@ const Cientifica = () => {
   const { useProducts } = useScreenHooks();
   const { products } = useProducts();
   const { cuidadores } = products;
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   return (
     <React.Fragment>
       <StyledSection4 background={cuidadores !== undefined && cuidadores.artesanalBackground.content}>
         <ContainerStyled>
-          <Grid item md={12} className="flex justify-center py-12">
+          {
+            width > 1024 ? (
+              <Grid item md={12} className="flex justify-center py-12">
             <StyledTitleSection2>Evidencia científica</StyledTitleSection2>
           </Grid>
-          <Grid item md={12} className="py-12">
+            ) : (
+              <StyledTitleText className="text-center pt-6">
+                Evidencia científica
+              </StyledTitleText>
+            )
+          }
+          
+          <Grid item md={12} className="xl:py-12 pb-6">
             <Link to="/">
               <StyledImage2 src={cuidadores !== undefined && cuidadores.evidencia_cientificac.content   } />
             </Link>

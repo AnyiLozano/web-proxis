@@ -45,7 +45,7 @@ const Epiprot: FC = (): JSX.Element => {
       "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/epiprot_epidermico_humano.png",
 
     show: true,
-    height: "34.6rem",
+    height: "27.6rem",
   };
 
   const { epiprot } = products;

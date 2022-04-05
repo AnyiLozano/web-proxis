@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import {
   Box,
   Button,
@@ -12,7 +12,7 @@ import {
 import Toolbar from "@mui/material/Toolbar";
 import useHeaderStyles from "./header.style";
 import useControllers from "controllers";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import _ from "lodash";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
@@ -27,6 +27,12 @@ const Header: FC = (): JSX.Element => {
     StyledContainerMenu2,
     StyledListItem,
   } = useHeaderStyles();
+
+  const history = useHistory();
+
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   const { useScreenHooks, useComponentsHooks } = useControllers();
   const { useHeader } = useComponentsHooks();
@@ -52,12 +58,17 @@ const Header: FC = (): JSX.Element => {
             style={{ justifyContent: "space-between" }}
             variant="regular"
           >
-            <img
+            {
+              width > 1024 && (
+                <img
               src={
                 "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
               }
               alt="Logo Profix"
+              onClick={() => history.push('/')}
             />
+              )
+            }
             <StyledContainerMenu item md={12}>
               <Grid item md={12} className="flex justify-end">
                 {login.token !== undefined ? (
@@ -190,20 +201,19 @@ const Header: FC = (): JSX.Element => {
                       <React.Fragment>
                         {login.user.role === "admin" ? (
                           <React.Fragment>
-                            <StyledListItem className="justify-between shadow-md">
+                            <StyledListItem className="justify-between shadow-md mb-6">
                               <p
                                 onClick={() => closeDrawer()}
                                 style={{ fontSize: 17 }}
                               >
                                 X
-                              </p>
-                              <Link to="/">
+                              </p> 
                                 <img
                                   src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png"
                                   alt=""
                                   width="100"
+                                  onClick={() => history.push('/')}
                                 />
-                              </Link>
                               <img
                                 src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/logo.png"
                                 alt=""
@@ -259,7 +269,7 @@ const Header: FC = (): JSX.Element => {
                       </React.Fragment>
                     ) : (
                       <>
-                        <StyledListItem className="justify-between shadow-md mb-6">
+                        <StyledListItem className="justify-between shadow-md mb-6 ">
                           <p
                             onClick={() => closeDrawer()}
                             style={{ fontSize: 17 }}
@@ -330,6 +340,21 @@ const Header: FC = (): JSX.Element => {
                 </Box>
               </SwipeableDrawer>
             </StyledContainerMenu2>
+            {
+              width < 1024 && (
+                <React.Fragment>
+                  <img
+              src={
+                "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
+              }
+              alt="Logo Profix"
+              style={{ width: width < 1024 ? '50%' : '' }}
+              onClick={() => history.push('/')}
+            />
+            <div></div>
+                </React.Fragment>
+              )
+            }
           </Toolbar>
         </Container>
       </AppBarComponent>

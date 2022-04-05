@@ -57,7 +57,7 @@ const Login: FC<{ background: string; show: boolean; logo?: string, height?: str
                 ? background.background
                 : "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/imagen_inicio_sesion.png"
             }
-            style={{ height: background.height ? background.height : "47.6rem" }}
+            style={{ height: background.height ? background.height : "47.6rem", paddingTop:  background.height ?  "4%" : "" }}
           >
             <Container>
               <Grid container>

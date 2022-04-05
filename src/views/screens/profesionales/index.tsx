@@ -44,7 +44,7 @@ const Profesionales: FC = (): JSX.Element => {
                 className="flex justify-center items-center"
                 selected={type === "salud" && true}
               >
-                <Link to="/profesionales/salud" className="text-white">
+                <Link to="/profesionales/salud" className="text-white text-sm">
                   Factor de Crecimiento Epidérmico
                 </Link>
               </StyledGrid>
@@ -53,7 +53,7 @@ const Profesionales: FC = (): JSX.Element => {
                 className="flex justify-center items-center"
                 selected={type === "cientifica" && true}
               >
-                <Link to="/profesionales/cientifica" className="text-white">
+                <Link to="/profesionales/cientifica" className="text-white text-sm">
                   Evidencia científica
                 </Link>
               </StyledGrid2>

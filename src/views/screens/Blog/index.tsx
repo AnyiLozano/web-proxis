@@ -43,12 +43,12 @@ const Blog: FC = (): JSX.Element => {
             />
             <StyledBlogFirstSection
               style={{
-                backgroundSize: width > 1024 ? "108% 86%" : "100% 100%",
+                backgroundSize: width > 1024 ? "108% 100%" : "100% 100%",
               }}
               background={
                 width > 1024 ? postsAssets.blog_background_recent?.content : ""
               }
-              className="py-8"
+              className="xl:py-12 py-8"
             >
               <Container>
                 {width > 1024 ? (
@@ -58,6 +58,7 @@ const Blog: FC = (): JSX.Element => {
                       textAlign: "center",
                       fontWeight: "600",
                       fontFamily: "montserrat, bold",
+                      marginTop: "0%"
                     }}
                   >
                     Reciente
@@ -267,10 +268,10 @@ const Blog: FC = (): JSX.Element => {
               </Container>
             </StyledBlogFirstSection>
             <StyledContainer2>
-              <Container className="xl:py-16 lg:py-16 py-6 mt-12">
+              <Container className="xl:py-16 lg:py-14 py-6 mt-12">
                 <Grid container>
                   {_.map(recentPosts, (item: any, index: any) => (
-                    <Grid item sm={6} md={6} lg={4} className="py-6 px-6">
+                    <Grid item sm={6} md={6} lg={4} className="xl:mt-12 lg:mt-12 px-6">
                       <Grid item lg={12}>
                         <StyledTitle2
                           style={{

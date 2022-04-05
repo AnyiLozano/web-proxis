@@ -91,7 +91,7 @@ const TuPapel = () => {
                     fontFamily: "montserrat, bold",
                     fontSize: "45.8px",
                     marginLeft: "7.5%",
-                    marginTop: "9.1%",
+                    marginTop: "2.1%",
                   }}
                 >
                   Tu papel
@@ -115,7 +115,7 @@ const TuPapel = () => {
                       fontFamily: "Montserrat, bold",
                       fontSize: "25px",
                       marginLeft: "-57.4%",
-                      marginTop: "6.5%",
+                      marginTop: "1.5%",
                     }}
                     dangerouslySetInnerHTML={{
                       __html: cuidadores.papel_1.content.split("--")[0],
@@ -161,9 +161,9 @@ const TuPapel = () => {
                       src={cuidadores.banner_principal.content}
                       alt={cuidadores.banner_principal.alt}
                       style={{
-                        marginTop: "-61.4%",
+                        marginTop: "-48.4%",
                         marginLeft: "100.2%",
-                        height: "439px",
+                        // height: "439px",
                       }}
                     />
                   </Grid>
