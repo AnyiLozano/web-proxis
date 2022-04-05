@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import useContactStyles from "../contact.style";
 
 const FormContact: FC = (): JSX.Element => {
-    const { StyledSection, StyledButtonPresentation, StyledTitleSection, StyledTitle, StyledImage } = useContactStyles();
+    const { StyledSection, StyledButtonPresentation, StyledTitleSection, StyledTitle } = useContactStyles();
 
     const { useScreenHooks } = useControllers();
     const { useContact } = useScreenHooks();

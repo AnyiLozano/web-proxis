@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import useControllers from "controllers";
 import React, { FC } from "react";
-import { StyledTitleFactores, StyledWounds1Image } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
+import {  StyledWounds1Image } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
 import useContactStyles from "../contact.style";
 
 const Presentation: FC = (): JSX.Element => {
@@ -12,7 +12,6 @@ const Presentation: FC = (): JSX.Element => {
         StyledTextPresentation,
         StyledButtonPresentation,
         StyledIconRight,
-        StyledImage,
         StyledContainerImage
     } = useContactStyles();
 
