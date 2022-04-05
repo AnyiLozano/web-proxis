@@ -5,7 +5,6 @@ import useControllers from "controllers";
 import _ from "lodash";
 import {
   StyledDescripcionFactores,
-  StyledDescriptionCase,
   StyledTitleFactores,
 } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
 
