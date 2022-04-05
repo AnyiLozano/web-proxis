@@ -52,7 +52,12 @@ const Header: FC = (): JSX.Element => {
             style={{ justifyContent: "space-between" }}
             variant="regular"
           >
-            <img src={"http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"} alt="Logo Profix" />
+            <img
+              src={
+                "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
+              }
+              alt="Logo Profix"
+            />
             <StyledContainerMenu item md={12}>
               <Grid item md={12} className="flex justify-end">
                 {login.token !== undefined ? (
@@ -74,10 +79,13 @@ const Header: FC = (): JSX.Element => {
                           aria-labelledby="navbarDropdown"
                         >
                           <StyledButtonMenu>
-                            <Link to="/active-users">Activar usuarios</Link>   
+                            <Link to="/active-users">Activar usuarios</Link>
                           </StyledButtonMenu>
 
-                          <StyledButtonMenu isSubmenu onClick={() => closeSesion()}>
+                          <StyledButtonMenu
+                            isSubmenu
+                            onClick={() => closeSesion()}
+                          >
                             Cerrar Sesion
                           </StyledButtonMenu>
                         </div>
@@ -174,13 +182,33 @@ const Header: FC = (): JSX.Element => {
                 open={open}
                 onOpen={openDrawer}
                 onClose={closeDrawer}
+                style={{ width: "100%" }}
               >
                 <Box className="px-6 py-6">
                   <List>
                     {login.token !== undefined ? (
                       <React.Fragment>
-                        {login.user.role === "Administrador" ? (
+                        {login.user.role === "admin" ? (
                           <React.Fragment>
+                            <StyledListItem className="justify-between shadow-md">
+                              <p
+                                onClick={() => closeDrawer()}
+                                style={{ fontSize: 17 }}
+                              >
+                                X
+                              </p>
+                              <Link to="/">
+                                <img
+                                  src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png"
+                                  alt=""
+                                  width="100"
+                                />
+                              </Link>
+                              <img
+                                src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/logo.png"
+                                alt=""
+                              />
+                            </StyledListItem>
                             <StyledListItem
                               onClick={() => expandMenu("personal")}
                             >
@@ -230,14 +258,32 @@ const Header: FC = (): JSX.Element => {
                         )}
                       </React.Fragment>
                     ) : (
-                      <StyledListItem>
-                        <Link to="/login">
-                          <StyledButtonLogin>
-                            Iniciar Sesión
-                            <StyledAccountIcon />
-                          </StyledButtonLogin>
-                        </Link>
-                      </StyledListItem>
+                      <>
+                        <StyledListItem className="justify-between shadow-md mb-6">
+                          <p
+                            onClick={() => closeDrawer()}
+                            style={{ fontSize: 17 }}
+                          >
+                            X
+                          </p>
+                          <Link to="/">
+                            <img
+                              src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png"
+                              alt=""
+                              width="100"
+                            />
+                          </Link>
+                          <div> </div>
+                        </StyledListItem>
+                        <StyledListItem>
+                          <Link to="/login">
+                            <StyledButtonLogin>
+                              Iniciar Sesión
+                              <StyledAccountIcon />
+                            </StyledButtonLogin>
+                          </Link>
+                        </StyledListItem>
+                      </>
                     )}
 
                     {_.map(menus, (item: any, index: any) => {
@@ -248,7 +294,7 @@ const Header: FC = (): JSX.Element => {
                         return (
                           <React.Fragment>
                             <StyledListItem
-                              onClick={() => expandMenu("menu")}
+                              onClick={() => expandMenu(`menu${index}`)}
                               key={index}
                             >
                               {item.post_title}

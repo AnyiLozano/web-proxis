@@ -1,11 +1,19 @@
 import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
 import {
   StyledImageGeneral,
   StyledSubtitle,
 } from "views/screens/terapeutic-number/terapeutic-number.style";
+import {
+  StyledDescriptionText,
+  StyledDescriptionWhiteText,
+  StyledImageResponsive,
+  StyledSectionDescription,
+  StyledTitleText,
+  StyledTitleTextWhite,
+} from "../Epiprot/epiprot.responsive.styles";
 
 const Bulcosan: FC = (): JSX.Element => {
   // Styles
@@ -23,13 +31,18 @@ const Bulcosan: FC = (): JSX.Element => {
 
   const { bulcosan } = products;
 
+  /** States */
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
+
   return (
     <React.Fragment
-      // style={{
-      //   backgroundImage:
-      //     "url('http://api-praxis.eml.com.co/wp-content/uploads/2022/03/polimero.png')",
-      //   height: "5500px",
-      // }}
+    // style={{
+    //   backgroundImage:
+    //     "url('http://api-praxis.eml.com.co/wp-content/uploads/2022/03/polimero.png')",
+    //   height: "5500px",
+    // }}
     >
       {bulcosan !== undefined && (
         <React.Fragment>
@@ -41,176 +54,289 @@ const Bulcosan: FC = (): JSX.Element => {
           {/* banner */}
 
           {/* vulcosan  */}
-          <StyledTerapeuticNumberSection
-            style={{ backgroundSize: "104% 96%" }}
-            background={bulcosan.background_description.content}
-          >
-            <Container>
-              <Grid item lg={12} className="flex justify-center">
-                <StyledImageGeneral
-                  src={bulcosan.vulcosan_titulo_1.content}
-                  alt={bulcosan.vulcosan_titulo_1.alt}
-                  style={{
-                    width: "auto",
-                    marginTop: "-1%",
-                    marginLeft: "4.8%",
-                  }}
-                />
-              </Grid>
+          {width > 1024 ? (
+            <StyledTerapeuticNumberSection
+              style={{ backgroundSize: "104% 96%" }}
+              background={bulcosan.background_description.content}
+            >
+              <Container>
+                <Grid item lg={12} className="flex justify-center">
+                  <StyledImageGeneral
+                    src={bulcosan.vulcosan_titulo_1.content}
+                    alt={bulcosan.vulcosan_titulo_1.alt}
+                    style={{
+                      width: "auto",
+                      marginTop: "-1%",
+                      marginLeft: "4.8%",
+                    }}
+                  />
+                </Grid>
 
-              <Grid item lg={12} className="">
-                <StyledTitulo1
-                  style={{
-                    lineHeight: "1.3",
-                    fontSize: "17px",
-                    padding: "0 56px",
-                    marginTop: "2.7%",
-                    fontFamily: "Montserrat, medium",
-                    color: "#666666",
-                    marginLeft: "5.4%",
-                  }}
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      bulcosan !== undefined &&
-                      bulcosan.vulcosan_texto_1.content,
-                  }}
-                ></StyledTitulo1>
-              </Grid>
-            </Container>
-          </StyledTerapeuticNumberSection>
+                <Grid item lg={12} className="">
+                  <StyledTitulo1
+                    style={{
+                      lineHeight: "1.3",
+                      fontSize: "17px",
+                      padding: "0 56px",
+                      marginTop: "2.7%",
+                      fontFamily: "Montserrat, medium",
+                      color: "#666666",
+                      marginLeft: "5.4%",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        bulcosan !== undefined &&
+                        bulcosan.vulcosan_texto_1.content,
+                    }}
+                  ></StyledTitulo1>
+                </Grid>
+              </Container>
+            </StyledTerapeuticNumberSection>
+          ) : (
+            <StyledSectionDescription
+              background={bulcosan.background_description.content}
+              className="py-8"
+            >
+              <Container>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className="d-flex justify-center"
+                >
+                  <img
+                    src={bulcosan.vulcosan_titulo_1.content}
+                    alt={bulcosan.vulcosan_titulo_1.alt}
+                    style={{ width: width < 769 ? "45%" : "auto" }}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className="d-flex justify-center"
+                >
+                  <StyledDescriptionText
+                    className="mt-8"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        bulcosan !== undefined &&
+                        bulcosan.vulcosan_texto_1.content,
+                    }}
+                  ></StyledDescriptionText>
+                </Grid>
+              </Container>
+            </StyledSectionDescription>
+          )}
           {/* vulcosan  */}
 
           {/* cuadro text heridad */}
           {bulcosan.indicaciones_image !== undefined && (
             <React.Fragment>
-              <Grid item md={6}>
-                <StyledSubtitle
-                  style={{
-                    textAlign: "center",
-                    fontFamily: "Montserrat, bold",
-                    fontSize: "25px",
-                    marginLeft: "-54.1%",
-                    marginTop: "2.8%",
-                  }}
-                  dangerouslySetInnerHTML={{
-                    __html: bulcosan.indicaciones.content.split("--")[0],
-                  }}
-                ></StyledSubtitle>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: bulcosan.indicaciones.content.split("--")[1],
-                  }}
-                  className=""
-                  style={{
-                    // padding: "0 160px",
-                    marginTop: "-3%",
-                    marginLeft: "5.5%",
-                    fontFamily: "Montserrat, medium",
-                    color: "#666666",
-                    fontSize: "17px",
-                    width: "48%",
-                    fontWeight: "500",
-                    lineHeight: "2.2",
-                  }}
-                ></p>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: bulcosan.indicaciones.content.split("--")[2],
-                  }}
-                  className=""
-                  style={{
-                    // padding: "0 160px",
-                    marginTop: "-4.8%",
-                    fontFamily: "Montserrat, medium",
-                    color: "#666666",
-                    fontSize: "17px",
-                    width: "63%",
-                    fontWeight: "500",
-                    padding: "0 7%",
-                    marginLeft: "-5%"
-                  }}
-                ></p>
-              </Grid>
-              <Grid container>
-                <Grid item md={6}>
-                  <img
-                    src={bulcosan.indicaciones_image.content}
-                    alt={bulcosan.indicaciones_image.alt}
-                    style={{
-                      width: "500px",
-                      marginTop: "-73%",
-                      marginLeft: "113.1%",
-                      height: "414.6px",
-                    }}
-                  />
-                </Grid>
-              </Grid>
+              {width > 1024 ? (
+                <React.Fragment>
+                  <Grid item md={6}>
+                    <StyledSubtitle
+                      style={{
+                        textAlign: "center",
+                        fontFamily: "Montserrat, bold",
+                        fontSize: "25px",
+                        marginLeft: "-54.1%",
+                        marginTop: "2.8%",
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html: bulcosan.indicaciones.content.split("--")[0],
+                      }}
+                    ></StyledSubtitle>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: bulcosan.indicaciones.content.split("--")[1],
+                      }}
+                      className=""
+                      style={{
+                        // padding: "0 160px",
+                        marginTop: "-3%",
+                        marginLeft: "5.5%",
+                        fontFamily: "Montserrat, medium",
+                        color: "#666666",
+                        fontSize: "17px",
+                        width: "48%",
+                        fontWeight: "500",
+                        lineHeight: "2.2",
+                      }}
+                    ></p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: bulcosan.indicaciones.content.split("--")[2],
+                      }}
+                      className=""
+                      style={{
+                        // padding: "0 160px",
+                        marginTop: "-4.8%",
+                        fontFamily: "Montserrat, medium",
+                        color: "#666666",
+                        fontSize: "17px",
+                        width: "63%",
+                        fontWeight: "500",
+                        padding: "0 7%",
+                        marginLeft: "-5%",
+                      }}
+                    ></p>
+                  </Grid>
+                  <Grid container>
+                    <Grid item md={6}>
+                      <img
+                        src={bulcosan.indicaciones_image.content}
+                        alt={bulcosan.indicaciones_image.alt}
+                        style={{
+                          width: "500px",
+                          marginTop: "-73%",
+                          marginLeft: "113.1%",
+                          height: "414.6px",
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <Grid item xs={12} sm={12} md={12}>
+                    <StyledImageResponsive
+                      src={bulcosan.are_infectada.content}
+                      alt={bulcosan.are_infectada.alt}
+                      style={{ maxWidth: "100%" }}
+                    />
+                  </Grid>
+                  <Container>
+                    <Grid item xs={12} sm={12} md={12}>
+                      <StyledTitleText
+                        dangerouslySetInnerHTML={{
+                          __html: bulcosan.indicaciones.content.split("--")[0],
+                        }}
+                      ></StyledTitleText>
+                      <StyledDescriptionText
+                        dangerouslySetInnerHTML={{
+                          __html: bulcosan.indicaciones.content.split("--")[1],
+                        }}
+                      ></StyledDescriptionText>
+                      <StyledDescriptionText
+                        dangerouslySetInnerHTML={{
+                          __html: bulcosan.indicaciones.content.split("--")[2],
+                        }}
+                      ></StyledDescriptionText>
+                    </Grid>
+                  </Container>
+                </React.Fragment>
+              )}
             </React.Fragment>
           )}
-          <Container className="mt-12">
-            {/* cuadro text heridad */}
+          {/* cuadro text heridad */}
 
-            {/* cuadro text heridad */}
-            <StyledTerapeuticNumberSection
-              background={bulcosan.caracteristicas_background.content}
-            >
-              <Grid container className="mt-5">
-                {bulcosan.caracteristicas !== undefined && (
-                  <React.Fragment>
-                    <Grid container>
-                      <Grid item md={6}>
-                        <img
-                          src={bulcosan.caracteristicas.content}
-                          alt={bulcosan.caracteristicas.alt}
-                          style={{
-                            width: "500px",
-                            marginTop: "-32.7%",
-                            marginLeft: "-4.2%",
-                            height: "414.6px",
-                          }}
-                        />
+          {/* cuadro text heridad */}
+          <StyledTerapeuticNumberSection
+            background={bulcosan.caracteristicas_background.content}
+            style={{
+              paddingTop: width < 1024 ? "2rem" : "9rem",
+              paddingBottom: width < 1024 ? "2rem" : "9rem",
+            }}
+          >
+            {width > 1024 ? (
+              <Container className="xl:mt-12 lg:mt-12">
+                <Grid container className="mt-5">
+                  {bulcosan.caracteristicas !== undefined && (
+                    <React.Fragment>
+                      <Grid container>
+                        <Grid item md={6}>
+                          <img
+                            src={bulcosan.caracteristicas.content}
+                            alt={bulcosan.caracteristicas.alt}
+                            style={{
+                              width: "500px",
+                              marginTop: "-32.7%",
+                              marginLeft: "-4.2%",
+                              height: "414.6px",
+                            }}
+                          />
+                        </Grid>
+                        <Grid item md={6}>
+                          <StyledSubtitle
+                            style={{
+                              textAlign: "center",
+                              fontFamily: "Montserrat, bold",
+                              fontSize: "25px",
+                              marginLeft: "-44.1%",
+                              marginTop: "-29.2%",
+                            }}
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                bulcosan.caracteristicas_image.content.split(
+                                  "--"
+                                )[0],
+                            }}
+                          ></StyledSubtitle>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                bulcosan.caracteristicas_image.content.split(
+                                  "--"
+                                )[1],
+                            }}
+                            className=""
+                            style={{
+                              // padding: "0 160px",
+                              marginTop: "-1.8%",
+                              marginLeft: "12.7%",
+                              fontFamily: "Montserrat, medium",
+                              color: "#666666",
+                              fontSize: "17px",
+                              fontWeight: "500",
+                            }}
+                          ></p>
+                        </Grid>
                       </Grid>
-                      <Grid item md={6}>
-                        <StyledSubtitle
-                          style={{
-                            textAlign: "center",
-                            fontFamily: "Montserrat, bold",
-                            fontSize: "25px",
-                            marginLeft: "-44.1%",
-                            marginTop: "-29.2%",
-                          }}
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              bulcosan.caracteristicas_image.content.split(
-                                "--"
-                              )[0],
-                          }}
-                        ></StyledSubtitle>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              bulcosan.caracteristicas_image.content.split(
-                                "--"
-                              )[1],
-                          }}
-                          className=""
-                          style={{
-                            // padding: "0 160px",
-                            marginTop: "-1.8%",
-                            marginLeft: "12.7%",
-                            fontFamily: "Montserrat, medium",
-                            color: "#666666",
-                            fontSize: "17px",
-                            fontWeight: "500",
-                          }}
-                        ></p>
-                      </Grid>
-                    </Grid>
-                  </React.Fragment>
-                )}
+                    </React.Fragment>
+                  )}
 
-                {/* cuadro3 */}
+                  {/* cuadro3 */}
+                </Grid>
+              </Container>
+            ) : (
+              <Grid container>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className="d-flex justify-center"
+                >
+                  <StyledImageResponsive
+                    src={bulcosan.caracteristicas_responsive.content}
+                    alt={bulcosan.caracteristicas_responsive.alt}
+                    style={{ maxWidth: "100%" }}
+                  />
+                </Grid>
+                <Container>
+                  <Grid item xs={12} sm={12} md={12}>
+                    <StyledTitleText
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          bulcosan.caracteristicas_image.content.split("--")[0],
+                      }}
+                    ></StyledTitleText>
+                    <StyledDescriptionText
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          bulcosan.caracteristicas_image.content.split("--")[1],
+                      }}
+                    ></StyledDescriptionText>
+                  </Grid>
+                </Container>
               </Grid>
+            )}
+
+            {width > 1024 ? (
               <Grid container className="mt-14">
                 <Grid item md={6}>
                   <StyledImageGeneral
@@ -236,67 +362,139 @@ const Bulcosan: FC = (): JSX.Element => {
                   />
                 </Grid>
               </Grid>
-              {/* cuadro3 */}
-            </StyledTerapeuticNumberSection>
-            <StyledTitulo
-              style={{
-                textAlign: "center",
-                fontFamily: "Montserrat, bold",
-                fontSize: "25px",
-                marginLeft: "-77.1%",
-                marginTop: "-5.7%",
-              }}
-            >
-              {bulcosan.aplicacion_title.content}
-            </StyledTitulo>
-            <Grid container className="mt-5 justify-center">
-              <StyledImageGeneral
-                src={bulcosan.aplicacion_image.content}
-                alt={bulcosan.aplicacion_image.alt}
-                style={{ width: "100%", marginLeft: "4%", marginTop: "1%" }}
-              />
-            </Grid>
-            <StyledTitulo
-              className=""
-              style={{
-                textAlign: "center",
-                fontFamily: "Montserrat, bold",
-                fontSize: "25px",
-                marginLeft: "-67.1%",
-                marginTop: "4.9%",
-              }}
-            >
-              {bulcosan.facil_title.content}
-            </StyledTitulo>
-            <Grid container className="mt-12">
-              <Grid
-                item
-                md={6}
-                className="d-flex justify-center align-items-center"
+            ) : (
+              <Grid container>
+                <Grid item xs={12} sm={12} md={12}>
+                  <StyledImageResponsive
+                    src={bulcosan.ventaja_responsive1.content}
+                    alt={bulcosan.ventaja_responsive1.alt}
+                    style={{ maxWidth: "100%" }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} className="mt-6">
+                  <Container>
+                    <StyledImageResponsive
+                      src={bulcosan.ventajas.content}
+                      alt={bulcosan.ventajas.alt}
+                      style={{
+                        maxWidth: "100%",
+                        margin: width < 768 ? "4% 0px" : "4% 25px",
+                      }}
+                    />
+                  </Container>
+                </Grid>
+              </Grid>
+            )}
+            {/* cuadro3 */}
+          </StyledTerapeuticNumberSection>
+          {width > 1024 ? (
+            <>
+              <StyledTitulo
+                style={{
+                  textAlign: "center",
+                  fontFamily: "Montserrat, bold",
+                  fontSize: "25px",
+                  marginLeft: "-77.1%",
+                  marginTop: "-5.7%",
+                }}
               >
+                {bulcosan.aplicacion_title.content}
+              </StyledTitulo>
+              <Grid container className="mt-5 justify-center">
                 <StyledImageGeneral
-                  src={bulcosan.facil_image.content}
-                  alt={bulcosan.facil_image.alt}
-                  style={{ width: "50%", marginLeft: "-10%", marginTop: "-4%" }}
+                  src={bulcosan.aplicacion_image.content}
+                  alt={bulcosan.aplicacion_image.alt}
+                  style={{ width: "100%", marginLeft: "4%", marginTop: "1%" }}
                 />
               </Grid>
+              <StyledTitulo
+                className=""
+                style={{
+                  textAlign: "center",
+                  fontFamily: "Montserrat, bold",
+                  fontSize: "25px",
+                  marginLeft: "-67.1%",
+                  marginTop: "4.9%",
+                }}
+              >
+                {bulcosan.facil_title.content}
+              </StyledTitulo>
+              <Grid container className="mt-12">
+                <Grid
+                  item
+                  md={6}
+                  className="d-flex justify-center align-items-center"
+                >
+                  <StyledImageGeneral
+                    src={bulcosan.facil_image.content}
+                    alt={bulcosan.facil_image.alt}
+                    style={{
+                      width: "50%",
+                      marginLeft: "-10%",
+                      marginTop: "-4%",
+                    }}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  md={6}
+                  className="d-flex justify-center align-items-center"
+                >
+                  <StyledImageGeneral
+                    src={bulcosan.facil_image2.content}
+                    alt={bulcosan.facil_image2.alt}
+                    style={{
+                      width: "100%",
+                      marginLeft: "-34%",
+                      marginTop: "-6%",
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </>
+          ) : (
+            <>
+              <Container>
+                <StyledTitleText>
+                  {bulcosan.aplicacion_title.content}
+                </StyledTitleText>
+              </Container>
+
               <Grid
                 item
-                md={6}
-                className="d-flex justify-center align-items-center"
+                xs={12}
+                sm={12}
+                md={12}
+                className="d-flex justify-center "
               >
-                <StyledImageGeneral
-                  src={bulcosan.facil_image2.content}
-                  alt={bulcosan.facil_image2.alt}
-                  style={{
-                    width: "100%",
-                    marginLeft: "-34%",
-                    marginTop: "-6%",
-                  }}
+                <StyledImageResponsive
+                  src={bulcosan.tabla_responsive_aplicacion.content}
+                  alt={bulcosan.tabla_responsive_aplicacion.alt}
+                  style={{ maxWidth: "80%" }}
                 />
               </Grid>
-            </Grid>
-          </Container>
+              <Container>
+                <StyledTitleText className="mt-6">
+                  {bulcosan.facil_title.content}
+                </StyledTitleText>
+              </Container>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                className="d-flex justify-center "
+              >
+                <StyledImageResponsive
+                  src={bulcosan.facil_manipulacion.content}
+                  alt={bulcosan.facil_manipulacion.alt}
+                  style={{ maxWidth: "80%" }}
+                />
+              </Grid>
+            </>
+          )}
+
+          {/* </Container> */}
 
           {/* VUADRO AZUL */}
           {bulcosan.references !== undefined && (
@@ -308,70 +506,128 @@ const Bulcosan: FC = (): JSX.Element => {
                 marginTop: "4.3%",
                 height: "4.4%",
               }}
-              className="py-16"
+              className="xl:py-16 lg:py-16 py-6"
             >
-              <StyledSubtitle
-                style={{
-                  textAlign: "center",
-                  fontFamily: "Montserrat, bold",
-                  fontSize: "25px",
-                  marginLeft: "-61.1%",
-                  marginTop: "-3.7%",
-                  color: "#fff"
-                }}
-                dangerouslySetInnerHTML={{
-                  __html: bulcosan.references.content.split("--")[0],
-                }}
-              ></StyledSubtitle>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: bulcosan.references.content.split("--")[1]
-                }}
-                className="text-white"
-                style={{
-                  padding: "0 160px",
-                  marginTop: "-2.7%",
-                  marginLeft: "-3.3%",
-                  fontFamily: "Montserrat, medium",
-                  fontSize: "17px",
-                  lineHeight: "1.8",
-                }}
-              ></p>
+              {width > 1024 ? (
+                <>
+                  <StyledSubtitle
+                    style={{
+                      textAlign: "center",
+                      fontFamily: "Montserrat, bold",
+                      fontSize: "25px",
+                      marginLeft: "-61.1%",
+                      marginTop: "-3.7%",
+                      color: "#fff",
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: bulcosan.references.content.split("--")[0],
+                    }}
+                  ></StyledSubtitle>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: bulcosan.references.content.split("--")[1],
+                    }}
+                    className="text-white"
+                    style={{
+                      padding: "0 160px",
+                      marginTop: "-2.7%",
+                      marginLeft: "-3.3%",
+                      fontFamily: "Montserrat, medium",
+                      fontSize: "17px",
+                      lineHeight: "1.8",
+                    }}
+                  ></p>
+                </>
+              ) : (
+                <>
+                  <Container>
+                    <StyledTitleTextWhite
+                      className="text-white"
+                      dangerouslySetInnerHTML={{
+                        __html: bulcosan.references.content.split("--")[0],
+                      }}
+                    ></StyledTitleTextWhite>
+                    <StyledDescriptionWhiteText
+                      className="text-white"
+                      dangerouslySetInnerHTML={{
+                        __html: bulcosan.references.content.split("--")[1],
+                      }}
+                    ></StyledDescriptionWhiteText>
+                  </Container>
+                </>
+              )}
             </div>
           )}
-          <Grid container className="mt-5">
-            {/* <Grid item md={12}>
-              <StyledImageGeneral
-                src={bulcosan.references.content}
-                alt={bulcosan.references.alt}
-                style={{ width: "100%" }}
-              />
-            </Grid> */}
-          </Grid>
           {/* VUADRO AZUL */}
 
           <Container>
-            <Grid container className="mt-12 mb-12 align-items-center">
-              <StyledTitulo
-               style={{
-                padding: "0 160px",
-                marginTop: "-2.1%",
-                marginLeft: "-3.9%",
-                fontFamily: "Montserrat, bold",
-                fontSize: "25px",
-              }}
-               >{bulcosan.consiguelo.content}</StyledTitulo>
-              <a
-                href="https://www.cruzverde.com.co/aposito-esteril-caja-x-10-vulcosan-phmb-10cm-x-10cm/COCV_386040.html"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <StyledImageGeneral
-                  src={bulcosan.cruz.content}
-                  style={{ width: "auto", marginTop: "-8%", marginLeft: "-64.6%" }}
-                  alt={bulcosan.cruz.alt}
-                />
-              </a>
+            <Grid
+              container
+              className="xl:mt-12 lg:mt-12 xl:mb-12 lg:mb-12 mt-6 mb-6 align-items-center"
+            >
+              {width > 1024 ? (
+                <>
+                  <StyledTitulo
+                    style={{
+                      padding: "0 160px",
+                      marginTop: "-2.1%",
+                      marginLeft: "-3.9%",
+                      fontFamily: "Montserrat, bold",
+                      fontSize: "25px",
+                    }}
+                  >
+                    {bulcosan.consiguelo.content}
+                  </StyledTitulo>
+                  <a
+                    href="https://www.cruzverde.com.co/aposito-esteril-caja-x-10-vulcosan-phmb-10cm-x-10cm/COCV_386040.html"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <StyledImageGeneral
+                      src={bulcosan.cruz.content}
+                      style={{
+                        width: "auto",
+                        marginTop: "-8%",
+                        marginLeft: "-64.6%",
+                      }}
+                      alt={bulcosan.cruz.alt}
+                    />
+                  </a>
+                </>
+              ) : (
+                <>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    className="d-flex justify-center "
+                  >
+                    <StyledTitleText className="text-center">
+                      {bulcosan.consiguelo.content}
+                    </StyledTitleText>
+                  </Grid>
+
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    className="d-flex justify-center "
+                  >
+                    <a
+                      href="https://www.cruzverde.com.co/aposito-esteril-caja-x-10-vulcosan-phmb-10cm-x-10cm/COCV_386040.html"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src={bulcosan.cruz.content}
+                        alt={bulcosan.cruz.alt}
+                      />
+                    </a>
+                  </Grid>
+                </>
+              )}
             </Grid>
           </Container>
         </React.Fragment>

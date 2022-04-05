@@ -39,7 +39,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
             >
               <Link
                 to="/terapeutic-number/heridas"
-                className="text-white text-md sm:text-xs xs:text-xs"
+                className="text-white text-md "
                 style={{
                   fontSize: width <= 767 ? "10px" : "15px",
                 }}
@@ -54,7 +54,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
             >
               <Link
                 to="/terapeutic-number/ulceras"
-                className="text-white text-md sm:text-xs"
+                className="text-white text-md"
                 style={{
                   fontSize: width <= 767 ? "10px" : "15px",
                 }}
@@ -64,12 +64,12 @@ const TerapeuticNumber: FC = (): JSX.Element => {
             </StyledGrid2>
             <StyledGrid3
               xs={3}
-              className="flex justify-center items-center sm:text-xs"
+              className="flex justify-center items-center"
               selected={type === "diabetes" && true}
             >
               <Link
                 to="/terapeutic-number/diabetes"
-                className="text-white text-md sm:text-xs"
+                className="text-white text-md"
                 style={{
                   fontSize: width <= 767 ? "10px" : "15px",
                 }}
@@ -79,7 +79,7 @@ const TerapeuticNumber: FC = (): JSX.Element => {
             </StyledGrid3>
             <StyledGrid4
               xs={3}
-              className="flex justify-center items-center sm:text-xs"
+              className="flex justify-center items-center"
               selected={type === "enfermedad-hemorrodial" && true}
             >
               <Link

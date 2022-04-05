@@ -11,6 +11,7 @@ import React, { FC, useState } from "react";
 import useLoginStyles from "./login.styles";
 import { Link } from "react-router-dom";
 import useControllers from "controllers";
+import { StyledTitleFactores } from "../terapeutic-number/Heridas/heridas.responsive.styles";
 // import { StyledContainer } from "../Home/home.styles";
 
 const Login: FC<{ background: string; show: boolean; logo?: string, height?: string; }> = (
@@ -95,9 +96,9 @@ const Login: FC<{ background: string; show: boolean; logo?: string, height?: str
                     <Grid lg={12} className="pb-4 sm:pb-4 flex justify-center">
                       <TextField
                         {...register("email")}
-                        placeholder="Correo Electronico"
+                        placeholder="Correo Electrónico"
                         className="w-full md:w-9/12"
-                        label="Correo Electronico"
+                        label="Correo Electrónico"
                       />
                     </Grid>
                     <Grid md={12} className="pb-1 sm:pb-1 flex justify-center">
@@ -142,18 +143,21 @@ const Login: FC<{ background: string; show: boolean; logo?: string, height?: str
           </StyledSection>
         ) : (
           <React.Fragment>
-            <StyledSection background="http://api-praxis.test/wp-content/uploads/2022/03/registro-1.png">
+            <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png">
               <Container>
                 <Grid item md={12} xs={12} className="pt-12">
-                  <Grid md={12} className="pb-12 sm:pb-12">
-                    <StyledTitle>Ingreso</StyledTitle>
+                  <Grid item xs={12} sm={12} md={12} className="d-flex justify-center mb-12"> 
+                      <img src={'http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png'} alt="" width="200" />
                   </Grid>
-                  <Grid lg={12} className="pb-4 sm:pb-4 flex justify-center">
+                  <Grid md={12} className="pb-8 sm:pb-12">
+                    <StyledTitleFactores className="text-center" style={{ fontSize: "24px" }}>Ingreso</StyledTitleFactores>
+                  </Grid>
+                  <Grid lg={12} className="pb-4 sm:pb-4  flex justify-center">
                     <TextField
                       {...register("email")}
-                      placeholder="Correo Electronico"
+                      placeholder="Correo Electrónico"
                       className="w-full md:w-9/12"
-                      label="Correo Electronico"
+                      label="Correo Electrónico"
                     />
                   </Grid>
                   <Grid md={12} className="pb-1 sm:pb-1 flex justify-center">
@@ -200,7 +204,7 @@ const Login: FC<{ background: string; show: boolean; logo?: string, height?: str
                   xs={12}
                   className="flex justify-center py-12"
                 >
-                  <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-3-3.png" />
+                  <StyledImage src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/logosingresos.png" />
                 </Grid>
               </Container>
             </StyledSection>

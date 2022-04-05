@@ -3,6 +3,7 @@ import React, { FC, useState } from "react";
 import useLoginStyles from "./register.styles";
 import useControllers from "controllers";
 import { Controller } from "react-hook-form";
+import { StyledTitleFactores } from "../terapeutic-number/Heridas/heridas.responsive.styles";
 // import { StyledContainer } from "../Home/home.styles";
 
 const Register: FC = (): JSX.Element => {
@@ -178,11 +179,14 @@ const Register: FC = (): JSX.Element => {
         </StyledSection>
       ) : (
         <React.Fragment>
-          <StyledSection background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-7-3.png">
+          <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png">
             <Container>
               <Grid item md={12} xs={12} className="pt-12">
+              <Grid item xs={12} sm={12} md={12} className="d-flex justify-center mb-12"> 
+                      <img src={'http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png'} alt="" width="200" />
+                  </Grid>
                 <Grid md={12} className="pb-12 sm:pb-12">
-                  <StyledTitle>Registro</StyledTitle>
+                  <StyledTitleFactores className="text-center" style={{ fontSize: "24px" }}>Registro</StyledTitleFactores>
                 </Grid>
                 <Grid lg={12} className="pb-4 sm:pb-4 flex justify-center">
                   <Controller
@@ -295,7 +299,7 @@ const Register: FC = (): JSX.Element => {
                 </Grid>
               </Grid>
               <Grid item md={12} xs={12} className="flex justify-center py-12">
-                <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-3-3.png" />
+                <StyledImage src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/logosingresos.png" />
               </Grid>
             </Container>
           </StyledSection>

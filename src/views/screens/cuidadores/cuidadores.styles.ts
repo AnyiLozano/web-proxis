@@ -94,7 +94,7 @@ const useCuidadoresStyles = () => {
     `;
 
     const StyledSectionBlue = styled.section`
-        ${tw`py-16`}
+        ${tw`xl:py-16 lg:py-16 py-8`}
         background: #005DA2;
     `
 

@@ -5,14 +5,19 @@ import tw from "twin.macro";
 
 const useContactStyles = () => {
     const StyledSection = styled.section`
-        ${tw `pt-16    `}
+        ${tw `xl:pt-16  lg:pt-16  pt-8`}
         background-image: url('${(props: any) => props.background}');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-color: #DBEEF3;
+        
         
         @media (min-width: 1201px){
             margin-top: 8.9rem;
+        }
+
+        @media (max-width: 1023px){
+            background-position: center;
+            background-size: 100% 100%;
         }
     `;
 

@@ -1,11 +1,12 @@
 import { Container, Grid } from "@mui/material";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import useBlogStyles from "./blog.styles";
 import _ from "lodash";
 import useControllers from "controllers";
 // import Slider from "react-slick";
 import { useHistory } from "react-router-dom";
 import { StyledContainer } from "../Home/home.styles";
+import { StyledTitleText } from "../products/Epiprot/epiprot.responsive.styles";
 
 const Blog: FC = (): JSX.Element => {
   // Styles
@@ -25,37 +26,60 @@ const Blog: FC = (): JSX.Element => {
   const { postsAssets, recentPosts } = useBlog("principal");
   const history = useHistory();
 
+  /** States */
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
+
   return (
     <React.Fragment>
       <StyledContainer maxWidth="lg">
         {postsAssets !== undefined && (
           <React.Fragment>
             <StyledImageBanner
-              style={{ marginTop: "12%" }}
+              style={{ marginTop: width < 769 ? "29.4%" : "12%" }}
               src={postsAssets.blog_banner_principal?.content}
               alt="Blog's Banner Image"
             />
             <StyledBlogFirstSection
-              style={{ backgroundSize: "108% 86%" }}
-              background={postsAssets.blog_background_recent?.content}
-              className="sm:py-36"
+              style={{
+                backgroundSize: width > 1024 ? "108% 86%" : "100% 100%",
+              }}
+              background={
+                width > 1024 ? postsAssets.blog_background_recent?.content : ""
+              }
+              className="py-8"
             >
               <Container>
-                <StyledTitle2
-                  className="pb-16"
-                  style={{
-                    textAlign: "center",
-                    fontWeight: "600",
-                    fontFamily: "montserrat, bold",
-                  }}
-                >
-                  Reciente
-                </StyledTitle2>
+                {width > 1024 ? (
+                  <StyledTitle2
+                    className="pb-16"
+                    style={{
+                      textAlign: "center",
+                      fontWeight: "600",
+                      fontFamily: "montserrat, bold",
+                    }}
+                  >
+                    Reciente
+                  </StyledTitle2>
+                ) : (
+                  <StyledTitleText className="text-center">
+                    Reciente
+                  </StyledTitleText>
+                )}
                 <Grid container>
                   {_.map(recentPosts, (item: any, index: any) => {
                     if (index === 0) {
                       return (
-                        <Grid item lg={3} key={index} className="px-6">
+                        <Grid
+                          item
+                          xs={12}
+                          sm={6}
+                          md={6}
+                          lg={3}
+                          key={index}
+                          className="px-6"
+                        >
                           <StyledImage
                             src={postsAssets.blog_number_1?.content}
                             alt="pre-test"
@@ -70,11 +94,11 @@ const Blog: FC = (): JSX.Element => {
                           </Grid>
                           <p
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
-                              marginTop: "8%"
+                              marginTop: "8%",
                             }}
                           >
                             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -83,7 +107,7 @@ const Blog: FC = (): JSX.Element => {
                           <StyledButtonViewMore
                             onClick={() => history.push(`/detail/${item.id}`)}
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
@@ -95,7 +119,15 @@ const Blog: FC = (): JSX.Element => {
                       );
                     } else if (index === 1) {
                       return (
-                        <Grid item lg={3} key={index} className="px-6">
+                        <Grid
+                          item
+                          xs={12}
+                          sm={6}
+                          md={6}
+                          lg={3}
+                          key={index}
+                          className="px-6"
+                        >
                           <Grid item lg={12}>
                             <StyledImage
                               src={postsAssets.blog_number_2?.content}
@@ -110,11 +142,11 @@ const Blog: FC = (): JSX.Element => {
                           </Grid>
                           <p
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
-                              marginTop: "8%"
+                              marginTop: "8%",
                             }}
                           >
                             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -123,7 +155,7 @@ const Blog: FC = (): JSX.Element => {
                           <StyledButtonViewMore
                             onClick={() => history.push(`/detail/${item.id}`)}
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
@@ -135,7 +167,15 @@ const Blog: FC = (): JSX.Element => {
                       );
                     } else if (index === 2) {
                       return (
-                        <Grid item lg={3} key={index} className="px-6">
+                        <Grid
+                          item
+                          xs={12}
+                          sm={6}
+                          md={6}
+                          lg={3}
+                          key={index}
+                          className="px-6"
+                        >
                           <Grid item lg={12}>
                             <StyledImage
                               src={postsAssets.blog_number_3?.content}
@@ -150,11 +190,11 @@ const Blog: FC = (): JSX.Element => {
                           </Grid>
                           <p
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
-                              marginTop: "8%"
+                              marginTop: "8%",
                             }}
                           >
                             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -163,7 +203,7 @@ const Blog: FC = (): JSX.Element => {
                           <StyledButtonViewMore
                             onClick={() => history.push(`/detail/${item.id}`)}
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
@@ -175,7 +215,15 @@ const Blog: FC = (): JSX.Element => {
                       );
                     } else if (index === 3) {
                       return (
-                        <Grid item lg={3} key={index} className="px-6">
+                        <Grid
+                          item
+                          xs={12}
+                          sm={6}
+                          md={6}
+                          lg={3}
+                          key={index}
+                          className="px-6"
+                        >
                           <Grid item lg={12}>
                             <StyledImage
                               src={postsAssets.blog_number_4?.content}
@@ -190,11 +238,11 @@ const Blog: FC = (): JSX.Element => {
                           </Grid>
                           <p
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
-                              marginTop: "8%"
+                              marginTop: "8%",
                             }}
                           >
                             Lorem ipsum dolor sit amet consectetur adipisicing
@@ -203,7 +251,7 @@ const Blog: FC = (): JSX.Element => {
                           <StyledButtonViewMore
                             onClick={() => history.push(`/detail/${item.id}`)}
                             style={{
-                              fontSize: "17px",
+                              fontSize: width < 769 ? "12px" : "17px",
                               fontFamily: "Montserrat, medium",
                               color: "#666666",
                               fontWeight: "500",
@@ -219,20 +267,22 @@ const Blog: FC = (): JSX.Element => {
               </Container>
             </StyledBlogFirstSection>
             <StyledContainer2>
-              <Container className="py-16">
+              <Container className="xl:py-16 lg:py-16 py-6 mt-12">
                 <Grid container>
                   {_.map(recentPosts, (item: any, index: any) => (
-                    <Grid item lg={4} className="py-6 px-6">
+                    <Grid item sm={6} md={6} lg={4} className="py-6 px-6">
                       <Grid item lg={12}>
                         <StyledTitle2
-                            style={{ fontSize: "22px", fontWeight: "700", fontFamily: "montserrat, bold"
-
+                          style={{
+                            fontSize: width > 1024 ? "22px" : width < 769 ? "17px" : "22px",
+                            fontWeight: "700",
+                            fontFamily: "Montserrat, bold",
                           }}
                         >
                           Lorem ipsum dolor sit amet consectetur
                         </StyledTitle2>
                         <StyledTextDescription
-                          style={{ fontSize: "15px" }}
+                          style={{ fontSize: width > 1024 ? "15px" : width < 769 ? "12px" : "17px" }}
                           dangerouslySetInnerHTML={{
                             __html:
                               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, a obcaecati?",
@@ -241,7 +291,7 @@ const Blog: FC = (): JSX.Element => {
                         <StyledButtonViewMore
                           onClick={() => history.push(`/detail/${item.id}`)}
                           style={{
-                            fontSize: "17px",
+                            fontSize: width > 1024 ? "17px" : width < 769 ? "12px" : "17px",
                             fontFamily: "Montserrat, medium",
                             color: "#666666",
                             fontWeight: "500",

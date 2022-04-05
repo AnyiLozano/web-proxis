@@ -28,7 +28,11 @@ const useProductsStyles = () => {
         }};
 
         @media (max-width: 1024px) {
-            height: 15.3vw;
+            height: 60px;
+        }
+
+        @media (max-width: 500px) {
+            height: 40px;
         }
     `;
 
@@ -46,7 +50,11 @@ const useProductsStyles = () => {
         }};
 
         @media (max-width: 1024px) {
-            height: 15.3vw;
+            height: 60px;
+        }
+
+        @media (max-width: 500px) {
+            height: 40px;
         }
     `;
 
@@ -64,7 +72,11 @@ const useProductsStyles = () => {
         }};
 
         @media (max-width: 1024px) {
-            height: 15.3vw;
+            height: 60px;
+        }
+
+        @media (max-width: 500px) {
+            height: 40px;
         }
     `;
 

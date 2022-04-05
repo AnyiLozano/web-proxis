@@ -1,8 +1,14 @@
 import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
 import { StyledImageGeneral } from "views/screens/terapeutic-number/terapeutic-number.style";
+import {
+  StyledDescriptionText,
+  StyledImageResponsive,
+  StyledSectionDescription,
+  StyledTitleText,
+} from "../Epiprot/epiprot.responsive.styles";
 
 const Proctokinasa: FC = (): JSX.Element => {
   // Styles
@@ -20,6 +26,11 @@ const Proctokinasa: FC = (): JSX.Element => {
 
   const { proctokinasa } = products;
 
+  /** States */
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  window.addEventListener("resize", () => setWidth(window.innerWidth));
+
   return (
     <React.Fragment>
       {proctokinasa !== undefined && (
@@ -28,111 +39,200 @@ const Proctokinasa: FC = (): JSX.Element => {
             src={proctokinasa.banner_principal.content}
             alt={proctokinasa.banner_principal.alt}
           />
-          <StyledTerapeuticNumberSection
-            style={{ backgroundSize: "105% 124%" }}
-            background={proctokinasa.background_description.content}
-          >
-            <Container>
-              <Grid item lg={12} className="flex justify-center">
-                <StyledTitulo
-                  style={{
-                    fontFamily: "Montserrat, bold",
-                    fontSize: "25px",
-                    marginTop: "-8.2%",
-                  }}
+          {width > 1024 ? (
+            <StyledTerapeuticNumberSection
+              style={{ backgroundSize: "105% 124%" }}
+              background={proctokinasa.background_description.content}
+            >
+              <Container>
+                <Grid item lg={12} className="flex justify-center">
+                  <StyledTitulo
+                    style={{
+                      fontFamily: "Montserrat, bold",
+                      fontSize: "25px",
+                      marginTop: "-8.2%",
+                    }}
+                  >
+                    Proctokinasa®
+                  </StyledTitulo>
+                </Grid>
+                <Grid item lg={12} className="">
+                  <StyledTitulo1
+                    style={{
+                      lineHeight: "1",
+                      padding: "0 56px",
+                      marginTop: "-1.3%",
+                      fontFamily: "Montserrat, medium",
+                      fontSize: "17px",
+                      color: "#666666",
+                      marginLeft: "5.4%",
+                    }}
+                  >
+                    {proctokinasa.vulcosan_texto_1.content}
+                  </StyledTitulo1>
+                </Grid>
+              </Container>
+            </StyledTerapeuticNumberSection>
+          ) : (
+            <StyledSectionDescription
+              background={proctokinasa.background_description.content}
+            >
+              <Container>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className="d-flex justify-center"
                 >
-                  Proctokinasa®
-                </StyledTitulo>
-              </Grid>
-              <Grid item lg={12} className="">
-                <StyledTitulo1
-                  style={{
-                    lineHeight: "1",
-                    padding: "0 56px",
-                    marginTop: "-1.3%",
-                    fontFamily: "Montserrat, medium",
-                    fontSize: "17px",
-                    color: "#666666",
-                    marginLeft: "5.4%",
-                  }}
+                  <StyledTitleText>Proctokinasa®</StyledTitleText>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className="d-flex justify-center"
                 >
-                  {proctokinasa.vulcosan_texto_1.content}
-                </StyledTitulo1>
-              </Grid>
-            </Container>
-          </StyledTerapeuticNumberSection>
+                  <StyledDescriptionText>
+                    {proctokinasa.vulcosan_texto_1.content}
+                  </StyledDescriptionText>
+                </Grid>
+              </Container>
+            </StyledSectionDescription>
+          )}
           <Container>
             <Grid container>
               {proctokinasa.content.map((item: any, index: number) => {
                 if (index % 2 === 0) {
                   return (
                     <React.Fragment>
-                      <Grid item md={6} className="mt-12 pr-5">
-                        <StyledTitulo
-                          style={{
-                            fontSize: 25,
-                            fontFamily: "Montserrat, bold",
-                          }}
-                        >
-                          {item.title}
-                        </StyledTitulo>
-                        <StyledTitulo1
-                          dangerouslySetInnerHTML={{
-                            __html: item.text,
-                          }}
-                          style={{
-                            fontSize: 17,
-                            fontFamily: "Montserrat, bold",
-                            color: "#666666",
-                            fontWeight: "500"
-                          }}
-                        ></StyledTitulo1>
-                      </Grid>
-                      <Grid item md={6} className="d-flex justify-center mt-12">
-                        <StyledImageGeneral
-                          src={item.image}
-                          alt=""
-                          style={{ width: "100%" }}
-                        />
-                      </Grid>
+                      {width > 1024 ? (
+                        <>
+                          <Grid item md={6} className="mt-12 pr-5">
+                            <StyledTitulo
+                              style={{
+                                fontSize: 25,
+                                fontFamily: "Montserrat, bold",
+                              }}
+                            >
+                              {item.title}
+                            </StyledTitulo>
+                            <StyledTitulo1
+                              dangerouslySetInnerHTML={{
+                                __html: item.text,
+                              }}
+                              style={{
+                                fontSize: 17,
+                                fontFamily: "Montserrat, bold",
+                                color: "#666666",
+                                fontWeight: "500",
+                              }}
+                            ></StyledTitulo1>
+                          </Grid>
+                          <Grid
+                            item
+                            md={6}
+                            className="d-flex justify-center mt-12"
+                          >
+                            <StyledImageGeneral
+                              src={item.image}
+                              alt=""
+                              style={{ width: "100%" }}
+                            />
+                          </Grid>
+                        </>
+                      ) : (
+                        <>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={12}
+                            md={12}
+                            className="d-flex justify-center mt-12"
+                          >
+                            <StyledImageResponsive
+                              src={item.image}
+                              alt=""
+                              style={{ width: "100%", maxWidth: "100%" }}
+                            />
+                          </Grid>
+                          <Grid item xs={12} sm={12} md={12} className="mt-6">
+                            <StyledTitleText>{item.title}</StyledTitleText>
+                            <StyledDescriptionText
+                              dangerouslySetInnerHTML={{
+                                __html: item.text,
+                              }}
+                            ></StyledDescriptionText>
+                          </Grid>
+                        </>
+                      )}
                     </React.Fragment>
                   );
                 } else {
                   return (
                     <React.Fragment>
-                      <Grid
-                        item
-                        md={6}
-                        className="d-flex justify-center mt-12 pr-5"
-                      >
-                        <StyledImageGeneral
-                          src={item.image}
-                          alt=""
-                          style={{ width: "100%" }}
-                        />
-                      </Grid>
+                      {width > 1024 ? (
+                        <>
+                          <Grid
+                            item
+                            md={6}
+                            className="d-flex justify-center mt-12 pr-5"
+                          >
+                            <StyledImageGeneral
+                              src={item.image}
+                              alt=""
+                              style={{ width: "100%" }}
+                            />
+                          </Grid>
 
-                      <Grid item md={6} className="mt-12">
-                        <StyledTitulo
-                          style={{
-                            fontSize: 25,
-                            fontFamily: "Montserrat, bold",
-                          }}
-                        >
-                          {item.title}
-                        </StyledTitulo>
-                        <StyledTitulo1
-                          dangerouslySetInnerHTML={{
-                            __html: item.text
-                          }}
-                          style={{
-                            fontSize: 17,
-                            fontFamily: "Montserrat, bold",
-                            color: "#666666",
-                            fontWeight: "500"
-                          }}
-                        ></StyledTitulo1>
-                      </Grid>
+                          <Grid item md={6} className="mt-12">
+                            <StyledTitulo
+                              style={{
+                                fontSize: 25,
+                                fontFamily: "Montserrat, bold",
+                              }}
+                            >
+                              {item.title}
+                            </StyledTitulo>
+                            <StyledTitulo1
+                              dangerouslySetInnerHTML={{
+                                __html: item.text,
+                              }}
+                              style={{
+                                fontSize: 17,
+                                fontFamily: "Montserrat, bold",
+                                color: "#666666",
+                                fontWeight: "500",
+                              }}
+                            ></StyledTitulo1>
+                          </Grid>
+                        </>
+                      ) : (
+                        <>
+                          <Grid
+                            item
+                            xs={12}
+                            sm={12}
+                            md={12}
+                            className="d-flex justify-center mt-12"
+                          >
+                            <StyledImageResponsive
+                              src={item.image}
+                              alt=""
+                              style={{ width: "100%", maxWidth: "100%" }}
+                            />
+                          </Grid>
+                          <Grid item xs={12} sm={12} md={12} className="mt-6">
+                            <StyledTitleText>{item.title}</StyledTitleText>
+                            <StyledDescriptionText
+                              dangerouslySetInnerHTML={{
+                                __html: item.text,
+                              }}
+                            ></StyledDescriptionText>
+                          </Grid>
+                        </>
+                      )}
                     </React.Fragment>
                   );
                 }
@@ -150,11 +250,19 @@ const Proctokinasa: FC = (): JSX.Element => {
             </Grid>
           </Container>
           <Grid container className="mt-12">
-            <StyledImageGeneral
-              src={proctokinasa.references && proctokinasa.references.content}
-              alt=""
-              style={{ width: "100%" }}
-            />
+            {width > 1024 ? (
+              <StyledImageGeneral
+                src={proctokinasa.references && proctokinasa.references.content}
+                alt=""
+                style={{ width: "100%" }}
+              />
+            ) : (
+              <StyledImageResponsive
+                src={proctokinasa.tipos_tejidos && proctokinasa.tipos_tejidos.content}
+                alt=""
+                style={{ maxWidth: "100%" }}
+              />
+            )}
           </Grid>
         </React.Fragment>
       )}

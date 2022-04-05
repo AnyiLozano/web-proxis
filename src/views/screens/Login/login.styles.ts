@@ -13,6 +13,7 @@ const useLoginStyles = () => {
 
         @media (max-width: 1023px){
             margin-top: 6.9rem;
+            background-size: 100%;
             height: auto;
 
         }

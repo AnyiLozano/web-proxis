@@ -67,13 +67,13 @@ const FormContact: FC = (): JSX.Element => {
                         </Container>
                     </StyledSection>
                 ) : (
-                    <StyledSection className="pt-36">
+                    <StyledSection className="pt-36" background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/contactomovil.png">
                         <Grid item md={12} className="flex justify-center">
                             <Card sx={{ width: '90%', background: '#ffffffc4', padding: "2rem", marginBottom: '4rem' }}>
                                 <Grid item lg={12} className="flex justify-center">
-                                    <StyledTitle className="py-8">Contáctenos</StyledTitle>
+                                    <StyledTitle className="xl:py-8 lg:py-8 py-1">Contáctenos</StyledTitle>
                                 </Grid>
-                                <Grid item lg={12} className="pt-6">
+                                <Grid item lg={12} className="xl:pt-6 lg:pt-6 pt-2">
                                     <TextField
                                         label="Nombre Completo"
                                         type="text"
@@ -82,7 +82,7 @@ const FormContact: FC = (): JSX.Element => {
                                         {...register('name')}
                                     />
                                 </Grid>
-                                <Grid item lg={12} className="pt-6">
+                                <Grid item lg={12} className="xl:pt-6 lg:pt-6 pt-2">
                                     <TextField
                                         label="Correo Electronico"
                                         type="email"
@@ -91,7 +91,7 @@ const FormContact: FC = (): JSX.Element => {
                                         {...register('email')}
                                     />
                                 </Grid>
-                                <Grid item lg={12} className="pt-6">
+                                <Grid item lg={12} className="xl:pt-6 lg:pt-6 pt-2">
                                     <TextField
                                         label="Correo Electronico"
                                         type="email"
@@ -102,13 +102,10 @@ const FormContact: FC = (): JSX.Element => {
                                         {...register('message')}
                                     />
                                 </Grid>
-                                <Grid item lg={12} className="pt-6 flex justify-center">
+                                <Grid item lg={12} className="xl:pt-6 lg:pt-6 pt-2 flex justify-center">
                                     <StyledButtonPresentation onClick={handleSubmit(handleSentContact)}>Enviar</StyledButtonPresentation>
                                 </Grid>
                             </Card>
-                        </Grid>
-                        <Grid item lg={12}>
-                            <StyledImage src="http://api-praxis.test/wp-content/uploads/2022/03/contacto.png" alt="Chica" />
                         </Grid>
                     </StyledSection>
                 )

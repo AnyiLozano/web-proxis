@@ -24,17 +24,17 @@ const Products: FC = (): JSX.Element => {
             <StyledAppBarPage position="relative">
                 <Grid container>
                     <StyledGrid xs={4} lg={4} md={4} xl={4} className="flex justify-center items-center" selected={type === "epiprot" && true}>
-                        <Link to="/products/epiprot" className="text-white">
+                        <Link to="/products/epiprot" className="text-sm xl:text-md lg:text-md md:text-base sm:text-md text-white">
                             Epiprot®
                         </Link>
                     </StyledGrid>
                     <StyledGrid2 xs={4} className="flex justify-center items-center" selected={type === "bulcosan" && true}>
-                        <Link to="/products/Vulcosan" className="text-white">
+                        <Link to="/products/Vulcosan" className="text-sm xl:text-md lg:text-md md:text-base sm:text-md text-white">
                             Vulcosan®
                         </Link>
                     </StyledGrid2>
                     <StyledGrid3 xs={4} className="flex justify-center items-center" selected={type === "proctokinasa" && true}>
-                        <Link to="/products/proctokinasa" className="text-white">
+                        <Link to="/products/proctokinasa" className="text-sm xl:text-md lg:text-md md:text-base sm:text-md text-white">
                             Proctokinasa®
                         </Link>
                     </StyledGrid3>

@@ -52,7 +52,7 @@ const Hemorroides = () => {
                     style={{
                       marginTop: "0%",
                       marginLeft: "4%",
-                      fontSize: "44px",
+                      fontSize: "40px",
                       fontFamily: "Montserrat, bold",
                     }}
                   >
