@@ -143,7 +143,7 @@ const Login: FC<{ background: string; show: boolean; logo?: string, height?: str
           </StyledSection>
         ) : (
           <React.Fragment>
-            <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png">
+            <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png" style={{ marginTop: background.height !== undefined ? "0rem" : window.location.pathname === "/profesionales/salud" ? "6.5rem" : "6.3rem"}}>
               <Container>
                 <Grid item md={12} xs={12} className="pt-12">
                   <Grid item xs={12} sm={12} md={12} className="d-flex justify-center mb-12"> 

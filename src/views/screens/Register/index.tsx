@@ -179,7 +179,7 @@ const Register: FC = (): JSX.Element => {
         </StyledSection>
       ) : (
         <React.Fragment>
-          <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png">
+          <StyledSection background="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/fondo_iciio_responsive.png" style={{ marginTop: "5.9rem" }}>
             <Container>
               <Grid item md={12} xs={12} className="pt-12">
               <Grid item xs={12} sm={12} md={12} className="d-flex justify-center mb-12"> 

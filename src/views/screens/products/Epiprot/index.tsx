@@ -98,6 +98,7 @@ const Epiprot: FC = (): JSX.Element => {
                   src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/tratamientoP.png"
                   alt=""
                   style={{ width: width < 769 ? "100%" : "80%" }}
+                  onClick={() => setFirstImage(true)}
                 />
               )}
             </div>
