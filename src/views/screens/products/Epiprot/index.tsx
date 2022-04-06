@@ -57,6 +57,8 @@ const Epiprot: FC = (): JSX.Element => {
 
   window.addEventListener("resize", () => setWidth(window.innerWidth));
 
+  console.log(width)
+
   const [open, setOpen] = React.useState(false);
   const [itemRender, setItemRender] = React.useState("");
   const handleOpen = (item: any) => {
@@ -271,7 +273,7 @@ const Epiprot: FC = (): JSX.Element => {
                 <StyledTerapeuticNumberSection
                   style={{
                     paddingTop: width < 1024 ? "2rem" : "9rem",
-                    paddingBottom: width < 1024 ? "2rem" : "9rem",
+                    paddingBottom: width < 1024 ? "2rem" : "1rem",
                   }}
                   background={
                     epiprot !== undefined && epiprot.fuente_background.content
@@ -569,7 +571,7 @@ const Epiprot: FC = (): JSX.Element => {
                 {/* cuadro */}
 
                 {/*  indicaciones*/}
-                <Grid container className="mt-12 mb-12">
+                <Grid container className="xl:mt-12 xl:mb-12 mb-6">
                   {width > 1024 ? (
                     <React.Fragment>
                       <Grid item md={6}>
@@ -692,7 +694,7 @@ const Epiprot: FC = (): JSX.Element => {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <StyledTitleText
+                    <StyledTitleText 
                       dangerouslySetInnerHTML={{
                         __html: epiprot.aplicacion_title.content,
                       }}
@@ -777,6 +779,7 @@ const Epiprot: FC = (): JSX.Element => {
                     marginRight: "0px",
                     marginTop: "1.3%",
                     height: "5.4%",
+                    marginBottom: "2%"
                   }}
                   className="xl:py-16 lg:py-16 py-6"
                 >
@@ -809,6 +812,7 @@ const Epiprot: FC = (): JSX.Element => {
 
               {/* cuadro 2 */}
               <Container>
+                <Grid container>
                 {width > 1024 ? (
                   epiprot.final &&
                   epiprot.final.map((item: any, key: number) => (
@@ -857,6 +861,7 @@ const Epiprot: FC = (): JSX.Element => {
                     </Grid>
                   </>
                 )}
+                </Grid>
               </Container>
               {/* cuadro 2 */}
             </React.Fragment>

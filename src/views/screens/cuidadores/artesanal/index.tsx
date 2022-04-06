@@ -61,16 +61,27 @@ const Artesanal = () => {
                   <StyledCarousel
                     arrows={true}
                     dots={false}
-                    speed={10000}
+                    // speed={40000}
                     slidesToShow={1}
                     slidesToScroll={1}
-                    autoplay={true}
+                    autoplay={false}
                     responsive={[
                       {
                         breakpoint: 1024,
                         settings: {
                           dots: false,
-                          arrows: false,
+                          arrows: true,
+                          autoplay: false
+                        },
+                      },
+                      {
+                        breakpoint: 480,
+                        settings: {
+                          dots: false,
+                          arrows: true,
+                          autoplay: false,
+                          speed: 90000,
+                          infinity: false
                         },
                       },
                     ]}
