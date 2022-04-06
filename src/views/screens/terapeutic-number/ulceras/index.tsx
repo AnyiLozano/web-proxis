@@ -285,6 +285,7 @@ const Ulceras = () => {
                             "--"
                           )[1],
                       }}
+                      
                     ></StyledDescripcionFactores>
                   )}
                 </Grid>
@@ -308,6 +309,36 @@ const Ulceras = () => {
                     )}
                   </Grid>
                 </Grid>
+                {width > 1024 ? (
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.lesiones_por_presion.content.split(
+                          "--"
+                        )[2],
+                    }}
+                    className=""
+                    style={{
+                      marginTop: "-2.4%",
+                      marginLeft: "3%",
+                      fontFamily: "Montserrat, medium",
+                      color: "#666666",
+                      fontSize: "17px",
+                      fontWeight: "600",
+                      padding: "0 52px",
+                    }}
+                  ></p>
+                ) : (
+                  <StyledDescripcionFactores
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        woundsAssets.lesiones_por_presion.content.split(
+                          "--"
+                        )[2],
+                    }}
+                    style={{ marginTop: "0%", marginBottom: "10%" }}
+                  ></StyledDescripcionFactores>
+                )}
               </React.Fragment>
             )}
           </StyledTerapeuticNumberSection1>

@@ -11,6 +11,9 @@ const useHeader = () => {
     const [open, setOpen] = useState<boolean>(false);
     const [expand, setExpand] = useState<boolean>(false);
     const [expand1, setExpand1] = useState<boolean>(false);
+    const [expand4, setExpand4] = useState<boolean>(false);
+    const [expand2, setExpand2] = useState<boolean>(false);
+    const [expand3, setExpand3] = useState<boolean>(false);
 
     // Actions
     const { useActions } = useApi();
@@ -27,6 +30,15 @@ const useHeader = () => {
     }
 
     const expandMenu = (type: string) : void => {
+        if(type === "menu1"){
+            expand4 ? setExpand4(false) : setExpand4(true);
+        }
+        if(type === "menu2"){
+            expand2 ? setExpand2(false) : setExpand2(true);
+        }
+        if(type === "menu3"){
+            expand3 ? setExpand3(false) : setExpand3(true);
+        }
         if(type === "personal"){
             if(expand1){
                 setExpand1(false);
@@ -63,7 +75,10 @@ const useHeader = () => {
         expand,
         login,
         expand1,
-        closeSesion
+        closeSesion,
+        expand2,
+        expand3,
+        expand4
     }
 }
 

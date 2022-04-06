@@ -16,7 +16,7 @@ const RecoveryPassword: FC = (): JSX.Element => {
     <React.Fragment>
       {width >= 1200 ? (
         <StyledSection
-          background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-7-3.png"
+          background="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/imagen_inicio_sesion.png"
           style={{ height: "50.7rem" }}
         >
           <Container>
@@ -28,7 +28,7 @@ const RecoveryPassword: FC = (): JSX.Element => {
                 className="flex justify-center items-center"
               >
                 <Grid item lg={12} className="flex justify-center">
-                  <StyledImage src="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-3-3.png" />
+                  <StyledImage src="http://api-praxis.eml.com.co/wp-content/uploads/2022/03/flex_logo_fondo.png" />
                 </Grid>
               </Grid>
               <Grid item lg={6} className="flex justify-center w-full">

@@ -516,14 +516,14 @@ const Heridas = () => {
             />
           )}
 
-          <StyledTitleHands>
+          <StyledTitleHands className="mt-8">
             {woundsAssets.remembers_wounds[1].content.split("--")[1]}
           </StyledTitleHands>
         </Grid>
       )}
 
       {woundsAssets.aux_person !== undefined && (
-        <StyledContainerCase className="lg:py-16 xl:py-16 py-8">
+        <StyledContainerCase className="lg:py-16 xl:py-16 py-8 mt-8">
           <Container maxWidth="lg">
             <StyledTitleCase className="lg:pb-12 xl:pb-12 pb-8 lg:text-center xl:text-center">
               En caso de atender a una persona herida:
@@ -927,7 +927,8 @@ const Heridas = () => {
                     __html: woundsAssets.Heridas_imagen_14.content,
                   }}
                   className="text-white"
-                  style={{ fontSize: "12 !important", paddingLeft: "13%" }}
+                  noReference
+                  style={{ paddingLeft: "13%" }}
                 ></StyledDescriptionReferences>
               )}
             </div>

@@ -279,7 +279,7 @@ export const StyledDescriptionReferences = styled.h1.attrs({
 
   @media (max-width: 1023px) {
     font-size: ${(props: any) =>
-      props.moreText ? "4px !important" : "6px !important"};
+      props.moreText ? "4px !important" : props.noReference ? "12px !important" : "6px !important"};
     padding: 0 8%;
     line-height: 1.2 !important;
   }

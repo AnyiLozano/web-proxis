@@ -43,6 +43,9 @@ const Header: FC = (): JSX.Element => {
     expandMenu,
     expand,
     expand1,
+    expand2,
+    expand3,
+    expand4,
     login,
     closeSesion,
   } = useHeader();
@@ -58,17 +61,15 @@ const Header: FC = (): JSX.Element => {
             style={{ justifyContent: "space-between" }}
             variant="regular"
           >
-            {
-              width > 1024 && (
-                <img
-              src={
-                "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
-              }
-              alt="Logo Profix"
-              onClick={() => history.push('/')}
-            />
-              )
-            }
+            {width > 1024 && (
+              <img
+                src={
+                  "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
+                }
+                alt="Logo Profix"
+                onClick={() => history.push("/")}
+              />
+            )}
             <StyledContainerMenu item md={12}>
               <Grid item md={12} className="flex justify-end">
                 {login.token !== undefined ? (
@@ -207,13 +208,13 @@ const Header: FC = (): JSX.Element => {
                                 style={{ fontSize: 17 }}
                               >
                                 X
-                              </p> 
-                                <img
-                                  src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png"
-                                  alt=""
-                                  width="100"
-                                  onClick={() => history.push('/')}
-                                />
+                              </p>
+                              <img
+                                src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/praxis_responsive.png"
+                                alt=""
+                                width="100"
+                                onClick={() => history.push("/")}
+                              />
                               <img
                                 src="http://api-praxis.eml.com.co/wp-content/uploads/2022/04/logo.png"
                                 alt=""
@@ -307,25 +308,108 @@ const Header: FC = (): JSX.Element => {
                               onClick={() => expandMenu(`menu${index}`)}
                               key={index}
                             >
-                              {item.post_title}
-                              {expand ? <ExpandLess /> : <ExpandMore />}
+                              {item.post_title === "Líneas de cuidado" ? (
+                                <React.Fragment>
+                                  {item.post_title}
+                                  {expand4 ? <ExpandLess /> : <ExpandMore />}
+                                </React.Fragment>
+                              ) : item.post_title === "Aliados" ? (
+                                <React.Fragment>
+                                  {item.post_title}
+                                  {expand2 ? <ExpandLess /> : <ExpandMore />}
+                                </React.Fragment>
+                              ) : (
+                                <React.Fragment>
+                                  {item.post_title}
+                                  {expand3 ? <ExpandLess /> : <ExpandMore />}
+                                </React.Fragment>
+                              )}
                             </StyledListItem>
-                            <Collapse in={expand} timeout="auto" unmountOnExit>
-                              <Fade in={expand}>
-                                <List component="div" disablePadding>
-                                  {_.map(
-                                    item.submenus,
-                                    (submenu: any, idx: number) => (
-                                      <StyledListItem sx={{ pl: 4 }} key={idx}>
-                                        <Link to={submenu.url}>
-                                          {submenu.post_title}
-                                        </Link>
-                                      </StyledListItem>
-                                    )
-                                  )}
-                                </List>
-                              </Fade>
-                            </Collapse>
+                            {item.post_title === "Líneas de cuidado" ? (
+                              <React.Fragment>
+                                <Collapse
+                                  in={expand4}
+                                  timeout="auto"
+                                  unmountOnExit
+                                >
+                                  <Fade in={expand4}>
+                                    <List component="div" disablePadding>
+                                      {_.map(
+                                        item.submenus,
+                                        (submenu: any, idx: number) => (
+                                          <StyledListItem
+                                            sx={{ pl: 4 }}
+                                            key={idx}
+                                            onClick={() => {
+                                              closeDrawer();
+                                              history.push(submenu.url);
+                                            }}
+                                          >
+                                            {submenu.post_title}
+                                          </StyledListItem>
+                                        )
+                                      )}
+                                    </List>
+                                  </Fade>
+                                </Collapse>
+                              </React.Fragment>
+                            ) : item.post_title === "Aliados" ? (
+                              <React.Fragment>
+                                <Collapse
+                                  in={expand2}
+                                  timeout="auto"
+                                  unmountOnExit
+                                >
+                                  <Fade in={expand2}>
+                                    <List component="div" disablePadding>
+                                      {_.map(
+                                        item.submenus,
+                                        (submenu: any, idx: number) => (
+                                          <StyledListItem
+                                            sx={{ pl: 4 }}
+                                            key={idx}
+                                            onClick={() => {
+                                              closeDrawer();
+                                              history.push(submenu.url);
+                                            }}
+                                          >
+                                            {submenu.post_title}
+                                          </StyledListItem>
+                                        )
+                                      )}
+                                    </List>
+                                  </Fade>
+                                </Collapse>
+                              </React.Fragment>
+                            ) : (
+                              <React.Fragment>
+                                <Collapse
+                                  in={expand3}
+                                  timeout="auto"
+                                  unmountOnExit
+                                >
+                                  <Fade in={expand3}>
+                                    <List component="div" disablePadding>
+                                      {_.map(
+                                        item.submenus,
+                                        (submenu: any, idx: number) => (
+                                          <StyledListItem
+                                            sx={{ pl: 4 }}
+                                            key={idx}
+                                            onClick={() => {
+                                              closeDrawer();
+                                              history.push(submenu.url);
+                                            }}
+                                          >
+                                            {submenu.post_title}
+                                          </StyledListItem>
+                                        )
+                                      )}
+                                    </List>
+                                  </Fade>
+                                </Collapse>
+                              </React.Fragment>
+                            )}
                           </React.Fragment>
                         );
                       } else {
@@ -340,21 +424,19 @@ const Header: FC = (): JSX.Element => {
                 </Box>
               </SwipeableDrawer>
             </StyledContainerMenu2>
-            {
-              width < 1024 && (
-                <React.Fragment>
-                  <img
-              src={
-                "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
-              }
-              alt="Logo Profix"
-              style={{ width: width < 1024 ? '50%' : '' }}
-              onClick={() => history.push('/')}
-            />
-            <div></div>
-                </React.Fragment>
-              )
-            }
+            {width < 1024 && (
+              <React.Fragment>
+                <img
+                  src={
+                    "http://api-praxis.eml.com.co/wp-content/uploads/2022/03/Recurso-13.png"
+                  }
+                  alt="Logo Profix"
+                  style={{ width: width < 1024 ? "50%" : "" }}
+                  onClick={() => history.push("/")}
+                />
+                <div></div>
+              </React.Fragment>
+            )}
           </Toolbar>
         </Container>
       </AppBarComponent>
