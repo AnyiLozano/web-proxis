@@ -239,7 +239,7 @@ const Bulcosan: FC = (): JSX.Element => {
             background={bulcosan.caracteristicas_background.content}
             style={{
               paddingTop: width < 1024 ? "2rem" : "9rem",
-              paddingBottom: width < 1024 ? "2rem" : "9rem",
+              paddingBottom: width < 1024 ? "1rem" : "9rem",
             }}
           >
             {width > 1024 ? (
@@ -392,14 +392,12 @@ const Bulcosan: FC = (): JSX.Element => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} className="mt-6">
                   <Container>
-                    <StyledImageResponsive
-                      src={bulcosan.ventajas.content}
-                      alt={bulcosan.ventajas.alt}
-                      style={{
-                        maxWidth: "100%",
-                        margin: width < 768 ? "4% 0px" : "4% 25px",
-                      }}
-                    />
+                  <StyledTitleText dangerouslySetInnerHTML={{
+                      __html: bulcosan.ventajas_responsives1.content.split("--")[0],
+                    }}></StyledTitleText>
+                  <StyledDescriptionText dangerouslySetInnerHTML={{
+                        __html: bulcosan.ventajas_responsives1.content.split("--")[1],
+                      }}></StyledDescriptionText>
                   </Container>
                 </Grid>
               </Grid>
