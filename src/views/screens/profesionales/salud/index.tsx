@@ -10,6 +10,7 @@ import { StyledImageResponsive } from "views/screens/products/Epiprot/epiprot.re
 import { Modal } from "@mui/material";
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
+import { Container } from "@mui/material";
 
 const Salud = () => {
   // Styles
@@ -62,24 +63,27 @@ const Salud = () => {
                   </StyledTitleFactores>
                 )}
               </Grid>
-              <Grid item lg={12} className="xl:pb-16">
+              <Grid item lg={12} className="xl:pb-16 d-flex justify-center">
                 {/* <video controls width="100%">
                   <source src="http://localhost/api-proxis/wp-content/uploads/2021/12/Praxis-English-Academy.mp4"></source>
                 </video> */}
                 <img
                   src={cuidadores.banner_video.content}
                   alt={cuidadores.banner_video.alt}
-                  style={{ width: "100%" }}
+                  style={{ width: "80%" }}
                 />
               </Grid>
               <Grid item md={12} className="xl:pb-12 pb-6">
                 {width > 1024 ? (
-                  <span
+                 <Container>
+                    <span
                     dangerouslySetInnerHTML={{
                       __html: cuidadores.text_factores.content,
                     }}
                     className="text-lg md:text-lg"
+                   
                   ></span>
+                 </Container>
                 ) : (
                   <StyledDescripcionFactores
                     dangerouslySetInnerHTML={{
@@ -90,17 +94,24 @@ const Salud = () => {
                 )}
               </Grid>
               {width > 1024 ? (
-                <React.Fragment>
+                <React.Fragment >
+                  <Grid item lg={12} className="d-flex justify-center pb-8">
                   <img
+                  className="d-flex justify-center"
                     src={cuidadores.ancestral_slider_.content}
                     alt={cuidadores.ancestral_slider_.alt}
-                    style={{ width: "100%" }}
+                    style={{ width: "80%" }}
                   />
+                  </Grid>
+                  <Grid item lg={12} className="d-flex justify-center">
                   <img
                     src={cuidadores.ancestral_slider_99.content}
                     alt={cuidadores.ancestral_slider_99.alt}
-                    style={{ width: "100%", marginBottom: "3%" }}
+                    style={{ width: "80%", marginBottom: "3%" }}
                   />
+                  </Grid>
+                  
+                 
                 </React.Fragment>
               ) : (
                 <React.Fragment>

@@ -78,7 +78,9 @@ const useProfesionalesStyles = () => {
     
     `;
 
-    const StyledTerapeuticNumberSection = styled.section`
+    const StyledTerapeuticNumberSection = styled.section.attrs({
+        className: "blue"
+    })`
         ${tw`py-24 sm:py-36`}
         background-image: url('${(props: any) => props.background}');
         background-size: 100% 100%;

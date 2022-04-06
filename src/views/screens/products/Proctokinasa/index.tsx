@@ -2,13 +2,17 @@ import { Container, Grid } from "@mui/material";
 import useControllers from "controllers";
 import React, { FC, useState } from "react";
 import useProductsStyles from "../products.style";
-import { StyledImageGeneral } from "views/screens/terapeutic-number/terapeutic-number.style";
+import {
+  StyledImageGeneral,
+  StyledSubtitle,
+} from "views/screens/terapeutic-number/terapeutic-number.style";
 import {
   StyledDescriptionText,
   StyledImageResponsive,
   StyledSectionDescription,
   StyledTitleText,
 } from "../Epiprot/epiprot.responsive.styles";
+import { StyledTitleTypesWounds } from "views/screens/terapeutic-number/Heridas/heridas.responsive.styles";
 
 const Proctokinasa: FC = (): JSX.Element => {
   // Styles
@@ -238,188 +242,128 @@ const Proctokinasa: FC = (): JSX.Element => {
                 }
               })}
             </Grid>
+            {/* aplicacion */}
             <Grid item md={12} className="mt-12">
-              <StyledImageGeneral
-                src={
-                  proctokinasa.preImage !== undefined &&
-                  proctokinasa.preImage.content
-                }
-                alt=""
-                style={{ width: "100%" }}
-              />
+              {width > 1024 ? (
+                <React.Fragment>
+                  <StyledTitleTypesWounds style={{ marginLeft: "-2%" }}>
+                    Aplicación
+                  </StyledTitleTypesWounds>
+                  <StyledImageGeneral
+                    src={
+                      proctokinasa.preImage !== undefined &&
+                      proctokinasa.preImage.content
+                    }
+                    alt=""
+                    style={{ width: "100%" }}
+                  />
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <StyledTitleText>Aplicación</StyledTitleText>
+                  <StyledImageResponsive
+                    src={
+                      proctokinasa.preImage !== undefined &&
+                      proctokinasa.preImage.content
+                    }
+                    alt=""
+                    style={{ width: "100%" }}
+                  />
+                </React.Fragment>
+              )}
             </Grid>
+            {/* aplicacion */}
           </Container>
+
+          {/* cuadro azul */}
           <Grid container className="mt-12">
-            {width > 1024 ? (
-              <StyledImageGeneral
-                src={proctokinasa.references && proctokinasa.references.content}
-                alt=""
-                style={{ width: "100%" }}
-              />
-            ) : (
-              <StyledImageResponsive
-                src={proctokinasa.tipos_tejidos && proctokinasa.tipos_tejidos.content}
-                alt=""
-                style={{ maxWidth: "100%" }}
-              />
-            )}
+            <div
+              style={{
+                background: "#005D9A",
+                marginTop: "0%",
+                height: "6.9%",
+              }}
+              className="xl:py-16 lg:py-16 py-8"
+            >
+              {width > 1024 ? (
+                <React.Fragment>
+                  <Grid container>
+                    <Grid item md={6}>
+                      <img
+                        src={proctokinasa.aplicacion_imagen_webmovil.content}
+                        alt={proctokinasa.aplicacion_imagen_webmovil.alt}
+                        style={{
+                          marginTop: "6.1%",
+                          marginLeft: "112.4%",
+                          width: "70%",
+                        }}
+                      />
+                    </Grid>
+                  </Grid>
+
+                  <Grid item md={6}>
+                    <StyledSubtitle
+                      style={{
+                        fontFamily: "Montserrat, bold",
+                        fontSize: "25px",
+                        marginLeft: "16.3%",
+                        marginTop: "-44.4%",
+                      }}
+                      className="text-white"
+                      dangerouslySetInnerHTML={{
+                        __html: proctokinasa.references.content.split("--")[0],
+                      }}
+                    ></StyledSubtitle>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: proctokinasa.references.content.split("--")[1],
+                      }}
+                      className="text-white"
+                      style={{
+                        marginTop: "0%",
+                        marginLeft: "16.3%",
+                        fontFamily: "Montserrat, medium",
+                        color: "#666666",
+                        fontSize: "17px",
+                        fontWeight: "500",
+                      }}
+                    ></p>
+                  </Grid>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <Grid container>
+                    <Container>
+                      <Grid item md={12}>
+                        <StyledTitleText
+                          className="text-white"
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              proctokinasa.references.content.split("--")[0],
+                          }}
+                        ></StyledTitleText>
+
+                        <StyledDescriptionText
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              proctokinasa.references.content.split("--")[1],
+                          }}
+                          className="text-white"
+                        ></StyledDescriptionText>
+
+                        <StyledImageResponsive
+                          src={proctokinasa.aplicacion_imagen_webmovil.content}
+                          alt={proctokinasa.aplicacion_imagen_webmovil.alt}
+                        />
+                      </Grid>
+                    </Container>
+                  </Grid>
+                </React.Fragment>
+              )}
+            </div>
           </Grid>
         </React.Fragment>
       )}
-
-      {/* <StyledTerapeuticNumberSection1 background="http://localhost/api-proxis/wp-content/uploads/2021/12/Recurso-8.png">
-        <Container>
-          <Grid item lg={12}>
-            <Grid container>
-              {_.map(products, (item: any, index: number) => {
-                if (width >= 1024) {
-                  if (item.id !== 4) {
-                    if (index % 2 === 0) {
-                      return (
-                        <React.Fragment>
-                          <Grid item lg={6} className="mt-12" key={index}>
-                            <Grid item lg={12}>
-                              <StyledTitleSection2>
-                                {item.title}
-                              </StyledTitleSection2>
-                            </Grid>
-                            <Grid item lg={12}>
-                              {typeof item.description === "string" ? (
-                                <StyledDescriptionSection2>
-                                  {item.description}
-                                </StyledDescriptionSection2>
-                              ) : (
-                                <ul style={{ listStyle: "disc" }}>
-                                  {_.map(
-                                    item.description,
-                                    (it: any, idx: number) => (
-                                      <React.Fragment>
-                                        <StyledListItemSection2
-                                          className="mb-2"
-                                          key={idx}
-                                        >
-                                          {it}
-                                        </StyledListItemSection2>
-                                      </React.Fragment>
-                                    )
-                                  )}
-                                </ul>
-                              )}
-                            </Grid>
-                          </Grid>
-                          <Grid item lg={6} className="flex justify-end mt-12">
-                            <StyledImage
-                              src={item.image}
-                              alt="image-terapeutic-number"
-                            />
-                          </Grid>
-                        </React.Fragment>
-                      );
-                    } else {
-                      return (
-                        <React.Fragment>
-                          <Grid
-                            item
-                            lg={6}
-                            key={index}
-                            className="flex items-center mt-12"
-                          >
-                            <StyledImage
-                              src={item.image}
-                              alt="image-terapeutic-number"
-                            />
-                          </Grid>
-                          <Grid item lg={6} className="mt-12">
-                            <Grid item lg={12} className="mt-2">
-                              <StyledTitleSection2>
-                                {item.title}
-                              </StyledTitleSection2>
-                            </Grid>
-                            <Grid item lg={12} className="mt-4">
-                              {typeof item.description === "string" ? (
-                                <StyledDescriptionSection2>
-                                  {item.description}
-                                </StyledDescriptionSection2>
-                              ) : (
-                                <ul style={{ listStyle: "disc" }}>
-                                  {_.map(
-                                    item.description,
-                                    (it: any, idx: number) => (
-                                      <React.Fragment>
-                                        <StyledListItemSection2
-                                          className="mb-2"
-                                          key={idx}
-                                        >
-                                          {it}
-                                        </StyledListItemSection2>
-                                      </React.Fragment>
-                                    )
-                                  )}
-                                </ul>
-                              )}
-                            </Grid>
-                          </Grid>
-                        </React.Fragment>
-                      );
-                    }
-                  } else {
-                    return (
-                      <Grid item lg={12} className="mt-12">
-                        <StyledImage
-                          src={item.image}
-                          alt="Aplication Product"
-                          width="100%"
-                        />
-                      </Grid>
-                    );
-                  }
-                } else {
-                  return (
-                    <React.Fragment>
-                      <Grid item lg={6} className="mt-12">
-                        <Grid item lg={12}>
-                          <StyledTitleSection2>
-                            {item.title}
-                          </StyledTitleSection2>
-                        </Grid>
-                        <Grid item lg={12}>
-                          {typeof item.description === "string" ? (
-                            <StyledDescriptionSection2>
-                              {item.description}
-                            </StyledDescriptionSection2>
-                          ) : (
-                            <ul style={{ listStyle: "disc" }}>
-                              {_.map(
-                                item.description,
-                                (it: any, idx: number) => (
-                                  <React.Fragment>
-                                    <StyledListItemSection2
-                                      className="mb-2"
-                                      key={idx}
-                                    >
-                                      {it}
-                                    </StyledListItemSection2>
-                                  </React.Fragment>
-                                )
-                              )}
-                            </ul>
-                          )}
-                        </Grid>
-                      </Grid>
-                      <Grid item lg={6} className="flex justify-end mt-12">
-                        <StyledImage
-                          src={item.image}
-                          alt="image-terapeutic-number"
-                        />
-                      </Grid>
-                    </React.Fragment>
-                  );
-                }
-              })}
-            </Grid>
-          </Grid>
-        </Container>
-      </StyledTerapeuticNumberSection1> */}
     </React.Fragment>
   );
 };

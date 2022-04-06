@@ -123,19 +123,13 @@ const useCientificaStyles = () => {
         background-image: url('${(props: any) => props.background}');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        margin-top: 8.9rem !important;
 
-        @media (max-width: 1023px){
-            margin-top: 10.6rem;
+        @media (max-width: 1023px) {
+            margin-top: -4%;
         }
     `;
 
     const ContainerStyled = styled(Container)`
-        margin-top: 14.4rem !important;
-
-        @media (max-width: 1023px) {
-            margin-top: 10.4rem !important;
-        }
     `
 
     return {

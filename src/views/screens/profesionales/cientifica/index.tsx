@@ -34,9 +34,9 @@ const Cientifica = () => {
             )
           }
           
-          <Grid item md={12} className="xl:py-12 pb-6">
-            <Link to="/">
-              <StyledImage2 src={cuidadores !== undefined && cuidadores.evidencia_cientificac.content   } />
+          <Grid item md={12} className="xl:py-12 pb-6 py-6 d-flex justify-center">
+            <Link to="/" className="d-flex justify-center">
+              <StyledImage2  style={{ marginTop: "-6%", width: "80%" }} src={cuidadores !== undefined && cuidadores.evidencia_cientificac.content   } />
             </Link>
           </Grid>
         </ContainerStyled>

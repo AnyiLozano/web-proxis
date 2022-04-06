@@ -10,10 +10,10 @@ const useSaludStyles = () => {
 
     const StyledAppBarPage = styled(AppBar)`
         ${tw``}
-        background-color: transparent !important; 
+        background-color: transparent !important;
         background: linear-gradient(to top,#004269e0 100%,transparent);
         margin-top: 8.9rem;
-        
+
         @media (max-width: 1023px){
             margin-top: 7rem;
         }
@@ -70,7 +70,7 @@ const useSaludStyles = () => {
         text-align: center;
 
         @media (max-width: 1023px) {
-            font-size:  1.5rem; 
+            font-size:  1.5rem;
         }
     `;
 
@@ -121,19 +121,11 @@ const useSaludStyles = () => {
         background-image: url('${(props: any) => props.background}');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        margin-top: 8.9rem !important;
 
-        @media (max-width: 1023px){
-            margin-top: 10.6rem;
-        }
     `;
 
     const ContainerStyled = styled(Container)`
-        margin-top: 14.4rem !important;
 
-        @media (max-width: 1023px) {
-            margin-top: 10.4rem !important;
-        }
     `
 
     return {
