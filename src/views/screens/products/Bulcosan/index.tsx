@@ -254,7 +254,7 @@ const Bulcosan: FC = (): JSX.Element => {
                             alt={bulcosan.caracteristicas.alt}
                             style={{
                               width: "500px",
-                              marginTop: "-32.7%",
+                              marginTop: "-27.7%",
                               marginLeft: "-4.2%",
                               height: "414.6px",
                             }}
@@ -267,7 +267,7 @@ const Bulcosan: FC = (): JSX.Element => {
                               fontFamily: "Montserrat, bold",
                               fontSize: "25px",
                               marginLeft: "-44.1%",
-                              marginTop: "-29.2%",
+                              marginTop: "-16.2%",
                             }}
                             dangerouslySetInnerHTML={{
                               __html:
@@ -339,15 +339,34 @@ const Bulcosan: FC = (): JSX.Element => {
             {width > 1024 ? (
               <Grid container className="mt-14">
                 <Grid item md={6}>
-                  <StyledImageGeneral
-                    src={bulcosan.ventajas.content}
-                    alt={bulcosan.ventajas.alt}
+                  <StyledTitulo
                     style={{
-                      width: "100%",
-                      marginTop: "6%",
-                      marginLeft: "10%",
+                      marginTop: "3.2%",
+                        fontFamily: "Montserrat, bold",
+                        fontSize: 25,
+                        fontWeight: "700",
+                        marginLeft: "9.2%",
+                        marginBottom: "6%"
                     }}
-                  />
+                    dangerouslySetInnerHTML={{
+                      __html: bulcosan.ventajas_responsives1.content.split("--")[0],
+                    }}
+                  >
+                  </StyledTitulo>
+                  <p
+                      dangerouslySetInnerHTML={{
+                        __html: bulcosan.ventajas_responsives1.content.split("--")[1],
+                      }}
+                      style={{
+                        marginTop: "-3%",
+                        marginLeft: "14.5%",
+                        fontFamily: "Montserrat, medium",
+                        color: "#666666",
+                        fontSize: "17px",
+                        fontWeight: "500",
+                        lineHeight: "1.7",
+                      }}
+                    ></p>
                 </Grid>
                 <Grid item md={6}>
                   <StyledImageGeneral
@@ -355,7 +374,7 @@ const Bulcosan: FC = (): JSX.Element => {
                     alt={bulcosan.ventajas_imagen.alt}
                     style={{
                       width: "100%",
-                      marginLeft: "4%",
+                      marginLeft: "0%",
                       height: "125.5%",
                       marginTop: "-4%",
                     }}

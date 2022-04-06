@@ -41,7 +41,7 @@ const FormContact: FC = (): JSX.Element => {
                                     </Grid>
                                     <Grid item lg={12} className="md:pt-6">
                                         <TextField
-                                            label="Correo Electronico"
+                                            label="Correo Electrónico"
                                             type="email"
                                             id="email"
                                             fullWidth
@@ -50,7 +50,7 @@ const FormContact: FC = (): JSX.Element => {
                                     </Grid>
                                     <Grid item lg={12} className="md:pt-6">
                                         <TextField
-                                            label="Correo Electronico"
+                                            label="Deja tu Mensaje"
                                             type="email"
                                             multiline
                                             rows={6}
