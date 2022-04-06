@@ -280,6 +280,7 @@ const Ulceras = () => {
                   ) : (
                     <StyledDescripcionFactores
                       dangerouslySetInnerHTML={{
+                        
                         __html:
                           woundsAssets.lesiones_por_presion.content.split(
                             "--"
@@ -297,7 +298,7 @@ const Ulceras = () => {
                         alt={woundsAssets.ulceras_imagen_4.alt}
                         style={{
                           marginLeft: "0%",
-                          marginTop: "-13.4%",
+                          marginTop: "-11.4%",
                           height: "773px",
                         }}
                       />
@@ -319,7 +320,7 @@ const Ulceras = () => {
                     }}
                     className=""
                     style={{
-                      marginTop: "-2.4%",
+                      marginTop: "-1.4%",
                       marginLeft: "3%",
                       fontFamily: "Montserrat, medium",
                       color: "#666666",
